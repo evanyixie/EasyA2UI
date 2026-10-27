@@ -1,0 +1,296 @@
+[
+  {
+    "tag": "q01",
+    "query": "帮我做个卡片，看杭州市西湖区现在是什么天气，点一下查看杭州天气详情。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q02",
+    "query": "明天在重庆安排户外活动，帮我做个卡片，看明天的日期、星期和天气。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q03",
+    "query": "下一场日程是18天后上午十点的产品发布会，帮我做个卡片，看离发布会还有几天、日程标题和开始时间，点一下查看日程详情。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q04",
+    "query": "帮我做个天气预警卡片，重点看长沙当前天气预警。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q05",
+    "query": "明天要在广州出门办事，帮我做个降雨卡片，看明天下雨概率，再看温度范围。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q06",
+    "query": "明天上午九点有产品立项会，下午三点有客户交流会，帮我做个卡片，分别看两场会议的标题和开始时间。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q07",
+    "query": "下一场日程是明天下午两点的客户方案交流会，帮我做个卡片，看会议地点、备注和结束时间。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q08",
+    "query": "2天后要去北京出差，帮我做个卡片，看还有几天出发和北京当天的天气、温度范围。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q09",
+    "query": "帮我做个耳机状态卡片，分别看左右耳机电量，再看各自是否在充电。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q10",
+    "query": "周末准备去杭州露营，帮我做个卡片，分别看杭州明天和后天的天气、空气质量。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q11",
+    "query": "帮我做个电池温度卡片，重点看现在的电池温度，再看充电器类型。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q12",
+    "query": "帮我做个睡眠分析卡片，看昨晚总睡眠时长，再看睡眠记录类型和深睡时长。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q13",
+    "query": "下午三点有合作方线上评审会，日程中有可用的入会链接，帮我做个卡片，看会议开始时间、耳机是否连接和耳机仓电量，点击按钮一键入会。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q14",
+    "query": "帮我做个充电状态卡片，看手机是否在充电、使用的充电器类型和耳机仓是否在充电，点一下打开电池设置。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q15",
+    "query": "跑步结束后想复盘心率，帮我做个卡片，重点看最高心率和最低心率。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q16",
+    "query": "明天带孩子去成都公园，帮我做个健康指数卡片，重点看紫外线等级，再看空气质量和感冒指数。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q17",
+    "query": "周六有用户体验营，帮我做个日程卡片，看活动标题、日期和是不是全天安排，点一下查看日程详情。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q18",
+    "query": "下一场日程是下午三点的版本发布排期会，帮我做个卡片，看会议开始时间和地点，点击导航去公司。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q19",
+    "query": "出门前检查耳机仓，帮我做个卡片，看耳机仓电量和充电状态，点一下打开蓝牙设置。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q20",
+    "query": "出门前帮我做个设备状态卡片，看手机剩余电量、耳机仓电量和耳机是否连接。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q21",
+    "query": "帮我做个作息卡片，看昨天白天小睡多久、晚上几点睡着和早上几点醒，点一下打开闹钟应用。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q22",
+    "query": "帮我做个运动音乐卡片，看今天最近一次运动的时长、消耗热量和平均心率，训练时可以打开歌单。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q23",
+    "query": "下周一上午九点有一个全球项目周会，帮我做个卡片，看会议标题、会议日期、结束时间和所在时区。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q24",
+    "query": "下一场日程是李四发起的下午两点需求评审会，帮我做个卡片，看会议发起人、是不是重要日程、提前提醒时间，开会前可以打开免打扰设置。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q25",
+    "query": "准备去厦门海边航拍，帮我做个卡片，卡片展示当地风向、风力，点一下查看厦门天气详情。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q26",
+    "query": "4天后要去西安市雁塔区出差，帮我做个卡片，看还有几天出发和当天的天气、温度范围、下雨概率，点一下打开闹钟应用设置出发提醒。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q27",
+    "query": "帮我做个训练音乐卡片，看今天的运动日期、最近一次练了什么和最低心率，点一下打开收藏的歌单。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q29",
+    "query": "帮我做个卡片，看看深圳天气和体感，再看看上午第一件日程几点开始、具体位置是哪里，点一下能查看日程详情。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q30",
+    "query": "帮我做个日程卡片，下午两点有需求评审会，卡片可以看会议名称、开始和结束时间，点击按钮一键入会。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q31",
+    "query": "帮我做个耳机卡片，看看耳机连上没、叫什么名字，能直接打开收藏的歌单。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q32",
+    "query": "帮我做个电量卡片，使用进度环查看剩余电量和充电状态，点击进入省电模式。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q33",
+    "query": "帮我做个卡片，我明天上午10点要去医院复查，卡片展示日程信息、时间信息，点一下能进闹钟。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q34",
+    "query": "帮我做个天气卡片，看看成都和上海各多少度、什么天气，能直接在卡片上看到。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q35",
+    "query": "帮我做个日程卡片，看看未来7天一共安排了几件事和最近一件的标题、开始时间、备注，点一下进日程详情。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q38",
+    "query": "帮我做个卡片，看昨晚睡眠得分、睡眠状态和睡了多久，点一下能去设置手机使用时长。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q39",
+    "query": "帮我做个运动卡片，看看最近一次练了什么、练了多久，点一下打开运动健康的锻炼页。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q40",
+    "query": "帮我做个电池卡片，查看剩余电量、充电状态和电池健康等信息。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q41",
+    "query": "帮我做个日程卡片，下周一要和美国团队开会，展示标题、时区、是不是全天、开会地点。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q42",
+    "query": "帮我做个卡片，86天后要去北京出差一周，展示还有几天出发、北京的天气，点一下能看北京天气详情。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q43",
+    "query": "帮我做个卡片，看看长沙老家天气预警、紫外线和空气，怕妈妈着凉，妈妈的号码是1388888888，点一下打开拨号界面并带上这个号码。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q44",
+    "query": "帮我做个卡片，查看剩余电量，点击打开省电模式，并且可以直接导航回家。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q45",
+    "query": "帮我做个卡片，上面要有深圳现在天气现象、多少度和手机电量怎么样，还有当前的电池温度",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q46",
+    "query": "帮我做个卡片，可以看耳机盒是否在充电、电量有多少，卡片可以点击跳转歌单和闹钟。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q47",
+    "query": "帮我做个电池检查卡片，展示充电电流、充电电压、电量等级和电池是否被系统识别，点击打开电池设置。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q48",
+    "query": "帮我做个卡片，展示耳机名称、充电仓还有多少电，可以打开歌单，也能去设置免打扰。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q49",
+    "query": "帮我做个电池体检卡片，手机剩余电量、电量等级、电池健康状态、实时温度，点击查看电池健康设置。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q50",
+    "query": "帮我做个会议提醒卡片，看会议名称、会议日期、几点开始和离会议还有几天，点击进入免打扰设置。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q51",
+    "query": "4天后要带孩子去哈尔滨太阳岛，帮我做个健康指数卡片，确认预报地区，看当天空气质量、紫外线和感冒指数。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  },
+  {
+    "tag": "q52",
+    "query": "帮我做个耳机排障卡片，看耳机名称、连接状态和左右耳机充电状态，点击打开蓝牙设置。",
+    "source": "artifact:CreateMyCard",
+    "size": "2x2"
+  }
+]

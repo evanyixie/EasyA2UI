@@ -1,0 +1,740 @@
+{
+ "q1": [
+  {
+   "path": "data.weather.location.districtName",
+   "key": "districtName",
+   "value": "青浦区"
+  },
+  {
+   "path": "data.weather.current.condition",
+   "key": "condition",
+   "value": "多云"
+  }
+ ],
+ "q2": [
+  {
+   "path": "data.weather.daily.1.date",
+   "key": "date",
+   "value": "2026-08-06"
+  },
+  {
+   "path": "data.weather.daily.1.weekday",
+   "key": "weekday",
+   "value": "星期四"
+  },
+  {
+   "path": "data.weather.daily.1.condition",
+   "key": "condition",
+   "value": "多云"
+  }
+ ],
+ "q3": [
+  {
+   "path": "data.countdown.countdownDays",
+   "key": "countdownDays",
+   "value": "30"
+  },
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "项目例会"
+  },
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "14:00"
+  }
+ ],
+ "q4": [
+  {
+   "path": "data.weather.current.alertLevel",
+   "key": "alertLevel",
+   "value": "大风蓝色预警"
+  }
+ ],
+ "q5": [
+  {
+   "path": "data.weather.daily.1.temperatureRangeText",
+   "key": "temperatureRangeText",
+   "value": "25℃"
+  },
+  {
+   "path": "data.weather.daily.1.temperatureRangeText",
+   "key": "temperatureRangeText",
+   "value": "32℃"
+  }
+ ],
+ "q6": [
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "产品立项会"
+  },
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "09:00"
+  },
+  {
+   "path": "data.calendar.events.1.title",
+   "key": "title",
+   "value": "客户交流会"
+  },
+  {
+   "path": "data.calendar.events.1.dtStart",
+   "key": "dtStart",
+   "value": "15:00"
+  }
+ ],
+ "q7": [
+  {
+   "path": "data.calendar.events.0.eventLocation",
+   "key": "eventLocation",
+   "value": "会议室"
+  },
+  {
+   "path": "data.calendar.events.0.description",
+   "key": "description",
+   "value": "周例会"
+  },
+  {
+   "path": "data.calendar.events.0.dtEnd",
+   "key": "dtEnd",
+   "value": "15:00"
+  }
+ ],
+ "q8": [
+  {
+   "path": "data.countdown.countdownDays",
+   "key": "countdownDays",
+   "value": "30"
+  },
+  {
+   "path": "data.weather.daily.2.condition",
+   "key": "condition",
+   "value": "多云"
+  },
+  {
+   "path": "data.weather.daily.2.temperatureRangeText",
+   "key": "temperatureRangeText",
+   "value": "25℃"
+  },
+  {
+   "path": "data.weather.daily.2.temperatureRangeText",
+   "key": "temperatureRangeText",
+   "value": "32℃"
+  }
+ ],
+ "q9": [
+  {
+   "path": "data.earphone.leftBatteryLevel",
+   "key": "leftBatteryLevel",
+   "value": "76"
+  },
+  {
+   "path": "data.earphone.leftChargingStatusDesc",
+   "key": "leftChargingStatusDesc",
+   "value": "未充电"
+  },
+  {
+   "path": "data.earphone.rightBatteryLevel",
+   "key": "rightBatteryLevel",
+   "value": "78"
+  }
+ ],
+ "q10": [
+  {
+   "path": "data.weather.daily.1.condition",
+   "key": "condition",
+   "value": "多云"
+  },
+  {
+   "path": "data.weather.daily.1.airQuality",
+   "key": "airQuality",
+   "value": "良"
+  }
+ ],
+ "q11": [
+  {
+   "path": "data.phoneBattery.batteryTemperatureText",
+   "key": "batteryTemperatureText",
+   "value": "29.0 ℃"
+  }
+ ],
+ "q12": [
+  {
+   "path": "data.healthSport.nightSleepDurationText",
+   "key": "nightSleepDurationText",
+   "value": "7小时1分"
+  },
+  {
+   "path": "data.healthSport.deepSleepDurationText",
+   "key": "deepSleepDurationText",
+   "value": "2小时15分"
+  }
+ ],
+ "q13": [
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "14:00"
+  },
+  {
+   "path": "data.earphone.batteryLevel",
+   "key": "batteryLevel",
+   "value": "80"
+  }
+ ],
+ "q14": [
+  {
+   "path": "data.phoneBattery.chargingStatusDesc",
+   "key": "chargingStatusDesc",
+   "value": "未充电"
+  }
+ ],
+ "q15": [
+  {
+   "path": "data.healthSport.exerciseHeartRateMax",
+   "key": "exerciseHeartRateMax",
+   "value": "168"
+  },
+  {
+   "path": "data.healthSport.exerciseHeartRateMin",
+   "key": "exerciseHeartRateMin",
+   "value": "96"
+  }
+ ],
+ "q16": [
+  {
+   "path": "data.weather.daily.1.uvIndex",
+   "key": "uvIndex",
+   "value": "中等"
+  },
+  {
+   "path": "data.weather.daily.1.airQuality",
+   "key": "airQuality",
+   "value": "良"
+  },
+  {
+   "path": "data.weather.daily.1.coldLevel",
+   "key": "coldLevel",
+   "value": "低"
+  }
+ ],
+ "q17": [
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "项目例会"
+  },
+  {
+   "path": "data.calendar.events.0.startDate",
+   "key": "startDate",
+   "value": "08-06"
+  }
+ ],
+ "q18": [
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "15:00"
+  },
+  {
+   "path": "data.calendar.events.0.eventLocation",
+   "key": "eventLocation",
+   "value": "总部大楼"
+  }
+ ],
+ "q19": [
+  {
+   "path": "data.earphone.batteryLevel",
+   "key": "batteryLevel",
+   "value": "80"
+  },
+  {
+   "path": "data.earphone.chargingStatusDesc",
+   "key": "chargingStatusDesc",
+   "value": "未充电"
+  }
+ ],
+ "q20": [
+  {
+   "path": "data.phoneBattery.batterySOC",
+   "key": "batterySOC",
+   "value": "68"
+  },
+  {
+   "path": "data.earphone.batteryLevel",
+   "key": "batteryLevel",
+   "value": "80"
+  }
+ ],
+ "q21": [
+  {
+   "path": "data.healthSport.totalNapDurationText",
+   "key": "totalNapDurationText",
+   "value": "0分"
+  },
+  {
+   "path": "data.healthSport.fallAsleepTimeText",
+   "key": "fallAsleepTimeText",
+   "value": "23:15"
+  },
+  {
+   "path": "data.healthSport.wakeupTimeText",
+   "key": "wakeupTimeText",
+   "value": "07:30"
+  }
+ ],
+ "q22": [
+  {
+   "path": "data.healthSport.exerciseDurationText",
+   "key": "exerciseDurationText",
+   "value": "40分"
+  },
+  {
+   "path": "data.healthSport.exerciseCalorieText",
+   "key": "exerciseCalorieText",
+   "value": "260 千卡"
+  },
+  {
+   "path": "data.healthSport.exerciseHeartRateAvg",
+   "key": "exerciseHeartRateAvg",
+   "value": "135"
+  }
+ ],
+ "q23": [
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "项目例会"
+  },
+  {
+   "path": "data.calendar.events.0.startDate",
+   "key": "startDate",
+   "value": "08-06"
+  },
+  {
+   "path": "data.calendar.events.0.dtEnd",
+   "key": "dtEnd",
+   "value": "15:00"
+  },
+  {
+   "path": "data.calendar.events.0.timeZone",
+   "key": "timeZone",
+   "value": "Asia"
+  },
+  {
+   "path": "data.calendar.events.0.timeZone",
+   "key": "timeZone",
+   "value": "Shanghai"
+  }
+ ],
+ "q24": [
+  {
+   "path": "data.calendar.events.0.senderName",
+   "key": "senderName",
+   "value": "李四"
+  },
+  {
+   "path": "data.calendar.events.0.remindTime.0",
+   "key": "0",
+   "value": "15"
+  }
+ ],
+ "q25": [
+  {
+   "path": "data.weather.current.windDirection",
+   "key": "windDirection",
+   "value": "东南风"
+  },
+  {
+   "path": "data.weather.current.windLevel",
+   "key": "windLevel",
+   "value": "2"
+  }
+ ],
+ "q26": [
+  {
+   "path": "data.countdown.countdownDays",
+   "key": "countdownDays",
+   "value": "30"
+  },
+  {
+   "path": "data.weather.daily.4.condition",
+   "key": "condition",
+   "value": "多云"
+  },
+  {
+   "path": "data.weather.daily.4.temperatureRangeText",
+   "key": "temperatureRangeText",
+   "value": "25℃"
+  },
+  {
+   "path": "data.weather.daily.4.temperatureRangeText",
+   "key": "temperatureRangeText",
+   "value": "32℃"
+  }
+ ],
+ "q27": [
+  {
+   "path": "data.healthSport.targetDateText",
+   "key": "targetDateText",
+   "value": "2026-08-06"
+  },
+  {
+   "path": "data.healthSport.exerciseHeartRateMin",
+   "key": "exerciseHeartRateMin",
+   "value": "96"
+  }
+ ],
+ "q29": [
+  {
+   "path": "data.weather.current.condition",
+   "key": "condition",
+   "value": "多云"
+  },
+  {
+   "path": "data.weather.current.temperatureC",
+   "key": "temperatureC",
+   "value": "29"
+  },
+  {
+   "path": "data.weather.current.feelsLikeC",
+   "key": "feelsLikeC",
+   "value": "31"
+  },
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "14:00"
+  },
+  {
+   "path": "data.calendar.events.0.eventLocation",
+   "key": "eventLocation",
+   "value": "会议室"
+  }
+ ],
+ "q30": [
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "需求评审会"
+  },
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "14:00"
+  },
+  {
+   "path": "data.calendar.events.0.dtEnd",
+   "key": "dtEnd",
+   "value": "15:00"
+  }
+ ],
+ "q31": [
+  {
+   "path": "data.earphone.earphoneName",
+   "key": "earphoneName",
+   "value": "示例耳机"
+  }
+ ],
+ "q32": [
+  {
+   "path": "data.phoneBattery.batterySOC",
+   "key": "batterySOC",
+   "value": "68"
+  },
+  {
+   "path": "data.phoneBattery.chargingStatusDesc",
+   "key": "chargingStatusDesc",
+   "value": "未充电"
+  }
+ ],
+ "q33": [
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "项目例会"
+  },
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "14:00"
+  }
+ ],
+ "q34": [
+  {
+   "path": "data.weather1.current.temperatureC",
+   "key": "temperatureC",
+   "value": "29"
+  },
+  {
+   "path": "data.weather1.current.condition",
+   "key": "condition",
+   "value": "多云"
+  }
+ ],
+ "q35": [
+  {
+   "path": "data.calendar.eventCount",
+   "key": "eventCount",
+   "value": "1"
+  },
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "项目例会"
+  },
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "14:00"
+  },
+  {
+   "path": "data.calendar.events.0.description",
+   "key": "description",
+   "value": "周例会"
+  }
+ ],
+ "q38": [
+  {
+   "path": "data.healthSport.sleepScore",
+   "key": "sleepScore",
+   "value": "82"
+  },
+  {
+   "path": "data.healthSport.sleepStatus",
+   "key": "sleepStatus",
+   "value": "良好"
+  },
+  {
+   "path": "data.healthSport.nightSleepDurationText",
+   "key": "nightSleepDurationText",
+   "value": "7小时1分"
+  }
+ ],
+ "q39": [
+  {
+   "path": "data.healthSport.exerciseDurationText",
+   "key": "exerciseDurationText",
+   "value": "40分"
+  }
+ ],
+ "q40": [
+  {
+   "path": "data.phoneBattery.batterySOC",
+   "key": "batterySOC",
+   "value": "68"
+  },
+  {
+   "path": "data.phoneBattery.chargingStatusDesc",
+   "key": "chargingStatusDesc",
+   "value": "未充电"
+  },
+  {
+   "path": "data.phoneBattery.healthStatusDesc",
+   "key": "healthStatusDesc",
+   "value": "正常"
+  }
+ ],
+ "q41": [
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "项目例会"
+  },
+  {
+   "path": "data.calendar.events.0.timeZone",
+   "key": "timeZone",
+   "value": "Asia"
+  },
+  {
+   "path": "data.calendar.events.0.timeZone",
+   "key": "timeZone",
+   "value": "Shanghai"
+  },
+  {
+   "path": "data.calendar.events.0.eventLocation",
+   "key": "eventLocation",
+   "value": "会议室"
+  }
+ ],
+ "q42": [
+  {
+   "path": "data.countdown.countdownDays",
+   "key": "countdownDays",
+   "value": "86"
+  },
+  {
+   "path": "data.weather.current.condition",
+   "key": "condition",
+   "value": "多云"
+  },
+  {
+   "path": "data.weather.current.temperatureC",
+   "key": "temperatureC",
+   "value": "29"
+  }
+ ],
+ "q43": [
+  {
+   "path": "data.weather.current.alertLevel",
+   "key": "alertLevel",
+   "value": "大风蓝色预警"
+  },
+  {
+   "path": "data.weather.current.uvIndex",
+   "key": "uvIndex",
+   "value": "中等"
+  },
+  {
+   "path": "data.weather.current.airQuality",
+   "key": "airQuality",
+   "value": "良"
+  }
+ ],
+ "q44": [
+  {
+   "path": "data.phoneBattery.batterySOC",
+   "key": "batterySOC",
+   "value": "68"
+  },
+  {
+   "path": "data.phoneBattery.chargingStatusDesc",
+   "key": "chargingStatusDesc",
+   "value": "未充电"
+  }
+ ],
+ "q45": [
+  {
+   "path": "data.weather.current.condition",
+   "key": "condition",
+   "value": "多云"
+  },
+  {
+   "path": "data.weather.current.temperatureC",
+   "key": "temperatureC",
+   "value": "29"
+  },
+  {
+   "path": "data.phoneBattery.batterySOC",
+   "key": "batterySOC",
+   "value": "68"
+  },
+  {
+   "path": "data.phoneBattery.batteryTemperatureText",
+   "key": "batteryTemperatureText",
+   "value": "29.0 ℃"
+  }
+ ],
+ "q46": [
+  {
+   "path": "data.earphone.batteryLevel",
+   "key": "batteryLevel",
+   "value": "80"
+  },
+  {
+   "path": "data.earphone.chargingStatusDesc",
+   "key": "chargingStatusDesc",
+   "value": "未充电"
+  }
+ ],
+ "q47": [
+  {
+   "path": "data.phoneBattery.nowCurrentText",
+   "key": "nowCurrentText",
+   "value": "-151 mA"
+  },
+  {
+   "path": "data.phoneBattery.voltageText",
+   "key": "voltageText",
+   "value": "4 V"
+  }
+ ],
+ "q48": [
+  {
+   "path": "data.earphone.earphoneName",
+   "key": "earphoneName",
+   "value": "示例耳机"
+  },
+  {
+   "path": "data.earphone.batteryLevel",
+   "key": "batteryLevel",
+   "value": "80"
+  }
+ ],
+ "q49": [
+  {
+   "path": "data.phoneBattery.batteryCapacityLevelDesc",
+   "key": "batteryCapacityLevelDesc",
+   "value": "正常电量"
+  },
+  {
+   "path": "data.phoneBattery.healthStatusDesc",
+   "key": "healthStatusDesc",
+   "value": "正常"
+  },
+  {
+   "path": "data.phoneBattery.batteryTemperatureText",
+   "key": "batteryTemperatureText",
+   "value": "29.0 ℃"
+  }
+ ],
+ "q50": [
+  {
+   "path": "data.calendar.events.0.title",
+   "key": "title",
+   "value": "项目例会"
+  },
+  {
+   "path": "data.calendar.events.0.startDate",
+   "key": "startDate",
+   "value": "08-06"
+  },
+  {
+   "path": "data.calendar.events.0.dtStart",
+   "key": "dtStart",
+   "value": "14:00"
+  },
+  {
+   "path": "data.calendar.events.0.countdownDays",
+   "key": "countdownDays",
+   "value": "0"
+  }
+ ],
+ "q51": [
+  {
+   "path": "data.weather.location.districtName",
+   "key": "districtName",
+   "value": "青浦区"
+  },
+  {
+   "path": "data.weather.daily.4.airQuality",
+   "key": "airQuality",
+   "value": "良"
+  },
+  {
+   "path": "data.weather.daily.4.uvIndex",
+   "key": "uvIndex",
+   "value": "中等"
+  },
+  {
+   "path": "data.weather.daily.4.coldLevel",
+   "key": "coldLevel",
+   "value": "低"
+  }
+ ],
+ "q52": [
+  {
+   "path": "data.earphone.earphoneName",
+   "key": "earphoneName",
+   "value": "示例耳机"
+  },
+  {
+   "path": "data.earphone.leftChargingStatusDesc",
+   "key": "leftChargingStatusDesc",
+   "value": "未充电"
+  }
+ ]
+}

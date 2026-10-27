@@ -1,0 +1,90 @@
+{
+  "comment": "字号/间距/圆角批准档位（UX-SPEC 第 2 节与云侧方案美观硬规则）。越档即校验错误。 hero 降档序列 2026-10-16 按金标截到 30（52 张金标主值只有 18/700 与 30/700 两档）。",
+  "font_sizes": {
+    "approved": [
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      32,
+      38
+    ],
+    "title": 12,
+    "body": 14,
+    "body_max": 18,
+    "compact_number": [
+      20,
+      24
+    ],
+    "hero_number_default": 30,
+    "hero_number_max": 38,
+    "unit_range": [
+      12,
+      16
+    ],
+    "button": 14
+  },
+  "hero_downgrade_ladder": [
+    {
+      "value": 30,
+      "unit": 14
+    },
+    {
+      "value": 24,
+      "unit": 12
+    },
+    {
+      "value": 20,
+      "unit": 12
+    }
+  ],
+  "spacings": {
+    "approved": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16
+    ],
+    "preferred": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "num_unit_gap": 2,
+    "icon_text_gap": 8,
+    "group_gap_min": 8
+  },
+  "radii": {
+    "card": 20,
+    "backboard": [
+      12,
+      16
+    ],
+    "capsule": 18
+  },
+  "capsule_button": {
+    "height": 36,
+    "fontSize": 14,
+    "h_padding": 8,
+    "text_gap": 8
+  },
+  "icon": {
+    "width": 20,
+    "height": 20
+  },
+  "text_width_budget": {
+    "comment": "压力宽度预算：中文约 1em，数字/英文约 0.65em，另留 20% 水平余量",
+    "cjk_em": 1.0,
+    "alnum_em": 0.65,
+    "other_em": 0.85,
+    "margin_ratio": 0.2
+  }
+}

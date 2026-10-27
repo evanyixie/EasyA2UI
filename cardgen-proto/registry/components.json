@@ -1,0 +1,242 @@
+{
+  "comment": "组件角色规格表（替代旧 C-1xx 纯字数口径）。spec 为视觉规格：fontSize 走 ladders.approved 档位；color_role 由 themes.json 解析；copy 预算用压力宽度（ladders.text_width_budget）而非字数。select.rules 顺序匹配：type 集合 + 特征条件 → 角色。",
+  "roles": {
+    "header_title": {
+      "a2ui": "Text",
+      "desc": "卡片标题（CardHeader 形态：12fp/400，单行）",
+      "spec": {
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color_role": "primary_text",
+        "height": 20,
+        "maxLines": 1,
+        "min_size": 12
+      }
+    },
+    "hero_value": {
+      "a2ui": "Text",
+      "desc": "大数字主焦点（降档序列 38/30/24/20，700）",
+      "spec": {
+        "ladder": "hero_downgrade_ladder",
+        "fontWeight": 700,
+        "color_role": "primary_text",
+        "maxLines": 1,
+        "min_size": 20
+      }
+    },
+    "hero_context": {
+      "a2ui": "Text",
+      "desc": "hero 上方/下方上下文（12fp/400）",
+      "spec": {
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color_role": "secondary_text",
+        "maxLines": 1,
+        "min_size": 12
+      }
+    },
+    "status_lead": {
+      "a2ui": "Text",
+      "desc": "突出状态/副标题（18fp/700）",
+      "spec": {
+        "fontSize": 18,
+        "fontWeight": 700,
+        "color_role": "primary_text",
+        "maxLines": 1,
+        "height": 24,
+        "min_size": 14
+      }
+    },
+    "support_line": {
+      "a2ui": "Text",
+      "desc": "支撑信息行（14fp/500）",
+      "spec": {
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color_role": "primary_text",
+        "maxLines": 1,
+        "height": 20,
+        "min_size": 12
+      }
+    },
+    "zone_value_line": {
+      "a2ui": "Text",
+      "desc": "小背板第一行：对象名+主值（16fp/700，规范 §2 突出文字档 + 金标 16/700）",
+      "spec": {
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color_role": "primary_text",
+        "maxLines": 1,
+        "min_size": 12
+      }
+    },
+    "zone_aux_line": {
+      "a2ui": "Text",
+      "desc": "小背板第二行：辅助状态（12fp/400）",
+      "spec": {
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color_role": "primary_text",
+        "maxLines": 1,
+        "min_size": 12
+      }
+    },
+    "meta_note": {
+      "a2ui": "Text",
+      "desc": "弱化注释/来源（12fp/400，meta 色 60%）",
+      "spec": {
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color_role": "meta_text",
+        "maxLines": 1,
+        "min_size": 12
+      }
+    },
+    "list_row": {
+      "a2ui": "Text",
+      "desc": "列表条目行（12fp/400）",
+      "spec": {
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color_role": "primary_text",
+        "maxLines": 1,
+        "height": 28,
+        "min_size": 12
+      }
+    },
+    "capsule_action": {
+      "a2ui": "Row",
+      "desc": "图文胶囊按钮（高 36、圆角 18、主题色 20% 底、文字 14/500 居中、图标 20 与文字间距 8）。形态对齐金标真实产物 cta（Row + onClick）—— Form 的 Button 装不下 20×20 图标，而金标自身也发射 Row，故改回 Row 以获得同一渲染结果（差异见 UX-SPEC §11.3）",
+      "spec": {
+        "height": 36,
+        "borderRadius": 18,
+        "fontSize": 14,
+        "fontWeight": 500,
+        "bg_role": "action_bg",
+        "ink_role": "primary_text",
+        "h_padding": 8,
+        "maxLines": 1,
+        "width": "matchParent",
+        "textAlign": "center",
+        "icon": 20,
+        "icon_gap": 8
+      }
+    },
+    "check_action": {
+      "a2ui": "Checkbox",
+      "desc": "开关形态（Form 协议无 Toggle，label+select）",
+      "spec": {
+        "fontSize": 14,
+        "color_role": "primary_text",
+        "select": false
+      }
+    },
+    "compact_value": {
+      "a2ui": "Text",
+      "desc": "紧凑数值（三列指标/并列比较：20/700，下限 16）",
+      "spec": {
+        "fontSize": 20,
+        "fontWeight": 700,
+        "color_role": "primary_text",
+        "maxLines": 1,
+        "min_size": 16
+      }
+    },
+    "icon_action": {
+      "a2ui": "Stack",
+      "desc": "圆形图标动作钮（40×40、圆角 20、图标 20×20 居中，数据 M2 bottom_action）",
+      "spec": {
+        "width": 40,
+        "height": 40,
+        "borderRadius": 20,
+        "bg_role": "action_bg",
+        "icon": 20,
+        "ink_role": "primary_text"
+      }
+    }
+  },
+  "select_rules": [
+    {
+      "if": {
+        "actions": true,
+        "types": [
+          "toggle"
+        ]
+      },
+      "role": "check_action"
+    },
+    {
+      "if": {
+        "actions": true
+      },
+      "role": "capsule_action"
+    },
+    {
+      "if": {
+        "types": [
+          "title"
+        ]
+      },
+      "role": "header_title"
+    },
+    {
+      "if": {
+        "types": [
+          "discount",
+          "price",
+          "stat",
+          "percent"
+        ],
+        "short": true
+      },
+      "role": "hero_value"
+    },
+    {
+      "if": {
+        "types": [
+          "discount",
+          "price",
+          "stat",
+          "percent"
+        ]
+      },
+      "role": "status_lead"
+    },
+    {
+      "if": {
+        "types": [
+          "deadline"
+        ]
+      },
+      "role": "status_lead"
+    },
+    {
+      "if": {
+        "types": [
+          "subtitle"
+        ]
+      },
+      "role": "support_line"
+    },
+    {
+      "if": {
+        "types": [
+          "member_tag"
+        ]
+      },
+      "role": "meta_note"
+    },
+    {
+      "if": {
+        "types": [
+          "source"
+        ]
+      },
+      "role": "meta_note"
+    },
+    {
+      "if": {},
+      "role": "support_line"
+    }
+  ]
+}

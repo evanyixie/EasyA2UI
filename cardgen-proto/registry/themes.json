@@ -1,0 +1,156 @@
+{
+  "_comment": "主题目录（唯一主题资产）。P6 主题装配读本目录完成『选主题 + 着色』，其他环节零主题知识。每个主题 = desc + select（domains 为业务域映射，user_only 表示仅用户显式指定时可用）+ palette（渐变 / 色彩角色 / 白背板按尺寸）。主题 ID 需与 registry/enums.json 的 theme 枚举保持同步。",
+  "selection": {
+    "priority": [
+      "m1_user_preference",
+      "domain_map",
+      "default"
+    ],
+    "default": "blue"
+  },
+  "themes": {
+    "blue": {
+      "desc": "天气/电池/耳机/设备/未知业务默认蓝（蓝色微渐变）",
+      "select": {
+        "domains": [
+          "weather",
+          "battery",
+          "earphone",
+          "device",
+          "unknown",
+          "promotion",
+          "info_card"
+        ]
+      },
+      "palette": {
+        "gradient": {
+          "direction": "RightBottom",
+          "colors": [
+            [
+              "#FFCBDDFE",
+              0
+            ],
+            [
+              "#FFF1F6FE",
+              1
+            ]
+          ]
+        },
+        "roles": {
+          "primary_text": "#FF1F4799",
+          "secondary_text": "#FF1F4799",
+          "meta_text": "#991F4799",
+          "action_bg": "#331F4799"
+        },
+        "backboard": {
+          "2x2": "#CCFFFFFF",
+          "2x4": "#99FFFFFF"
+        }
+      }
+    },
+    "purple": {
+      "desc": "睡眠/运动/健康/专注紫（紫色微渐变）",
+      "select": {
+        "domains": [
+          "sleep",
+          "exercise",
+          "health",
+          "focus"
+        ]
+      },
+      "palette": {
+        "gradient": {
+          "direction": "RightBottom",
+          "colors": [
+            [
+              "#FFDBCCFF",
+              0
+            ],
+            [
+              "#FFF6F2FF",
+              1
+            ]
+          ]
+        },
+        "roles": {
+          "primary_text": "#FF563D99",
+          "secondary_text": "#FF563D99",
+          "meta_text": "#99563D99",
+          "action_bg": "#33563D99"
+        },
+        "backboard": {
+          "2x2": "#CCFFFFFF",
+          "2x4": "#99FFFFFF"
+        }
+      }
+    },
+    "warm": {
+      "desc": "日程/会议/倒计时/通知暖（暖橙微渐变）",
+      "select": {
+        "domains": [
+          "calendar",
+          "meeting",
+          "countdown",
+          "notice"
+        ]
+      },
+      "palette": {
+        "gradient": {
+          "direction": "RightBottom",
+          "colors": [
+            [
+              "#FFFFE0CC",
+              0
+            ],
+            [
+              "#FFFFF7F2",
+              1
+            ]
+          ]
+        },
+        "roles": {
+          "primary_text": "#FF8C4B1C",
+          "secondary_text": "#FF8C4B1C",
+          "meta_text": "#998C4B1C",
+          "action_bg": "#338C4B1C"
+        },
+        "backboard": {
+          "2x2": "#CCFFFFFF",
+          "2x4": "#99FFFFFF"
+        }
+      }
+    },
+    "dark": {
+      "desc": "中性深色（仅用户显式指定深色/黑底时可用，不是默认第四主题）",
+      "select": {
+        "domains": [],
+        "user_only": true
+      },
+      "palette": {
+        "gradient": {
+          "direction": "RightBottom",
+          "colors": [
+            [
+              "#FF191A1C",
+              0
+            ],
+            [
+              "#FF202224",
+              1
+            ]
+          ]
+        },
+        "roles": {
+          "primary_text": "#E5FFFFFF",
+          "secondary_text": "#E5FFFFFF",
+          "meta_text": "#99FFFFFF",
+          "action_bg": "#33FFFFFF"
+        },
+        "backboard": {
+          "2x2": "#33FFFFFF",
+          "2x4": "#19FFFFFF"
+        }
+      }
+    }
+  }
+}

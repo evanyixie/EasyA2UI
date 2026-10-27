@@ -1,0 +1,111 @@
+{
+  "comment": "图标策略（2026-10-16 由金标反哺）：标题区图标按业务域映射、动作内图标按动作语义关键词映射。**value 只登记文件名**，完整路径由 src/paths.media_src() 拼。所有图标均须在 registry/assets.json 白名单内。尺寸统一 20×20，颜色用 fillColor（主文字色）。",
+  "spec": {
+    "size": 20,
+    "objectFit": "contain",
+    "ink_role": "primary_text",
+    "header_gap": 8,
+    "action_gap": 8
+  },
+  "header_icon_by_domain": {
+    "weather": "sun_max.svg",
+    "calendar": "icon_meeting.svg",
+    "meeting": "icon_meeting.svg",
+    "countdown": "clock_fill.svg",
+    "battery": "battery_leaf_fill.svg",
+    "device": "phone_fill.svg",
+    "earphone": "icon_earphone.svg",
+    "exercise": "figure_run.svg",
+    "sleep": "moon_z_fill_1.svg",
+    "health": "heart_fill.svg",
+    "focus": "bell_slash_fill.svg",
+    "notice": "bell_fill.svg",
+    "promotion": "heart_fill.svg",
+    "info_card": "local_fill.svg",
+    "unknown": "local_fill.svg"
+  },
+  "action_icon_by_keyword": [
+    [
+      "闹钟",
+      "alarm_fill_1.svg"
+    ],
+    [
+      "歌单",
+      "music_fill.svg"
+    ],
+    [
+      "音乐",
+      "music_fill.svg"
+    ],
+    [
+      "免打扰",
+      "bell_slash_fill.svg"
+    ],
+    [
+      "静音",
+      "bell_slash_fill.svg"
+    ],
+    [
+      "导航",
+      "house_fill.svg"
+    ],
+    [
+      "回家",
+      "house_fill.svg"
+    ],
+    [
+      "省电",
+      "battery_leaf_fill.svg"
+    ],
+    [
+      "电池",
+      "bolt_fill.svg"
+    ],
+    [
+      "充电",
+      "bolt_fill.svg"
+    ],
+    [
+      "蓝牙",
+      "icon_earphone.svg"
+    ],
+    [
+      "耳机",
+      "icon_earphone.svg"
+    ],
+    [
+      "日程",
+      "calendar_fill.svg"
+    ],
+    [
+      "会议",
+      "calendar_fill.svg"
+    ],
+    [
+      "入会",
+      "icon_meeting.svg"
+    ],
+    [
+      "天气",
+      "sun_max.svg"
+    ],
+    [
+      "锻炼",
+      "figure_run.svg"
+    ],
+    [
+      "运动",
+      "figure_run.svg"
+    ],
+    [
+      "专注",
+      "bell_slash_fill.svg"
+    ],
+    [
+      "详情",
+      "local_fill.svg"
+    ]
+  ],
+  "default_action_icon": "local_fill.svg",
+  "default_header_icon": "local_fill.svg"
+}

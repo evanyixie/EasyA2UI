@@ -1,0 +1,84 @@
+{
+  "comment": "容量适配候选表（v3 §8）：固定几何槽位的结构候选序列与字号梯级。前向枚举 + 首个可行解，无回溯。",
+  "preference": [
+    "stack",
+    "row",
+    "merged",
+    "drop_should",
+    "truncate"
+  ],
+  "preference_note": "保真度代价递增：保原形 < 降档（含于各候选内部） < 换轴 < 合并 < 省略 < 截断；骨架内不回溯。",
+  "slot_kinds": {
+    "single_line_max_h": 46,
+    "board_max_w": 150,
+    "note": "业务小背板优先按槽位命名前缀识别（zone:/aux:）——其内高与单行区重叠，几何无法区分；其余按几何：内高 ≤ 46 → 单行区，内高 auto → 弹性槽位，内宽 ≤ 150 且内高 > 46 → 小背板",
+    "board_slot_prefixes": [
+      "zone:",
+      "aux:"
+    ]
+  },
+  "candidates": {
+    "single_line": [
+      "stack",
+      "row",
+      "merged",
+      "drop_should",
+      "truncate"
+    ],
+    "board": [
+      "stack",
+      "merged",
+      "drop_should",
+      "truncate"
+    ]
+  },
+  "guards": {
+    "row": {
+      "min_items": 2,
+      "max_items": 3,
+      "forbid_types": [
+        "unit"
+      ]
+    },
+    "merged": {
+      "min_items": 2,
+      "max_items": 3
+    },
+    "drop_should": {
+      "only_keep": [
+        "should"
+      ]
+    },
+    "board_rows": {
+      "max_lines": 2,
+      "max_items_line2": 2
+    }
+  },
+  "ladders": {
+    "line": [
+      18,
+      16,
+      14,
+      12
+    ],
+    "value": [
+      38,
+      32,
+      30,
+      24,
+      20,
+      18,
+      16
+    ],
+    "note": "取值必须落在 ladders.json 的 font_sizes.approved 内；候选内部沿梯级内插，不新增档位"
+  },
+  "spacing": {
+    "row_gap": 4,
+    "line_gap": 2,
+    "merge_align": "bottom"
+  },
+  "separators": {
+    "merge": " · ",
+    "line": " | "
+  }
+}

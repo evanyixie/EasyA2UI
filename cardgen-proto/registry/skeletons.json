@@ -1,0 +1,1310 @@
+{
+  "comment": "固定布局骨架（源自 CreateMyCard UX-SPEC：2x2 四分法 S1~S4 / 2x4 十分法 W1~W10）。select 为路由键：objects=业务对象数区间, actions=动作数区间, features=内容特征。tree 为发射模板：slot 指明填充来源（header/content/action/hero/zone:0..3/aux/list/text_flow），styles 数值为 vp。背景由主题层注入（background: gradient | backboard 色）。",
+  "default_size": "2x2",
+  "size_rule": {
+    "2x4": "objects>=3，或用户显式指定；其余一律 2x2（最小尺寸原则）",
+    "2x2": "默认"
+  },
+  "skeletons": {
+    "S1-single-info": {
+      "desc": "单信息/倒计时：目标标题 + 居中 hero 数值组，无动作",
+      "size": "2x2",
+      "select": {
+        "objects": [
+          1,
+          1
+        ],
+        "actions": [
+          0,
+          0
+        ],
+        "features": [
+          "sparse"
+        ]
+      },
+      "priority": 20,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "alignItems": "center",
+          "justifyContent": "center",
+          "itemMargin": 2,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "focus_group",
+            "component": "Column",
+            "styles": {
+              "width": 126,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "itemMargin": 2
+            },
+            "slot": "hero"
+          }
+        ]
+      }
+    },
+    "S2-info-pair-action": {
+      "desc": "标题 + 内容 + 底部动作/辅助（最大簇，兜底骨架）",
+      "size": "2x2",
+      "select": {
+        "objects": [
+          1,
+          4
+        ],
+        "actions": [
+          0,
+          1
+        ]
+      },
+      "priority": 10,
+      "fallback": true,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "alignItems": "start",
+          "itemMargin": 6,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "title_area",
+            "component": "Row",
+            "styles": {
+              "width": 126,
+              "height": 20,
+              "itemMargin": 0,
+              "justifyContent": "spaceBetween",
+              "alignItems": "center"
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "content_area",
+            "component": "Column",
+            "styles": {
+              "width": 126,
+              "layoutWeight": 1,
+              "justifyContent": "start",
+              "alignItems": "start",
+              "itemMargin": 2
+            },
+            "slot": "content",
+            "kind": "flow"
+          },
+          {
+            "id": "action_area",
+            "component": "Column",
+            "styles": {
+              "width": 126,
+              "alignItems": "start"
+            },
+            "slot": "action",
+            "optional": true
+          }
+        ],
+        "desc": "单业务：标题 + 内容 + 动作（数据 M3/M4；无动作时 action 槽空置省略，即 V04/V12 稀疏亚型）"
+      }
+    },
+    "S3-info-dual-action": {
+      "desc": "双动作：38vp 信息组 + 两张 36vp 胶囊纵排（间距 8；以真实数据为准，规范正本写 6）",
+      "size": "2x2",
+      "select": {
+        "objects": [
+          1,
+          2
+        ],
+        "actions": [
+          2,
+          2
+        ]
+      },
+      "priority": 30,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "alignItems": "center",
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "header_area",
+            "component": "Column",
+            "styles": {
+              "width": 126,
+              "height": 38,
+              "justifyContent": "start",
+              "alignItems": "start",
+              "itemMargin": 2
+            },
+            "slot": "content"
+          },
+          {
+            "id": "action_area",
+            "component": "Column",
+            "styles": {
+              "width": 126,
+              "height": 80,
+              "itemMargin": 8,
+              "alignItems": "start"
+            },
+            "slot": "action"
+          }
+        ],
+        "desc": "单业务：38vp 信息组（固定内高，容量引擎管辖）+ 两个 36vp 胶囊纵排（数据 M7，间距 8）"
+      }
+    },
+    "S4-stacked-zones": {
+      "desc": "上下双业务：padding 8 + 两个 134x63 白背板（间距 8），动作绑定所属背板",
+      "size": "2x2",
+      "select": {
+        "objects": [
+          2,
+          2
+        ]
+      },
+      "priority": 40,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 8,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "zone_top",
+            "component": "Column",
+            "styles": {
+              "width": 134,
+              "height": 63,
+              "padding": {
+                "top": 0,
+                "bottom": 0,
+                "left": 12,
+                "right": 12
+              },
+              "borderRadius": 16,
+              "backgroundColor": "backboard",
+              "alignItems": "start",
+              "itemMargin": 2,
+              "justifyContent": "center"
+            },
+            "slot": "zone:0",
+            "kind": "board"
+          },
+          {
+            "id": "zone_bottom",
+            "component": "Column",
+            "styles": {
+              "width": 134,
+              "height": 63,
+              "padding": {
+                "top": 0,
+                "bottom": 0,
+                "left": 12,
+                "right": 12
+              },
+              "borderRadius": 16,
+              "backgroundColor": "backboard",
+              "alignItems": "start",
+              "itemMargin": 2,
+              "justifyContent": "center"
+            },
+            "slot": "zone:1",
+            "kind": "board"
+          }
+        ]
+      }
+    },
+    "W1-focus-aux": {
+      "desc": "左主焦点 136 + 右两个 130x59 辅助板（root padding 12、间隔 10）",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          1,
+          2
+        ],
+        "actions": [
+          0,
+          2
+        ],
+        "features": [
+          "focus"
+        ]
+      },
+      "priority": 20,
+      "fallback_2x4": true,
+      "tree": {
+        "id": "root",
+        "component": "Row",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 10,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "focus_zone",
+            "component": "Column",
+            "styles": {
+              "width": 136,
+              "height": 126,
+              "justifyContent": "center",
+              "alignItems": "start",
+              "itemMargin": 2
+            },
+            "slot": "hero",
+            "kind": "flow"
+          },
+          {
+            "id": "aux_column",
+            "component": "Column",
+            "styles": {
+              "width": 130,
+              "height": 126,
+              "itemMargin": 8
+            },
+            "children": [
+              {
+                "id": "aux_top",
+                "component": "Column",
+                "styles": {
+                  "width": 130,
+                  "height": 59,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 12,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 4,
+                  "justifyContent": "center"
+                },
+                "slot": "aux:0",
+                "kind": "board"
+              },
+              {
+                "id": "aux_bottom",
+                "component": "Column",
+                "styles": {
+                  "width": 130,
+                  "height": 59,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 12,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 4,
+                  "justifyContent": "center"
+                },
+                "slot": "aux:1",
+                "kind": "board"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "W2-text-flow": {
+      "desc": "文字叙事：可选标题 + 最多三组文字单元",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          1,
+          1
+        ],
+        "actions": [
+          0,
+          0
+        ],
+        "features": [
+          "text"
+        ]
+      },
+      "priority": 10,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "title_area",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "height": 20,
+              "alignItems": "center",
+              "itemMargin": 8
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "content_area",
+            "component": "Column",
+            "styles": {
+              "width": 276,
+              "layoutWeight": 1,
+              "justifyContent": "center",
+              "itemMargin": 8
+            },
+            "slot": "text_flow",
+            "kind": "flow"
+          }
+        ]
+      }
+    },
+    "W3-ring-detail": {
+      "desc": "环形主指标 + 说明列（主环 92/stroke 8）",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          1,
+          1
+        ],
+        "actions": [
+          0,
+          1
+        ],
+        "features": [
+          "progress"
+        ]
+      },
+      "priority": 25,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 2,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "title_area",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "height": 20
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "main_area",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "height": 103,
+              "itemMargin": 10,
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "id": "ring_area",
+                "component": "Stack",
+                "styles": {
+                  "width": 92,
+                  "height": 92,
+                  "alignContent": "center"
+                },
+                "slot": "ring"
+              },
+              {
+                "id": "detail_col",
+                "component": "Column",
+                "styles": {
+                  "width": 134,
+                  "justifyContent": "center",
+                  "itemMargin": 4
+                },
+                "slot": "content",
+                "kind": "flow"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "W4-metric-triple": {
+      "desc": "三个同级指标：三列紧凑对齐（88/96/88）+ 分隔线",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          1,
+          1
+        ],
+        "actions": [
+          0,
+          0
+        ],
+        "features": [
+          "triple_stats"
+        ]
+      },
+      "priority": 25,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "alignItems": "center",
+          "justifyContent": "center",
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "title_area",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "height": 20
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "metrics_row",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "justifyContent": "spaceBetween",
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "id": "metric_col_0",
+                "component": "Column",
+                "styles": {
+                  "width": 88,
+                  "alignItems": "center",
+                  "itemMargin": 2,
+                  "height": 84,
+                  "justifyContent": "center"
+                },
+                "slot": "triple:0",
+                "kind": "board"
+              },
+              {
+                "id": "metric_divider_0",
+                "component": "Divider",
+                "styles": {
+                  "width": 1,
+                  "height": 64,
+                  "color": "divider"
+                }
+              },
+              {
+                "id": "metric_col_1",
+                "component": "Column",
+                "styles": {
+                  "width": 96,
+                  "alignItems": "center",
+                  "itemMargin": 2,
+                  "height": 84,
+                  "justifyContent": "center"
+                },
+                "slot": "triple:1",
+                "kind": "board"
+              },
+              {
+                "id": "metric_divider_1",
+                "component": "Divider",
+                "styles": {
+                  "width": 1,
+                  "height": 64,
+                  "color": "divider"
+                }
+              },
+              {
+                "id": "metric_col_2",
+                "component": "Column",
+                "styles": {
+                  "width": 88,
+                  "alignItems": "center",
+                  "itemMargin": 2,
+                  "height": 84,
+                  "justifyContent": "center"
+                },
+                "slot": "triple:2",
+                "kind": "board"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "W5-progress-detail": {
+      "desc": "线性进度 276x8 + 两个 134x45 明细板",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          1,
+          2
+        ],
+        "actions": [
+          0,
+          0
+        ],
+        "features": [
+          "progress"
+        ]
+      },
+      "priority": 20,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "title_area",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "height": 20
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "progress_area",
+            "component": "Column",
+            "styles": {
+              "width": 276,
+              "height": 45,
+              "justifyContent": "center"
+            },
+            "slot": "hero",
+            "kind": "flow"
+          },
+          {
+            "id": "progress_bar",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "height": 8
+            },
+            "slot": "progress"
+          },
+          {
+            "id": "detail_row",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "itemMargin": 8
+            },
+            "children": [
+              {
+                "id": "detail_left",
+                "component": "Column",
+                "styles": {
+                  "width": 134,
+                  "height": 45,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 12,
+                  "backgroundColor": "backboard",
+                  "justifyContent": "center",
+                  "itemMargin": 2,
+                  "alignItems": "start"
+                },
+                "slot": "aux:0"
+              },
+              {
+                "id": "detail_right",
+                "component": "Column",
+                "styles": {
+                  "width": 134,
+                  "height": 45,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 12,
+                  "backgroundColor": "backboard",
+                  "justifyContent": "center",
+                  "itemMargin": 2,
+                  "alignItems": "start"
+                },
+                "slot": "aux:1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "W6-agenda-cta": {
+      "desc": "左焦点 + 右两个动作背板（130x59，文字左对齐）",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          1,
+          1
+        ],
+        "actions": [
+          2,
+          2
+        ]
+      },
+      "priority": 30,
+      "tree": {
+        "id": "root",
+        "component": "Row",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 10,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "focus_zone",
+            "component": "Column",
+            "styles": {
+              "width": 136,
+              "height": 126,
+              "justifyContent": "center",
+              "itemMargin": 4
+            },
+            "slot": "content",
+            "kind": "flow"
+          },
+          {
+            "id": "action_col",
+            "component": "Column",
+            "styles": {
+              "width": 130,
+              "height": 126,
+              "itemMargin": 8
+            },
+            "children": [
+              {
+                "id": "action_top",
+                "component": "Column",
+                "styles": {
+                  "width": 130,
+                  "height": 59,
+                  "padding": 10,
+                  "borderRadius": 12,
+                  "backgroundColor": "backboard",
+                  "alignItems": "center",
+                  "itemMargin": 4
+                },
+                "slot": "action_zone:0",
+                "kind": "board"
+              },
+              {
+                "id": "action_bottom",
+                "component": "Column",
+                "styles": {
+                  "width": 130,
+                  "height": 59,
+                  "padding": 10,
+                  "borderRadius": 12,
+                  "backgroundColor": "backboard",
+                  "alignItems": "center",
+                  "itemMargin": 4
+                },
+                "slot": "action_zone:1",
+                "kind": "board"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "W7-list-rows": {
+      "desc": "三项列表：可选标题 + 三行 276x28 条目（gap 8、圆角 8）",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          1,
+          1
+        ],
+        "actions": [
+          0,
+          1
+        ],
+        "features": [
+          "list"
+        ]
+      },
+      "priority": 25,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "alignItems": "center",
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "title_area",
+            "component": "Row",
+            "styles": {
+              "width": 276,
+              "height": 20,
+              "alignItems": "center",
+              "itemMargin": 8
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "list_area",
+            "component": "Column",
+            "styles": {
+              "width": 276,
+              "layoutWeight": 1,
+              "justifyContent": "center",
+              "itemMargin": 8
+            },
+            "slot": "list",
+            "kind": "flow"
+          }
+        ]
+      }
+    },
+    "W8-quad-cells": {
+      "desc": "四格背板：padding 8 + 2x2 网格 138x63（gap 8），无整卡标题",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          4,
+          4
+        ]
+      },
+      "priority": 40,
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 8,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "grid_row_1",
+            "component": "Row",
+            "styles": {
+              "width": 284,
+              "height": 63,
+              "itemMargin": 8
+            },
+            "children": [
+              {
+                "id": "cell_0",
+                "component": "Column",
+                "styles": {
+                  "width": 138,
+                  "height": 63,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 16,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 2,
+                  "justifyContent": "center"
+                },
+                "slot": "zone:0",
+                "kind": "board"
+              },
+              {
+                "id": "cell_1",
+                "component": "Column",
+                "styles": {
+                  "width": 138,
+                  "height": 63,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 16,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 2,
+                  "justifyContent": "center"
+                },
+                "slot": "zone:1",
+                "kind": "board"
+              }
+            ]
+          },
+          {
+            "id": "grid_row_2",
+            "component": "Row",
+            "styles": {
+              "width": 284,
+              "height": 63,
+              "itemMargin": 8
+            },
+            "children": [
+              {
+                "id": "cell_2",
+                "component": "Column",
+                "styles": {
+                  "width": 138,
+                  "height": 63,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 16,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 2,
+                  "justifyContent": "center"
+                },
+                "slot": "zone:2",
+                "kind": "board"
+              },
+              {
+                "id": "cell_3",
+                "component": "Column",
+                "styles": {
+                  "width": 138,
+                  "height": 63,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 16,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 2,
+                  "justifyContent": "center"
+                },
+                "slot": "zone:3",
+                "kind": "board"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "W9-dual-backboards": {
+      "desc": "左右两个 138x134 大背板（root padding 8、板内 padding 12、内容 114x110）",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          2,
+          2
+        ]
+      },
+      "priority": 40,
+      "tree": {
+        "id": "root",
+        "component": "Row",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 8,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "board_left",
+            "component": "Column",
+            "styles": {
+              "width": 138,
+              "height": 134,
+              "padding": 12,
+              "borderRadius": 16,
+              "backgroundColor": "backboard",
+              "itemMargin": 8
+            },
+            "slot": "zone:0",
+            "kind": "board"
+          },
+          {
+            "id": "board_right",
+            "component": "Column",
+            "styles": {
+              "width": 138,
+              "height": 134,
+              "padding": 12,
+              "borderRadius": 16,
+              "backgroundColor": "backboard",
+              "itemMargin": 8
+            },
+            "slot": "zone:1",
+            "kind": "board"
+          }
+        ]
+      }
+    },
+    "W10-triple-backboards": {
+      "desc": "一大两小三业务：左 138x134 大板 + 右两块 138x63",
+      "size": "2x4",
+      "select": {
+        "objects": [
+          3,
+          3
+        ]
+      },
+      "priority": 40,
+      "tree": {
+        "id": "root",
+        "component": "Row",
+        "styles": {
+          "width": "matchParent",
+          "height": "matchParent",
+          "padding": 8,
+          "borderRadius": 20,
+          "clip": true,
+          "itemMargin": 8,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "board_main",
+            "component": "Column",
+            "styles": {
+              "width": 138,
+              "height": 134,
+              "padding": 12,
+              "borderRadius": 16,
+              "backgroundColor": "backboard",
+              "itemMargin": 8
+            },
+            "slot": "zone:0",
+            "kind": "board"
+          },
+          {
+            "id": "side_col",
+            "component": "Column",
+            "styles": {
+              "width": 138,
+              "height": 134,
+              "itemMargin": 8
+            },
+            "children": [
+              {
+                "id": "side_top",
+                "component": "Column",
+                "styles": {
+                  "width": 138,
+                  "height": 63,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 16,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 2,
+                  "justifyContent": "center"
+                },
+                "slot": "zone:1",
+                "kind": "board"
+              },
+              {
+                "id": "side_bottom",
+                "component": "Column",
+                "styles": {
+                  "width": 138,
+                  "height": 63,
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 12,
+                    "right": 12
+                  },
+                  "borderRadius": 16,
+                  "backgroundColor": "backboard",
+                  "alignItems": "start",
+                  "itemMargin": 2,
+                  "justifyContent": "center"
+                },
+                "slot": "zone:2",
+                "kind": "board"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "S5-primary-support": {
+      "size": "2x2",
+      "desc": "单业务：一个主区 + 一个辅区纵向二分，无动作（数据 M1，11 张）；root im6 + body im8（金标 q02 等）",
+      "select": {
+        "objects": [
+          1,
+          3
+        ],
+        "actions": [
+          0,
+          0
+        ],
+        "features": [
+          "primary_support"
+        ]
+      },
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": 150,
+          "height": 150,
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "alignItems": "start",
+          "itemMargin": 6,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "header_area",
+            "component": "Row",
+            "styles": {
+              "width": 126,
+              "height": 20,
+              "itemMargin": 0,
+              "justifyContent": "spaceBetween",
+              "alignItems": "center"
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "body",
+            "component": "Column",
+            "styles": {
+              "width": 126,
+              "layoutWeight": 1,
+              "itemMargin": 8,
+              "alignItems": "start",
+              "justifyContent": "start"
+            },
+            "children": [
+              {
+                "id": "primary_area",
+                "component": "Column",
+                "styles": {
+                  "width": 126,
+                  "layoutWeight": 1,
+                  "itemMargin": 2,
+                  "alignItems": "start"
+                },
+                "slot": "primary"
+              },
+              {
+                "id": "support_area",
+                "component": "Column",
+                "styles": {
+                  "width": 126,
+                  "layoutWeight": 1,
+                  "itemMargin": 2,
+                  "alignItems": "start"
+                },
+                "slot": "support"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "S6-primary-bottom-action": {
+      "size": "2x2",
+      "desc": "单业务：主区 + 底部复合行（辅信息列 78 + 圆形图标动作钮 40×40）（数据 M2，13 张；路由键=icon_button）；root im6 + body im8（金标 q03 等）",
+      "select": {
+        "objects": [
+          1,
+          3
+        ],
+        "actions": [
+          1,
+          1
+        ],
+        "features": [
+          "icon_action"
+        ]
+      },
+      "tree": {
+        "id": "root",
+        "component": "Column",
+        "styles": {
+          "width": 150,
+          "height": 150,
+          "padding": 12,
+          "borderRadius": 20,
+          "clip": true,
+          "alignItems": "start",
+          "itemMargin": 6,
+          "background": "gradient"
+        },
+        "children": [
+          {
+            "id": "header_area",
+            "component": "Row",
+            "styles": {
+              "width": 126,
+              "height": 20,
+              "itemMargin": 0,
+              "justifyContent": "spaceBetween",
+              "alignItems": "center"
+            },
+            "slot": "header",
+            "optional": true
+          },
+          {
+            "id": "body",
+            "component": "Column",
+            "styles": {
+              "width": 126,
+              "layoutWeight": 1,
+              "itemMargin": 8,
+              "alignItems": "start",
+              "justifyContent": "start"
+            },
+            "children": [
+              {
+                "id": "primary_area",
+                "component": "Column",
+                "styles": {
+                  "width": 126,
+                  "layoutWeight": 1,
+                  "itemMargin": 2,
+                  "alignItems": "start"
+                },
+                "slot": "primary"
+              },
+              {
+                "id": "bottom_row",
+                "component": "Row",
+                "styles": {
+                  "width": 126,
+                  "height": 40,
+                  "itemMargin": 8,
+                  "alignItems": "center",
+                  "justifyContent": "spaceBetween"
+                },
+                "children": [
+                  {
+                    "id": "bottom_info",
+                    "component": "Column",
+                    "styles": {
+                      "width": 78,
+                      "height": 40,
+                      "itemMargin": 2,
+                      "alignItems": "start"
+                    },
+                    "slot": "bottom_info"
+                  },
+                  {
+                    "id": "bottom_action",
+                    "component": "Stack",
+                    "styles": {
+                      "width": 40,
+                      "height": 40
+                    },
+                    "slot": "bottom_action"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

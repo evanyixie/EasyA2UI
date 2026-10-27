@@ -1,0 +1,96 @@
+{
+  "intent": [
+    "info_card",
+    "promotion",
+    "notice"
+  ],
+  "domain": [
+    "weather",
+    "battery",
+    "earphone",
+    "device",
+    "calendar",
+    "meeting",
+    "exercise",
+    "sleep",
+    "health",
+    "focus",
+    "countdown",
+    "notice",
+    "promotion",
+    "info_card",
+    "unknown"
+  ],
+  "size": [
+    "2x2",
+    "2x4",
+    "auto"
+  ],
+  "theme": [
+    "blue",
+    "purple",
+    "warm",
+    "dark"
+  ],
+  "info_type": [
+    "title",
+    "subtitle",
+    "discount",
+    "price",
+    "deadline",
+    "member_tag",
+    "source",
+    "stat",
+    "percent"
+  ],
+  "action_type": [
+    "primary_button",
+    "secondary_button",
+    "icon_button",
+    "toggle",
+    "link"
+  ],
+  "relation_type": [
+    "binds",
+    "part_of",
+    "peer",
+    "order_before",
+    "primary_of",
+    "secondary",
+    "exclusive_with"
+  ],
+  "group_type": [
+    "section",
+    "list",
+    "unit",
+    "action_bar",
+    "aside"
+  ],
+  "keep": [
+    "must",
+    "should"
+  ],
+  "synonyms": {
+    "优惠价": "price",
+    "促销价": "discount",
+    "活动说明": "source",
+    "注释": "source",
+    "购买": "primary_button",
+    "图标入口": "icon_button",
+    "图标按钮": "icon_button",
+    "快捷入口": "icon_button",
+    "天气": "weather",
+    "电量": "battery",
+    "耳机": "earphone",
+    "日历": "calendar",
+    "会议": "meeting",
+    "运动": "exercise",
+    "睡眠": "sleep",
+    "健康": "health",
+    "专注": "focus",
+    "倒计时": "countdown",
+    "提醒": "notice",
+    "促销": "promotion",
+    "信息卡": "info_card"
+  }
+}

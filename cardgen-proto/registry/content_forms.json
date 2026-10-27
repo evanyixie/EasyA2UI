@@ -1,0 +1,88 @@
+{
+  "comment": "内容类槽位的排法表（方案2）。order 从小到大依次判断，取第一个满足 when 的排法；每个排法的几何规格放 spec。槽位三分类：header/action 这类 1:1 映射不进表；zone:/aux: 背板的容量降级走 layout_variants.json（那是试算不是选择）；只有 content/primary/support/bottom_info 这类'多种排法抢同一个槽'的才进本表。新增排法 = 加一条 when + 写一个同名函数（src/forms.py），不要再往 _fill_children 里加 if。",
+  "forms": [
+    {
+      "order": 0,
+      "id": "capacity_rows",
+      "desc": "容量引擎已经给出逐行决策（放不下时换轴/合并/丢弃）——优先级最高，保证现有行为不变",
+      "when": {
+        "has_layout_rows": true
+      }
+    },
+    {
+      "order": 1,
+      "id": "ring_stat",
+      "desc": "环形主值：一条百分比 + 最多一条状态（金标 q19/q32）",
+      "when": {
+        "slots": [
+          "content"
+        ],
+        "exact_types": {
+          "percent": 1
+        },
+        "max_items": 2,
+        "all_present": true
+      },
+      "spec": {
+        "ring": 52,
+        "strokeWidth": 6,
+        "icon": 20,
+        "rowHeight": 52,
+        "iconGap": 8,
+        "lineGap": 2,
+        "label": {
+          "fontSize": 14,
+          "fontWeight": 700,
+          "height": 18,
+          "colorRole": "primary_text"
+        },
+        "value": {
+          "fontSize": 12,
+          "fontWeight": 400,
+          "height": 16,
+          "colorRole": "secondary_text"
+        },
+        "colorRole": "primary_text",
+        "trackRole": "action_bg",
+        "iconRole": "meta_text"
+      }
+    },
+    {
+      "order": 2,
+      "id": "label_rows",
+      "desc": "标签在左、数值在右，一行一个条目（金标 34/52 的张形态）；内容区整列沉底",
+      "when": {
+        "slots": [
+          "content",
+          "primary",
+          "support",
+          "bottom_info"
+        ],
+        "all_have_label": true,
+        "min_items": 2,
+        "no_promoted_hero": true
+      },
+      "spec": {
+        "rowHeight": 18,
+        "rowGap": 8,
+        "label": {
+          "fontSize": 12,
+          "fontWeight": 400,
+          "colorRole": "meta_text"
+        },
+        "value": {
+          "fontSize": 12,
+          "fontWeight": 400,
+          "colorRole": "primary_text"
+        },
+        "listGap": 2
+      }
+    },
+    {
+      "order": 3,
+      "id": "plain_items",
+      "desc": "兜底：一条一段，按条目角色规格发射",
+      "when": {}
+    }
+  ]
+}

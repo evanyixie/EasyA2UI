@@ -1,0 +1,15 @@
+# 工作记录（不参与交付）
+.workbuddy/
+
+# Python
+__pycache__/
+*.pyc
+
+# 本地密钥：含真实 api_key，绝不入库
+cardgen-proto/config/llm.json
+
+# 可再生产物：批量卡 / 稳定性 / 可视化 / 调试 / 验收
+cardgen-proto/runs/
+
+# 运行日志
+cardgen-proto/logs/
