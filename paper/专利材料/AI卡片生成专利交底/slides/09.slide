@@ -1,0 +1,102 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>专利检索结果（智慧芽 PatSnap）</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>09 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'column' }}>
+
+    <Text style={{ fontSize: 13, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", marginBottom: 10 }}>
+      检索平台：智慧芽 PatSnap（eureka.patsnap.com）｜ 关键词：自然语言生成 UI / 卡片 · 大模型 · 布局生成 ｜ 检索日期：2026-10-28
+    </Text>
+
+    <Table
+      style={{ width: '100%', height: 342 }}
+      defaultTextStyle={{ fontSize: 12.5, textAlign: 'left', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}
+      defaultCellStyle={{
+        border: {
+          left: { width: 1, color: '#E6E6E6' },
+          right: { width: 1, color: '#E6E6E6' },
+          top: { width: 1, color: '#E6E6E6' },
+          bottom: { width: 1, color: '#E6E6E6' },
+        },
+      }}
+      cells={[
+        [
+          { text: '公开号', textStyle: { bold: true, color: '#1A1A1A', fontSize: 13 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '申请人', textStyle: { bold: true, color: '#1A1A1A', fontSize: 13 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '技术路线', textStyle: { bold: true, color: '#1A1A1A', fontSize: 13 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '与本发明的差异', textStyle: { bold: true, color: '#1A1A1A', fontSize: 13 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: 'CN122111416A', textStyle: { bold: true, color: '#8B1E24' }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '东软睿驰', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: 'LLM 意图分解 + 布局模板库匹配 + 动态布局算法', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '最接近的现有技术（智能座舱整屏 UI）；失配时以动态布局算法兜底（组件面积递归划分），无文本宽度实测、无容量降档、无协议校验，输出一致性无保障', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: 'CN120688455B', textStyle: { bold: true, color: '#8B1E24' }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '火山引擎', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: 'LLM + 提示词直接生成 JSX 布局代码后渲染', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '全包生成，几何由模型产生；无骨架路由与构造性合规机制', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: 'CN121970027A', textStyle: { bold: true, color: '#8B1E24' }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: 'Google', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: 'LLM 由自然语言动态生成 UI 组件与指令集', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '组件级动态生成；不涉及固定画布下的容量约束求解', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: 'CN120530377A', textStyle: { bold: true, color: '#8B1E24' }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '字节跳动', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '模型生成卡片协议数据 + 协议转换后渲染', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '解决协议转换与局部更新；几何正确性与装不下问题未解决', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: 'CN122285001A', textStyle: { bold: true, color: '#8B1E24' }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '电翼数字生活', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: 'LLM 意图理解 + 任务分解 + 卡片编排引擎组合', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '编排层组合既有卡片；不涉及卡片内部布局的生成方法', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: 'CN121010660B', textStyle: { bold: true, color: '#8B1E24' }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '金邦达', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '知识图谱扩充提示词 + 文生图生成智能卡版面', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '产物为图像而非结构化卡片，无法数据绑定与交互', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+      ]}
+    />
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', gap: 28, marginTop: 14, alignItems: 'stretch' }}>
+      <Box style={{ flex: 1, background: '#F7F7F7', borderLeft: '3px solid #8B1E24', padding: '12px 16px', display: 'flex', alignItems: 'center' }}>
+        <Text style={{ fontSize: 13, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          <span style={{ fontWeight: 'bold', color: '#8B1E24' }}>检索结论</span>：未发现「单次语义抽取 + 确定性骨架路由 + 真实测量容量求解 + 构造性协议合规」组合的现有技术。最接近的 CN122111416A 失配时以组件级动态布局算法兜底，不涉及文本真实宽度测量与协议合规（详见第 5 页差异分析），本发明的新颖性边界清晰。
+        </Text>
+      </Box>
+      <Box style={{ width: 470, display: 'flex', flexDirection: 'column', gap: 6 }}>
+        <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>检索链接（智慧芽，点击直达专利详情）：</Text>
+        <Box style={{ display: 'flex', flexDirection: 'row', gap: 24 }}>
+          <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 5 }}>
+            <Text href="https://eureka.patsnap.com/patent/CN122111416A" style={{ fontSize: 12, color: '#8B1E24', textDecoration: 'underline', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>CN122111416A · 基于 LLM 动态生成用户界面</Text>
+            <Text href="https://eureka.patsnap.com/patent/CN120688455B" style={{ fontSize: 12, color: '#8B1E24', textDecoration: 'underline', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>CN120688455B · 基于大模型的数据展示方法</Text>
+            <Text href="https://eureka.patsnap.com/patent/CN121970027A" style={{ fontSize: 12, color: '#8B1E24', textDecoration: 'underline', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>CN121970027A · 用大模型生成 UI 组件</Text>
+          </Box>
+          <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 5 }}>
+            <Text href="https://eureka.patsnap.com/patent/CN120530377A" style={{ fontSize: 12, color: '#8B1E24', textDecoration: 'underline', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>CN120530377A · 用于生成卡片的方法</Text>
+            <Text href="https://eureka.patsnap.com/patent/CN122285001A" style={{ fontSize: 12, color: '#8B1E24', textDecoration: 'underline', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>CN122285001A · 基于大模型的智慧屏应用编排</Text>
+            <Text href="https://eureka.patsnap.com/patent/CN121010660B" style={{ fontSize: 12, color: '#8B1E24', textDecoration: 'underline', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>CN121010660B · 智能卡版面生成方法</Text>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>9 / 9</Text>
+  </Box>
+</Slide>

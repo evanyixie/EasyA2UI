@@ -1,0 +1,95 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>技术方案总览：语义 — 程序解耦（L4）</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>02 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'column' }}>
+
+    <svg width={1152} height={318} viewBox="0 0 1152 318">
+      <rect x="0" y="112" width="132" height="82" rx="10" fill="#F7F7F7" stroke="#595959" strokeWidth="1.5" />
+      <text x="66" y="146" fontSize="14" fill="#595959" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">一句话需求</text>
+      <text x="66" y="170" fontSize="11" fill="#8C8C8C" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">（自然语言）</text>
+
+      <line x1="136" y1="153" x2="166" y2="153" stroke="#595959" strokeWidth="1.5" />
+      <polygon points="170,153 160,148 160,158" fill="#595959" />
+
+      <rect x="172" y="96" width="196" height="114" rx="12" fill="#8B1E24" />
+      <text x="270" y="136" fontSize="22" fontWeight="bold" fill="#FFFFFF" textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif">M1</text>
+      <text x="270" y="162" fontSize="15" fontWeight="bold" fill="#FFFFFF" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">语义抽取</text>
+      <text x="270" y="186" fontSize="11" fill="#FFFFFF" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">唯一一次模型调用</text>
+
+      <line x1="372" y1="153" x2="402" y2="153" stroke="#595959" strokeWidth="1.5" />
+      <polygon points="406,153 396,148 396,158" fill="#595959" />
+
+      <rect x="408" y="86" width="176" height="134" rx="10" fill="#FFFFFF" stroke="#595959" strokeWidth="1.5" />
+      <text x="496" y="112" fontSize="13" fontWeight="bold" fill="#595959" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">结构化语义计划</text>
+      <line x1="424" y1="122" x2="568" y2="122" stroke="#E6E6E6" strokeWidth="1" />
+      <text x="424" y="144" fontSize="11" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">· 业务领域</text>
+      <text x="424" y="164" fontSize="11" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">· 业务对象与字段取舍</text>
+      <text x="424" y="184" fontSize="11" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">· 动作与优先级</text>
+      <text x="424" y="204" fontSize="11" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">· 画布尺寸</text>
+
+      <line x1="588" y1="153" x2="618" y2="153" stroke="#595959" strokeWidth="1.5" />
+      <polygon points="622,153 612,148 612,158" fill="#595959" />
+
+      <rect x="624" y="14" width="384" height="290" rx="14" fill="#F7F7F7" stroke="#E6E6E6" strokeWidth="1.5" />
+      <text x="644" y="44" fontSize="14" fontWeight="bold" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">确定性程序  P1 – P7</text>
+
+      <rect x="644" y="58" width="344" height="26" rx="13" fill="#FFFFFF" stroke="#595959" strokeWidth="1" />
+      <text x="658" y="76" fontSize="12" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">P1 归一化（语义清洗）</text>
+      <rect x="644" y="92" width="344" height="26" rx="13" fill="#FFFFFF" stroke="#595959" strokeWidth="1" />
+      <text x="658" y="110" fontSize="12" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">P2 骨架路由（16 骨架模板库）</text>
+      <rect x="644" y="126" width="344" height="26" rx="13" fill="#FFFFFF" stroke="#595959" strokeWidth="1" />
+      <text x="658" y="144" fontSize="12" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">P3 槽位装配（容量常量内建）</text>
+      <rect x="644" y="160" width="344" height="26" rx="13" fill="#FFFFFF" stroke="#595959" strokeWidth="1" />
+      <text x="658" y="178" fontSize="12" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">P4 角色规格（字号 / 色彩角色查表）</text>
+      <rect x="644" y="194" width="344" height="26" rx="13" fill="#FFFFFF" stroke="#8B1E24" strokeWidth="1.8" />
+      <text x="658" y="212" fontSize="12" fontWeight="bold" fill="#8B1E24" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">P5 容量求解（真实文本测量）</text>
+      <rect x="644" y="228" width="344" height="26" rx="13" fill="#FFFFFF" stroke="#595959" strokeWidth="1" />
+      <text x="658" y="246" fontSize="12" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">P6 主题装配（领域映射着色）</text>
+      <rect x="644" y="262" width="344" height="26" rx="13" fill="#FFFFFF" stroke="#595959" strokeWidth="1" />
+      <text x="658" y="280" fontSize="12" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">P7 协议发射（构造即合法）</text>
+
+      <line x1="1012" y1="153" x2="1042" y2="153" stroke="#595959" strokeWidth="1.5" />
+      <polygon points="1046,153 1036,148 1036,158" fill="#595959" />
+
+      <rect x="1048" y="104" width="104" height="98" rx="10" fill="#F7F7F7" stroke="#595959" strokeWidth="1.5" />
+      <text x="1100" y="142" fontSize="12" fontWeight="bold" fill="#8B1E24" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">A2UI</text>
+      <text x="1100" y="162" fontSize="12" fontWeight="bold" fill="#8B1E24" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">三行 JSONL</text>
+      <text x="1100" y="182" fontSize="10" fill="#595959" textAnchor="middle" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">可直接渲染</text>
+    </svg>
+
+    <Box style={{ display: 'flex', flexDirection: 'row', marginTop: 18, height: 170 }}>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8, paddingRight: 26 }}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>按信息可得性分工</Text>
+        <Text style={{ fontSize: 13, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          语义信息只存在于原文（模型擅长）；几何信息只存在于渲染结果（程序可实测）。分工边界不取决于模型能力，而取决于<span style={{ color: '#8B1E24', fontWeight: 'bold' }}>信息在哪里可得</span>。
+        </Text>
+      </Box>
+      <Box style={{ width: 1, background: '#E6E6E6' }} />
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8, paddingLeft: 26, paddingRight: 26 }}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>骨架模板库 + 形态优先路由</Text>
+        <Text style={{ fontSize: 13, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          每个骨架内建槽位数量与容量常量，按业务对象数量与信息形态确定性路由；<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>结构自由度收敛为 16 选 1</span>，杜绝模型自由造结构。
+        </Text>
+      </Box>
+      <Box style={{ width: 1, background: '#E6E6E6' }} />
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8, paddingLeft: 26 }}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>容量求解引擎</Text>
+        <Text style={{ fontSize: 13, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          以「画布 − 内边距 − 图标 − 间距」建立宽度预算，逐条实测文本宽度；放不下时执行<span style={{ color: '#8B1E24', fontWeight: 'bold' }}>字号降档梯级 30→24→20fp</span> 与确定性截断，装不下是可预期行为而非事故；档位与截断规则固化为卡片结构层属性，<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>数据刷新后持续生效</span>。
+        </Text>
+      </Box>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>2 / 9</Text>
+  </Box>
+</Slide>

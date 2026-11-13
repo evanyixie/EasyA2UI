@@ -26,7 +26,7 @@ DSL_DIR = DATA / "生成卡片的DSL结果"
 sys.path.insert(0, str(ROOT))
 from src.paths import MEDIA_DIR as MEDIA  # noqa: E402  资源路径唯一事实源
 RUNS = ROOT / "runs" / "batch"
-GOLD_PAIRS = ROOT / "fixtures" / "gold_pairs.json"
+GOLD_PAIRS = ROOT / "data" / "gold_pairs.json"
 OUT = ROOT / "runs" / "viz" / "card_compare.html"
 
 SCALE = 2
@@ -423,7 +423,10 @@ def frame(body: str, w, h) -> str:
 
 
 def main():
-    run = Path(sys.argv[1]) if len(sys.argv) > 1 else sorted(RUNS.iterdir())[-1]
+    # 默认取最新的时间戳运行目录（runs/batch/ 下还有 batch_report.json 等
+    # 非目录文件，按名字排序会排到时间戳后面，不能直接取 sorted()[-1]）
+    run = Path(sys.argv[1]) if len(sys.argv) > 1 else sorted(
+        d for d in RUNS.iterdir() if d.is_dir() and d.name[:2].isdigit())[-1]
     if not run.is_absolute():
         run = RUNS / run.name
     idx = json.loads((run / "index.json").read_text(encoding="utf-8"))

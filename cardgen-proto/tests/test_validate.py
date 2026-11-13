@@ -12,7 +12,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 from src.validate import validate_a2ui, count_by_code
 from src.pipeline import generate
-from src.llm import MockLLM
+from src.M1_extract import MockLLM
 
 SID = "surface-test"
 CATALOG = "ohos.a2ui.extended.catalog.form"

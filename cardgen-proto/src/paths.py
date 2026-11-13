@@ -2,11 +2,11 @@
 
 约定：
   - 协议发给端侧的 `src` 形如 `resources/base/media/xxx.svg`（相对 cardgen-proto 根）；
-  - **这个前缀只允许出现在本文件**。registry 里的资产只登记**文件名**，
+  - **这个前缀只允许出现在本文件**。rules 里的资产只登记**文件名**，
     代码一律通过 `media_src()` / `media_path()` 取路径。
 
 以后要挪目录（或改成 CDN / 打包路径），只改下面两行常量 + 移动文件即可，
-不需要再动 registry、emitter、渲染器或测试。
+不需要再动 rules、emitter、渲染器或测试。
 """
 from pathlib import Path
 

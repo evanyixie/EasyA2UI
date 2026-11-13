@@ -1,0 +1,170 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>L1 – L4：模型与程序的分工边界</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>03 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'column' }}>
+
+    <Box style={{ height: 32, display: 'flex', flexDirection: 'row', gap: 10, alignItems: 'center' }}>
+      <Text style={{ width: 150, fontSize: 13, fontWeight: 'bold', color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>卡片生成步骤 ↓</Text>
+      <Box style={{ width: 158, display: 'flex', justifyContent: 'center' }}><Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>语义抽取</Text></Box>
+      <Box style={{ width: 158, display: 'flex', justifyContent: 'center' }}><Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>结构决策</Text></Box>
+      <Box style={{ width: 158, display: 'flex', justifyContent: 'center' }}><Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>几何求解</Text></Box>
+      <Box style={{ width: 158, display: 'flex', justifyContent: 'center' }}><Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>主题配色</Text></Box>
+      <Box style={{ width: 158, display: 'flex', justifyContent: 'center' }}><Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>协议发射</Text></Box>
+      <Box style={{ width: 150, display: 'flex', justifyContent: 'center' }}><Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>关键差异</Text></Box>
+    </Box>
+
+    <Box style={{ height: 84, marginTop: 8, display: 'flex', flexDirection: 'row', gap: 10, alignItems: 'stretch' }}>
+      <Box style={{ width: 150, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+        <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>L1</Text>
+        <Text style={{ fontSize: 12.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.3 }}>全包生成<br />（基线）</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>抽取语义</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>自由写组件树</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>猜测坐标字号</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>占位符填色</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>直出 JSONL</Text>
+      </Box>
+      <Box style={{ width: 150, display: 'flex', alignItems: 'center' }}>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>几何靠猜，越界与违规频发</Text>
+      </Box>
+    </Box>
+
+    <Box style={{ height: 84, marginTop: 10, display: 'flex', flexDirection: 'row', gap: 10, alignItems: 'stretch' }}>
+      <Box style={{ width: 150, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+        <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>L2</Text>
+        <Text style={{ fontSize: 12.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.3 }}>全包结构<br />程序算数</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>抽取语义</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>自由写组件树</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #595959', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>重算全部数字</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>占位符填色</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>格式化输出</Text>
+      </Box>
+      <Box style={{ width: 150, display: 'flex', alignItems: 'center' }}>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>数字可信，结构自由仍失控</Text>
+      </Box>
+    </Box>
+
+    <Box style={{ height: 84, marginTop: 10, display: 'flex', flexDirection: 'row', gap: 10, alignItems: 'stretch' }}>
+      <Box style={{ width: 150, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+        <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>L3</Text>
+        <Text style={{ fontSize: 12.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.3 }}>模板结构<br />程序装配</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>抽取语义</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#FFFFFF', border: '1.5px solid #8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}><span style={{ fontWeight: 'bold', color: '#8B1E24' }}>模型选</span><span style={{ color: '#595959' }}> · </span><span style={{ fontWeight: 'bold', color: '#1A1A1A' }}>程序装</span></Text>
+        <Text style={{ fontSize: 10.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>骨架 16 选 1</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #595959', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>实测求解</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>领域映射</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模板发射</Text>
+      </Box>
+      <Box style={{ width: 150, display: 'flex', alignItems: 'center' }}>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>结构受限，选择仍靠模型</Text>
+      </Box>
+    </Box>
+
+    <Box style={{ height: 84, marginTop: 10, display: 'flex', flexDirection: 'row', gap: 10, alignItems: 'stretch', background: '#E6E6E6', borderRadius: 8, paddingTop: 0, paddingBottom: 0 }}>
+      <Box style={{ width: 150, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8, paddingLeft: 12 }}>
+        <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>L4</Text>
+        <Text style={{ fontSize: 12.5, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.3 }}>规则结构<br />程序装配</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#8B1E24', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>模型</Text>
+        <Text style={{ fontSize: 10.5, color: '#FFFFFF', opacity: 0.85, fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>抽取语义（仅此一次）</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1.5px solid #595959', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>规则路由骨架</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1.5px solid #595959', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>实测＋降档梯级</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>领域映射</Text>
+      </Box>
+      <Box style={{ width: 158, background: '#F7F7F7', border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>程序</Text>
+        <Text style={{ fontSize: 10.5, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>协议发射</Text>
+      </Box>
+      <Box style={{ width: 150, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: 3 }}>
+        <Text style={{ fontSize: 11, fontWeight: 'bold', color: '#FFFFFF', background: '#8B1E24', padding: '2px 8px', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>本发明</Text>
+        <Text style={{ fontSize: 12, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>单次调用 · 构造即合法</Text>
+      </Box>
+    </Box>
+
+    <Box style={{ height: 58, marginTop: 16, display: 'flex', flexDirection: 'row', gap: 12 }}>
+      <Box style={{ flex: 1, border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>L1 → L2</Text>
+        <Text style={{ fontSize: 12.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>几何（数字）交给程序</Text>
+      </Box>
+      <Box style={{ flex: 1, border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>L2 → L3</Text>
+        <Text style={{ fontSize: 12.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>结构自由度收敛为模板</Text>
+      </Box>
+      <Box style={{ flex: 1, border: '1px solid #E6E6E6', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>L3 → L4</Text>
+        <Text style={{ fontSize: 12.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>结构选择权交给程序</Text>
+      </Box>
+    </Box>
+
+    <Box style={{ marginTop: 14, display: 'flex', alignItems: 'center' }}>
+      <Text style={{ fontSize: 14.5, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.5 }}>
+        模型的决策范围逐档收窄：L1 全部包办 → L4 仅剩语义抽取；<span style={{ color: '#8B1E24', fontWeight: 'bold' }}>每移交一项决策，就把一类错误从「概率性发生」变成「构造上不可能」</span>。
+      </Text>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>3 / 9</Text>
+  </Box>
+</Slide>

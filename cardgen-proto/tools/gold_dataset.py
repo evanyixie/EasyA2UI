@@ -16,13 +16,13 @@
        由 matchParent 解析为 **显式画布数值**）——即"端侧解析后的金标"。
 
 产出：
-  fixtures/batch_queries.json       批量测试输入（真实 userQuery，替换掉早期模型自编的 query）
-  fixtures/gold_pairs.json          真实数据集：输入（query/尺寸/标题/能力/事件/数据模型）+ 金标结构
+  data/queries.json       批量测试输入（真实 userQuery，替换掉早期模型自编的 query）
+  data/gold_pairs.json          真实数据集：输入（query/尺寸/标题/能力/事件/数据模型）+ 金标结构
   （check 模式不写文件，只做一致性核验）
 
 用法（在 cardgen-proto/ 目录）：
     python tools/gold_dataset.py           # 构建数据集 + 打印汇总报告
-    python tools/gold_dataset.py check     # 金标结构与 registry 骨架的几何一致性核验（有漂移则非零退出）
+    python tools/gold_dataset.py check     # 金标结构与 rules 骨架的几何一致性核验（有漂移则非零退出）
     python tools/gold_dataset.py compare [runs/时间戳]   # 本次批跑 vs 金标：骨架/尺寸/fallback 逐条核对表
 """
 import json
@@ -43,7 +43,7 @@ sys.path.insert(0, str(ROOT))
 from tools.extract_skeletons_from_cards import (  # noqa: E402
     get_components, load_messages, norm_id, region_view)
 
-REG = json.loads((ROOT / "registry/skeletons.json").read_text(encoding="utf-8"))["skeletons"]
+REG = json.loads((ROOT / "rules/skeletons.json").read_text(encoding="utf-8"))["skeletons"]
 
 BLOCK_RE = re.compile(r"```(\w+)\n(.*?)\n```", re.S)
 
@@ -187,7 +187,7 @@ def our_geometry(sid: str) -> dict:
             "root_im": tree.get("itemMargin", tree.get("styles", {}).get("itemMargin"))}
 
 
-ROLE_SPEC = json.loads((ROOT / "registry/components.json").read_text(encoding="utf-8"))["roles"]
+ROLE_SPEC = json.loads((ROOT / "rules/components.json").read_text(encoding="utf-8"))["roles"]
 
 
 def slim(blocks: list) -> list:
@@ -300,18 +300,18 @@ def build_pairs() -> list:
 
 
 def write_dataset(pairs: list) -> None:
-    bdir = ROOT / "fixtures"
-    # 旧清单是模型自编的 query（场景与本数据不一致），归档而非静默丢弃
-    legacy = bdir / "batch_queries.json"
-    if legacy.exists() and not (bdir / "batch_queries.legacy_model_invented.json").exists():
-        (bdir / "batch_queries.legacy_model_invented.json").write_text(
+    bdir = ROOT / "data"
+    # 旧清单是模型自编的 query（场景与本数据不一致），早先已归档进 data/legacy/
+    legacy = bdir / "legacy" / "queries.model_invented.json"
+    if legacy.exists() and not (bdir / "legacy" / "queries.model_invented.bak").exists():
+        (bdir / "legacy" / "queries.model_invented.bak").write_text(
             legacy.read_text(encoding="utf-8"), encoding="utf-8")
 
-    (bdir / "batch_queries.json").write_text(json.dumps(
+    (bdir / "queries.json").write_text(json.dumps(
         [{"tag": p["tag"], "query": p["query"], "source": "artifact:CreateMyCard",
           "size": p["size"]} for p in pairs], ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8")
-    (ROOT / "fixtures/gold_pairs.json").write_text(json.dumps({
+    (ROOT / "data/gold_pairs.json").write_text(json.dumps({
         "comment": "CreateMyCard 人工校验输入输出对（q1~q52，现存 49 张）。source=真实工程 artifact；"
                    "gold.skeleton 由最终产物的纯结构特征判定（见 tools/gold_dataset.py classify）。",
         "count": len(pairs), "pairs": pairs}, ensure_ascii=False, indent=1) + "\n",
@@ -435,7 +435,7 @@ def main() -> None:
         return
     write_dataset(pairs)
     report(pairs)
-    print("\n产出：fixtures/batch_queries.json、fixtures/gold_pairs.json")
+    print("\n产出：data/queries.json、data/gold_pairs.json")
     if issues:
         print(f"\n❌ 结构性偏差 {len(issues)} 处：")
         for x in issues[:12]:

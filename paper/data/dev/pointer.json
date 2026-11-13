@@ -1,0 +1,7 @@
+{
+  "_说明": "开发集（49 条金标）的指针。数据本体在原型里，此处不复制；跑批前填下面两项。",
+  "repo": "../cardgen-proto",
+  "data_dir": "data/gold",
+  "commit": "",
+  "manifest_sha256": ""
+}

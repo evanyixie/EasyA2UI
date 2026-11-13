@@ -1,0 +1,85 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>与最接近现有技术的核心差异（CN122111416A）</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>05 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'column' }}>
+
+    <Box style={{ background: '#F7F7F7', padding: '12px 16px', marginBottom: 14 }}>
+      <Text style={{ fontSize: 12.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+        <span style={{ fontWeight: 'bold', color: '#1A1A1A' }}>CN122111416A</span>（东软睿驰，公开日 2026-05-29，汽车智能座舱）：LLM 将用户意图分解映射为功能组件 → 按使用场景确定语义属性（组件类型 / 标识 / 位置 / 尺寸）→ 与布局模板库<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>精确 / 模糊匹配</span> → 匹配不成功时以<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>动态布局算法</span>兜底（重要组件放大 20% 置于中心，剩余区域递归划分）。宏观思路与本发明最接近，核心差异如下：
+      </Text>
+    </Box>
+
+    <Table
+      style={{ width: '100%', height: 396 }}
+      defaultTextStyle={{ fontSize: 12.5, textAlign: 'left', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}
+      defaultCellStyle={{
+        border: {
+          left: { width: 1, color: '#E6E6E6' },
+          right: { width: 1, color: '#E6E6E6' },
+          top: { width: 1, color: '#E6E6E6' },
+          bottom: { width: 1, color: '#E6E6E6' },
+        },
+      }}
+      cells={[
+        [
+          { text: '对比维度', textStyle: { bold: true, color: '#1A1A1A', fontSize: 13 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: 'CN122111416A（东软睿驰）', textStyle: { bold: true, color: '#1A1A1A', fontSize: 13 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '本发明', textStyle: { bold: true, color: '#FFFFFF', fontSize: 13 }, cellStyle: { background: { color: '#8B1E24' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '生成对象与决策范围', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '功能组件的摆放方案——组件为预制黑盒，其内部文字排版与配色不在生成范围', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '完整卡片产物：内容取舍、骨架结构、字号几何、主题配色、协议发射全链决策', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '模型调用', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '无次数约束：LLM 参与意图获取、组件分解等多步，且随座舱上下文反复触发，执行边界模糊', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '全流程恰好一次，成本与故障面恒定；模型 / 程序职责按信息可得性划界', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '模型输出内容', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '语义属性含组件位置信息与尺寸——模型参与几何决策', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '语义计划零几何量（领域 / 对象 / 字段 / 动作），模型不触碰任何坐标、尺寸、字号', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '结构选择', textStyle: { bold: true }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '按组件数量精确 / 模糊匹配；失配 → 动态布局算法兜底，两套布局逻辑并存', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '按对象数量 + 信息形态穷举路由，16 选 1，不存在失配分支', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '几何处理粒度', textStyle: { bold: true }, cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '组件盒级：面积计算与递归划分，前提是组件尺寸已知', cellStyle: { padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+          { text: '文本级：实测每条文字的真实渲染宽度，求解固定槽位容量', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 6, bottom: 6, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '文本级处理', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '未涉及：文字溢出与刷新后溢出均无处理，更无价值取舍', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '降档梯级 + 契约固化；有损时按语义优先级取舍：先丢可弃整条、必保宁小勿缺', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '输出保障', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '无协议校验环节；输出一致性无保障', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '构造性协议合规 + 出口结构化校验，同输入逐字节可复现', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+      ]}
+    />
+
+    <Box style={{ flex: 1, marginTop: 14, background: '#F7F7F7', borderLeft: '3px solid #8B1E24', padding: '12px 18px', display: 'flex', alignItems: 'center' }}>
+      <Text style={{ fontSize: 13.5, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+        两者共享「LLM + 模板库」的宏观路线，但生成对象不同——CN122111416A 生成<span style={{ fontWeight: 'bold' }}>「组件摆放方案」</span>（盒子级、静态一次成），本发明生成<span style={{ fontWeight: 'bold', color: '#8B1E24' }}>「完整卡片产物」</span>（内容 · 结构 · 几何 · 主题 · 协议全链；文本级、覆盖数据刷新）。新颖性核心：语义计划零几何量（01）、真实测量容量求解与刷新适配（03）、语义优先级驱动的分级降级（04）。
+      </Text>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>5 / 9</Text>
+  </Box>
+</Slide>

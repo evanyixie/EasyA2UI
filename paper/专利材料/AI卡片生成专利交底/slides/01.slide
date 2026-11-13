@@ -1,0 +1,85 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>发明背景与现有技术</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>01 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'row', gap: 32 }}>
+
+    <Box style={{ width: 440, display: 'flex', flexDirection: 'column' }}>
+      <svg width={440} height={420} viewBox="0 0 440 420">
+        <rect x="8" y="16" width="252" height="66" rx="12" fill="#F7F7F7" stroke="#595959" strokeWidth="1.5" />
+        <polygon points="56,80 42,102 86,80" fill="#F7F7F7" stroke="#595959" strokeWidth="1.5" />
+        <rect x="55" y="79" width="32" height="4" fill="#F7F7F7" />
+        <text x="24" y="42" fontSize="14" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">「帮我做张卡片，看手机</text>
+        <text x="24" y="66" fontSize="14" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">和耳机盒还剩多少电」</text>
+        <text x="24" y="128" fontSize="12" fill="#8C8C8C" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">用户一句话需求</text>
+
+        <line x1="272" y1="58" x2="332" y2="118" stroke="#595959" strokeWidth="1.5" />
+        <polygon points="336,122 322,116 330,106" fill="#595959" />
+
+        <rect x="286" y="122" width="146" height="286" rx="20" fill="#FFFFFF" stroke="#595959" strokeWidth="2" />
+        <rect x="298" y="142" width="122" height="246" rx="8" fill="#F7F7F7" stroke="#E6E6E6" strokeWidth="1" />
+
+        <rect x="308" y="154" width="102" height="104" rx="8" fill="#FFFFFF" stroke="#595959" strokeWidth="1.2" />
+        <text x="318" y="176" fontSize="11" fontWeight="bold" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">明天天气</text>
+        <text x="318" y="212" fontSize="24" fontWeight="bold" fill="#595959" fontFamily="'Helvetica Neue',Arial,sans-serif">26°</text>
+        <text x="318" y="238" fontSize="9" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">多云 · 降水 10%</text>
+
+        <rect x="308" y="272" width="102" height="104" rx="8" fill="#FFFFFF" stroke="#595959" strokeWidth="1.2" />
+        <text x="318" y="294" fontSize="11" fontWeight="bold" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">电量</text>
+        <text x="318" y="322" fontSize="13" fontWeight="bold" fill="#8B1E24" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">手机 68%</text>
+        <text x="318" y="344" fontSize="10" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">耳机盒 45%</text>
+        <text x="318" y="364" fontSize="10" fill="#595959" fontFamily="'Source Han Sans SC','Microsoft YaHei',sans-serif">耳机 已连接</text>
+      </svg>
+      <Text style={{ fontSize: 14, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6, marginTop: 6 }}>
+        业务场景：智能终端（手机 / 车机 / 智能屏）的服务卡片——用户以一句自然语言表达意图，系统生成<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>可直接渲染、可数据绑定的结构化卡片</span>（如鸿蒙 A2UI Form 三行 JSONL），免去传统拖拽式卡片搭建。
+      </Text>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>现有技术路线</Text>
+        <Box style={{ flex: 1, height: 1, background: '#E6E6E6' }} />
+      </Box>
+
+      <Box style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <Box style={{ display: 'flex', flexDirection: 'column', gap: 4, paddingBottom: 12, borderBottom: '1px solid #E6E6E6' }}>
+          <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>路线一 · 大模型全包生成</Text>
+          <Text style={{ fontSize: 13, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.55 }}>
+            由大模型直接产出完整布局代码或组件树（含坐标、字号、颜色），代表：火山引擎 CN120688455B（LLM 生成 JSX）、Google CN121970027A、字节 CN120530377A。<span style={{ color: '#8B1E24' }}>缺陷：越界 / 裁切 / 组件重叠频发，协议违规，同输入多次输出不一致，需多轮修复抬高成本。</span>
+          </Text>
+        </Box>
+
+        <Box style={{ display: 'flex', flexDirection: 'column', gap: 4, paddingBottom: 12, borderBottom: '1px solid #E6E6E6' }}>
+          <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>路线二 · 模板 / 规则匹配</Text>
+          <Text style={{ fontSize: 13, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.55 }}>
+            关键词命中预置模板，或 LLM 做意图分解后匹配布局模板库（东软 CN122111416A，车机界面）。<span style={{ color: '#8B1E24' }}>缺陷：语义覆盖窄；模板失配时以动态布局算法兜底，但仅做组件级面积划分——组件内部的内容排版、语义驱动的主题配色、输出协议合规与一致性均不在其决策范围。</span>
+          </Text>
+        </Box>
+
+        <Box style={{ display: 'flex', flexDirection: 'column', gap: 4, paddingBottom: 12 }}>
+          <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>路线三 · 文生图生成版面</Text>
+          <Text style={{ fontSize: 13, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.55 }}>
+            知识图谱扩充提示词后经扩散模型生成版面图像（CN121010660B）。<span style={{ color: '#8B1E24' }}>缺陷：产物是图像而非结构化卡片，无法数据绑定与交互，文字不可编辑。</span>
+          </Text>
+        </Box>
+      </Box>
+
+      <Box style={{ marginTop: 'auto', background: '#F7F7F7', borderLeft: '3px solid #8B1E24', padding: '14px 18px' }}>
+        <Text style={{ fontSize: 14, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          <span style={{ fontWeight: 'bold', color: '#8B1E24' }}>核心痛点</span>：排版正确性依赖一个生成时刻不可得的量——<span style={{ fontWeight: 'bold' }}>「这段文字在固定尺寸格子里占据的真实宽度」</span>。该量只有在真实渲染后才能测得，生成式模型在原理上不可知，只能猜测；且卡片文字支持数据刷新，宽度随之动态变化——一次性猜测即使碰对初值，也会在下一次数据更新时失效。
+        </Text>
+      </Box>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>1 / 9</Text>
+  </Box>
+</Slide>

@@ -8,7 +8,7 @@
 `taskspec.dataModelSchema.sampleValue`（覆盖 6 个数据能力：天气 / 日程 / 耳机 /
 手机电量 / 健康运动 / 倒计时，共 169 个数据叶）——即对齐其 dataModelSchema
 的 sampleValue 概念，且**取值本身取自真实数据集**，不再是手工编造。
-聚合产物见 `fixtures/gold_pairs.json`，汇总命令 `python tools/gold_dataset.py`。
+聚合产物见 `data/gold_pairs.json`，汇总命令 `python tools/gold_dataset.py`。
 
 **与金标的约定差异**：金标把"数值"与"单位"分开（如 `batterySOC=68` 为纯整数，
 单位由模板/标签补），本项目尚无独立单位角色，因此本表直接给"可直接显示的文本"

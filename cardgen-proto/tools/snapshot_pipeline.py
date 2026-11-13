@@ -6,7 +6,7 @@
 用法：
     python tools/snapshot_pipeline.py save  /tmp/snap_before.json
     python tools/snapshot_pipeline.py diff  /tmp/snap_before.json /tmp/snap_after.json
-    python tools/snapshot_pipeline.py save  /tmp/snap.json --cases   # 只跑 fixtures/cases.json
+    python tools/snapshot_pipeline.py save  /tmp/snap.json --cases   # 只跑 data/cases.json
 
 退出码：diff 有差异 → 1（可直接当 CI 断言）。
 """
@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from src.llm import MockLLM          # noqa: E402
+from src.M1_extract import MockLLM          # noqa: E402
 from src.pipeline import generate    # noqa: E402
 
 
@@ -32,10 +32,10 @@ PROBES = [
 
 def queries(only_cases: bool) -> list:
     out = list(PROBES)
-    cases = json.loads((ROOT / "fixtures" / "cases.json").read_text(encoding="utf-8"))
+    cases = json.loads((ROOT / "data" / "cases.json").read_text(encoding="utf-8"))
     out += [("case%02d" % c["id"], c["query"]) for c in cases]
     if not only_cases:
-        batch = json.loads((ROOT / "fixtures" / "batch_queries.json").read_text(encoding="utf-8"))
+        batch = json.loads((ROOT / "data" / "queries.json").read_text(encoding="utf-8"))
         out += [(q["tag"], q["query"]) for q in batch]
     return out
 

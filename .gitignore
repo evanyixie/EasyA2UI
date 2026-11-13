@@ -8,8 +8,18 @@ __pycache__/
 # 本地密钥：含真实 api_key，绝不入库
 cardgen-proto/config/llm.json
 
-# 可再生产物：批量卡 / 稳定性 / 可视化 / 调试 / 验收
+# 可再生产物：批量卡 / 稳定性 / 可视化 / 调试 / 验收（含 exp 跑批产物 runs/exp/）
 cardgen-proto/runs/
 
 # 运行日志
 cardgen-proto/logs/
+
+# 论文实验产物与复现包压缩文件
+paper/out/*
+!paper/out/.gitkeep
+!paper/out/*/
+!paper/out/*/.gitkeep
+paper/release/*.zip
+
+# 幻灯片工具的本地缓存（跑一次能重建）
+.slidep/

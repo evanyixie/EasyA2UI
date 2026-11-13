@@ -1,0 +1,96 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>有益效果：技术点 → 效果对应</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>07 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'column' }}>
+
+    <Box style={{ height: 104, display: 'flex', flexDirection: 'row', alignItems: 'center', borderBottom: '1px solid #E6E6E6' }}>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", lineHeight: 1.0 }}>0</Text>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", textAlign: 'center', lineHeight: 1.35 }}>协议违规<br /><span style={{ fontSize: 10.5, color: '#8C8C8C' }}>49 张真实卡实测</span></Text>
+      </Box>
+      <Box style={{ width: 1, height: 68, background: '#E6E6E6' }} />
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", lineHeight: 1.0 }}>0</Text>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", textAlign: 'center', lineHeight: 1.35 }}>越界与裁切<br /><span style={{ fontSize: 10.5, color: '#8C8C8C' }}>全量渲染后测量</span></Text>
+      </Box>
+      <Box style={{ width: 1, height: 68, background: '#E6E6E6' }} />
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", lineHeight: 1.0 }}>1</Text>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", textAlign: 'center', lineHeight: 1.35 }}>次模型调用<br /><span style={{ fontSize: 10.5, color: '#8C8C8C' }}>生成全程仅一次</span></Text>
+      </Box>
+      <Box style={{ width: 1, height: 68, background: '#E6E6E6' }} />
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", lineHeight: 1.0 }}>3.8<span style={{ fontSize: 22 }}>s</span></Text>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", textAlign: 'center', lineHeight: 1.35 }}>端到端平均耗时<br /><span style={{ fontSize: 10.5, color: '#8C8C8C' }}>单次生成全链路</span></Text>
+      </Box>
+    </Box>
+
+    <Table
+      style={{ width: '100%', height: 344, marginTop: 12 }}
+      defaultTextStyle={{ fontSize: 11.5, textAlign: 'left', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}
+      defaultCellStyle={{
+        border: {
+          left: { width: 1, color: '#E6E6E6' },
+          right: { width: 1, color: '#E6E6E6' },
+          top: { width: 1, color: '#E6E6E6' },
+          bottom: { width: 1, color: '#E6E6E6' },
+        },
+      }}
+      cells={[
+        [
+          { text: '技术保护点', textStyle: { bold: true, color: '#1A1A1A', fontSize: 12.5 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '带来的有益效果', textStyle: { bold: true, color: '#1A1A1A', fontSize: 12.5 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '实测支撑', textStyle: { bold: true, color: '#1A1A1A', fontSize: 12.5 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '01 语义—几何解耦', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '模型成本与故障面恒定；输出逐字节可复现，行为可审计', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '1 次调用 · 平均 3.8s', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '02 骨架穷举路由', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '结构合法性由构造保证；无失配分支，容量告急也不结构跳变', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '尺寸匹配 49/49', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '03 容量求解与刷新适配', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '零越界零裁切；契约随卡片固化，刷新后防护持续生效且零模型调用', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '0 越界 · 0 裁切', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '04 语义优先级分级降级', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '核心信息永不残缺：先丢可弃整条、再截可弃文本，必保条目宁小勿缺', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '有损仅伤可弃条目（归因日志可查）', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '05 构造性协议合规', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '协议违规为零；产物可直接渲染、可数据绑定', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '0 违规（49 张实测）', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+        [
+          { text: '06 排法表装配', textStyle: { bold: true }, cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '封闭域扩展零代码侵入，新增排法 = 增加表行', cellStyle: { padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+          { text: '排法表驱动全部内容槽位', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 5, bottom: 5, left: 10, right: 8 } } },
+        ],
+      ]}
+    />
+
+    <Box style={{ flex: 1, display: 'flex', alignItems: 'center', marginTop: 8 }}>
+      <Text style={{ fontSize: 12.5, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.5 }}>
+        <span style={{ color: '#8B1E24', fontWeight: 'bold' }}>每个效果可追溯到具体技术点，而非模型能力增强</span>——正确性来自构造（白名单、显式画布、容量预算、优先级裁撤），不依赖生成后纠错。
+      </Text>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>7 / 9</Text>
+  </Box>
+</Slide>

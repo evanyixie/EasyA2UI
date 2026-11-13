@@ -1,0 +1,102 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>技术保护点</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>06 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'column' }}>
+
+    <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10, paddingBottom: 8, borderBottom: '1px solid #E6E6E6' }}>
+      <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>
+        提取原则：保护点 = 区别于最接近现有技术的<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>技术手段</span>（非功能 / 效果描述）；过必要性检验；按<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>独立 / 从属权利要求级</span>分层设防，每条注明与 CN122111416A 的区别边界。
+      </Text>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid #E6E6E6' }}>
+      <Text style={{ width: 54, fontSize: 28, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", textAlign: 'left' }}>01</Text>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>语义抽取与几何求解的完全解耦（单次调用契约）</Text>
+          <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>独权级</Text></Box>
+        </Box>
+        <Text style={{ fontSize: 11.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>
+          模型全流程仅调用一次，输出限定为<span style={{ color: '#8B1E24', fontWeight: 'bold' }}>零几何量</span>的结构化语义计划（领域 / 对象 / 字段取舍 / 动作与优先级），结构、几何与主题配色全部移交确定性程序。<span style={{ color: '#8C8C8C' }}>区别：现有技术无调用次数契约——东软 LLM 多步参与且随上下文反复触发，语义属性含位置与尺寸。</span>
+        </Text>
+      </Box>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid #E6E6E6' }}>
+      <Text style={{ width: 54, fontSize: 28, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", textAlign: 'left' }}>02</Text>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>骨架穷举路由（无失配分支，容量不足不换骨架）</Text>
+          <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>独权级</Text></Box>
+        </Box>
+        <Text style={{ fontSize: 11.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>
+          预置骨架集合内建槽位数量与容量常量，按对象数量与信息形态<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>确定性路由</span>；任何输入必落入唯一骨架，不存在失配兜底，<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>容量不可行时亦不回退换结构</span>。<span style={{ color: '#8C8C8C' }}>区别：东软失配切换动态布局算法，两套布局逻辑并存。</span>
+        </Text>
+      </Box>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid #E6E6E6' }}>
+      <Text style={{ width: 54, fontSize: 28, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", textAlign: 'left' }}>03</Text>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>真实文本测量的容量约束求解与刷新适配</Text>
+          <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>独权级 · 核心</Text></Box>
+        </Box>
+        <Text style={{ fontSize: 11.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>
+          以「画布 − 内边距 − 图标位 − 间距」建立宽度预算，对文本<span style={{ color: '#8B1E24', fontWeight: 'bold' }}>实测渲染宽度</span>，求解字号档位（30→24→20fp）与截断规则并固化为产物结构层属性——刷新后沿固化契约适配，<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>渲染侧仅执行不修改</span>。<span style={{ color: '#8C8C8C' }}>区别：现有技术只做组件盒级一次性分配，不测文本宽度。</span>
+        </Text>
+      </Box>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid #E6E6E6' }}>
+      <Text style={{ width: 54, fontSize: 28, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", textAlign: 'left' }}>04</Text>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>语义优先级驱动的分级有损降级</Text>
+          <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>从权级 · 差异化</Text></Box>
+        </Box>
+        <Text style={{ fontSize: 11.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>
+          语义计划携带条目级显示优先级（用户点名 / 主值 = 必保，辅助说明 = 可弃）；容量不可行时按优先级降级：<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>无损排法变换 → 丢弃可弃条目的整条 → 仅截断可弃条目的文本</span>；必保条目永不截断，宁降字号保完整。<span style={{ color: '#8C8C8C' }}>区别：现有技术有损处理无差别（谁超截谁）；东软「重要 / 次要」仅用于排布，无空间不足时的价值取舍。</span>
+        </Text>
+      </Box>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 18, borderBottom: '1px solid #E6E6E6' }}>
+      <Text style={{ width: 54, fontSize: 28, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", textAlign: 'left' }}>05</Text>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>构造性协议合规与出口结构化校验</Text>
+          <Box style={{ border: '1px solid #8B1E24', padding: '0 7px' }}><Text style={{ fontSize: 10, color: '#8B1E24', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>从权级</Text></Box>
+        </Box>
+        <Text style={{ fontSize: 11.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>
+          组件取自封闭白名单、画布尺寸显式声明、出口执行结构化校验（违规码 / 位置 / 严重度）；合规由<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>构造保证</span>——校验是验证而非补救，修复为可选旁路。<span style={{ color: '#8C8C8C' }}>区别：现有技术均无输出协议校验环节。</span>
+        </Text>
+      </Box>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 18 }}>
+      <Text style={{ width: 54, fontSize: 28, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif", textAlign: 'left' }}>06</Text>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>排法表驱动的内容装配</Text>
+          <Box style={{ border: '1px solid #8B1E24', padding: '0 7px' }}><Text style={{ fontSize: 10, color: '#8B1E24', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>从权级 · 防御</Text></Box>
+        </Box>
+        <Text style={{ fontSize: 11.5, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>
+          信息形态 → 发射器的排法映射以<span style={{ color: '#1A1A1A', fontWeight: 'bold' }}>注册表声明式配置</span>，与装配主流程解耦，新增排法零代码侵入。<span style={{ color: '#8C8C8C' }}>定位：工程特征防御性布局，防竞品以「硬编码改写排法」绕开 01–04 的组合。</span>
+        </Text>
+      </Box>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>6 / 9</Text>
+  </Box>
+</Slide>

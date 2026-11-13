@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """真实数据集冒烟（防止"换了测试用例就裸奔"）。
 
-`fixtures/batch_queries.json` 由 `tools/gold_dataset.py` 从 CreateMyCard
+`data/queries.json` 由 `tools/gold_dataset.py` 从 CreateMyCard
 人工校验数据生成（49 条真实 userQuery）。这些 query 是**面向真实模型**的：
 离线 MockLLM 是封闭域桩模型，语义必然对不上，因此本测试**不断言 fallback 数**，
 只断言"管线不崩、协议不破、数据集完整"——这是换数据集后最低限度的安全网。
@@ -18,12 +18,12 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.stdout.reconfigure(encoding="utf-8")
 
-from src.llm import MockLLM                      # noqa: E402
+from src.M1_extract import MockLLM                      # noqa: E402
 from src.pipeline import generate                # noqa: E402
 from tests.run_cases import check_full_a2ui      # noqa: E402
 
-QUERIES = ROOT / "fixtures" / "batch_queries.json"
-GOLD = ROOT / "fixtures" / "gold_pairs.json"
+QUERIES = ROOT / "data" / "queries.json"
+GOLD = ROOT / "data" / "gold_pairs.json"
 REPORT = []
 
 

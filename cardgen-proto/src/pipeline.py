@@ -9,13 +9,14 @@ import json
 import time
 from pathlib import Path
 
-from . import normalize, skeletons, slot_assign, component_select, assemble, compiler, theme as theme_step
-from .llm import LLMCallError, extract_json, stats_delta
+from . import (P1_normalize, P2_skeleton_route, P3_slot_assign,
+               P4_component_roles, P5_assemble, P6_theme, P7_emit)
+from .M1_extract import LLMCallError, extract_json, stats_delta
 from .pipeline_options import PipelineOptions, load_options
 from .validate import validate_a2ui, count_by_code
 
 ROOT = Path(__file__).resolve().parent.parent
-ENUMS = json.loads((ROOT / "registry/enums.json").read_text(encoding="utf-8"))
+ENUMS = json.loads((ROOT / "rules/enums.json").read_text(encoding="utf-8"))
 LOG_PATH = ROOT / "logs" / "generate.jsonl"
 
 EMPTY_PLAN = {"domain": "unknown", "intent": "info_card", "size": "auto", "theme": None,
@@ -57,7 +58,7 @@ def generate(query: str, llm, debug: bool = False, size: str = None,
         return stats_delta(stats0, llm.stats())
 
     # ---- M1 模型：结构规划（纯语义 + 对象分组 + 领域判断） ----
-    tpl = (ROOT / "prompts/step1_structure_plan.md").read_text(encoding="utf-8")
+    tpl = (ROOT / "prompts/content_extract.md").read_text(encoding="utf-8")
     prompt = (tpl.replace("{{ENUMS}}", json.dumps(ENUMS, ensure_ascii=False))
                  .replace("{{QUERY}}", query))
     raw, parse_err = "", None
@@ -80,7 +81,7 @@ def generate(query: str, llm, debug: bool = False, size: str = None,
     # ---- P1~P7 程序 ----
     if size in ("2x2", "2x4"):
         plan_raw["size"] = size  # 用户/评测显式指定卡槽尺寸，优先于模型决策
-    plan = normalize.normalize_plan(plan_raw, options)
+    plan = P1_normalize.normalize_plan(plan_raw, options)
     if parse_err:
         plan["fallback_log"].append(parse_err)
     if not plan["entries"]:
@@ -121,32 +122,32 @@ def generate(query: str, llm, debug: bool = False, size: str = None,
         plan["fallback_log"].append("M1 empty plan -> placeholder entries")
     _record(trace, "P1", "程序", plan_raw, plan)
 
-    skel = skeletons.select_skeleton(plan)
+    skel = P2_skeleton_route.select_skeleton(plan)
     _record(trace, "P2", "程序", {k: plan[k] for k in ("domain", "size", "objects", "entries")}, skel)
 
-    assign = slot_assign.assign_regions(plan, skel)
+    assign = P3_slot_assign.assign_regions(plan, skel)
     _record(trace, "P3", "程序", {"plan": plan, "skeleton": skel["sid"]}, assign)
 
     slot_of = {}
     for slot, f in assign["fills"].items():
         for r in f["info"] + f["action"]:
             slot_of[r] = slot
-    comp = component_select.select_roles(plan["entries"], slot_of=slot_of)
+    comp = P4_component_roles.select_roles(plan["entries"], slot_of=slot_of)
     _record(trace, "P4", "程序", plan["entries"], comp)
 
-    ir = assemble.assemble_ir(plan, skel, assign, comp, plan_raw.get("intent"))
+    ir = P5_assemble.assemble_ir(plan, skel, assign, comp, plan_raw.get("intent"))
     _record(trace, "P5", "程序",
             {"plan": plan, "skeleton": skel["sid"], "assign": assign, "roles": comp,
              "m1_intent": plan_raw.get("intent")},
             ir)
 
-    theme_step.apply_theme(ir, m1_theme=plan.get("theme"))
+    P6_theme.apply_theme(ir, m1_theme=plan.get("theme"))
     _record(trace, "P6 主题装配", "程序",
             {"domain": ir["domain"], "m1_theme": plan.get("theme")},
             {"theme": ir["theme"], "palette": ir["palette"]})
 
-    a2ui = compiler.compile_a2ui(ir)
-    full_a2ui = compiler.compile_a2ui_full(ir)
+    a2ui = P7_emit.compile_a2ui(ir)
+    full_a2ui = P7_emit.compile_a2ui_full(ir)
     _record(trace, "P7 发射器", "程序",
             {"tree": ir["tree"], "entries": ir["entries"]},
             {"a2ui": a2ui, "full-a2ui": full_a2ui})

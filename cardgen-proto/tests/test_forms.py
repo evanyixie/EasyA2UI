@@ -1,4 +1,4 @@
-"""排法表守卫：`registry/content_forms.json` 与 `src/forms.py` 的对应关系。
+"""排法表检查：`rules/content_forms.json` 与 `src/content_forms.py` 的对应关系。
 
 把"新增排法要改哪两处"这条约定变成可执行断言：
   1. 表里的每个 id 都必须有实现，实现也必须都在表里（防止加了函数忘了登记，或反之）
@@ -15,8 +15,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from src import forms                     # noqa: E402
-from src.llm import MockLLM               # noqa: E402
+from src import content_forms as forms      # noqa: E402
+from src.M1_extract import MockLLM               # noqa: E402
 from src.pipeline import generate         # noqa: E402
 
 KNOWN_WHEN = {"slots", "has_layout_rows", "all_present", "exact_types",
@@ -62,5 +62,5 @@ try:
 finally:
     forms.SPECS["ring_stat"] = saved
 
-print("\n== 排法表守卫 %s ==" % ("通过" if ok else "失败"))
+print("\n== 排法表检查 %s ==" % ("通过" if ok else "失败"))
 sys.exit(0 if ok else 1)

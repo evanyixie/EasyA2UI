@@ -7,13 +7,14 @@
 
 用法：
     from src.measure import build_record, write_records
-    rec = build_record("q01", "L4", query, result)
-    rec["layout"] = {...}   # 由 tools/measure_geometry.py 回填
-    rec["content"] = {...}  # 由 tools/measure_content.py 回填
+    rec = build_record("q01", "L6", query, result)
+    rec["layout"] = {...}   # 由 exp/metrics/measure_geometry.py 回填
+    rec["content"] = {...}  # 由 exp/metrics/measure_content.py 回填
 """
 import hashlib
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 SURFACE_RE = re.compile(r"sfc-[0-9a-f]{8}")
@@ -118,3 +119,86 @@ def flatten(rec: dict) -> dict:
         else:
             out[k] = v
     return out
+
+
+# ---------------------------------------------------------------------------
+# 内容指标（覆盖 / 保真 / 重复）
+#
+# 为什么放在产品区：它是"尺子"——谁都可以用它量一张卡，论文侧只是拿它跑批出表。
+# 放在这里，删掉 exp/ 之后度量测试依然能跑通（架构检查会检查）。
+# ---------------------------------------------------------------------------
+
+_CONTENT_TOKEN_RE = re.compile(
+    r"\d{4}年\d{1,2}月\d{1,2}日|\d{4}-\d{1,2}-\d{1,2}|\d{1,2}月\d{1,2}日|"
+    r"\d{1,2}:\d{2}|"
+    r"\d+(?:\.\d+)?\s*(?:%|℃|°C|°|天|小时|分钟|步|千卡|次|元|km|m|级)?")
+
+
+def content_key(tag: str) -> str:
+    """批次 tag 是 q01，基准键是 q1，统一到数字形态再查。"""
+    m = re.search(r"(\d+)", str(tag))
+    return f"q{int(m.group(1))}" if m else str(tag)
+
+
+def _content_norm(s: str) -> str:
+    """全角转半角、去空白、统一大小写——避免"68％"与"68%"被算成两个值。"""
+    return re.sub(r"\s+", "", unicodedata.normalize("NFKC", str(s or ""))).lower()
+
+
+def _content_contains(text_n: str, value: str) -> bool:
+    """纯数字/带单位的值按边界匹配（68 不应命中 168）；其余按子串。"""
+    v = _content_norm(value)
+    if not v:
+        return False
+    if re.fullmatch(r"[\d.%℃°c天小时分钟步千卡次元]+", v):
+        return re.search(r"(?<![\d.])" + re.escape(v) + r"(?![\d.])", text_n) is not None
+    return v in text_n
+
+
+def check_content(card_text: str, facts: list, query: str = "") -> dict:
+    """返回一张卡的内容指标。facts 来自基准（[{key,value,path,must?}]）。
+
+    口径（论文文档 §15）：C-02 覆盖拆两档（A4a 全部 / A4b 只对 must）；
+    C-03 卡面没有任何数据型片段时保真记 None 并置 empty_data。
+    """
+    text_n = _content_norm(card_text)
+    query_n = _content_norm(query)
+
+    total = len(facts)
+    missing = [f["value"] for f in facts if not _content_contains(text_n, f["value"])]
+    covered = total - len(missing)
+
+    must_facts = [f for f in facts if f.get("must")]
+    if must_facts:
+        must_total = len(must_facts)
+        must_miss = [f["value"] for f in must_facts if not _content_contains(text_n, f["value"])]
+        coverage_must = round((must_total - len(must_miss)) / must_total, 3)
+    else:
+        must_miss, coverage_must = [], None
+
+    dup = 0
+    for f in facts:
+        v = _content_norm(f["value"])
+        if v and text_n.count(v) >= 2:
+            dup += 1
+
+    tokens = {_content_norm(t) for t in _CONTENT_TOKEN_RE.findall(card_text or "")}
+    tokens = {t for t in tokens if t}
+    sources = [_content_norm(f["value"]) for f in facts] + ([query_n] if query_n else [])
+    supported = [t for t in tokens
+                 if any(_content_contains(s, t) or _content_contains(t, s) for s in sources)]
+    unsupported = sorted(tokens - set(supported))
+
+    return {
+        "facts_total": total,
+        "covered": covered,
+        "coverage": round(covered / total, 3) if total else None,
+        "coverage_must": coverage_must,
+        "missing_must": must_miss,
+        "missing": missing,
+        "duplicated": dup,
+        "tokens": len(tokens),
+        "precision": round(len(supported) / len(tokens), 3) if tokens else None,
+        "empty_data": not tokens,
+        "unsupported": unsupported,
+    }

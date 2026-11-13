@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT))
 sys.stdout.reconfigure(encoding="utf-8")
 
 from src.pipeline import generate
-from src.llm import build_llm, config_ready, load_llm_config
+from src.M1_extract import build_llm, config_ready, load_llm_config
 
 DEFAULT_QUERY = "帮我做一个双11会员促销卡片，要有折扣信息和购买按钮"
 

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """骨架可视化生成器（调试工具，独立于流水线）。
 
-读取 registry/skeletons.json + registry/themes.json，生成自包含的
+读取 rules/skeletons.json + rules/themes.json，生成自包含的
 viz/skeleton_preview.html：全部骨架（S1~S7 / W1~W10）的线框图阵列（vp×2 缩放），
 支持 线框/主题 双模式切换、悬停查看节点样式、槽位虚线占位与拟真填充。
 
@@ -24,8 +24,8 @@ def natural_key(sid: str):
 
 
 def main():
-    skels = json.loads((ROOT / "registry/skeletons.json").read_text(encoding="utf-8"))
-    themes = json.loads((ROOT / "registry/themes.json").read_text(encoding="utf-8"))
+    skels = json.loads((ROOT / "rules/skeletons.json").read_text(encoding="utf-8"))
+    themes = json.loads((ROOT / "rules/themes.json").read_text(encoding="utf-8"))
     order = sorted(skels["skeletons"].keys(), key=natural_key)
     data = {"skeletons": skels["skeletons"], "themes": themes["themes"],
             "selection": themes.get("selection", {}), "order": order}

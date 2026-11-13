@@ -16,7 +16,7 @@ v3 起增加第二重对标：生产级项目 CreateMyCard（小艺 App AI 卡�
 
 - **消除样式幻觉**：模型永远不输出几何/样式/组件编号，只输出"决策结果"（枚举 + 短摘抄 + 对象分组），幻觉面趋近于零。
 - **可测试、可回放**：每步输出都是结构化小数据，可断言、可回归。
-- **UI 质量天花板由程序保证**：模型选错会被程序兜住（路由决策表/角色规则表/宽度预算/兜底骨架），不会"生成坏卡片"。
+- **UI 质量下限由程序保证**：模型选错会被程序兜住（路由决策表/角色规则表/宽度预算/兜底骨架），不会"生成坏卡片"。
 
 ## 2. 架构原则
 
@@ -26,7 +26,7 @@ v3 起增加第二重对标：生产级项目 CreateMyCard（小艺 App AI 卡�
 | 2 | **程序负责确定性，模型负责不确定性** | 能枚举、有唯一正确答案的 → 程序；语义判断（领域、对象分组、字段取舍、信息项拆解）→ 模型 |
 | 3 | **业务对象先于字段数量** | 同一业务对象的名称/数值/状态只算一个对象（objects 分组），是骨架路由的第一判据；字段数、组件数不增加对象数 |
 | 4 | **骨架即发射模板** | 16 个固定骨架（2×2 S1~S6 / 2×4 W1~W10；S5/S6 由真实卡片数据反哺）带精确几何（region 尺寸/padding/间距），P6 按树模板直接发射原生组件，无中间转换器 |
-| 5 | **规范资产全部代码化** | UX 规范的字号/间距/圆角档位、三套色板、白背板、压力宽度预算口径全部落 registry JSON，越档即审计错误 |
+| 5 | **规范资产全部代码化** | UX 规范的字号/间距/圆角档位、三套色板、白背板、压力宽度预算口径全部落 rules/ 下的 JSON，越档即审计错误 |
 | 6 | **IR 单点事实源** | 数据只朝一个方向流动：IR → A2UI。意图（M1 原始 domain/intent）贯穿写入 IR 做残差连接 |
 | 7 | **协议合规是发射器的责任** | Form catalog 组件白名单（十组件，Toggle 排除）、事件协议（onClick 单 handler）、三行消息结构由 P6 统一保证，模型与中间环节无感知 |
 
@@ -175,7 +175,7 @@ query
 
 **v3 变化**：region 装配的执行依据从 groups 迁移到 **objects（业务对象）**；groups 保留用于语义参考与未来演进。关系边中 `binds`（动作属于哪个对象）用于 P3 把动作绑定到对象所在背板。
 
-## 6. 封闭域资产（registry/，v3 六件套）
+## 6. 封闭域资产（rules/，v3 六件套）
 
 程序环节依赖的全部确定性资产，以 JSON 配置 + 媒体资源形式存放：
 
@@ -188,7 +188,7 @@ query
 | `components.json` | **11 个组件角色**（视觉规格 + color_role）+ select_rules 语义→角色规则表 | Form 协议 + UX-SPEC |
 | `assets.json` | 72 项素材白名单（src/description/dyeable）+ 图标规格（20×20/contain） | CreateMyCard 素材库 |
 
-另有 `copy_templates.json`（文案模板）与 `resources/base/media/`（154 个端侧素材文件，复制自 CreateMyCard；**路径前缀只在 `src/paths.py` 定义**，registry 只登记文件名，挪目录只改一处常量）。
+另有 `copy_templates.json`（文案模板）与 `resources/base/media/`（154 个端侧素材文件，复制自 CreateMyCard；**路径前缀只在 `src/paths.py` 定义**，rules/ 只登记文件名，挪目录只改一处常量）。
 
 ### 6.1 骨架（skeletons.json）
 
@@ -260,7 +260,7 @@ select_rules 顺序匹配（命中即停）：`actions:true + toggle → check_a
 | `header` / `action` / `action_zone` / `bottom_action` | 条目类型 → 组件，一对一 | 不进 | 表里只会有一行，等于把 switch 搬进 JSON |
 | `zone:*` / `aux:*`（背板） | `layout_variants.json` 的候选序列（stack→row→merged→丢弃→截断） | 不进 | 那是**试算**不是**选择**，写进表会让表变成编程语言 |
 
-**表结构**（`registry/content_forms.json`）
+**表结构**（`rules/content_forms.json`）
 
 ```json
 {"order": 1, "id": "ring_stat",
@@ -280,7 +280,7 @@ select_rules 顺序匹配（命中即停）：`actions:true + toggle → check_a
 
 **新增一种排法的步骤（四步，缺一不可）**
 1. 表里加一条 `order` / `when` /（可选）`spec`；
-2. `src/forms.py` 写同名函数 `def _your_form(em, slot, f, layout) -> list[组件]`；
+2. `src/content_forms.py` 写同名函数 `def _your_form(em, slot, f, layout) -> list[组件]`；
 3. 在 `EMITTERS` 里登记一行；
 4. 跑 `python tests/test_forms.py`（表与实现必须一一对应）与 `python tools/snapshot_pipeline.py`（重构类改动要求输出 diff = 0）。
 
@@ -307,6 +307,23 @@ select_rules 顺序匹配（命中即停）：`actions:true + toggle → check_a
 | 外观与输出 | P6 + P7 | 角色 → 色值、树 → 三行 JSONL | 查表 + 序列化 | 交出去无收益：零决策或纯格式 |
 
 **一句话**：整条流水线只有 P5 一格需要真实测量。这就是"几何必须由程序求解"的严格表述——不是因为模型不够聪明，而是因为这一格的正确性依赖一个模型拿不到的量。
+
+##### 统一术语（v3.27，2026-10-31 增补：层的唯一命名，防对话/文档漂移）
+
+讨论本方案一律使用上表五个层名。历史叫法收编如下，**此后不再使用**：
+
+| 曾用名（废止） | 统一为 | 备注 |
+|---|---|---|
+| 数据层 / 内容集合 / 信息层 / 条目层 | **语义层** | 语义计划 `items` 是本层核心数据；「条目」= 集合内一个元素（丢弃的作用对象），「文本」= 条目内的字符串（截断的作用对象）——两者是本层内部的粒度，不单独立层 |
+| 骨架层 | **结构层** | |
+| 容量层 | **几何层** | |
+| 组件层 / DSL 层 / 发射层 | **外观与输出层** | A2UI DSL 是本层产物；渲染器把 DSL 解释为运行时组件树，属部署切面（见下），不是新层 |
+
+三条口径，用于回答"一共几层"：
+
+1. **层 = 5 层**（语义 / 结构 / 样式规格 / 几何 / 外观与输出），按"数字来源"划分的职责分区，把生成侧 8 个环节（M1、P1~P7）分完。
+2. **环节 = 9 个**（M1、P1~P7、渲染器）：环节是对层做变换的**步骤**；层是跨环节的数据与职责**形态**（如语义层诞生于 M1、经 P1 清洗、被 P2~P5 消费与修改，外观与输出层诞生于 P6+P7）。
+3. **切面不是层**：① 决策切面（模型 M1 / 程序 P1~P7）；② 部署切面（生成侧 / DSL 契约 / 渲染侧）。讨论客户端职责、刷新适配归属时用切面，勿与层混称。
 
 #### 三类（论文视角）
 
@@ -348,13 +365,13 @@ select_rules 顺序匹配（命中即停）：`actions:true + toggle → check_a
 | 环节 | 工具 | 吃什么 | 产出 |
 |---|---|---|---|
 | 记录 | `src/measure.py` | `generate()` 结果 | 一行固定字段：协议违规 / 分阶段耗时 / token / 骨架 / 指纹 / 卡面文字 |
-| 跑批 | `tools/run_condition.py` | 条件名（L4 / L4-NR） | `records.jsonl` + `cards/<tag>.jsonl` |
-| 内容 | `tools/build_content_oracle.py` → `tools/measure_content.py` | 金标 DSL → 基准；记录 + 基准 | 覆盖（漏）/ 保真（编）/ 重复 |
-| 几何 | `tools/measure_geometry.py` | 记录 + 原始产物 | 越界卡数、裁切卡数、最小字号、低于 12fp 节点数 |
-| 稳定性 | `tools/resample_stability.py` | query × N 次重采样 | 字段全一致率、产物逐字一致率 |
-| 出表 | `tools/build_metrics_report.py` | 各条件的 `records.jsonl` | Markdown 汇总表（论文表 1/表 3 原料） |
+| 跑批 | `exp/runners/run_condition.py` | 条件名（L6 / L6-NR） | `records.jsonl` + `cards/<tag>.jsonl` |
+| 内容 | `exp/metrics/build_content_oracle.py` → `exp/metrics/measure_content.py` | 金标 DSL → 基准；记录 + 基准 | 覆盖（漏）/ 保真（编）/ 重复 |
+| 几何 | `exp/metrics/measure_geometry.py` | 记录 + 原始产物 | 越界卡数、裁切卡数、最小字号、低于 12fp 节点数 |
+| 稳定性 | `exp/runners/resample_stability.py` | query × N 次重采样 | 字段全一致率、产物逐字一致率 |
+| 出表 | `exp/metrics/build_metrics_report.py` | 各条件的 `records.jsonl` | Markdown 汇总表（论文表 1/表 3 原料） |
 
-**基准必须独立于被测系统**：内容对错的基准来自金标抽出的事实集（`fixtures/content_oracle.json`，49 张卡 128 条），不是被测系统自己的 plan——L1 根本没有 plan，用它当基准就不可比。
+**基准必须独立于被测系统**：内容对错的基准来自金标抽出的事实集（`data/content_oracle.json`，49 张卡 128 条），不是被测系统自己的 plan——L1 根本没有 plan，用它当基准就不可比。
 
 **快慢分开**：协议校验在流水线内（微秒级，修复要用它拿清单）；几何测量在流水线外（每张几百毫秒，要起渲染器）；内容与稳定性也在外。
 
@@ -384,10 +401,10 @@ select_rules 顺序匹配（命中即停）：`actions:true + toggle → check_a
 #### 一条链跑完
 
 ```bash
-python tools/run_condition.py L4 --out runs/L4        # 生成 + 落记录与产物
-python tools/measure_content.py runs/L4/records.jsonl # 原地回填 content
-python tools/measure_geometry.py runs/L4              # 原地回填 layout
-python tools/build_metrics_report.py runs/L4 runs/L4-NR --out runs/report.md
+python exp/runners/run_condition.py L6 --out runs/L6        # 生成 + 落记录与产物
+python exp/metrics/measure_content.py runs/L6/records.jsonl # 原地回填 content
+python exp/metrics/measure_geometry.py runs/L6              # 原地回填 layout
+python exp/metrics/build_metrics_report.py runs/L6 runs/L6-NR --out runs/report.md
 ```
 
 `--mock` 可离线跑通链路，但它只是关键词桩，**指标数值没有意义**，只用来验证工具本身。
@@ -503,7 +520,7 @@ est_width(text, fontSize) = Σ (中文 1em ｜ 字母数字 0.65em ｜ 其他 0.
 `a2ui` 简化格式保留为调试视图（role + copy + binding 汇总），不再是交付产物。
 
 
-**排法分派**：发射器只保留三类专用分支——背板（`zone:`/`aux:`，走 `_zone_children` + 容量候选）、标题区（标题 + 20×20 图标）、动作区（胶囊/圆钮/开关）。其余内容类槽位（`content`/`primary`/`support`/`bottom_info`）**统一交给 `src/forms.py` 查表分派**，实现见 §6.3。新增内容排法不得再往 `_fill_children` 加 `if`。
+**排法分派**：发射器只保留三类专用分支——背板（`zone:`/`aux:`，走 `_zone_children` + 容量候选）、标题区（标题 + 20×20 图标）、动作区（胶囊/圆钮/开关）。其余内容类槽位（`content`/`primary`/`support`/`bottom_info`）**统一交给 `src/content_forms.py` 查表分派**，实现见 §6.3。新增内容排法不得再往 `_fill_children` 加 `if`。
 
 ## 8. 容量适配机制：候选表与首个可行解
 
@@ -598,17 +615,17 @@ est_width(text, fontSize) = Σ (中文 1em ｜ 字母数字 0.65em ｜ 其他 0.
 
 | 资产 | 内容 |
 |---|---|
-| `registry/layout_variants.json` | 槽位形态判据（`board_slot_prefixes: ["zone:","aux:"]`、`single_line_max_h: 46`）、每形态的有序候选序列、guards、字号梯级、间距与分隔符 |
-| `registry/components.json` | 角色规格新增 **`min_size` 下限**（hero_value 20 = 主数字降档序列终点，其余 12）——决定"继续缩字号"与"换结构"的分界线 |
-| `registry/skeletons.json` | 槽位几何即容量来源（`_slot_boxes` 提取内宽/内高/标注）；槽位节点可选带 `kind` 显式标注（board / flow / single_line）——**几何与命名都无法区分时以标注为准**（如 W4 三列 88 宽与 W9 大板 138 宽、W6 焦点区 136 宽易混） |
-| `registry/components.json`（新增角色） | `compact_value`：三列指标/并列比较的紧凑数值（20/700，下限 16）——triple 列不用 hero（38）也不用 zone 行角色（14） |
+| `rules/layout_variants.json` | 槽位形态判据（`board_slot_prefixes: ["zone:","aux:"]`、`single_line_max_h: 46`）、每形态的有序候选序列、guards、字号梯级、间距与分隔符 |
+| `rules/components.json` | 角色规格新增 **`min_size` 下限**（hero_value 20 = 主数字降档序列终点，其余 12）——决定"继续缩字号"与"换结构"的分界线 |
+| `rules/skeletons.json` | 槽位几何即容量来源（`_slot_boxes` 提取内宽/内高/标注）；槽位节点可选带 `kind` 显式标注（board / flow / single_line）——**几何与命名都无法区分时以标注为准**（如 W4 三列 88 宽与 W9 大板 138 宽、W6 焦点区 136 宽易混） |
+| `rules/components.json`（新增角色） | `compact_value`：三列指标/并列比较的紧凑数值（20/700，下限 16）——triple 列不用 hero（38）也不用 zone 行角色（14） |
 
 **两个模块**
 
 | 模块 | 职责 |
 |---|---|
-| `src/metrics.py` | 文字度量公共基础：`est_width`（压力宽度）、`est_height`（1.4 × 字号 × 行数）、`semantic_truncate`——独立成模块以避免 assemble 与 capacity 循环依赖 |
-| `src/capacity.py` | 容量引擎：`slot_kind()` 判形态（board 按槽位命名优先，其余按几何），`adapt_slot()` 实现候选枚举 + 双预算验收 + 首个可行解，返回布局决策 |
+| `src/text_metrics.py` | 文字度量公共基础：`est_width`（压力宽度）、`est_height`（1.4 × 字号 × 行数）、`semantic_truncate`——独立成模块以避免 assemble 与 capacity 循环依赖 |
+| `src/P5_capacity.py` | 容量引擎：`slot_kind()` 判形态（board 按槽位命名优先，其余按几何），`adapt_slot()` 实现候选枚举 + 双预算验收 + 首个可行解，返回布局决策 |
 
 **流水线接口**
 
@@ -631,7 +648,7 @@ est_width(text, fontSize) = Σ (中文 1em ｜ 字母数字 0.65em ｜ 其他 0.
 
 ## 11. 验证指标与通过标准
 
-### 10.1 测试用例（fixtures/cases.json）
+### 10.1 测试用例（data/cases.json）
 
 | # | query | 期望 |
 |---|---|---|
@@ -664,7 +681,7 @@ est_width(text, fontSize) = Σ (中文 1em ｜ 字母数字 0.65em ｜ 其他 0.
 - `python tests/test_capacity.py`：容量适配专项 16 项断言；
 - ~~`verify_a2ui_render.py`~~：**已移除**（依赖外部 `a2ui` 包，未随仓库分发，跑不起来）。协议合规改由 `src/validate.py` 的 15 条规则覆盖；官方 MessageProcessor 解析只作 2026-10-16 的一次性旁证，见 v3.5 变更记录；
 - `python tests/test_gold_queries.py`：真实 query 数据集冒烟（49 条，断言零异常零协议违规；语义词数不断言——MockLLM 是桩模型）；
-- `python tools/gold_dataset.py`：从人工校验输入输出对构建数据集（`fixtures/batch_queries.json` + `fixtures/gold_pairs.json`）；`check` 子命令做金标结构核验；
+- `python tools/gold_dataset.py`：从人工校验输入输出对构建数据集（`data/queries.json` + `data/gold_pairs.json`）；`check` 子命令做金标结构核验；
 - `python tools/extract_skeletons_from_cards.py [--] pairs|regions|tree|summary`：卡片 DSL 区划聚类探索（`gold_dataset.py` 复用其解析函数）；
 - `python tools/debug_pipeline.py "query"`：逐环节 trace + 裸 JSONL 落盘（`logs/`）。
 
@@ -686,59 +703,102 @@ est_width(text, fontSize) = Σ (中文 1em ｜ 字母数字 0.65em ｜ 其他 0.
 
 ```
 cardgen-proto/
-├── README.md
-├── docs/
-│   └── AI卡片生成架构方案-v3.md      # 本文档
-├── prompts/
-│   └── step1_structure_plan.md      # M1 提示词（domain/objects/keep 契约）
-├── registry/                        # 封闭域资产六件套 + 文案模板
-│   ├── enums.json                   # 枚举 + 同义词
-│   ├── skeletons.json               # 16 骨架（select 路由键 + tree 发射模板）
-│   ├── themes.json                  # 三套色板 + domain 映射 + 色彩角色
-│   ├── ladders.json                 # 字号/间距/圆角档 + hero 降档 + 宽度预算口径
-│   ├── components.json              # 11 角色（视觉规格 + color_role）+ select_rules
-│   ├── assets.json                  # 72 项素材白名单
-│   └── copy_templates.json
-├── resources/
-│   └── media/                       # 端侧素材（154 文件，来自 CreateMyCard）
-├── src/                             # 程序环节
-│   ├── llm.py                       # LLMClient + HttpLLM(占位) + MockLLM(五场景规则)
-│   ├── normalize.py                 # P1 归一化（含 domain/objects/keep）
-│   ├── skeletons.py                 # P2 骨架路由（特征派生+尺寸决策+决策表）
-│   ├── slot_assign.py               # P3 region 装配
-│   ├── component_select.py          # P4 角色规格选择
-│   ├── assemble.py                  # P5 拼装 IR（压力宽度预算审计）
-│   ├── sample_values.py             # 样本值推断（泛化提示 -> 真实样值，封闭域关键词映射）
-│   ├── metrics.py                   # 文字度量（压力宽度 / 行高 / 语义截断，公共基础）
-│   ├── capacity.py                   # 容量引擎（前向枚举 + 首个可行解，v3 §8）
-│   ├── theme.py                     # P6 主题装配（选主题 + 着色，唯一主题环节）
-│   ├── compiler.py                  # P7 发射器（原生三行 JSONL，零色板知识）
-│   └── pipeline.py                  # 固定 workflow 编排
-├── fixtures/                        # 固定输入与基准（入库）
-│   ├── cases.json                   # 9 条回归用例
-│   ├── gold_pairs.json              # 49 对金标数据集（派生品）
-│   ├── content_oracle.json          # 应有事实集（评测基准）
-│   └── batch_queries.json           # 49 条真实 userQuery
-├── data/                            金标原始数据（49 对，98 文件）+ MANIFEST.sha256
-├── refs/                            外部依据（A2UI 协议 / Basic Catalog / 鸿蒙 Form）
-├── runs/                            一切产物（batch / stability / viz / debug / acceptance）
-├── logs/                            运行日志
-├── tests/run_cases.py               # 批量验证 + 协议断言
-├── tests/test_capacity.py           # 容量适配专项断言
-├── tests/test_gold_queries.py       # 真实数据集冒烟（换数据集后的安全网）
-├── tools/gen_assets_registry.py     # 素材清单生成脚本
-├── tools/extract_skeletons_from_cards.py  # 卡片 DSL 区划聚类（探索视图）
-└── tools/gold_dataset.py            # 输入输出对 → 数据集 + 基准核验
+├── docs/AI卡片生成架构方案-v3.md        # 本文档（设计正本）
+├── src/                                 # 产品区：第六档（L6）的本体（P1~P7）
+│   ├── pipeline.py                      # 总装：M1 → P1…P7
+│   ├── M1_extract.py                    # M1 语义抽取 + 唯一模型通道（HTTP / Mock）
+│   ├── P1_normalize.py                  # P1 归一化（含 domain/objects/keep）
+│   ├── P2_skeleton_route.py             # P2 骨架路由（特征派生 + 尺寸决策）
+│   ├── P3_slot_assign.py                # P3 region 装配
+│   ├── P4_component_roles.py            # P4 角色规格选择
+│   ├── P5_capacity.py                   # P5 容量求解（前向枚举 + 首个可行解）
+│   ├── P5_assemble.py                   # P5 拼装 IR（调用容量引擎）
+│   ├── P6_theme.py                      # P6 主题装配（唯一主题环节）
+│   ├── P7_emit.py                       # P7 发射器（原生三行 JSONL）
+│   ├── validate.py                      # 出口校验（15 类违规码，不改产物）
+│   ├── measure.py                       # 度量：记录 / 指纹 / 内容覆盖与保真
+│   ├── text_metrics.py                  # 文本宽度 / 行高 / 语义截断
+│   ├── content_forms.py                 # 内容排法表加载与发射器
+│   ├── sample_values.py                 # 样本值推断（封闭域关键词映射）
+│   ├── pipeline_options.py              # 修复与占位选项（实验用，默认全开）
+│   └── paths.py                         # 路径前缀的唯一出口
+├── exp/                                 # 实验区：另三个方案 + 跑批 + 度量 + 人评（可整目录剥离）
+│   ├── conditions.py                    # 六档条件表（方案 = 五个阶段各选一个实现）
+│   ├── steps/                           # 阶段 × 实现：content / structure / geometry / theme / emit
+│   ├── runners/                         # 按条件跑批、重采样
+│   ├── metrics/                         # 测量、汇总、出表
+│   └── human_eval/                      # 人评配对与回收分析
+├── prompts/                             # 提示词（产品与实验共用；共享片段只有一份）
+├── rules/                               # 规则库：骨架 / 角色 / 排法 / 主题 / 枚举 / 梯级 / 白名单
+├── data/                                # 唯一一份数据：金标 49 对 + 49 条查询 + 9 条用例 + 评测基准
+├── resources/                           # 端侧素材（154 文件，白名单见 rules/assets.json）
+├── refs/                                # 外部依据（A2UI 协议 / Basic Catalog / 鸿蒙 Form）
+├── tests/                               # 10 套：功能回归 9 套 + 架构检查 1 套
+├── tools/                               # 通用工具（调试 / 快照 / 越界检查 / 并排渲染 …）
+├── config/llm.json                      # 本地模型配置（含密钥，不入库）
+├── runs/                                # 一切产物（batch / stability / viz / debug / acceptance）
+└── logs/                                # 运行日志
 ```
+
+**三条结构纪律**（2026-11-12 重组）：
+
+1. **`src/` 是产品区**，实验代码一行不进；
+2. **`exp/` 只单向依赖 `src/`**，反向依赖由 `tests/test_architecture.py` 禁止；
+3. **目录与命名必须持续与论文对应**（见 13.1）——结构是论文的一部分，不是工程的私事。
+
+`tests/test_architecture.py` 会检查前两条边界，删掉 `exp/` 后全部测试必须照旧通过。
+
+### 13.1 命名约定（持续与论文对应）
+
+判断标准只有一条：**评审不读代码，只看目录名与文件名，能不能说出"这对应论文哪一节、哪个环节"。**
+
+**目录：一个概念只给一个目录。**
+
+| 目录 | 放什么 | 命名理由 |
+|---|---|---|
+| `src/` | 第六档（L6）本体（产品路径） | 只装被论文当作"方法本身"的代码 |
+| `exp/` | 另外三档 + 跑批 + 度量 + 人评 | 对应论文实验部分；整目录可剥离 |
+| `prompts/` | **全部**提示词（产品与实验共用） | 只有一个——各档拼同一份，分两个目录等于暗示存在两套条件 |
+| `rules/` | 骨架 / 角色 / 排法 / 主题 / 枚举 / 白名单 | 不叫 `registry`：这些表全部由 49 张金标反推，叫"规则库"才对得上论文 §16.3 的开卷披露 |
+| `data/` | 金标 49 对 + 查询清单 + 回归用例 + 评测基准 | 只有一个——原 `fixtures/` 已并入（数据都在 `data/`，代码都在 `tests/`） |
+| `tests/` | 回归 9 套 + 架构检查 1 套 | 与 `data/` 分开：测试是代码，数据是资产 |
+
+**`src/` 的文件名带环节号，与论文的环节编号一一对应。**
+
+| 文件名 | 对应环节 |
+|---|---|
+| `M1_extract.py` | M1 语义抽取（唯一模型调用 + 唯一模型通道） |
+| `P1_normalize.py` | P1 归一化 |
+| `P2_skeleton_route.py` | P2 骨架路由 |
+| `P3_slot_assign.py` | P3 槽位装配 |
+| `P4_component_roles.py` | P4 角色规格 |
+| `P5_capacity.py` / `P5_assemble.py` | P5 容量求解 / 拼装 |
+| `P6_theme.py` | P6 主题装配 |
+| `P7_emit.py` | P7 发射 |
+| `validate.py` / `measure.py` | 出口校验 / 尺子（不属单一环节，不带号） |
+| `text_metrics.py` / `content_forms.py` / `sample_values.py` | 基础设施（不属单一环节，不带号） |
+
+**四条执行规定：**
+
+1. 新增任何目录或文件，必须先能回答"它对应论文的哪一节 / 哪个环节"；答不上来的不建，并把这句话写进提交说明；
+2. 环节相关的文件必须带环节号，基础设施文件不带号；
+3. 改名或移动必须同步两份正本：本文 §13（目录树 + §13.1）与论文 §17（含 §17.6 的评审导航表）。根 README 只做入口、不写事实，因此不在同步清单里；
+4. **名字不承载版本**：不用 `v2` / `new` / `old` / `final` / `tmp`；废弃文件进 `data/legacy/`，不留在主路径上。
+
+违反第 1 条或第 3 条的后果很具体：评审按论文 §3 的六档定义去找实现，找不到就会怀疑实验的真实性——而他没有义务替你找。
+
+**文档也按这条原则管**：迭代期只保留三份正本（本文、论文、UX 规范）与根 README（30 行，只做入口：定位 + 三条命令 + 指路）。目录说明、使用手册、贡献指南这类文档一律不建，等真正发布时再按需补——发布文档没有技术难度，随时能生成，但提前维护等于提前腐坏。详见论文 §19.7。
 
 **运行方式**（零第三方依赖，Python 3）：
 
 ```bash
-python tools/debug_pipeline.py "query"  # 单次生成：逐环节 trace + 裸 JSONL（落 runs/debug/）
-python tests/run_cases.py         # 9 用例回归
+python tools/debug_pipeline.py "query"   # 单次生成：逐环节 trace + 裸 JSONL（落 runs/debug/）
+python tests/run_cases.py                # 9 用例回归
+python tests/test_architecture.py        # 产品区 / 实验区边界检查
+python exp/runners/run_condition.py L6 --out runs/L6   # 按实验条件跑批（论文用）
 ```
 
-### 12.1 接真实模型（config/llm.json）
+### 13.2 接真实模型（config/llm.json）
 
 填 `config/llm.json` 的 `base_url` / `api_key` / `model` 即可切换到真实模型（OpenAI 兼容 Chat Completions 端点）：
 
@@ -763,6 +823,25 @@ python tests/run_cases.py         # 9 用例回归
 - **失败语义区分**：`M1 call fail`（调用层：连接失败/读超时/HTTP 错误，可重试）与 `M1 parse fail`（输出解析失败）；两者都走空计划兜底，任何情况仍产出合法卡片；
 - **可观测性**：`logs/llm_calls.jsonl`（每次调用/重试：耗时、错误类型、json_mode、长度）与 `logs/generate.jsonl`（每次请求：query、模型、M1 失败原因、骨架/尺寸/主题、fallback_log、总耗时）；
 - 回归测试（`tests/run_cases.py`）固定使用 MockLLM 以保证确定性，真实模型用于联调与指标统计。
+
+### 13.3 data/ 里每个文件的来源与去向
+
+数据只此一份（论文侧靠 `commit + MANIFEST.sha256` 两个指针引用，不复制）。
+
+| 文件 | 谁生成 | 谁消费 |
+|---|---|---|
+| `gold/`（49 对） | 人工校验的真实卡片 | `gold_dataset`、`diff_gold`、`check_layout`、`gen_card_compare`、`build_content_oracle` |
+| `queries.json`（49 条真实 query） | `tools/gold_dataset.py` | `exp/runners/run_condition`、`resample_stability`、`tools/batch_generate`、`tests/test_gold_queries`、`test_routing_stability` |
+| `cases.json`（9 条回归用例） | 手写 | `tests/run_cases.py`、`tools/snapshot_pipeline.py` |
+| `gold_pairs.json` | `tools/gold_dataset.py` | `tests/test_gold_queries`、`tools/gen_card_compare` |
+| `content_oracle.json`（每卡应有事实集） | `exp/metrics/build_content_oracle.py` | `exp/metrics/measure_content.py`、`tests/test_measure` |
+| `MANIFEST.sha256` | 生成金标时 | 校验：`cd data && sha256sum -c MANIFEST.sha256` |
+
+三条规矩：
+
+1. **基准必须独立于被测系统**——`content_oracle.json` 从金标终产物抽，不从流水线的计划层抽（L1 没有计划层，用了就各档不可比）；
+2. **派生品丢了可重建，`queries.json` 例外**——它已无法从参考项目重新抽取，必须入库；
+3. 金标两个子目录保留中文名（准确描述内容，且被 6 个工具引用，改名只增加回归面）。
 
 ## 14. 关键认知备忘
 
@@ -812,16 +891,16 @@ v3 变更清单（相对 v2）：
 
 | 位置 | 现状 |
 |---|---|
-| `prompts/step1_structure_plan.md` 第 8 行 | 契约写着 `theme: 可选覆盖（blue / purple / warm），仅用户明确指定配色时输出` |
+| `prompts/content_extract.md` 第 8 行 | 契约写着 `theme: 可选覆盖（blue / purple / warm），仅用户明确指定配色时输出` |
 | 同文件规则 4 后半段 | "其余情况 theme 留空，由程序按 domain 选" |
-| `src/normalize.py:56-58` | 只检查 `theme not in ENUMS["theme"]`，合法就放行，**不核对用户到底说没说** |
-| `src/theme.py:21 select_theme()` | 三级优先：`m1_user_preference` > `domain_map` > `default(blue)`；前两级在 M1 给了合法值时都会被触发 |
+| `src/P1_normalize.py:56-58` | 只检查 `theme not in ENUMS["theme"]`，合法就放行，**不核对用户到底说没说** |
+| `src/P6_theme.py:21 select_theme()` | 三级优先：`m1_user_preference` > `domain_map` > `default(blue)`；前两级在 M1 给了合法值时都会被触发 |
 
 **怎么改（四步）**
 
 1. **删契约**：移除第 8 行的 `theme` 字段说明；规则 4 保留"判断业务领域"，删掉"用户明确要求配色时输出 theme"整段。
 2. **删归一化分支**：`normalize.py` 里 `theme` 变量的读取、非法校验、`theme dropped (invalid)` 日志一并移除；返回的 plan 不再含 `theme` 键（下游 `plan.get("theme")` 自然得到 None）。
-3. **降优先级**：`registry/themes.json` 的 `selection.priority` 从 `["m1_user_preference","domain_map","default"]` 改为 `["domain_map","default"]`；`theme.py::select_theme()` 删掉第一级分支，签名里的 `m1_theme` 参数也去掉（不留没用的入口）。
+3. **降优先级**：`rules/themes.json` 的 `selection.priority` 从 `["m1_user_preference","domain_map","default"]` 改为 `["domain_map","default"]`；`theme.py::select_theme()` 删掉第一级分支，签名里的 `m1_theme` 参数也去掉（不留没用的入口）。
 4. **补字面抽取（可选，产品需要才做）**：新增 `src/color_request.py`，关键词命中才返回主题 id：深色/暗色/夜间 → `dark`；蓝 → `blue`；紫 → `purple`；暖 → `warm`。**硬约束：命中的词必须出现在 query 原文里**，否则返回 None——这是该模块唯一的可核验条件。
 
 **改完怎么验收**
@@ -870,7 +949,7 @@ def apply_slot_overrides(roles, slot_of) -> dict  # 改 5 个槽位驱动角色
 
 - `repair_card` 选项已在 `src/pipeline_options.py` 就位（默认 True），但**没有任何代码读它**——修复动作本身还没写；
 - `src/validate.py` 已能给出结构化违规（`code` / `where` / `detail`），修复器所需的"眼睛"已经有了；
-- 原型（对应论文 L4）在 49 条上违规恒为 0，所以原型不需要它；它只服务论文的 L1 组（模型全包的 baseline）。
+- 原型（对应论文 L6）在 49 条上违规恒为 0，所以原型不需要它；它只服务论文的 L1 组（模型全包的对照方案）。
 
 **要做什么**
 
@@ -901,7 +980,7 @@ def repair_a2ui(text, surface_id, size, max_rounds=2) -> (text, repair_log)
 
 - L1 组 49 条：违规率下降，且 `introduced_by_repair` 单独成列；
 - 修复触发率 = 有违规的生成占比（论文 §4 的指标）；
-- 在原型 L4 上跑：触发率必须为 0，产物与不修时逐字一致（这条同时守住"修复器不影响正常路径"）。
+- 在原型 L6 上跑：触发率必须为 0，产物与不修时逐字一致（这条同时守住"修复器不影响正常路径"）。
 
 **风险**：修复器可能越修越糟。所以第 2 条约束是硬性的，论文里也必须如实给出"修复引入的新违规"与"修复后反而更差的卡数"。
 
@@ -909,9 +988,9 @@ def repair_a2ui(text, surface_id, size, max_rounds=2) -> (text, repair_log)
 
 ## v3.1 变更记录（2026-10-15：主题装配独立成步）
 
-1. **新增 P6 主题装配**（`src/theme.py`）：整条流水线唯一处理主题的环节——按主题目录选主题（M1 偏好 > domain 映射 > 默认）、解析色板写 `ir["palette"]`、涂装骨架树与条目、挂载对比度校验位；边界纪律：只碰颜色/背景/透明度/图像，不碰布局与内容；
+1. **新增 P6 主题装配**（`src/P6_theme.py`）：整条流水线唯一处理主题的环节——按主题目录选主题（M1 偏好 > domain 映射 > 默认）、解析色板写 `ir["palette"]`、涂装骨架树与条目、挂载对比度校验位；边界纪律：只碰颜色/背景/透明度/图像，不碰布局与内容；
 2. **原 P6 顺延为 P7 发射器**：去色板化（不再读取 themes.json），只读着色后 IR（`ir["tree"]`/`ir["palette"]`/具体色值 spec），职责收窄为结构展开 + 协议合规；
-3. **`registry/themes.json` 升级为主题目录**：多主题条目（蓝/紫/暖浅色 + 新增中性深色），每条目自带 select 选择规则，加主题 = 加 JSON 条目零代码；
+3. **`rules/themes.json` 升级为主题目录**：多主题条目（蓝/紫/暖浅色 + 新增中性深色），每条目自带 select 选择规则，加主题 = 加 JSON 条目零代码；
 4. **主题参与度收敛**：M1 仅传递用户颜色偏好（语义事实）；P1 保留 theme 枚举校验（海关职责，与 size/intent 同构）；P2/P3/P5 与 P7 零主题知识（P4 仅输出色彩语义角色名，不查色板）；
 5. **等价性验证**：重构前后 5 条代表 query（S1/S2/S3/S4/W9）的 full-a2ui 逐字段一致，产物零变化；7 条回归用例全绿。
 
@@ -960,7 +1039,7 @@ def repair_a2ui(text, surface_id, size, max_rounds=2) -> (text, repair_log)
 ## v3.5 变更记录（2026-10-15：容量适配机制并入方案 + 落地实现）
 
 1. **新增 §8 容量适配机制**（前向枚举 + 首个可行解）：候选边界纪律、7 个原子变换算子（含 guard 与规范依据）、四步候选生成策略、12 个场景模式库（M1~M12）、骨架影响结论与新增骨架四条判据、资产与接口定义；原 §8~§13 顺延为 §9~§14（独立设计文档已并入本章后删除，全项目只维护本文档）；
-2. **代码落地**（详见 §8.6）：新增 `registry/layout_variants.json`（候选表）、`src/metrics.py`（度量公共基础）、`src/capacity.py`（容量引擎）；`registry/components.json` 角色补 `min_size` 下限；P4 槽位感知（board 槽位不用 hero 角色）、P5 容量分流（固定槽位交引擎、弹性槽位走宽度预算）、P7 按 `slot_layouts` 发射（stack / 行包裹 / 合并）与背板行组合成；新增 `tests/test_capacity.py`（16 项断言）；
+2. **代码落地**（详见 §8.6）：新增 `rules/layout_variants.json`（候选表）、`src/text_metrics.py`（度量公共基础）、`src/P5_capacity.py`（容量引擎）；`rules/components.json` 角色补 `min_size` 下限；P4 槽位感知（board 槽位不用 hero 角色）、P5 容量分流（固定槽位交引擎、弹性槽位走宽度预算）、P7 按 `slot_layouts` 发射（stack / 行包裹 / 合并）与背板行组合成；新增 `tests/test_capacity.py`（16 项断言）；
 3. **验证**：容量专项 16/16、7 条回归全绿、官方 a2ui_core 三场景解析通过；S3 案例（68% + 充电中 + 双动作）从"38fp 主值与状态行重叠"变为"横排单行、hero 收敛至 24fp"；小背板行字号回到金标 14/700 + 12/400。
 
 ---
@@ -1062,7 +1141,7 @@ def repair_a2ui(text, surface_id, size, max_rounds=2) -> (text, repair_log)
 | 图标缺失（n_image 差异卡数） | 48 | **6** |
 | 可点组件形态差异（clicks） | 26 | **12** |
 
-**修正清单（6 轮）**：① 主值两档制（数值 30/700 / 文本 18/700，降档序列截到 30，定档在文案替换之后，唯一数值候选才提升）；② 图标槽接入（新资产 `registry/icons.json`：域→标题图标、动作关键词→动作图标）；③ 胶囊改回金标 `Row+onClick` 形态（装得下 20×20 图标）；④ 小背板 16/700 + 左右 padding（内宽 110/内高 63）；⑤ 标签与值分离（label 来自 M1 字段名，行渲染条目驱动，单条目/主值不做行）；⑥ M1 契约强化（逐字段成条、写字段名不写值）；⑦ S1 条件收紧（防丢项）；⑧ S5/S6 加 body 包装层（root 6 + body 8）；⑨ S2 内容区顶部对齐、标题区 spaceBetween；⑩ 新增 `tools/diff_gold.py` 与 `examples/batch/gold_vs_run.md`（对比表）+ `examples/batch/runs/` 逐卡产物。
+**修正清单（6 轮）**：① 主值两档制（数值 30/700 / 文本 18/700，降档序列截到 30，定档在文案替换之后，唯一数值候选才提升）；② 图标槽接入（新资产 `rules/icons.json`：域→标题图标、动作关键词→动作图标）；③ 胶囊改回金标 `Row+onClick` 形态（装得下 20×20 图标）；④ 小背板 16/700 + 左右 padding（内宽 110/内高 63）；⑤ 标签与值分离（label 来自 M1 字段名，行渲染条目驱动，单条目/主值不做行）；⑥ M1 契约强化（逐字段成条、写字段名不写值）；⑦ S1 条件收紧（防丢项）；⑧ S5/S6 加 body 包装层（root 6 + body 8）；⑨ S2 内容区顶部对齐、标题区 spaceBetween；⑩ 新增 `tools/diff_gold.py` 与 `examples/batch/gold_vs_run.md`（对比表）+ `examples/batch/runs/` 逐卡产物。
 
 **判定为"声明密度差异、不追"的一类**：`n_container`（金标多 1~2 层无样式 wrapper）、`heights`（金标给每个 Text/行都显式声明高度）、`textalign`（金标显式写 start）。这三类不影响渲染结果，只反映两侧生成器的风格差异。
 
@@ -1085,11 +1164,11 @@ def repair_a2ui(text, surface_id, size, max_rounds=2) -> (text, repair_log)
 
 **背景**：进度环此前把判断条件和 8 个几何数字都写死在 `compiler._ring_row` 里；而 `_fill_children` 里"容量行 / 环 / 标签值行 / 一条一段"四个分支靠书写顺序决定优先级。要加第五种排法时说不清该插在哪，也不知道会不会抢走别的卡。
 
-1. **方案1 参数化**：新增资产 `registry/content_forms.json`，环的 `ring/strokeWidth/icon/rowHeight/iconGap/lineGap`、标签与数值的字号行高、以及三个配色角色全部写进 `spec`。改外观只改 JSON。
-2. **方案2 排法表化**：内容类槽位（`content`/`primary`/`support`/`bottom_info`）改为**按 `order` 查表分派**，取第一个满足 `when` 的排法；拼装实现搬进 `src/forms.py`（`_capacity_rows` / `_ring_stat` / `_label_rows` / `_plain_items`）。`_fill_children` 收缩为一行 `forms.emit(...)`。
+1. **方案1 参数化**：新增资产 `rules/content_forms.json`，环的 `ring/strokeWidth/icon/rowHeight/iconGap/lineGap`、标签与数值的字号行高、以及三个配色角色全部写进 `spec`。改外观只改 JSON。
+2. **方案2 排法表化**：内容类槽位（`content`/`primary`/`support`/`bottom_info`）改为**按 `order` 查表分派**，取第一个满足 `when` 的排法；拼装实现搬进 `src/content_forms.py`（`_capacity_rows` / `_ring_stat` / `_label_rows` / `_plain_items`）。`_fill_children` 收缩为一行 `content_forms.emit(...)`。
 3. **边界（刻意不扩大范围）**：`header`/`action`/`action_zone`/`bottom_action` 是"条目类型 → 组件"的一对一映射，不进表；`zone:`/`aux:` 背板的"放不下怎么缩"是试算，继续走 `layout_variants.json`。**表只解决"选哪种排法"，不解决"放不下怎么算"**——后者写进表就会退化成自造 DSL。
 4. **优先级显式化**：`capacity_rows` 用 `order: 0` + `when: {has_layout_rows: true}` 表达"容量引擎已给出逐行决策"，把原来的代码书写顺序搬成数据里的一行；行为不变，但以后调顺序只改数字。
-5. **防回退**：`tests/test_forms.py` 五项守卫（表↔实现一一对应、最后一条必须无条件兜底、`when` 键必须在白名单内、`order` 唯一递增、环的几何确实来自 `spec` 且改 JSON 立即生效）。
+5. **防回退**：`tests/test_forms.py` 五项检查（表↔实现一一对应、最后一条必须无条件兜底、`when` 键必须在白名单内、`order` 唯一递增、环的几何确实来自 `spec` 且改 JSON 立即生效）。
 
 **验证**：新增 `tools/snapshot_pipeline.py`（确定性桩模型跑 65 条 = 10 用例 + 52 条真实 query + 3 条排法探针，逐条比对 `full-a2ui`）。**方案1 与方案2 各自 diff = 0**（首次比对全红，原因是 `surfaceId` 每次随机，已加入归一化）。回归：`run_cases` 9/9、`test_capacity` 16/16、`test_gold_queries` 7/7、`test_paths` 9/9、`test_forms` 8/8。真实模型批跑 52/52 成功、协议 0 违规、q19/q32 仍出环（骨架一致 30/52，与上一轮 32/52 的差异全部落在已知的 `S2↔S6`/`S2↔S5`/`S5↔S4` 语义等价类，属模型抽样波动，非本次改动引入）。
 
@@ -1117,7 +1196,7 @@ def repair_a2ui(text, surface_id, size, max_rounds=2) -> (text, repair_log)
 
 **根因**：我们的标题只来自 M1 抽取的 `title` 条目；金标的标题来自数据绑定，永远存在。M1 漏抽（query 里明明写着"电池温度卡片"）时标题区就只剩图标，`spaceBetween` 又把唯一子节点排到最左（q12 曾因此让图标跑到左上角）。
 
-**修法**：`src/slot_assign.py` 新增 `_ensure_title`，在**骨架路由之后**执行——有标题区但没有 title 条目时，用第一个业务对象名补（`电池`），否则按业务域给中性名（天气/电量/耳机/日程/会议/倒计时/健康/提醒/优惠）。
+**修法**：`src/P3_slot_assign.py` 新增 `_ensure_title`，在**骨架路由之后**执行——有标题区但没有 title 条目时，用第一个业务对象名补（`电池`），否则按业务域给中性名（天气/电量/耳机/日程/会议/倒计时/健康/提醒/优惠）。
 
 **关键坑**：首版放在 P1 归一化里，补标题改变了"信息条数"（title 计入 `n_info`），2 条内容的卡变成 3 条 → 路由改判 S5，**q32 的环卡因此丢掉环**。快照比对立刻暴露（4 张卡骨架变了）。挪到 P3 后骨架零变化，只剩"新增一个标题节点"。
 
@@ -1243,7 +1322,7 @@ T1 主题不交给模型（实验后执行）、T2 P4 拆两半（暂不做）�
 
 ## v3.19 变更记录（2026-10-26：度量层落地）
 
-### 1. 模型客户端开始记成本（`src/llm.py`）
+### 1. 模型客户端开始记成本（`src/M1_extract.py`）
 
 `LLMClient` 增加四项统计：`calls`（成功调用次数）、`attempts`（含重试的请求次数）、`usage`（in/out token）、`usage_missing`。端点不返回 usage 时**不估算**，如实记 None——编出来的 token 数会让成本对比失去意义。`stats_delta()` 取两次快照的差，得到"一次生成用了多少"。
 
@@ -1279,11 +1358,11 @@ T1 主题不交给模型（实验后执行）、T2 P4 拆两半（暂不做）�
 
 ### 2. 代码
 
-- `registry/enums.json`：theme 枚举 9 → 4（blue / purple / warm / dark）
-- `registry/themes.json`：删除 5 套融球主题、顶层 `structural` 几何规格、各主题的 `structural` 标记
-- `src/theme.py`：删除 structural 分支与 tokens 透传
-- `src/compiler.py`：删除 `_wrap_structural` 与 `THEMES` / `STRUCTURAL` 常量
-- `prompts/step1_structure_plan.md`：删除 5 个融球 id 的映射规则
+- `rules/enums.json`：theme 枚举 9 → 4（blue / purple / warm / dark）
+- `rules/themes.json`：删除 5 套融球主题、顶层 `structural` 几何规格、各主题的 `structural` 标记
+- `src/P6_theme.py`：删除 structural 分支与 tokens 透传
+- `src/P7_emit.py`：删除 `_wrap_structural` 与 `THEMES` / `STRUCTURAL` 常量
+- `prompts/content_extract.md`：删除 5 个融球 id 的映射规则
 
 ### 3. 金标与数据集
 
@@ -1313,12 +1392,12 @@ T1 主题不交给模型（实验后执行）、T2 P4 拆两半（暂不做）�
 
 | 编号 | 规定 | 代码落点 |
 |---|---|---|
-| C-01 | 失败卡 = 不合格（记 `generate.failed`；覆盖 0；保真不计入） | `src/measure.py:build_record`、`tools/measure_content.py:main` |
-| C-02 | 覆盖拆 A4a（全量）/ A4b（must 必显子集，未标注 = 未量） | `tools/measure_content.py:check`（`coverage_must`） |
-| C-03 | 空数据卡保真不计入，单独计数 | `tools/measure_content.py:check`（`empty_data`） |
-| C-04 | 合格卡 = 协议合规 ∧ 覆盖 ≥80% ∧ 单节点越界 ≤4px（60/100 两档敏感性） | `tools/build_metrics_report.py:_qualified` |
-| C-05 | 字号两条线：12fp（规范）/ 10fp（金标实测） | `src/measure.py:static_metrics`、`tools/measure_geometry.py:_min_font` |
-| C-06 | 重采样 = 全一致率 + 措辞不同算不一致（严格下界） | `tools/resample_stability.py`（实现本就如此） |
+| C-01 | 失败卡 = 不合格（记 `generate.failed`；覆盖 0；保真不计入） | `src/measure.py:build_record`、`exp/metrics/measure_content.py:main` |
+| C-02 | 覆盖拆 A4a（全量）/ A4b（must 必显子集，未标注 = 未量） | `exp/metrics/measure_content.py:check`（`coverage_must`） |
+| C-03 | 空数据卡保真不计入，单独计数 | `exp/metrics/measure_content.py:check`（`empty_data`） |
+| C-04 | 合格卡 = 协议合规 ∧ 覆盖 ≥80% ∧ 单节点越界 ≤4px（60/100 两档敏感性） | `exp/metrics/build_metrics_report.py:_qualified` |
+| C-05 | 字号两条线：12fp（规范）/ 10fp（金标实测） | `src/measure.py:static_metrics`、`exp/metrics/measure_geometry.py:_min_font` |
+| C-06 | 重采样 = 全一致率 + 措辞不同算不一致（严格下界） | `exp/runners/resample_stability.py`（实现本就如此） |
 
 ### 3. 验证
 
@@ -1399,8 +1478,8 @@ nextgenui/
 
 | 目录 | 原来装了什么 | 现在 |
 |---|---|---|
-| `examples/` | 3 个基准 json + 2 个批次清单 + 1 个 demo 脚本 + 1 个生成物 | **只放可运行示例**（`client_demo.py` + README）；数据 → `fixtures/`；生成物 → `runs/acceptance/` |
-| `fixtures/`（新） | — | 固定输入与基准：`cases` / `gold_pairs` / `content_oracle` / `batch_queries` |
+| `examples/` | 3 个基准 json + 2 个批次清单 + 1 个 demo 脚本 + 1 个生成物 | **只放可运行示例**（`client_demo.py` + README）；数据 → `data/`；生成物 → `runs/acceptance/` |
+| `data/`（新） | — | 固定输入与基准：`cases` / `gold_pairs` / `content_oracle` / `batch_queries` |
 | `viz/` | 2 个生成脚本 + 1 个产物 html | 脚本 → `tools/`；产物 → `runs/viz/`；目录删除 |
 | `docs/external/` | A2UI 协议 / Basic Catalog / 鸿蒙 Form 规范 | → `refs/`（外部依据不是本项目文档） |
 | `logs/` | 2 个日志 + 2 个调试产物 | **只放日志**；调试产物 → `runs/debug/` |
@@ -1415,7 +1494,7 @@ nextgenui/
 
 ### 4. 新增两份 README
 
-`fixtures/README.md` 说明每个文件是什么、谁生成、谁消费；`examples/README.md` 说明这个目录只放可运行示例。
+`data/README.md` 说明每个文件是什么、谁生成、谁消费；`examples/README.md` 说明这个目录只放可运行示例。
 
 ### 5. 验证
 
@@ -1441,11 +1520,11 @@ nextgenui/
 
 ### 4. 数据只有一份
 
-论文侧不复制，靠 `commit hash + MANIFEST 哈希` 两个指针。规则写进根 `README.md`、`paper/README.md`、`data/README.md`。
+论文侧不复制，靠 `commit hash + MANIFEST 哈希` 两个指针。规则写进本节与论文 §16.4，`data/README.md` 只说明这个目录放什么。
 
 ### 5. 验证
 
-九套测试 9/9；62 条快照逐字一致；`gold_dataset check` 49/49 通过；`build_content_oracle` 重建后 `fixtures/content_oracle.json` 哈希不变（1485754e…）；`diff_gold` 正常输出并跳过 3 张下线卡。
+九套测试 9/9；62 条快照逐字一致；`gold_dataset check` 49/49 通过；`build_content_oracle` 重建后 `data/content_oracle.json` 哈希不变（1485754e…）；`diff_gold` 正常输出并跳过 3 张下线卡。
 
 ## v3.26 变更记录（2026-10-27：删除服务层，只留核心）
 
@@ -1481,3 +1560,156 @@ python tools/debug_pipeline.py "query"    # 逐环节 trace + 落盘 runs/debug/
 ### 5. 验证
 
 九套测试 9/9；62 条快照逐字一致；`tools/debug_pipeline.py` 实测跑通（trace + 两份落盘文件正常）。"在线链路仅 1 次模型调用"这一验证目标不变——它由 `generate()` 内部的调用次数保证，与是否包 HTTP 无关。
+
+## v3.27 变更记录（2026-10-31：统一分层术语）
+
+对话与文档里长期混用"数据层 / 内容集合 / 信息层 / 条目层 / 骨架层 / 容量层 / 组件层"等多种叫法，导致同一件事在不同文档里名字不同。本次只在 §7.0 增补"统一术语"小节，不改任何行为：
+
+- **层 = 5**（语义 / 结构 / 样式规格 / 几何 / 外观与输出），按"这一步的数字是常量、查表还是实测"划分；
+- **环节 = 9**（M1、P1~P7、渲染器），是变换步骤；层是跨环节的数据形态，不是步骤的另一套名字；
+- **切面 ≠ 层**：决策切面（模型 / 程序）、部署切面（生成侧 / DSL 契约 / 渲染侧）只在讨论职责归属时使用；
+- **条目**（集合元素，丢弃的对象）与**文本**（条目内字符串，截断的对象）是语义层内部的粒度，不单独立层；
+- 废止叫法收编：数据层 / 内容集合 / 信息层 / 条目层 → 语义层；骨架层 → 结构层；容量层 → 几何层；组件层 / DSL 层 / 发射层 → 外观与输出层。
+
+## v3.28 变更记录（2026-11-12：目录与命名对论文对齐）
+
+**触发**：本项目全部为论文服务，但代码结构是按工程习惯长的，评审看不出来"这段代码对应论文哪一节"。本次按"评审视角"重组，行为零变化。
+
+### 1. 两区分离（第 13 节结构纪律的第 1、2 条）
+
+- `src/` = 产品区（第四档本体），`exp/` = 实验区（另三档 + 跑批 + 度量 + 人评），只单向依赖；
+- 新增 `tests/test_architecture.py` 八条检查：产品区不 import 实验区、测试不 import 实验区、网络调用只出现在 `M1_extract.py`、共享提示词片段存在、条件表四步齐全、L4 指向产品路径、L3 不加调用、补救组同位置；
+- **剥离演练通过**：隐藏 `exp/` 后 9 套功能测试全绿。演练中发现的真问题：内容度量 `check` 原本住在实验区，导致测试绑定实验区——已搬进 `src/measure.py`（改名 `check_content`），因为"尺子"属于产品区。
+
+### 2. 命名与归并（第 13.1 节）
+
+| 改动 | 原因 |
+|---|---|
+| `registry/` → `rules/` | 这些表全部由 49 张金标反推，"注册表"说不清来源，"规则库"才对得上论文的数据披露 |
+| `fixtures/` → 并入 `data/` | 数据只留一个目录（`data/` 放数据、`tests/` 放代码）；查询清单改名 `queries.json`，历史版本进 `data/legacy/` |
+| 两个 `prompts/` → 一个 | 产品的 M1 提示词就是四档共用的 `content_extract`；分两个目录等于暗示存在两套实验条件 |
+| `src/*.py` 加环节号 | `llm` → `M1_extract`，`normalize` → `P1_normalize`，……，`compiler` → `P7_emit`；`forms`/`metrics` 属基础设施，改名 `content_forms`/`text_metrics` 不带号 |
+| 论文 §17.6 增"评审导航表" | 评审按论文章节号直接跳文件；根 README 只留指路 |
+
+### 3. 新增结构纪律第 3 条
+
+**目录与命名必须持续与论文对应**（细则见 13.1）：新增目录/文件先回答"对应论文哪一节 / 哪个环节"；环节相关文件带号；改名必须同步两份正本（本文第 13 节、论文 §17）；名字不承载版本。
+
+### 4. 验证
+
+10 套测试全绿，行为数字与重组前完全一致（主用例 9/9、真实 query fallback 17 条不变、骨架分布不变）；`paper/release/build.py --check` 161 文件齐全；全库旧名（`registry/`、`fixtures/`、`src/llm.py` 等）残留检查为空。
+
+## v3.29 变更记录（2026-11-12：文档分三层，README 收薄）
+
+**触发**：项目本该只有两份方案文档（设计正本、论文正本），实际却出现了"第三份正本"——根 `README.md` 里同时维护目录树、纪律条文和"论文 ↔ 代码"对照表；`paper/README.md` 更是长期过期（写着"实验脚本还在 `tools/`"、"`paper/experiments` 仍为空"，而脚本早已迁进 `exp/`）。
+
+**这不是写错，是放错地方**：同一份事实存在三处，必然有一处先腐坏，而腐坏的那处往往是没有维护责任的门面。
+
+### 1. 文档固定为三层
+
+| 层 | 文件 | 允许写什么 |
+|---|---|---|
+| 正本 | 本文、论文、UX 规范 | 全部事实与规则 |
+| 门面 | 根 / `cardgen-proto/` / `paper/` 三个 README | 定位、最短跑通路径、指路表 |
+| 目录说明 | `exp/`、`rules/`、`prompts/`、`data/` 等目录 README | 这个目录放什么、不放什么（一屏内） |
+
+### 2. README 收薄
+
+- 根 `README.md` 110 → 56 行：删掉完整目录树（改 8 行顶层概览 + 指向 §13）、删掉"论文 ↔ 代码"对照表（迁进论文 §17.6 作为评审导航表）、删掉四条纪律条文（只留三条门面自身要守的约定）；
+- `cardgen-proto/README.md` 115 → 66 行：删掉逐目录树（指向 §13）、"接真实模型"长文压缩为最简示例（细则指向 §13.2）；
+- `paper/README.md` 45 → 31 行：删掉过期的 `experiments/` 结构与迁移说明，改为目录说明 + 正本指路。
+
+### 3. 同步规则随之简化
+
+"改名必须同步三处"改为"**同步两份正本**：本文 §13（目录树 + §13.1）与论文 §17（含 §17.6 评审导航表）"。门面不写事实，因此不在同步清单里——这也是收薄的收益：要改的地方少了。
+
+### 4. 判据
+
+**一条信息改一次要改多个文件，它就放错了地方。** 正本里只出现一次，其他地方用链接。
+
+## v3.30 变更记录（2026-11-12：目录说明按区合并）
+
+**触发**：`exp/` 下按目录层级放了 5 份说明（exp / steps / runners / metrics / human_eval），每份都只有一份局部规则，读者要连开 5 个文件才能拼出全貌。
+
+**没有全删，因为每一份都含正本里没有的东西**：steps 的四个步骤接口契约（字段级）、runners 的"调用次数归跑批"、metrics 的"基准独立于被测系统 + A4a/A4b 成对报"、human_eval 的四条纪律——这些写进正本会让正本臃肿，删掉会让下一个改代码的人踩坑。
+
+**做法**：合并成一份 `exp/README.md`（80 行：边界 / 目录职责 / 四步接口契约 / 实现清单 / 跑批与度量的纪律 / 人评纪律 / 剥离验证），删掉 4 份子目录说明。粒度判据写进论文 §19.7：**按"读者一次要掌握的信息量"定，不按目录层级定**。
+
+**文档总数回到 11 份**：正本 3（设计正本 / 论文 / UX 规范）+ 门面 3（根 / 原型 / paper）+ 目录说明 5（`exp/` 边界与接口、`rules/` 改行为先改表与规则来源、`data/` 唯一数据与基准独立、`prompts/` 共享片段只有一份、`paper/data/` 没有训练集）。
+
+**为什么不连门面一起删**（此判断在 v3.31 修订）：根 `README.md` 是仓库首页，也是复现包与双盲版本的入口；当时 `paper/release/build.py` 还会打包 `cardgen-proto/README.md`，包根另生成一份三命令说明。
+
+**顺带**：`paper/data/README.md` 保留（24 行）——它守着一个具体错误：有人往 `data/` 里加 `train/` `val/` `test/` 就等于声称训练过模型。这句提醒放在门口比放在论文第 16 节有效。
+
+## v3.31 变更记录（2026-11-12：只留正本，其余文档删除）
+
+**触发**：用户要求迭代期只保留最必要的东西——文件与目录清晰唯一，减少理解负担；发布文档等真正发表、发布时再补（补起来很快）。
+
+**决策**：不是"再削薄一层"，而是**取消整个衍生文档层**。
+
+### 1. 删除的 7 份
+
+| 文件 | 内容去了哪 |
+|---|---|
+| `cardgen-proto/README.md` | 命令进根 README 与本文 §13 运行方式；配置细则本文 §13.2 已有 |
+| `paper/README.md` | 论文与原型为什么平行 → 论文 §17.1；数据指针 → §16.4 |
+| `exp/README.md` | 四步接口契约与实现清单 → 论文 §17.2；跑批产物规范 → §17.4；剥离验证 → §17.4 已有 |
+| `rules/README.md` | "新增一种排法四步"本文 §7 已有；"路径前缀只在 paths.py" 本文 §6 已有；"规则由金标反推" 论文 §16.3 已有 |
+| `prompts/README.md` | "共享片段文件级唯一""差异必须显式" 论文 §17.3 已有 |
+| `data/README.md` | 每个文件的来源与去向 → 本文 §13.3（新增）；基准独立 → §11 已有 |
+| `paper/data/README.md` | "没有训练集"→ 论文 §16.1（标题就是这个问题）；冻结规则 → §16.2 |
+
+### 2. 根 README 收为 30 行
+
+只留：一句话定位、三份正本指针、四条最常用命令、三条约定（只留正本 / 产物不入库 / 金标只有一份）。它不再是"第三份正本"，也不再维护目录树与纪律条文。
+
+### 3. 连带修改
+
+- `paper/release/build.py` 去掉 `cardgen-proto/README.md` 的打包项（包根那份三命令说明仍在构建时生成，发布时自然出现）；
+- `exp/conditions.py` 的接口契约指向从 `exp/README.md` 改为论文 §17.2；
+- 论文 §19.7 由"文档分三层"改写为**「文档只留正本」**：迭代期 = 三份正本 + 一个根 README；目录说明、使用手册、贡献指南一律不建，发布前从正本抽取一次性生成。
+
+### 4. 迭代期的文档清单（最终态）
+
+```
+README.md（30 行，只做入口）
+cardgen-proto/docs/AI卡片生成架构方案-v3.md     设计正本
+paper/方案/论文实验方案.md                      论文正本
+cardgen-proto/ux-spec/UX-SPEC.md + FEWSHOT×2 + asset-library   界面规范与素材
+```
+
+提示词（`prompts/*.md`）是内容不是文档；`refs/` 是外部依据；两者不计入。
+
+### 5. 判据
+
+**一份文档如果只是把别处的话重说一遍，就不该存在**；**一条信息改一次要改多个文件，就是放错了地方**。发布文档没有技术难度，随时能生成；提前维护等于提前腐坏。
+
+## v3.32 变更记录（2026-11-13：实验阶梯改为五阶段六档）
+
+**触发**：原阶梯是四档（L1 全包 / L2 程序算数 / L3 模板结构 / L4 规则结构）。核对后发现 L1→L2 一步同时改了两件事——"是否分阶段"和"几何归谁"——说不清功劳归谁。另外"主题"与"发射"两个阶段一直没被单独测过。
+
+**新结构**：五个阶段（内容 / 结构 / 几何 / 主题 / 发射），从末端往前逐个移交，模型做前缀、程序做后缀。
+
+| 代号 | 内容 | 结构 | 几何 | 主题 | 发射 | 调用 |
+|---|---|---|---|---|---|---|
+| L1 | 一次全包（五段合一） | | | | | 1 |
+| L2 | 模型 | 模型自由写 | 模型 | 模型 | 模型 | 5 |
+| L3 | 模型 | 模型自由写 | 模型 | 模型 | **程序** | 4 |
+| L4 | 模型 | 模型自由写 | 模型 | **程序** | 程序 | 3 |
+| L5 | 模型 | 模型自由写 | **程序** | 程序 | 程序 | 2 |
+| L5b | 模型 | 模型 16 选 1（补充） | 程序 | 程序 | 程序 | 2 |
+| L6 | 模型 | **程序** | 程序 | 程序 | 程序 | 1 |
+
+- 原 L1 → 新 L1；原 L2 → 新 L5；原 L3 → 新 L5b；原 L4 → 新 L6。新增 L2/L3/L4。
+- **每一档相对上一档只移交一个阶段**，相邻两档的差异永远只有一个因素（L1→L2 例外：它测"分阶段"本身）。
+- L5b 是补充实验（结构从自由写改为从 16 个骨架里挑），不进主表。
+
+**代码改动**：
+- `exp/conditions.py`：五阶段 `STEPS`；新增 `ONE_SHOT` / `MAIN_CONDITIONS` / `SUPPLEMENT` / `model_calls()`；实现命名统一为 `model_*` 与 `program_*`；
+- `exp/steps/theme/` 新建；五个阶段目录的 `__init__.py` 各写明实现清单与状态；
+- 检查项：`test_l6_is_the_product_path`、`test_ladder_hands_over_one_stage_at_a_time`（程序阶段数 0→1→2→3→4）、`test_two_ends_cost_one_call`（L1/L6 各 1 次、L2 五次）、`test_l5b_only_changes_structure`；
+- `run_condition.py` 的可跑条件切到 L6 / L6-NR。
+
+**为什么只走"逐级移交"而不枚举 2⁵ = 32 种组合**：见论文 §2——这条线对应"越靠后越适合程序"的可检验假设，每档只动一个阶段测边际贡献；非前缀组合写进限制。
+
+**验证**：13 条结构检查通过；9 套回归全绿；附录表由 `appendix_table()` 生成（含调用次数列）。

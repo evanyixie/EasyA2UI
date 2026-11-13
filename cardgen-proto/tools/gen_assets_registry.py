@@ -1,4 +1,4 @@
-"""从本地 asset-library.md 解析生成 registry/assets.json。
+"""从本地 asset-library.md 解析生成 rules/assets.json。
 
 源文件：`ux-spec/asset-library.md`（设计资产清单规范，随项目维护，不依赖外部项目）。
 src 一律只存**文件名**（前缀由 src/paths.py 统一拼，不在此处决定目录）。
@@ -11,7 +11,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent          # cardgen-proto/
 MD = HERE / "ux-spec" / "asset-library.md"
-OUT = HERE / "registry" / "assets.json"
+OUT = HERE / "rules" / "assets.json"
 MEDIA_DIR = Path(r"F:\playground\workbuddy\nextgenui\cardgen-proto\resources\media")
 
 KEEP_COLOR_MARKS = ("保留原色", "不可染色", "禁止染色", "多色", "渐变", "品牌")

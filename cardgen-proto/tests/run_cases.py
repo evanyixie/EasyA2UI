@@ -1,4 +1,4 @@
-"""批量跑 fixtures/cases.json，输出原型验证报告。
+"""批量跑 data/cases.json，输出原型验证报告。
 
 指标（对应方案 §10）：
   主用例：意图正确 N/N、骨架路由正确 N/N、零 fallback N/N、A2UI 协议合规 N/N
@@ -14,8 +14,8 @@ sys.path.insert(0, str(ROOT))
 sys.stdout.reconfigure(encoding="utf-8")  # Windows GBK 控制台也能正常显示中文
 
 from src.pipeline import generate
-from src.llm import MockLLM
-from src.assemble import est_width
+from src.M1_extract import MockLLM
+from src.P5_assemble import est_width
 from src.validate import validate_a2ui
 
 HEADER_SPEC = 12     # header_title 规格 fontSize
@@ -43,7 +43,7 @@ def count_label_rows(full_a2ui: str) -> int:
 
 def main():
     llm = MockLLM()
-    cases = json.loads((ROOT / "fixtures" / "cases.json").read_text(encoding="utf-8"))
+    cases = json.loads((ROOT / "data" / "cases.json").read_text(encoding="utf-8"))
     main_cases = [c for c in cases if not c.get("capacity_check")]
     cap_cases = [c for c in cases if c.get("capacity_check")]
 

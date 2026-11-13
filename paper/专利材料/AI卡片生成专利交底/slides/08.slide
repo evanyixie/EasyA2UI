@@ -1,0 +1,99 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>技术点取证：对竞品的侵权判定路径</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>08 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'row', gap: 32 }}>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 10 }}>
+        <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>黑盒行为指纹（每条注明针对的保护点）</Text>
+      </Box>
+
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', gap: 14, alignItems: 'center', borderBottom: '1px solid #E6E6E6' }}>
+          <Text style={{ width: 26, fontSize: 18, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>1</Text>
+          <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>针对 01</Text></Box>
+              <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>单调用指纹</Text>
+            </Box>
+            <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>分析响应时延与输出长度分布：语义抽取型输出短而结构化；全包生成型输出长且含样式细节；多步模型参与（意图获取 + 组件分解等）呈多段推理时延叠加——多次采样可区分。</Text>
+          </Box>
+        </Box>
+        <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', gap: 14, alignItems: 'center', borderBottom: '1px solid #E6E6E6' }}>
+          <Text style={{ width: 26, fontSize: 18, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>2</Text>
+          <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>针对 01 + 02</Text></Box>
+              <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>确定性重放</Text>
+            </Box>
+            <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>同一输入重放 N 次：几何由程序求解 → <span style={{ color: '#8B1E24', fontWeight: 'bold' }}>逐字节一致</span>；几何由模型生成 → 必然抖动。这是最硬的单点证据。</Text>
+          </Box>
+        </Box>
+        <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', gap: 14, alignItems: 'center', borderBottom: '1px solid #E6E6E6' }}>
+          <Text style={{ width: 26, fontSize: 18, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>3</Text>
+          <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>针对 03 + 04</Text></Box>
+              <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>容量边界与分级裁撤探测</Text>
+            </Box>
+            <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>构造超长文案与「先短后长」刷新序列：是否出现确定性降档（30→24→20fp）与规律截断，刷新后是否沿固化梯级适配；多条目超载时丢弃是否优先牺牲可弃条目（点名信息始终完整）——分级裁撤是本方案独有指纹。</Text>
+          </Box>
+        </Box>
+        <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', gap: 14, alignItems: 'center', borderBottom: '1px solid #E6E6E6' }}>
+          <Text style={{ width: 26, fontSize: 18, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>4</Text>
+          <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>针对 02</Text></Box>
+              <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>骨架收敛探测</Text>
+            </Box>
+            <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>批量变化条数与对象数：输出结构若收敛到有限骨架集合（而非连续变化），说明存在模板库穷举路由；重点区分「失配有兜底」与「穷举无失配」。</Text>
+          </Box>
+        </Box>
+        <Box style={{ flex: 1, display: 'flex', flexDirection: 'row', gap: 14, alignItems: 'center' }}>
+          <Text style={{ width: 26, fontSize: 18, fontWeight: 'bold', color: '#8B1E24', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>5</Text>
+          <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Box style={{ background: '#8B1E24', padding: '1px 7px' }}><Text style={{ fontSize: 10, color: '#FFFFFF', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>针对 03 + 05</Text></Box>
+              <Text style={{ fontSize: 14.5, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>协议压力测试</Text>
+            </Box>
+            <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.45 }}>对抗性输入（超长 / 空 / 非法字符 / 多对象）：是否保持零违规零越界——构造性合规与修补式合规的失败分布截然不同。</Text>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+
+    <Box style={{ width: 380, display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <Box style={{ background: '#F7F7F7', padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: 6 }}>
+        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>白盒渠道</Text>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          招聘 JD（语义抽取 / 布局求解 / 约束求解岗位描述，<span style={{ color: '#8B1E24' }}>→ 01/03</span>）；开源仓库与 SDK 代码——排法表与装配逻辑分离的结构（<span style={{ color: '#8B1E24' }}>→ 06</span>）、优先级字段名（<span style={{ color: '#8B1E24' }}>→ 04</span>）；技术博客、论文与发布会披露的实现细节（<span style={{ color: '#8B1E24' }}>→ 02/05</span>）。
+        </Text>
+      </Box>
+
+      <Box style={{ background: '#F7F7F7', padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: 6 }}>
+        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>证据固定</Text>
+        <Text style={{ fontSize: 12, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          公证购买或公证调用（时间戳认证）；API 请求与响应全量留存；竞品版本号与行为变更时间线归档。
+        </Text>
+      </Box>
+
+      <Box style={{ marginTop: 'auto', background: '#F7F7F7', borderLeft: '3px solid #8B1E24', padding: '13px 16px' }}>
+        <Text style={{ fontSize: 12.5, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.55 }}>
+          指纹组合的独特性：单一特征可能被独立实现，<span style={{ color: '#8B1E24', fontWeight: 'bold' }}>覆盖保护点 01–05 的组合命中</span>（尤其指纹 2 + 3 + 5）难以偶然巧合，可作侵权比对的技术事实基础。
+        </Text>
+      </Box>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>8 / 9</Text>
+  </Box>
+</Slide>

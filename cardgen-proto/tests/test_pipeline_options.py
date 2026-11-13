@@ -1,4 +1,4 @@
-"""运行选项与“可关修正”的行为守卫。
+"""运行选项与“可关修正”的行为检查。
 
 三类断言：
   1. 选项本身：默认全开、环境变量可关、看不懂的值不静默反转；
@@ -14,8 +14,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.stdout.reconfigure(encoding="utf-8")
 
-from src import normalize
-from src.llm import MockLLM
+from src import P1_normalize
+from src.M1_extract import MockLLM
 from src.pipeline import generate
 from src.pipeline_options import PipelineOptions, load_options
 
@@ -30,7 +30,7 @@ def _plan(**kw):
 def _norm(plan, **overrides):
     """跑一次归一化。overrides 为空 = 默认（全开）；显式构造，避免受环境变量影响。"""
     opts = PipelineOptions(**overrides) if overrides else None
-    return normalize.normalize_plan(json.loads(json.dumps(plan)), opts)
+    return P1_normalize.normalize_plan(json.loads(json.dumps(plan)), opts)
 
 
 def test_defaults_on():

@@ -1,0 +1,90 @@
+<Slide style={{ width: '1280px', height: '720px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', padding: '0 64px' }}>
+
+  <Box style={{ height: 110, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingTop: 24 }}>
+    <Box>
+      <Box style={{ width: 28, height: 6, background: '#8B1E24', marginBottom: 10 }} />
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>L1 与 L4 逐项对比</Text>
+    </Box>
+    <Text style={{ fontSize: 14, color: '#8C8C8C', paddingBottom: 6, fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>04 / 09</Text>
+  </Box>
+
+  <Box style={{ height: 545, display: 'flex', flexDirection: 'row', gap: 36 }}>
+
+    <Box style={{ width: 296, display: 'flex', flexDirection: 'column', paddingTop: 8 }}>
+      <Text style={{ fontSize: 52, fontWeight: 'bold', color: '#1A1A1A', fontFamily: "'Helvetica Neue',Arial,sans-serif", lineHeight: 1.05 }}>
+        L1 <span style={{ color: '#8B1E24' }}>→</span> L4
+      </Text>
+      <Text style={{ fontSize: 14, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.65, marginTop: 18 }}>
+        <span style={{ fontWeight: 'bold', color: '#1A1A1A' }}>L1</span>：现有全包方案——大模型直接生成完整组件树与几何参数，作为基线。
+      </Text>
+      <Text style={{ fontSize: 14, color: '#595959', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.65, marginTop: 12 }}>
+        <span style={{ fontWeight: 'bold', color: '#8B1E24' }}>L4</span>：本发明——模型只做语义抽取，几何与结构全部交给确定性程序求解。
+      </Text>
+      <Box style={{ marginTop: 'auto', background: '#F7F7F7', padding: '14px 16px' }}>
+        <Text style={{ fontSize: 13, color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", lineHeight: 1.6 }}>
+          两者差距不在模型强弱，而在<span style={{ fontWeight: 'bold' }}>决策权放在信息可得的位置</span>——这正是权利要求的边界。
+        </Text>
+      </Box>
+    </Box>
+
+    <Box style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <Table
+        style={{ width: '100%', height: 448 }}
+        defaultTextStyle={{ fontSize: 13, textAlign: 'left', color: '#1A1A1A', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}
+        defaultCellStyle={{
+          border: {
+            left: { width: 1, color: '#E6E6E6' },
+            right: { width: 1, color: '#E6E6E6' },
+            top: { width: 1, color: '#E6E6E6' },
+            bottom: { width: 1, color: '#E6E6E6' },
+          },
+        }}
+        cells={[
+          [
+            { text: '对比维度', textStyle: { bold: true, color: '#1A1A1A', fontSize: 14 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 8, bottom: 8, left: 10, right: 10 } } },
+            { text: 'L1 · 全包生成（现有技术）', textStyle: { bold: true, color: '#1A1A1A', fontSize: 14 }, cellStyle: { background: { color: '#E6E6E6' }, padding: { top: 8, bottom: 8, left: 10, right: 10 } } },
+            { text: 'L4 · 语义-程序解耦（本发明）', textStyle: { bold: true, color: '#FFFFFF', fontSize: 14 }, cellStyle: { background: { color: '#8B1E24' }, padding: { top: 8, bottom: 8, left: 10, right: 10 } } },
+          ],
+          [
+            { text: '模型职责', textStyle: { bold: true }, cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '生成整棵组件树：结构、坐标、字号、颜色', cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '仅语义抽取：领域 / 对象 / 字段 / 动作', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+          ],
+          [
+            { text: '几何来源', textStyle: { bold: true }, cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '模型猜测宽度与字号，无法感知真实渲染', cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '程序按真实文本测量求解宽度预算', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+          ],
+          [
+            { text: '协议合规', textStyle: { bold: true }, cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '依赖事后校验与多轮模型修复', cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '构造保证：出口协议违规为 0', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+          ],
+          [
+            { text: '输出一致性', textStyle: { bold: true }, cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '同输入多次生成结果不一致', cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '同一输入逐字节可复现', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+          ],
+          [
+            { text: '模型调用', textStyle: { bold: true }, cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '生成 + 修复多轮，次数不可预期', cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '恰好 1 次，成本与故障面恒定', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+          ],
+          [
+            { text: '失败模式', textStyle: { bold: true }, cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '越界 / 裁切 / 白名单外组件，随机出现', cellStyle: { padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+            { text: '容量降级（降字号 / 截断），可预期可解释', cellStyle: { background: { color: '#F7F7F7' }, padding: { top: 7, bottom: 7, left: 10, right: 10 } } },
+          ],
+        ]}
+      />
+      <Text style={{ fontSize: 13, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif", marginTop: 14, lineHeight: 1.5 }}>
+        实测注：49 张真实业务卡片全量批跑，L4 路线协议违规 0、越界 0、尺寸匹配 49/49、端到端平均 3.8 秒。
+      </Text>
+    </Box>
+  </Box>
+
+  <Box style={{ height: 65, borderTop: '1px solid #E6E6E6', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 14 }}>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Source Han Sans SC','Microsoft YaHei',sans-serif" }}>AI 卡片生成专利交底 · 内部资料</Text>
+    <Text style={{ fontSize: 12, color: '#8C8C8C', fontFamily: "'Helvetica Neue',Arial,sans-serif" }}>4 / 9</Text>
+  </Box>
+</Slide>

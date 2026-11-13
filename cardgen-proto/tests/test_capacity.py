@@ -17,27 +17,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from src import assemble, capacity, compiler, component_select, normalize, slot_assign  # noqa: E402
-from src import theme as theme_step  # noqa: E402
+from src import (P1_normalize, P3_slot_assign, P4_component_roles,  # noqa: E402
+                 P5_assemble, P5_capacity, P6_theme, P7_emit)
 from tests.run_cases import check_full_a2ui  # noqa: E402
 
-REG = json.loads((ROOT / "registry/skeletons.json").read_text(encoding="utf-8"))["skeletons"]
+REG = json.loads((ROOT / "rules/skeletons.json").read_text(encoding="utf-8"))["skeletons"]
 
 
 def build(plan_raw: dict, sid: str):
     """强制指定骨架，跑 P1~P7，返回 (ir, components, full_a2ui)。"""
-    plan = normalize.normalize_plan(plan_raw)
+    plan = P1_normalize.normalize_plan(plan_raw)
     skel = dict(REG[sid])
     skel["sid"], skel["resolved_size"] = sid, skel["size"]
-    assign = slot_assign.assign_regions(plan, skel)
+    assign = P3_slot_assign.assign_regions(plan, skel)
     slot_of = {}
     for slot, f in assign["fills"].items():
         for r in f["info"] + f["action"]:
             slot_of[r] = slot
-    roles = component_select.select_roles(plan["entries"], slot_of=slot_of)
-    ir = assemble.assemble_ir(plan, skel, assign, roles, plan.get("intent"))
-    theme_step.apply_theme(ir, m1_theme=None)
-    full = compiler.compile_a2ui_full(ir)
+    roles = P4_component_roles.select_roles(plan["entries"], slot_of=slot_of)
+    ir = P5_assemble.assemble_ir(plan, skel, assign, roles, plan.get("intent"))
+    P6_theme.apply_theme(ir, m1_theme=None)
+    full = P7_emit.compile_a2ui_full(ir)
     comps = json.loads(full.splitlines()[1])["updateComponents"]["components"]
     return ir, comps, full
 
@@ -104,7 +104,7 @@ case("T1 保原形：背板两行字号 16/12",
 case("T1 保原形：协议合规", not check_full_a2ui(full2, ir2["surface_id"], "2x2"))
 
 # ---------------- 用例 3：合并候选（机制级单测 + 背板 ` | ` 行合并集成） ----------------
-_pick = capacity._fit_merged(
+_pick = P5_capacity._fit_merged(
     [{"ref": 1, "role": "zone_value_line", "type": "stat", "copy": "68%",
       "keep": "must", "base_size": 14, "order": 0, "min_size": 12},
      {"ref": 2, "role": "zone_aux_line", "type": "subtitle", "copy": "充电中",

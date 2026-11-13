@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from src.measure import build_record, extract_text, fingerprint, static_metrics  # noqa: E402
-from tools.measure_content import check                                        # noqa: E402
+from src.measure import (build_record, check_content as check,  # noqa: E402
+                         extract_text, fingerprint, static_metrics)
 
 
 def _card(texts, fonts=None):
@@ -58,7 +58,7 @@ def test_build_record_fields():
               "meta": {"failed": False, "violations": [], "violation_codes": {},
                        "fallback_log": [], "timing": {"total_ms": 5},
                        "cost": {"calls": 1}, "options": {}}}
-    rec = build_record("q01", "L4", "看天气", result)
+    rec = build_record("q01", "L6", "看天气", result)
     assert rec["clean"] is True and rec["skeleton"] == "S2-info-pair-action"
     assert rec["static"]["min_font"] == 12
     assert rec["layout"] is None and rec["content"] is None

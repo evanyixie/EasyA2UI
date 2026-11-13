@@ -2,7 +2,7 @@
 """批量生成测试：读本地测试输入清单，循环调用真实模型，
 产出可依次渲染的 A2UI 产物文件与效果报告。
 
-测试输入清单 `fixtures/batch_queries.json` 是本工具的唯一输入源，
+测试输入清单 `data/queries.json` 是本工具的唯一输入源，
 不依赖任何外部项目。清单由 `tools/gold_dataset.py` 从真实人工校验数据
 （CreateMyCard 的 q1~q52 输入输出对）生成，**不要再手工塞模型自编的 query**：
     [{"tag": "q01", "query": "帮我做个卡片，看杭州市西湖区现在是什么天气…",
@@ -15,7 +15,7 @@
     python tools/batch_generate.py --tag-substr 2x4   # 只跑 tag 含 2x4 的
 
 产物（runs/batch/）：
-    batch_queries.json   查询清单（tag + query + 来源），手工维护，批跑只读它
+    queries.json         查询清单（tag + query + 来源），手工维护，批跑只读它
     batch_outputs.md     每条 query 的原生 A2UI 三行（代码块，可依次复制渲染）
     batch_report.json    汇总报告（骨架/尺寸/主题/fallback/耗时/错误）
     runs/<时间戳>/       本次执行的 DSL 目录：每个 query 一个 .jsonl 文件
@@ -33,19 +33,19 @@ ROOT = Path(__file__).resolve().parent.parent          # cardgen-proto/
 sys.path.insert(0, str(ROOT))
 sys.stdout.reconfigure(encoding="utf-8")
 
-from src.llm import build_llm, config_ready, load_llm_config   # noqa: E402
+from src.M1_extract import build_llm, config_ready, load_llm_config   # noqa: E402
 from src.pipeline import generate                              # noqa: E402
 
-BATCH_DIR = ROOT / "fixtures"                  # 输入清单（入库）
+BATCH_DIR = ROOT / "data"                  # 输入清单（入库）
 RUNS_DIR = ROOT / "runs" / "batch"             # 产物（不入库）
-QUERIES_FILE = BATCH_DIR / "batch_queries.json"
+QUERIES_FILE = BATCH_DIR / "queries.json"
 
 
 def load_queries() -> list:
     """读本地测试输入清单。
 
     清单是本工具的唯一输入源——不再从 CreateMyCard 抽取，因此不依赖外部项目。
-    增删测试输入直接编辑 fixtures/batch_queries.json。
+    增删测试输入直接编辑 data/queries.json。
     """
     if not QUERIES_FILE.exists():
         print(f"测试输入清单不存在：{QUERIES_FILE}\n"
