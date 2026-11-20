@@ -19,7 +19,12 @@ sys.path.insert(0, str(ROOT))
 
 from src import (P1_normalize, P3_slot_assign, P4_component_roles,  # noqa: E402
                  P5_assemble, P5_capacity, P6_theme, P7_emit)
-from tests.run_cases import check_full_a2ui  # noqa: E402
+from src.validate import validate_a2ui  # noqa: E402
+
+
+def check_full_a2ui(text, surface_id, size="2x2"):
+    """协议合规检查：直接调 src/validate.py，规则唯一事实源在那里。"""
+    return [f"{v.code}: {v.detail}" for v in validate_a2ui(text, surface_id, size)]
 
 REG = json.loads((ROOT / "rules/skeletons.json").read_text(encoding="utf-8"))["skeletons"]
 
