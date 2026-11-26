@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import shutil
+import subprocess
 import sys
 import tempfile
 import zipfile
@@ -44,10 +45,20 @@ INCLUDE = [
 
 EXCLUDE_DIRS = {"__pycache__", "runs", "logs", ".cache", ".slidep", "专利材料"}
 EXCLUDE_FILES = {"llm.json", ".gitkeep"}
+STUDIES = Path("cardgen-proto/exp/studies")
+
+
+def study_release_files(repo: Path) -> set[Path]:
+    """实验目录也能生成盲卷和原件；发布包只读取 Git 登记的文件。"""
+    if not (repo / STUDIES).is_dir():
+        return set()
+    raw = subprocess.check_output(["git", "-C", str(repo), "ls-files", "-z", "--", STUDIES.as_posix()])
+    return {repo / name.decode("utf-8") for name in raw.split(b"\0") if name}
 
 
 def collect() -> list[tuple[Path, str]]:
     pairs: list[tuple[Path, str]] = []
+    published = study_release_files(REPO)
     for src_rel, dst_rel in INCLUDE:
         src = REPO / src_rel
         if not src.exists():
@@ -59,6 +70,8 @@ def collect() -> list[tuple[Path, str]]:
             if p.is_dir() or any(part in EXCLUDE_DIRS for part in p.parts):
                 continue
             if p.name in EXCLUDE_FILES:
+                continue
+            if p.is_relative_to(REPO / STUDIES) and (p not in published or p.is_symlink()):
                 continue
             pairs.append((p, str(Path(dst_rel) / p.relative_to(src))))
     return pairs

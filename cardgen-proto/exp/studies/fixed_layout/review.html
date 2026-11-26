@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>卡片独立评审</title>
+  <style>
+    :root{color-scheme:light;--paper:#fff;--ink:#202d39;--muted:#536370;--line:#c8d3db;--accent:#174d68}
+    *{box-sizing:border-box}body{margin:0 auto;padding:1.3rem;max-width:61rem;font:16px/1.55 system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+    h1{font-size:1.7rem}h2{font-size:1.27rem}h3{font-size:1.08rem}h1,h2,h3,p{margin:.45rem 0}
+    nav,.tools,.tabs,.row{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}nav{justify-content:space-between}
+    button,select,textarea{font:inherit;color:inherit}button,select,textarea{border:1px solid var(--line);border-radius:.4rem;background:white}
+    button,select{padding:.35rem .65rem}button:enabled{cursor:pointer}button:disabled{opacity:.5}
+    :focus-visible{outline:3px solid #257493;outline-offset:2px}.tabs button[aria-pressed="true"]{background:var(--accent);color:white}
+    .primary{background:var(--accent);color:white}.section{margin:1.2rem 0;padding:1rem 0;border-top:1px solid var(--line)}
+    .muted,small{color:var(--muted)}#query{font-weight:600;white-space:pre-wrap;overflow-wrap:anywhere}#context{white-space:pre-wrap}
+    .card{display:grid;grid-template-columns:minmax(12rem,1fr) minmax(17rem,1.05fr);gap:1.5rem;align-items:start;margin-top:.8rem}
+    .picture{margin:0;display:block;max-width:100%;width:auto;max-height:24rem;height:auto;object-fit:contain}
+    .image-button{display:block;border:0;padding:0;background:transparent;cursor:zoom-in!important;max-width:100%}
+    .criteria{display:grid;gap:.45rem} .criteria label{display:flex;align-items:center;justify-content:space-between;gap:.4rem}
+    label span{flex:1}textarea{width:100%;min-height:5rem;padding:.55rem;resize:vertical}.compared{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    figure{margin:0}figcaption{font-weight:600;margin:.5rem 0}dialog{max-height:96vh;max-width:96vw;border:0;padding:1rem}
+    dialog img{max-width:91vw;max-height:83vh;object-fit:contain}dialog::backdrop{background:#15222ec7}
+    @media(max-width:660px){.card{grid-template-columns:1fr}.picture{max-height:19rem}.compared{gap:.45rem}}
+    [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>卡片独立评审</h1>
+    <p>请按冻结内容核对可见事实、主次、动作入口及实体归属，同时判断布局和可读性。同题两张均合格后，可并列查看并记录偏好。实际点击和数据刷新需另行验证。</p>
+    <p><label>评审者 <input id="reviewer" autocomplete="off"></label> <label><input type="checkbox" id="independent"> 我独立完成原判</label></p><p class="muted" id="storage" aria-live="polite"></p>
+  </header>
+  <main>
+    <nav class="section" aria-label="题目导航">
+      <div class="tools"><button id="prev">上一题</button><label>题目 <select id="jump"></select></label><button id="next">下一题</button></div>
+      <button class="primary" id="download">导出当前评审</button>
+    </nav>
+    <p id="tally" class="muted" aria-live="polite"></p><section aria-label="固定显示合同">
+      <h2>固定显示合同</h2><p id="query"></p><p id="context" class="muted"></p>
+    </section>
+    <section class="section">
+      <h2>逐张判定</h2>
+      <div class="tabs"><button id="tabA" aria-pressed="true">卡片 A</button><button id="tabB" aria-pressed="false">卡片 B</button></div>
+      <div id="assessment"></div>
+    </section>
+    <section class="section">
+      <h2>两张卡的偏好</h2>
+      <button id="compare">并列查看并填写偏好</button>
+      <p class="muted" id="eligibility" aria-live="polite"></p>
+      <div id="comparison" hidden>
+        <div class="compared" id="pictures"></div>
+        <div class="row"><label for="preference">综合偏好</label><select id="preference"></select></div>
+      </div>
+    </section>
+  </main>
+  <dialog id="zoom"><button id="close">关掉大图</button><div><img id="large" alt="卡片截图原图"></div></dialog>
+  <script id="packet" type="application/json">__PACKET__</script>
+  <script>
+    'use strict';
+    const packet = JSON.parse(document.getElementById('packet').textContent);
+    const criteria = Object.entries({
+      independent_business:'业务信息与冻结内容、动作入口与实体归属相符',title_anchor:'标题位置与信息层级',
+      body_alignment:'正文对齐与分组',readable_text:'文字清晰完整',
+      specialized_presentation:'专用内容的呈现',schedule_timeline:'日程时间线'
+    });
+    const states = {pass:'通过',fail:'未通过',unknown:'无法判断',not_applicable:'不适用'};
+    const overallStates = {pass:'合格',fail:'不合格',unknown:'无法判断'};
+    const preferenceStates = {A:'更喜欢 A',B:'更喜欢 B',tie:'没有偏好',unknown:'无法判断'};
+    const $ = id => document.getElementById(id);
+    const storageKey = 'fixed-layout-report219-first-frame-v1/' + packet.packet_id;
+    let index=0, current='A', comparing=false;
+
+    function make(tag, content, className) {
+      const node = document.createElement(tag);
+      if (content != null) node.textContent = content;
+      if (className) node.className = className;
+      return node;
+    }
+    function selectOptions(select, choices, value) {
+      select.replaceChildren(new Option('未填写',''), ...Object.entries(choices).map(([v,t])=>new Option(t,v)));
+      select.value=value || '';
+    }
+    function blankOption(label) {
+      return {label,scores:Object.fromEntries(criteria.map(([key])=>[key,null])),overall:null,note:''};
+    }
+    function canPrefer(item, record) {
+      return item.options.every(view => {
+        const option=record.options.find(o=>o.label===view.label);
+        const needsNote=Object.values(option.scores).includes('not_applicable');
+        return !!view.image && option.overall==='pass' && (!needsNote || option.note.trim()!=='') &&
+          criteria.every(([key])=>option.scores[key]==='pass'||(key!=='independent_business' && option.scores[key]==='not_applicable'));
+      });
+    }
+    function restored() {
+      let stored=null;
+      try {stored = JSON.parse(localStorage.getItem(storageKey));} catch {}
+      const previous = stored?.schema==='fixed-layout-report219-first-frame-v1' && stored?.packet_id===packet.packet_id && Array.isArray(stored.items)
+        ? new Map(stored.items.map(it=>[it.code,it])) : new Map();
+      return packet.items.map(item=>{
+        const prior=previous.get(item.code);
+        const record={code:item.code, options:item.options.map(view=>{
+          const option=blankOption(view.label);
+          const saved=Array.isArray(prior?.options) ? prior.options.find(o=>o.label===view.label) : null;
+          if (!view.image || !saved) return option;
+          for(const [key] of criteria) {
+            const value=saved.scores?.[key];
+            if(Object.hasOwn(states,value) && (key!=='independent_business'||value!=='not_applicable')) option.scores[key]=value;
+          }
+          if(Object.hasOwn(overallStates,saved.overall)) option.overall=saved.overall;
+          if(typeof saved.note==='string') option.note=saved.note;
+          return option;
+        }), preference:null};
+        if(canPrefer(item,record)&&Object.hasOwn(preferenceStates,prior?.preference)) record.preference=prior.preference;
+        return record;
+      });
+    }
+    const answers=restored();
+    const exportData=()=>({reviewer:$('reviewer').value.trim(),independent:$('independent').checked,schema:'fixed-layout-report219-first-frame-v1',packet_id:packet.packet_id,items:answers});
+    function persist() {
+      try {
+        localStorage.setItem(storageKey,JSON.stringify(exportData()));
+        $('storage').textContent='进度已保存在当前浏览器。可随时导出已填部分。';
+      } catch {$('storage').textContent='当前浏览器无法保存进度，请及时导出。';}
+    }
+    try {
+      const savedSigner=JSON.parse(localStorage.getItem(storageKey));
+      if (typeof savedSigner?.reviewer === 'string') $('reviewer').value=savedSigner.reviewer;
+      $('independent').checked=savedSigner?.independent === true;
+    } catch {}
+    $('reviewer').onchange=persist;
+    $('independent').onchange=persist;
+    function zoomable(view) {
+      const button=make('button',null,'image-button');
+      button.type='button';button.setAttribute('aria-label','放大卡片 '+view.label);
+      const img=make('img',null,'picture'); img.src=view.image; img.alt='卡片 '+view.label+' 真机截图';
+      button.append(img);
+      button.onclick=()=>{$('large').src=view.image;$('zoom').showModal();};
+      return button;
+    }
+    function syncPreference() {
+      const visible=packet.items.reduce((n,item)=>n+item.options.filter(view=>view.image).length,0);
+      const marked=answers.reduce((n,item)=>n+item.options.filter(option=>option.overall!==null).length,0);
+      $('tally').textContent='有图席位已给整体判定 '+marked+' / '+visible+'，缺图 '+(2*packet.items.length-visible)+'。';
+      const item=packet.items[index],record=answers[index],eligible=canPrefer(item,record);
+      if(!eligible){comparing=false;record.preference=null;}
+      $('compare').disabled=!eligible;
+      $('compare').textContent=comparing?'收起并列对照':'并列查看并填写偏好';
+      $('eligibility').textContent=eligible
+        ? (record.preference?'已记录偏好。':'两张均已判为合格，可进行对照。')
+        : '两张都有截图，且各项通过或有据不适用、整体合格后，可比较偏好。';
+      $('comparison').hidden=!comparing;
+      $('preference').disabled=!eligible;
+      $('preference').value=record.preference||'';
+      const pictures=$('pictures');pictures.replaceChildren();
+      if(comparing) for(const view of item.options) {
+        const figure=make('figure');figure.append(make('figcaption','卡片 '+view.label),zoomable(view));pictures.append(figure);
+      }
+    }
+    function changed(){syncPreference();persist();}
+    function draw() {
+      const item=packet.items[index],record=answers[index],view=item.options.find(o=>o.label===current);
+      const option=record.options.find(o=>o.label===current);
+      $('jump').value=String(index);$('prev').disabled=index===0;$('next').disabled=index===packet.items.length-1;
+      $('query').textContent=item.query;
+      $('context').textContent=[item.title,item.description,item.size].filter(Boolean).join(' · ');
+      for(const label of ['A','B']) $('tab'+label).setAttribute('aria-pressed',String(label===current));
+      const pane=$('assessment');pane.replaceChildren();
+      if(!view.image) {
+        pane.append(make('p','这一席位没有可用截图，无法进行截图评分。','muted'));
+      } else {
+        const card=make('div',null,'card'); const form=make('div',null,'criteria');
+        for(const [key,text] of criteria) {
+          const label=make('label');label.append(make('span',text));
+          const select=make('select'); select.dataset.key=key;
+          const choices=key==='independent_business'?overallStates:states;
+          selectOptions(select,choices,option.scores[key]);
+          select.onchange=()=>{option.scores[key]=select.value||null;changed();};
+          label.append(select);form.append(label);
+        }
+        const summary=make('label');summary.append(make('strong','这张截图整体是否合格'));
+        const overall=make('select');overall.id='overall';selectOptions(overall,overallStates,option.overall);
+        overall.onchange=()=>{option.overall=overall.value||null;changed();};summary.append(overall);form.append(summary);
+        const note=make('textarea');note.id='note';note.value=option.note;
+        const prompt=make('label','判断依据');prompt.htmlFor='note';
+        note.setAttribute('aria-describedby','note_hint');
+        const hint=make('small','写明截图中支持判断的具体内容。选择不适用时，逐项写出该项及原因。','muted');hint.id='note_hint';
+        note.oninput=()=>{option.note=note.value;changed();};form.append(prompt,hint,note);
+        card.append(zoomable(view),form);pane.append(card);
+      }
+      syncPreference();
+    }
+    function go(to) {
+      index=to;comparing=false;
+      current=(packet.items[index].options.find(o=>o.image)||packet.items[index].options[0]).label;draw();
+    }
+    $('jump').replaceChildren(...packet.items.map((_,n)=>new Option(String(n+1)+' / '+packet.items.length,String(n))));
+    $('jump').onchange=()=>go(Number($('jump').value));$('prev').onclick=()=>go(index-1);$('next').onclick=()=>go(index+1);
+    for(const label of ['A','B']) $('tab'+label).onclick=()=>{current=label;comparing=false;draw();};
+    selectOptions($('preference'),preferenceStates,null);
+    $('compare').onclick=()=>{comparing=!comparing;syncPreference();};
+    $('preference').onchange=()=>{if(canPrefer(packet.items[index],answers[index])) answers[index].preference=$('preference').value||null;changed();};
+    $('close').onclick=()=>$('zoom').close();
+    $('download').onclick=()=>{
+      const url=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));
+      const a=make('a');a.href=url;a.download=packet.packet_id+'-review.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    };
+    $('storage').textContent='可随时导出已填部分。';go(0);
+  </script>
+</body>
+</html>

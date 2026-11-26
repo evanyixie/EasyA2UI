@@ -1,0 +1,18 @@
+{
+  "cases": [{
+    "id": "garden-demo",
+    "request": {
+      "size": "2x2", "userQuery": "显示庭院温度，读数用℃，可打开记录", "title": "庭院温度",
+      "candidateDataBindings": [{"writeResultTo": "/garden", "candidateOutputFields": ["value"]}],
+      "candidateEventCandidates": [{"label": "打开记录", "action": {"call": "openLog", "args": {}}}]
+    },
+    "sample_data": {"garden": {"value": 18}},
+    "reference": {
+      "clauses": [
+        {"kind": "required_fact", "id": "temperature", "evidence": "庭院温度", "alternatives": ["/garden/value"]},
+        {"kind": "required_action", "id": "open", "evidence": "打开记录", "alternatives": ["a1"]}
+      ],
+      "excluded": [], "sample_missing_candidate_ids": [], "unaligned": []
+    }
+  }]
+}
