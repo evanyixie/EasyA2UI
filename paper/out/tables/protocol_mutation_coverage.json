@@ -1,0 +1,976 @@
+{
+  "study": "T03 synthetic A2UI protocol mutations",
+  "scope": "The basic three-line protocol validator used by the original six arms. The host, content, interactions, geometry and additional formal output checks are outside this study.",
+  "design": "Five authored tree and data contexts, all with buttons, and five paired display-only controls. One primary violation per intervention. Removing the version also changes envelope keys. Renaming the sole root removes the reference required to inspect canvas and shell. Reported accompanying codes describe the same intervention. Contexts are purposive and paired.",
+  "code_inventory": {
+    "literal_codes": 15,
+    "expanded_line_specific_codes": 3,
+    "targets": 18
+  },
+  "validator_sha256_lf": "294e79853b56dfd8fc319fb31c1e3025c85bd1b0897f7fb39f5b599673ae178e",
+  "formal_validator_sha256_crlf": "477ca13df088164a290140598ccf6910ce89c8ed1f42ac37629dded9eb28e9af",
+  "labelled_inputs_sha256": "078bd0fc229da1bc763736c3d57048fcb50f7e5ff6bb946a296fdb184d81192f",
+  "legal_observations": [
+    {
+      "context": "timer",
+      "variant": "base",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "timer",
+      "variant": "without_action",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "meter",
+      "variant": "base",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "meter",
+      "variant": "without_action",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "journey",
+      "variant": "base",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "journey",
+      "variant": "without_action",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "diary",
+      "variant": "base",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "diary",
+      "variant": "without_action",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "checklist",
+      "variant": "base",
+      "codes": {},
+      "exception_type": null
+    },
+    {
+      "context": "checklist",
+      "variant": "without_action",
+      "codes": {},
+      "exception_type": null
+    }
+  ],
+  "legal_with_codes": 0,
+  "legal_exceptions": 0,
+  "mutation_observations": 90,
+  "outcome_counts": {
+    "exception": 1,
+    "target_and_other": 4,
+    "target_only": 85
+  },
+  "target_code_hits": 89,
+  "per_target": [
+    {
+      "target": "jsonl.line_count",
+      "edit": "Remove one complete message or append one additional message.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.line_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.line_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.line_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.line_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.line_count": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "jsonl.parse",
+      "edit": "Corrupt one JSON message while retaining all three nonblank lines.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.parse": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.parse": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.parse": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.parse": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "jsonl.parse": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "envelope.line1",
+      "edit": "Add an unexpected top-level key to the creation message.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line1": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line1": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line1": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line1": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line1": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "envelope.line2",
+      "edit": "Add an unexpected top-level key to the component message.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line2": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line2": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line2": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line2": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line2": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "envelope.line3",
+      "edit": "Add an unexpected top-level key to the data message.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line3": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line3": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line3": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line3": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.line3": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "envelope.version",
+      "edit": "Change or omit the version of exactly one message.",
+      "counts": {
+        "target_and_other": 1,
+        "target_only": 4
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.version": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.version": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.version": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "envelope.version": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_and_other",
+          "codes": {
+            "envelope.line2": 1,
+            "envelope.version": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "surface.create_surface",
+      "edit": "Change only the surface ID in the creation message.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "surface.create_surface": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "surface.create_surface": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "surface.create_surface": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "surface.create_surface": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "surface.create_surface": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "catalog.id",
+      "edit": "Change only the declared catalogue ID.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "catalog.id": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "catalog.id": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "catalog.id": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "catalog.id": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "catalog.id": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "surface.update_components",
+      "edit": "Change only the surface ID in the component message.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "surface.update_components": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "surface.update_components": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "surface.update_components": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "surface.update_components": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "surface.update_components": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "tree.root_count",
+      "edit": "Duplicate the root node or rename the only root.",
+      "counts": {
+        "target_and_other": 3,
+        "target_only": 2
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_and_other",
+          "codes": {
+            "root.canvas": 1,
+            "root.shell": 1,
+            "tree.root_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "tree.root_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_and_other",
+          "codes": {
+            "root.canvas": 1,
+            "root.shell": 1,
+            "tree.root_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "tree.root_count": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_and_other",
+          "codes": {
+            "root.canvas": 1,
+            "root.shell": 1,
+            "tree.root_count": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "tree.dangling_child",
+      "edit": "Change one child reference to an unregistered ID.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "tree.dangling_child": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "tree.dangling_child": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "tree.dangling_child": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "tree.dangling_child": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "tree.dangling_child": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "component.not_allowed",
+      "edit": "Change one text node's component type to a disallowed type.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "component.not_allowed": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "component.not_allowed": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "component.not_allowed": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "component.not_allowed": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "component.not_allowed": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "button.action_field",
+      "edit": "Attach a legacy action field to a button with its original valid handler.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "button.action_field": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "button.action_field": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "button.action_field": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "button.action_field": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "button.action_field": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "button.on_click",
+      "edit": "Violate the single call-handler contract on one button.",
+      "counts": {
+        "exception": 1,
+        "target_only": 4
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "button.on_click": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "button.on_click": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "button.on_click": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "button.on_click": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "exception",
+          "codes": {},
+          "exception_type": "TypeError"
+        }
+      ]
+    },
+    {
+      "target": "root.canvas",
+      "edit": "Change one root dimension.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "root.canvas": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "root.canvas": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "root.canvas": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "root.canvas": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "root.canvas": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "root.shell",
+      "edit": "Change one root clipping or corner-radius property.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "root.shell": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "root.shell": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "root.shell": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "root.shell": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "root.shell": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "data_model.path",
+      "edit": "Break the absolute data path or the data message's surface association.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.path": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.path": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.path": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.path": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.path": 1
+          },
+          "exception_type": null
+        }
+      ]
+    },
+    {
+      "target": "data_model.value",
+      "edit": "Remove the initial value from the data message.",
+      "counts": {
+        "target_only": 5
+      },
+      "observations": [
+        {
+          "context": "timer",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.value": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "meter",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.value": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "journey",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.value": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "diary",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.value": 1
+          },
+          "exception_type": null
+        },
+        {
+          "context": "checklist",
+          "outcome": "target_only",
+          "codes": {
+            "data_model.value": 1
+          },
+          "exception_type": null
+        }
+      ]
+    }
+  ]
+}

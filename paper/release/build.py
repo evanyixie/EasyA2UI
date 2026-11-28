@@ -30,6 +30,7 @@ TABLES = (
     "paper/out/tables/enhanced_layout_native_observation.json",
     "paper/out/tables/six_arm_button_visibility.json",
     "paper/out/tables/layout_preference_calibration.json",
+    "paper/out/tables/protocol_mutation_coverage.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -108,6 +109,7 @@ def _readme(anonymous: bool) -> str:
 - [补强 L6 新增通过的十题与原 L5 的真机对照]({TABLES[6]})
 - [正式六档 219 题的按钮尾部省略与同题比较]({TABLES[7]})
 - [固定内容实验的参考几何、字号与人工偏好]({TABLES[8]})
+- [T03 三行协议校验器的逐项注错与合法对照]({TABLES[9]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -122,6 +124,12 @@ python cardgen-proto/exp/studies/six_arms/study.py replay demo-batch demo-replay
 ```
 
 预期匹配 4 个席位，新增物理请求 0 次。逐席结果见 `demo-replay/replay.json`。上述机读表给出正式观测和补充分析的汇总值。
+
+T03 的 90 次注错和 10 个合法对照均可用公开材料复算。在解压目录执行下列命令，程序将逐项校对返回码、伴随码及异常类型。
+
+```sh
+python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
+```
 
 ## 正式结果的复核条件
 
