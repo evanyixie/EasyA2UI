@@ -47,6 +47,7 @@ TABLES = (
     "paper/out/tables/formal_reference_cost.json",
     "paper/out/tables/formal_reference_cost_diagnostics.json",
     "paper/out/tables/formal_numeric_fidelity.json",
+    "paper/out/tables/formal_font_size.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -135,6 +136,7 @@ def _readme(anonymous: bool) -> str:
 - [正式首件与终件的浏览器文字越界、卡内截断及同题差值]({TABLES[22]})
 - [覆盖参考值的卡数及每张合格卡的 token 用量]({TABLES[23]}) · [纯内容覆盖、框内截断与单边通过原因]({TABLES[24]})
 - [六档正文数值出处、参考值覆盖与修复前后配对]({TABLES[25]})
+- [六档声明字号、同一字段配对与设备取证范围]({TABLES[26]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -169,6 +171,8 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 复核参考值覆盖与单位交付成本时，在上述正式批保管目录旁保留原注册的答案库和来源清单。运行 `python cardgen-proto/exp/studies/six_arms/formal_reference_cost.py <正式批保管目录>` 校验主表，加 `--diagnostics` 校验分项表。两次均使用历史原件与已封存的浏览器测量，无需模型服务或设备。
 
 同一保管目录下运行 `python cardgen-proto/exp/studies/six_arms/formal_numeric_fidelity.py <正式批保管目录>` 可复核数值出处表。程序校验历史匹配器、输入和原件摘要，重算每席的参考值覆盖，并核对已发表的覆盖计数摘要。
+
+运行 `python cardgen-proto/exp/studies/six_arms/formal_font_size.py <正式批保管目录>` 可复核 C-05 的两条字号线、同一字段的字号差异，以及归档设备控件树能否提供实际字号。输出仅含汇总。
 
 A2 文字越界复测入口为 `cardgen-proto/exp/studies/six_arms/formal_web_geometry.py <正式批保管目录>`。Windows 上使用本机 Edge，实测依赖 websockets 17.0.1。完整 Git 检出可直接读取固定版本的排版代码。单独使用发布包时，把 `EASY_A2UI_RENDERER_SOURCE` 指向历史提交 `7680f7a7` 的 `cardgen-proto/tools/gen_card_compare.py`，保留源文件字节，程序会核验 SHA-256。
 

@@ -1,0 +1,2668 @@
+{
+  "content_geometry_and_font": {
+    "basis": "A2 is measured Web geometry; A3 is the declared font minimum of all display Text and Button nodes; A4a requires reference-value coverage of at least 80%. At full assignment an absent card fails delivery. A partially observed font set can establish a threshold failure as soon as one known size is below that threshold. In a present card, an observed failed condition decides the conjunction. Joint partial failures only identify observed failing dimensions. Cross-arm and before/after comparisons include the same tasks with two artifacts and observed coverage at both ends. The before/after matrix additionally requires two measured minimum font sizes.",
+    "phases": {
+      "after_common_repair": {
+        "arms": {
+          "L1": {
+            "10": {
+              "all_three_measured": 209,
+              "all_three_thresholds_decided": 209,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                127,
+                132
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 210,
+                  "unknown": 4
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 212,
+                  "unknown": 2
+                },
+                "A4a": {
+                  "fail": 82,
+                  "pass": 127,
+                  "unknown": 5
+                }
+              },
+              "joint_states": {
+                "complete_fail": 82,
+                "complete_pass": 127,
+                "no_artifact": 5,
+                "partial_fail": 0,
+                "unresolved": 5
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 82
+              }
+            },
+            "12": {
+              "all_three_measured": 209,
+              "all_three_thresholds_decided": 209,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                127,
+                132
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 210,
+                  "unknown": 4
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 212,
+                  "unknown": 2
+                },
+                "A4a": {
+                  "fail": 82,
+                  "pass": 127,
+                  "unknown": 5
+                }
+              },
+              "joint_states": {
+                "complete_fail": 82,
+                "complete_pass": 127,
+                "no_artifact": 5,
+                "partial_fail": 0,
+                "unresolved": 5
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 82
+              }
+            }
+          },
+          "L2": {
+            "10": {
+              "all_three_measured": 157,
+              "all_three_thresholds_decided": 157,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                108,
+                109
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 1,
+                  "pass": 157,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 108,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 108,
+                "no_artifact": 61,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2+A4a": 1,
+                "A4a": 48
+              }
+            },
+            "12": {
+              "all_three_measured": 157,
+              "all_three_thresholds_decided": 157,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                108,
+                109
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 1,
+                  "pass": 157,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 108,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 108,
+                "no_artifact": 61,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2+A4a": 1,
+                "A4a": 48
+              }
+            }
+          },
+          "L3": {
+            "10": {
+              "all_three_measured": 159,
+              "all_three_thresholds_decided": 159,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                111,
+                112
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 2,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 160,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 47,
+                  "pass": 112,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 48,
+                "complete_pass": 111,
+                "no_artifact": 59,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 1,
+                "A2+A4a": 1,
+                "A4a": 46
+              }
+            },
+            "12": {
+              "all_three_measured": 159,
+              "all_three_thresholds_decided": 159,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                111,
+                112
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 2,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 160,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 47,
+                  "pass": 112,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 48,
+                "complete_pass": 111,
+                "no_artifact": 59,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 1,
+                "A2+A4a": 1,
+                "A4a": 46
+              }
+            }
+          },
+          "L4": {
+            "10": {
+              "all_three_measured": 186,
+              "all_three_thresholds_decided": 186,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                126,
+                127
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 5,
+                  "pass": 182,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 187,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 55,
+                  "pass": 131,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 60,
+                "complete_pass": 126,
+                "no_artifact": 32,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 5,
+                "A4a": 55
+              }
+            },
+            "12": {
+              "all_three_measured": 186,
+              "all_three_thresholds_decided": 186,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                126,
+                127
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 5,
+                  "pass": 182,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 187,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 55,
+                  "pass": 131,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 60,
+                "complete_pass": 126,
+                "no_artifact": 32,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 5,
+                "A4a": 55
+              }
+            }
+          },
+          "L5": {
+            "10": {
+              "all_three_measured": 149,
+              "all_three_thresholds_decided": 149,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                100,
+                101
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 100,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 100,
+                "no_artifact": 69,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 49
+              }
+            },
+            "12": {
+              "all_three_measured": 149,
+              "all_three_thresholds_decided": 149,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                100,
+                101
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 100,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 100,
+                "no_artifact": 69,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 49
+              }
+            }
+          },
+          "L6": {
+            "10": {
+              "all_three_measured": 115,
+              "all_three_thresholds_decided": 115,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                78,
+                78
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 37,
+                  "pass": 78,
+                  "unknown": 0
+                }
+              },
+              "joint_states": {
+                "complete_fail": 37,
+                "complete_pass": 78,
+                "no_artifact": 104,
+                "partial_fail": 0,
+                "unresolved": 0
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 37
+              }
+            },
+            "12": {
+              "all_three_measured": 115,
+              "all_three_thresholds_decided": 115,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                78,
+                78
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 37,
+                  "pass": 78,
+                  "unknown": 0
+                }
+              },
+              "joint_states": {
+                "complete_fail": 37,
+                "complete_pass": 78,
+                "no_artifact": 104,
+                "partial_fail": 0,
+                "unresolved": 0
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 37
+              }
+            }
+          }
+        },
+        "paired": {
+          "L5_vs_L4": {
+            "assigned": 219,
+            "both_artifacts": 144,
+            "both_artifacts_and_coverage": 143,
+            "both_fonts_and_coverage": 143,
+            "equal_coverage_including_missing_font": 140,
+            "minimum_font_on_higher_coverage_side": {
+              "equal": 0,
+              "larger": 1,
+              "smaller": 2,
+              "unknown": 0
+            },
+            "missing_font_with_paired_coverage": 0
+          },
+          "L6_vs_L5": {
+            "assigned": 219,
+            "both_artifacts": 110,
+            "both_artifacts_and_coverage": 110,
+            "both_fonts_and_coverage": 110,
+            "equal_coverage_including_missing_font": 108,
+            "minimum_font_on_higher_coverage_side": {
+              "equal": 2,
+              "larger": 0,
+              "smaller": 0,
+              "unknown": 0
+            },
+            "missing_font_with_paired_coverage": 0
+          }
+        }
+      },
+      "raw_first": {
+        "arms": {
+          "L1": {
+            "10": {
+              "all_three_measured": 209,
+              "all_three_thresholds_decided": 209,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                127,
+                132
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 210,
+                  "unknown": 4
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 212,
+                  "unknown": 2
+                },
+                "A4a": {
+                  "fail": 82,
+                  "pass": 127,
+                  "unknown": 5
+                }
+              },
+              "joint_states": {
+                "complete_fail": 82,
+                "complete_pass": 127,
+                "no_artifact": 5,
+                "partial_fail": 0,
+                "unresolved": 5
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 82
+              }
+            },
+            "12": {
+              "all_three_measured": 209,
+              "all_three_thresholds_decided": 209,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                127,
+                132
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 210,
+                  "unknown": 4
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 212,
+                  "unknown": 2
+                },
+                "A4a": {
+                  "fail": 82,
+                  "pass": 127,
+                  "unknown": 5
+                }
+              },
+              "joint_states": {
+                "complete_fail": 82,
+                "complete_pass": 127,
+                "no_artifact": 5,
+                "partial_fail": 0,
+                "unresolved": 5
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 82
+              }
+            }
+          },
+          "L2": {
+            "10": {
+              "all_three_measured": 157,
+              "all_three_thresholds_decided": 157,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                108,
+                109
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 1,
+                  "pass": 157,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 108,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 108,
+                "no_artifact": 61,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2+A4a": 1,
+                "A4a": 48
+              }
+            },
+            "12": {
+              "all_three_measured": 157,
+              "all_three_thresholds_decided": 157,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                108,
+                109
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 1,
+                  "pass": 157,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 108,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 108,
+                "no_artifact": 61,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2+A4a": 1,
+                "A4a": 48
+              }
+            }
+          },
+          "L3": {
+            "10": {
+              "all_three_measured": 159,
+              "all_three_thresholds_decided": 159,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                111,
+                112
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 2,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 160,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 47,
+                  "pass": 112,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 48,
+                "complete_pass": 111,
+                "no_artifact": 59,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 1,
+                "A2+A4a": 1,
+                "A4a": 46
+              }
+            },
+            "12": {
+              "all_three_measured": 159,
+              "all_three_thresholds_decided": 159,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                111,
+                112
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 2,
+                  "pass": 158,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 160,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 47,
+                  "pass": 112,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 48,
+                "complete_pass": 111,
+                "no_artifact": 59,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 1,
+                "A2+A4a": 1,
+                "A4a": 46
+              }
+            }
+          },
+          "L4": {
+            "10": {
+              "all_three_measured": 186,
+              "all_three_thresholds_decided": 186,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                126,
+                127
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 5,
+                  "pass": 182,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 187,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 55,
+                  "pass": 131,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 60,
+                "complete_pass": 126,
+                "no_artifact": 32,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 5,
+                "A4a": 55
+              }
+            },
+            "12": {
+              "all_three_measured": 186,
+              "all_three_thresholds_decided": 186,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                126,
+                127
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 5,
+                  "pass": 182,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 187,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 55,
+                  "pass": 131,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 60,
+                "complete_pass": 126,
+                "no_artifact": 32,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A2": 5,
+                "A4a": 55
+              }
+            }
+          },
+          "L5": {
+            "10": {
+              "all_three_measured": 149,
+              "all_three_thresholds_decided": 149,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                100,
+                101
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 100,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 100,
+                "no_artifact": 69,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 49
+              }
+            },
+            "12": {
+              "all_three_measured": 149,
+              "all_three_thresholds_decided": 149,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                100,
+                101
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 150,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 49,
+                  "pass": 100,
+                  "unknown": 1
+                }
+              },
+              "joint_states": {
+                "complete_fail": 49,
+                "complete_pass": 100,
+                "no_artifact": 69,
+                "partial_fail": 0,
+                "unresolved": 1
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 49
+              }
+            }
+          },
+          "L6": {
+            "10": {
+              "all_three_measured": 115,
+              "all_three_thresholds_decided": 115,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                78,
+                78
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 37,
+                  "pass": 78,
+                  "unknown": 0
+                }
+              },
+              "joint_states": {
+                "complete_fail": 37,
+                "complete_pass": 78,
+                "no_artifact": 104,
+                "partial_fail": 0,
+                "unresolved": 0
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 37
+              }
+            },
+            "12": {
+              "all_three_measured": 115,
+              "all_three_thresholds_decided": 115,
+              "assigned": 219,
+              "assigned_pass_count_bounds": [
+                78,
+                78
+              ],
+              "dimension_counts_among_delivered": {
+                "A2": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A3": {
+                  "fail": 0,
+                  "pass": 115,
+                  "unknown": 0
+                },
+                "A4a": {
+                  "fail": 37,
+                  "pass": 78,
+                  "unknown": 0
+                }
+              },
+              "joint_states": {
+                "complete_fail": 37,
+                "complete_pass": 78,
+                "no_artifact": 104,
+                "partial_fail": 0,
+                "unresolved": 0
+              },
+              "known_failed_dimensions_among_delivered": {
+                "A4a": 37
+              }
+            }
+          }
+        },
+        "paired": {
+          "L5_vs_L4": {
+            "assigned": 219,
+            "both_artifacts": 144,
+            "both_artifacts_and_coverage": 143,
+            "both_fonts_and_coverage": 143,
+            "equal_coverage_including_missing_font": 140,
+            "minimum_font_on_higher_coverage_side": {
+              "equal": 0,
+              "larger": 1,
+              "smaller": 2,
+              "unknown": 0
+            },
+            "missing_font_with_paired_coverage": 0
+          },
+          "L6_vs_L5": {
+            "assigned": 219,
+            "both_artifacts": 110,
+            "both_artifacts_and_coverage": 110,
+            "both_fonts_and_coverage": 110,
+            "equal_coverage_including_missing_font": 108,
+            "minimum_font_on_higher_coverage_side": {
+              "equal": 2,
+              "larger": 0,
+              "smaller": 0,
+              "unknown": 0
+            },
+            "missing_font_with_paired_coverage": 0
+          }
+        }
+      }
+    },
+    "task_counts_by_layout_size": {
+      "2x2": 169,
+      "2x4": 50
+    },
+    "tasks": 219,
+    "within_arm_first_to_final": {
+      "L1": {
+        "assigned": 219,
+        "both_artifacts": 214,
+        "both_artifacts_and_coverage": 209,
+        "both_fonts_and_coverage": 209,
+        "missing_font_with_paired_coverage": 0,
+        "rows_coverage_change_columns_font_change": {
+          "decreased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          },
+          "equal": {
+            "decreased": 0,
+            "equal": 209,
+            "increased": 0
+          },
+          "increased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          }
+        }
+      },
+      "L2": {
+        "assigned": 219,
+        "both_artifacts": 158,
+        "both_artifacts_and_coverage": 157,
+        "both_fonts_and_coverage": 157,
+        "missing_font_with_paired_coverage": 0,
+        "rows_coverage_change_columns_font_change": {
+          "decreased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          },
+          "equal": {
+            "decreased": 0,
+            "equal": 157,
+            "increased": 0
+          },
+          "increased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          }
+        }
+      },
+      "L3": {
+        "assigned": 219,
+        "both_artifacts": 160,
+        "both_artifacts_and_coverage": 159,
+        "both_fonts_and_coverage": 159,
+        "missing_font_with_paired_coverage": 0,
+        "rows_coverage_change_columns_font_change": {
+          "decreased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          },
+          "equal": {
+            "decreased": 0,
+            "equal": 159,
+            "increased": 0
+          },
+          "increased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          }
+        }
+      },
+      "L4": {
+        "assigned": 219,
+        "both_artifacts": 187,
+        "both_artifacts_and_coverage": 186,
+        "both_fonts_and_coverage": 186,
+        "missing_font_with_paired_coverage": 0,
+        "rows_coverage_change_columns_font_change": {
+          "decreased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          },
+          "equal": {
+            "decreased": 0,
+            "equal": 186,
+            "increased": 0
+          },
+          "increased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          }
+        }
+      },
+      "L5": {
+        "assigned": 219,
+        "both_artifacts": 150,
+        "both_artifacts_and_coverage": 149,
+        "both_fonts_and_coverage": 149,
+        "missing_font_with_paired_coverage": 0,
+        "rows_coverage_change_columns_font_change": {
+          "decreased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          },
+          "equal": {
+            "decreased": 0,
+            "equal": 149,
+            "increased": 0
+          },
+          "increased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          }
+        }
+      },
+      "L6": {
+        "assigned": 219,
+        "both_artifacts": 115,
+        "both_artifacts_and_coverage": 115,
+        "both_fonts_and_coverage": 115,
+        "missing_font_with_paired_coverage": 0,
+        "rows_coverage_change_columns_font_change": {
+          "decreased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          },
+          "equal": {
+            "decreased": 0,
+            "equal": 115,
+            "increased": 0
+          },
+          "increased": {
+            "decreased": 0,
+            "equal": 0,
+            "increased": 0
+          }
+        }
+      }
+    }
+  },
+  "coverage_count_receipt_sha256": "8d9d5e737e0d1411379345ded3bbd174a075702879b4bccfa5ed4b128b0e8377",
+  "declarations": {
+    "after_common_repair": {
+      "L1": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 138,
+            "font_histogram": {
+              "12": 19,
+              "14": 119
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 138
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 948,
+            "font_histogram": {
+              "12": 175,
+              "13": 15,
+              "14": 353,
+              "16": 240,
+              "18": 13,
+              "20": 17,
+              "22": 4,
+              "24": 122,
+              "30": 6,
+              "32": 2,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 948
+          }
+        },
+        "fully_declared_display_card_count": 212,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 69,
+          "13": 1,
+          "14": 132,
+          "16": 10
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 71,
+            "13": 1,
+            "14": 132,
+            "16": 10
+          },
+          "cards_with_numeric_declarations": 214,
+          "numeric_nodes": 1099,
+          "scorable_records": 214
+        },
+        "tree_status": {
+          "measured": 212,
+          "no_artifact": 5,
+          "unresolved_tree": 2
+        }
+      },
+      "L2": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 102,
+            "font_histogram": {
+              "12": 15,
+              "14": 87
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 102
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 752,
+            "font_histogram": {
+              "12": 43,
+              "14": 350,
+              "16": 204,
+              "18": 9,
+              "20": 16,
+              "24": 120,
+              "30": 4,
+              "32": 5,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 752
+          }
+        },
+        "fully_declared_display_card_count": 158,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 19,
+          "14": 108,
+          "16": 31
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 19,
+            "14": 108,
+            "16": 31
+          },
+          "cards_with_numeric_declarations": 158,
+          "numeric_nodes": 854,
+          "scorable_records": 158
+        },
+        "tree_status": {
+          "measured": 158,
+          "no_artifact": 61
+        }
+      },
+      "L3": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 99,
+            "font_histogram": {
+              "12": 12,
+              "14": 87
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 99
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 743,
+            "font_histogram": {
+              "12": 37,
+              "14": 327,
+              "16": 215,
+              "18": 9,
+              "20": 20,
+              "24": 124,
+              "30": 9,
+              "32": 1,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 743
+          }
+        },
+        "fully_declared_display_card_count": 160,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 23,
+          "14": 106,
+          "16": 31
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 23,
+            "14": 106,
+            "16": 31
+          },
+          "cards_with_numeric_declarations": 160,
+          "numeric_nodes": 842,
+          "scorable_records": 160
+        },
+        "tree_status": {
+          "measured": 160,
+          "no_artifact": 59
+        }
+      },
+      "L4": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 126,
+            "font_histogram": {
+              "12": 19,
+              "14": 107
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 126
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 931,
+            "font_histogram": {
+              "12": 64,
+              "14": 411,
+              "16": 255,
+              "18": 7,
+              "20": 32,
+              "24": 149,
+              "30": 4,
+              "32": 7,
+              "36": 1,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 931
+          }
+        },
+        "fully_declared_display_card_count": 187,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 29,
+          "14": 128,
+          "16": 30
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 29,
+            "14": 128,
+            "16": 30
+          },
+          "cards_with_numeric_declarations": 187,
+          "numeric_nodes": 1057,
+          "scorable_records": 187
+        },
+        "tree_status": {
+          "measured": 187,
+          "no_artifact": 32
+        }
+      },
+      "L5": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 82,
+            "font_histogram": {
+              "12": 50,
+              "14": 32
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 82
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 644,
+            "font_histogram": {
+              "12": 332,
+              "14": 122,
+              "16": 96,
+              "20": 94
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 644
+          }
+        },
+        "fully_declared_display_card_count": 150,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 150
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 150
+          },
+          "cards_with_numeric_declarations": 150,
+          "numeric_nodes": 726,
+          "scorable_records": 150
+        },
+        "tree_status": {
+          "measured": 150,
+          "no_artifact": 69
+        }
+      },
+      "L6": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 40,
+            "font_histogram": {
+              "12": 35,
+              "14": 5
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 40
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 425,
+            "font_histogram": {
+              "12": 225,
+              "14": 59,
+              "16": 77,
+              "20": 64
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 425
+          }
+        },
+        "fully_declared_display_card_count": 115,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 115
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 115
+          },
+          "cards_with_numeric_declarations": 115,
+          "numeric_nodes": 465,
+          "scorable_records": 115
+        },
+        "tree_status": {
+          "measured": 115,
+          "no_artifact": 104
+        }
+      }
+    },
+    "raw_first": {
+      "L1": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 138,
+            "font_histogram": {
+              "12": 19,
+              "14": 119
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 138
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 948,
+            "font_histogram": {
+              "12": 175,
+              "13": 15,
+              "14": 353,
+              "16": 240,
+              "18": 13,
+              "20": 17,
+              "22": 4,
+              "24": 122,
+              "30": 6,
+              "32": 2,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 948
+          }
+        },
+        "fully_declared_display_card_count": 212,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 69,
+          "13": 1,
+          "14": 132,
+          "16": 10
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 71,
+            "13": 1,
+            "14": 132,
+            "16": 10
+          },
+          "cards_with_numeric_declarations": 214,
+          "numeric_nodes": 1099,
+          "scorable_records": 214
+        },
+        "tree_status": {
+          "measured": 212,
+          "no_artifact": 5,
+          "unresolved_tree": 2
+        }
+      },
+      "L2": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 102,
+            "font_histogram": {
+              "12": 15,
+              "14": 87
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 102
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 752,
+            "font_histogram": {
+              "12": 43,
+              "14": 350,
+              "16": 204,
+              "18": 9,
+              "20": 16,
+              "24": 120,
+              "30": 4,
+              "32": 5,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 752
+          }
+        },
+        "fully_declared_display_card_count": 158,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 19,
+          "14": 108,
+          "16": 31
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 19,
+            "14": 108,
+            "16": 31
+          },
+          "cards_with_numeric_declarations": 158,
+          "numeric_nodes": 854,
+          "scorable_records": 158
+        },
+        "tree_status": {
+          "measured": 158,
+          "no_artifact": 61
+        }
+      },
+      "L3": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 99,
+            "font_histogram": {
+              "12": 12,
+              "14": 87
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 99
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 743,
+            "font_histogram": {
+              "12": 37,
+              "14": 327,
+              "16": 215,
+              "18": 9,
+              "20": 20,
+              "24": 124,
+              "30": 9,
+              "32": 1,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 743
+          }
+        },
+        "fully_declared_display_card_count": 160,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 23,
+          "14": 106,
+          "16": 31
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 23,
+            "14": 106,
+            "16": 31
+          },
+          "cards_with_numeric_declarations": 160,
+          "numeric_nodes": 842,
+          "scorable_records": 160
+        },
+        "tree_status": {
+          "measured": 160,
+          "no_artifact": 59
+        }
+      },
+      "L4": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 126,
+            "font_histogram": {
+              "12": 19,
+              "14": 107
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 126
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 931,
+            "font_histogram": {
+              "12": 64,
+              "14": 411,
+              "16": 255,
+              "18": 7,
+              "20": 32,
+              "24": 149,
+              "30": 4,
+              "32": 7,
+              "36": 1,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 931
+          }
+        },
+        "fully_declared_display_card_count": 187,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 29,
+          "14": 128,
+          "16": 30
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 29,
+            "14": 128,
+            "16": 30
+          },
+          "cards_with_numeric_declarations": 187,
+          "numeric_nodes": 1057,
+          "scorable_records": 187
+        },
+        "tree_status": {
+          "measured": 187,
+          "no_artifact": 32
+        }
+      },
+      "L5": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 82,
+            "font_histogram": {
+              "12": 50,
+              "14": 32
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 82
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 644,
+            "font_histogram": {
+              "12": 332,
+              "14": 122,
+              "16": 96,
+              "20": 94
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 644
+          }
+        },
+        "fully_declared_display_card_count": 150,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 150
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 150
+          },
+          "cards_with_numeric_declarations": 150,
+          "numeric_nodes": 726,
+          "scorable_records": 150
+        },
+        "tree_status": {
+          "measured": 150,
+          "no_artifact": 69
+        }
+      },
+      "L6": {
+        "assigned": 219,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 40,
+            "font_histogram": {
+              "12": 35,
+              "14": 5
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 40
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 425,
+            "font_histogram": {
+              "12": 225,
+              "14": 59,
+              "16": 77,
+              "20": 64
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 425
+          }
+        },
+        "fully_declared_display_card_count": 115,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 115
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 115
+          },
+          "cards_with_numeric_declarations": 115,
+          "numeric_nodes": 465,
+          "scorable_records": 115
+        },
+        "tree_status": {
+          "measured": 115,
+          "no_artifact": 104
+        }
+      }
+    }
+  },
+  "device_evidence": {
+    "assigned_tasks": 219,
+    "field_occurrences": {
+      "all_native_node_attributes": {
+        "density_or_zoom": 0,
+        "font_scale": 0,
+        "font_size": 0,
+        "line_height_or_baseline": 0,
+        "other_font_style": 0
+      },
+      "capture_receipt": {
+        "density_or_zoom": 0,
+        "font_scale": 0,
+        "font_size": 0,
+        "line_height_or_baseline": 0,
+        "other_font_style": 0
+      },
+      "native_text_and_button_attributes": {
+        "density_or_zoom": 0,
+        "font_scale": 0,
+        "font_size": 0,
+        "line_height_or_baseline": 0,
+        "other_font_style": 0
+      }
+    },
+    "manifest_sha256": "6176cc600f9232e5b33ddc24efaa79de778748300e410bd1705e5cb932a77f88",
+    "phases": {
+      "after_common_repair": {
+        "L1": {
+          "artifact": 214,
+          "assigned": 219,
+          "receipt": 211,
+          "tree": 211
+        },
+        "L2": {
+          "artifact": 158,
+          "assigned": 219,
+          "receipt": 158,
+          "tree": 158
+        },
+        "L3": {
+          "artifact": 160,
+          "assigned": 219,
+          "receipt": 160,
+          "tree": 159
+        },
+        "L4": {
+          "artifact": 187,
+          "assigned": 219,
+          "receipt": 187,
+          "tree": 187
+        },
+        "L5": {
+          "artifact": 150,
+          "assigned": 219,
+          "receipt": 150,
+          "tree": 150
+        },
+        "L6": {
+          "artifact": 115,
+          "assigned": 219,
+          "receipt": 115,
+          "tree": 115
+        }
+      },
+      "raw_first": {
+        "L1": {
+          "artifact": 214,
+          "assigned": 219,
+          "receipt": 211,
+          "tree": 211
+        },
+        "L2": {
+          "artifact": 158,
+          "assigned": 219,
+          "receipt": 158,
+          "tree": 158
+        },
+        "L3": {
+          "artifact": 160,
+          "assigned": 219,
+          "receipt": 160,
+          "tree": 158
+        },
+        "L4": {
+          "artifact": 187,
+          "assigned": 219,
+          "receipt": 187,
+          "tree": 187
+        },
+        "L5": {
+          "artifact": 150,
+          "assigned": 219,
+          "receipt": 150,
+          "tree": 150
+        },
+        "L6": {
+          "artifact": 115,
+          "assigned": 219,
+          "receipt": 115,
+          "tree": 115
+        }
+      }
+    },
+    "scope": "Recorded field names only. Count all accessibility nodes in each unique captured window. A matching name alone cannot establish a resolved font size or its unit.",
+    "tree_set_sha256_sorted_hex_with_lf": "2130d36ec650da435abba85dda47c40137e401cf82912c1eb6e26b9c8b31ac51",
+    "unique_capture_receipts": 1159,
+    "unique_tree_contents": 1157,
+    "whole_window_nodes_in_unique_trees": {
+      "Button": 569,
+      "Text": 4892
+    }
+  },
+  "historical_measure_sha256_lf": "3bf0f319dc9fa266906d649aa4233398fa9da0c8cdefd0c4d08233776dca4376",
+  "legacy_count_receipt_sha256": "3d92857650493c78e03deb29fd067199e5914c9e901ac87a6c58027f85101080",
+  "reference_arrays_transcribed_as_three_lines": 219,
+  "reference_control": {
+    "assigned": 219,
+    "display_nodes": {
+      "button": {
+        "below_10fp": 0,
+        "below_12fp": 0,
+        "declared": 18,
+        "font_histogram": {
+          "14": 18
+        },
+        "invalid": 0,
+        "missing": 0,
+        "nodes": 18
+      },
+      "text": {
+        "below_10fp": 0,
+        "below_12fp": 52,
+        "declared": 1238,
+        "font_histogram": {
+          "10": 52,
+          "12": 718,
+          "14": 265,
+          "16": 20,
+          "18": 93,
+          "21": 7,
+          "24": 4,
+          "30": 45,
+          "48": 34
+        },
+        "invalid": 0,
+        "missing": 0,
+        "nodes": 1238
+      }
+    },
+    "fully_declared_display_card_count": 219,
+    "fully_declared_display_card_minimum_histogram": {
+      "10": 13,
+      "12": 202,
+      "14": 4
+    },
+    "legacy": {
+      "below_10fp": {
+        "cards": 0,
+        "nodes": 0
+      },
+      "below_12fp": {
+        "cards": 13,
+        "nodes": 52
+      },
+      "card_minimum_histogram": {
+        "10": 13,
+        "12": 202,
+        "14": 4
+      },
+      "cards_with_numeric_declarations": 219,
+      "numeric_nodes": 1256,
+      "scorable_records": 219
+    },
+    "tree_status": {
+      "measured": 219
+    }
+  },
+  "reference_mapping_sha256": "2caa898786d4cd0512ad9ddab1d6863ee7202651dbbfca1bab3437632bb85598",
+  "same_bound_value": {
+    "between": {
+      "after_common_repair": {
+        "L4_to_L5": {
+          "assigned_task_pairs": 219,
+          "both_trees_assessed": 144,
+          "fields": {
+            "equal": 26,
+            "larger": 5,
+            "smaller": 38
+          },
+          "matched_field_pairs": 69,
+          "matched_rate_shared_paths": 0.16083916083916083,
+          "matched_task_rate_assessed": 0.19444444444444445,
+          "matched_task_rate_assigned": 0.1278538812785388,
+          "shared_referenced_paths_on_assessed_pairs": 429,
+          "tasks": {
+            "all_equal": 6,
+            "mixed": 0,
+            "only_larger": 2,
+            "only_smaller": 20
+          },
+          "tasks_with_matched_fields": 28,
+          "union_referenced_paths_on_assessed_pairs": 455
+        },
+        "L5_to_L6": {
+          "assigned_task_pairs": 219,
+          "both_trees_assessed": 110,
+          "fields": {
+            "equal": 15,
+            "larger": 0,
+            "smaller": 12
+          },
+          "matched_field_pairs": 27,
+          "matched_rate_shared_paths": 0.10037174721189591,
+          "matched_task_rate_assessed": 0.12727272727272726,
+          "matched_task_rate_assigned": 0.0639269406392694,
+          "shared_referenced_paths_on_assessed_pairs": 269,
+          "tasks": {
+            "all_equal": 10,
+            "mixed": 0,
+            "only_larger": 0,
+            "only_smaller": 4
+          },
+          "tasks_with_matched_fields": 14,
+          "union_referenced_paths_on_assessed_pairs": 274
+        }
+      },
+      "raw_first": {
+        "L4_to_L5": {
+          "assigned_task_pairs": 219,
+          "both_trees_assessed": 144,
+          "fields": {
+            "equal": 26,
+            "larger": 5,
+            "smaller": 38
+          },
+          "matched_field_pairs": 69,
+          "matched_rate_shared_paths": 0.16083916083916083,
+          "matched_task_rate_assessed": 0.19444444444444445,
+          "matched_task_rate_assigned": 0.1278538812785388,
+          "shared_referenced_paths_on_assessed_pairs": 429,
+          "tasks": {
+            "all_equal": 6,
+            "mixed": 0,
+            "only_larger": 2,
+            "only_smaller": 20
+          },
+          "tasks_with_matched_fields": 28,
+          "union_referenced_paths_on_assessed_pairs": 455
+        },
+        "L5_to_L6": {
+          "assigned_task_pairs": 219,
+          "both_trees_assessed": 110,
+          "fields": {
+            "equal": 15,
+            "larger": 0,
+            "smaller": 12
+          },
+          "matched_field_pairs": 27,
+          "matched_rate_shared_paths": 0.10037174721189591,
+          "matched_task_rate_assessed": 0.12727272727272726,
+          "matched_task_rate_assigned": 0.0639269406392694,
+          "shared_referenced_paths_on_assessed_pairs": 269,
+          "tasks": {
+            "all_equal": 10,
+            "mixed": 0,
+            "only_larger": 0,
+            "only_smaller": 4
+          },
+          "tasks_with_matched_fields": 14,
+          "union_referenced_paths_on_assessed_pairs": 274
+        }
+      }
+    },
+    "first_to_final": {
+      "L1": {
+        "assigned_task_pairs": 219,
+        "both_trees_assessed": 212,
+        "fields": {
+          "equal": 297,
+          "larger": 0,
+          "smaller": 0
+        },
+        "matched_field_pairs": 297,
+        "matched_rate_shared_paths": 0.34256055363321797,
+        "matched_task_rate_assessed": 0.5188679245283019,
+        "matched_task_rate_assigned": 0.502283105022831,
+        "shared_referenced_paths_on_assessed_pairs": 867,
+        "tasks": {
+          "all_equal": 110,
+          "mixed": 0,
+          "only_larger": 0,
+          "only_smaller": 0
+        },
+        "tasks_with_matched_fields": 110,
+        "union_referenced_paths_on_assessed_pairs": 867
+      },
+      "L2": {
+        "assigned_task_pairs": 219,
+        "both_trees_assessed": 158,
+        "fields": {
+          "equal": 121,
+          "larger": 0,
+          "smaller": 0
+        },
+        "matched_field_pairs": 121,
+        "matched_rate_shared_paths": 0.21568627450980393,
+        "matched_task_rate_assessed": 0.2911392405063291,
+        "matched_task_rate_assigned": 0.2100456621004566,
+        "shared_referenced_paths_on_assessed_pairs": 561,
+        "tasks": {
+          "all_equal": 46,
+          "mixed": 0,
+          "only_larger": 0,
+          "only_smaller": 0
+        },
+        "tasks_with_matched_fields": 46,
+        "union_referenced_paths_on_assessed_pairs": 561
+      },
+      "L3": {
+        "assigned_task_pairs": 219,
+        "both_trees_assessed": 160,
+        "fields": {
+          "equal": 92,
+          "larger": 0,
+          "smaller": 0
+        },
+        "matched_field_pairs": 92,
+        "matched_rate_shared_paths": 0.1688073394495413,
+        "matched_task_rate_assessed": 0.25,
+        "matched_task_rate_assigned": 0.182648401826484,
+        "shared_referenced_paths_on_assessed_pairs": 545,
+        "tasks": {
+          "all_equal": 40,
+          "mixed": 0,
+          "only_larger": 0,
+          "only_smaller": 0
+        },
+        "tasks_with_matched_fields": 40,
+        "union_referenced_paths_on_assessed_pairs": 545
+      },
+      "L4": {
+        "assigned_task_pairs": 219,
+        "both_trees_assessed": 187,
+        "fields": {
+          "equal": 150,
+          "larger": 0,
+          "smaller": 0
+        },
+        "matched_field_pairs": 150,
+        "matched_rate_shared_paths": 0.21337126600284495,
+        "matched_task_rate_assessed": 0.27807486631016043,
+        "matched_task_rate_assigned": 0.2374429223744292,
+        "shared_referenced_paths_on_assessed_pairs": 703,
+        "tasks": {
+          "all_equal": 52,
+          "mixed": 0,
+          "only_larger": 0,
+          "only_smaller": 0
+        },
+        "tasks_with_matched_fields": 52,
+        "union_referenced_paths_on_assessed_pairs": 703
+      },
+      "L5": {
+        "assigned_task_pairs": 219,
+        "both_trees_assessed": 150,
+        "fields": {
+          "equal": 96,
+          "larger": 0,
+          "smaller": 0
+        },
+        "matched_field_pairs": 96,
+        "matched_rate_shared_paths": 0.2077922077922078,
+        "matched_task_rate_assessed": 0.24666666666666667,
+        "matched_task_rate_assigned": 0.1689497716894977,
+        "shared_referenced_paths_on_assessed_pairs": 462,
+        "tasks": {
+          "all_equal": 37,
+          "mixed": 0,
+          "only_larger": 0,
+          "only_smaller": 0
+        },
+        "tasks_with_matched_fields": 37,
+        "union_referenced_paths_on_assessed_pairs": 462
+      },
+      "L6": {
+        "assigned_task_pairs": 219,
+        "both_trees_assessed": 115,
+        "fields": {
+          "equal": 28,
+          "larger": 0,
+          "smaller": 0
+        },
+        "matched_field_pairs": 28,
+        "matched_rate_shared_paths": 0.09621993127147767,
+        "matched_task_rate_assessed": 0.13043478260869565,
+        "matched_task_rate_assigned": 0.0684931506849315,
+        "shared_referenced_paths_on_assessed_pairs": 291,
+        "tasks": {
+          "all_equal": 15,
+          "mixed": 0,
+          "only_larger": 0,
+          "only_smaller": 0
+        },
+        "tasks_with_matched_fields": 15,
+        "union_referenced_paths_on_assessed_pairs": 291
+      }
+    }
+  },
+  "scope": "C-05 counts explicit numeric fontSize on the stored component list. The display-only comparison requires a valid tree and complete positive declarations on Text and Button nodes. A2 uses sealed browser root-box measures. A4a is literal reference-value coverage. Analysis of the same bound value conditions on two artifacts and one unambiguous registered Text binding. These are observational comparisons.",
+  "sensitivity_final_excluding_reconstructed": {
+    "arms": {
+      "L1": {
+        "assigned": 217,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 136,
+            "font_histogram": {
+              "12": 19,
+              "14": 117
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 136
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 938,
+            "font_histogram": {
+              "12": 172,
+              "13": 15,
+              "14": 349,
+              "16": 239,
+              "18": 13,
+              "20": 17,
+              "22": 4,
+              "24": 121,
+              "30": 6,
+              "32": 1,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 938
+          }
+        },
+        "fully_declared_display_card_count": 210,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 68,
+          "13": 1,
+          "14": 131,
+          "16": 10
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 70,
+            "13": 1,
+            "14": 131,
+            "16": 10
+          },
+          "cards_with_numeric_declarations": 212,
+          "numeric_nodes": 1087,
+          "scorable_records": 212
+        },
+        "tree_status": {
+          "measured": 210,
+          "no_artifact": 5,
+          "unresolved_tree": 2
+        }
+      },
+      "L2": {
+        "assigned": 217,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 100,
+            "font_histogram": {
+              "12": 15,
+              "14": 85
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 100
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 747,
+            "font_histogram": {
+              "12": 43,
+              "14": 348,
+              "16": 203,
+              "18": 9,
+              "20": 16,
+              "24": 119,
+              "30": 3,
+              "32": 5,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 747
+          }
+        },
+        "fully_declared_display_card_count": 157,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 19,
+          "14": 107,
+          "16": 31
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 19,
+            "14": 107,
+            "16": 31
+          },
+          "cards_with_numeric_declarations": 157,
+          "numeric_nodes": 847,
+          "scorable_records": 157
+        },
+        "tree_status": {
+          "measured": 157,
+          "no_artifact": 60
+        }
+      },
+      "L3": {
+        "assigned": 217,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 97,
+            "font_histogram": {
+              "12": 12,
+              "14": 85
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 97
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 733,
+            "font_histogram": {
+              "12": 37,
+              "14": 322,
+              "16": 213,
+              "18": 9,
+              "20": 20,
+              "24": 123,
+              "30": 7,
+              "32": 1,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 733
+          }
+        },
+        "fully_declared_display_card_count": 158,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 23,
+          "14": 104,
+          "16": 31
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 23,
+            "14": 104,
+            "16": 31
+          },
+          "cards_with_numeric_declarations": 158,
+          "numeric_nodes": 830,
+          "scorable_records": 158
+        },
+        "tree_status": {
+          "measured": 158,
+          "no_artifact": 59
+        }
+      },
+      "L4": {
+        "assigned": 217,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 124,
+            "font_histogram": {
+              "12": 19,
+              "14": 105
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 124
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 920,
+            "font_histogram": {
+              "12": 64,
+              "14": 404,
+              "16": 253,
+              "18": 7,
+              "20": 32,
+              "24": 148,
+              "30": 3,
+              "32": 7,
+              "36": 1,
+              "38": 1
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 920
+          }
+        },
+        "fully_declared_display_card_count": 185,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 29,
+          "14": 126,
+          "16": 30
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 29,
+            "14": 126,
+            "16": 30
+          },
+          "cards_with_numeric_declarations": 185,
+          "numeric_nodes": 1044,
+          "scorable_records": 185
+        },
+        "tree_status": {
+          "measured": 185,
+          "no_artifact": 32
+        }
+      },
+      "L5": {
+        "assigned": 217,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 80,
+            "font_histogram": {
+              "12": 50,
+              "14": 30
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 80
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 634,
+            "font_histogram": {
+              "12": 329,
+              "14": 120,
+              "16": 93,
+              "20": 92
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 634
+          }
+        },
+        "fully_declared_display_card_count": 148,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 148
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 148
+          },
+          "cards_with_numeric_declarations": 148,
+          "numeric_nodes": 714,
+          "scorable_records": 148
+        },
+        "tree_status": {
+          "measured": 148,
+          "no_artifact": 69
+        }
+      },
+      "L6": {
+        "assigned": 217,
+        "display_nodes": {
+          "button": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 38,
+            "font_histogram": {
+              "12": 33,
+              "14": 5
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 38
+          },
+          "text": {
+            "below_10fp": 0,
+            "below_12fp": 0,
+            "declared": 415,
+            "font_histogram": {
+              "12": 220,
+              "14": 59,
+              "16": 72,
+              "20": 64
+            },
+            "invalid": 0,
+            "missing": 0,
+            "nodes": 415
+          }
+        },
+        "fully_declared_display_card_count": 113,
+        "fully_declared_display_card_minimum_histogram": {
+          "12": 113
+        },
+        "legacy": {
+          "below_10fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "below_12fp": {
+            "cards": 0,
+            "nodes": 0
+          },
+          "card_minimum_histogram": {
+            "12": 113
+          },
+          "cards_with_numeric_declarations": 113,
+          "numeric_nodes": 453,
+          "scorable_records": 113
+        },
+        "tree_status": {
+          "measured": 113,
+          "no_artifact": 104
+        }
+      }
+    },
+    "tasks": 217
+  }
+}
