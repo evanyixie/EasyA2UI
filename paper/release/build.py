@@ -41,6 +41,8 @@ TABLES = (
     "paper/out/tables/native_repeated_facts.json",
     "paper/out/tables/six_arm_cache_token_cost.json",
     "paper/out/tables/paired_resource_differences.json",
+    "paper/out/tables/layout_order_sensitivity.json",
+    "paper/out/tables/endpoint_stability_scores_dev.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -125,6 +127,7 @@ def _readme(anonymous: bool) -> str:
 - [相同内容提示的选择一致性]({TABLES[14]}) · [四组内容下的原程序]({TABLES[15]}) · [两种字号下的补强程序]({TABLES[16]})
 - [A6 同一动态数值是否跨控件重复显示]({TABLES[17]})
 - [六档缓存命中、未命中与输出用量]({TABLES[18]}) · [同题耗时与输入、输出 token 的配对差和区间]({TABLES[19]})
+- [同一内容下改变候选顺序的结果]({TABLES[20]}) · [两道开发题各六档十次的端到端稳定性]({TABLES[21]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -156,7 +159,7 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 
 保管方逐题复算需要冻结输入、对应版本的执行器、历史模型回包、原件与回执。视觉与交互结论另需对应的设备和评审证据。这些逐题材料由保管方隔离保存。
 
-L5、L6 的参考几何检查还需要匹配冻结版本的 Pillow、FreeType、测量模块以及常规和粗体字体。通过 `SIX_ARMS_MEASURE_PY`、`SIX_ARMS_FONT_REGULAR` 和 `SIX_ARMS_FONT_BOLD` 指定对应文件。配好这些依赖后，在上述第一条命令中去掉 `--arms L1 L2 L3 L4` 并另用新的批次和回放目录，即可离线演练全部六档。运行回归测试另需 pytest。另行实发模型请求需要 httpx、获授权的 API 密钥和联网环境。论文中的首次调用耗时来自历史实测。
+演练全部六档时，将 `SIX_ARMS_MEASURE_PY` 设为本包 `cardgen-proto/exp/studies/six_arms/reference_text_measure.py` 的绝对路径，并用 `SIX_ARMS_FONT_REGULAR` 和 `SIX_ARMS_FONT_BOLD` 指定两款字体。去掉第一条命令中的 `--arms L1 L2 L3 L4`，三条命令另用新的批次与回放目录。使用原参考字体的独立发布包已复现六个合成席位，六个匹配，新增物理请求零次。与正式批逐字节比对还需匹配冻结字体和 Pillow、FreeType 版本。运行回归测试另需 pytest。另行实发模型请求需要 httpx、获授权的 API 密钥和联网环境。论文中的首次调用耗时来自历史实测。
 """
 
 

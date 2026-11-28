@@ -34,7 +34,7 @@ SEALED_ROWS = "403f1cefa2181c260a56b57f9e566b4d27ed10baf6a77a83d08bdd6d58e0aa43"
 
 
 def program_layout(bench, dev, mods, task, content, source, entry):
-    """Use the original policies; task only breaks candidate ordering ties on small cards."""
+    """Use the original policies, including the frozen small-card candidate order."""
     base = bench.run.eng.program.program_route(content)
     small = content["size"] == "2x2"
     evidence.require(small or content["size"] == "2x4", "Unknown canvas")

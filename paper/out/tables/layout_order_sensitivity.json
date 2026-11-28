@@ -1,0 +1,286 @@
+{
+  "all": {
+    "compatible": {
+      "any_different_positive_sha_inputs": 0,
+      "any_different_positive_sha_tasks": 0,
+      "decisions": {
+        "constant": {
+          "no_policy_hit": 160,
+          "pass": 264,
+          "unknown": 0
+        },
+        "content_sha256": {
+          "no_policy_hit": 160,
+          "pass": 264,
+          "unknown": 0
+        },
+        "original": {
+          "no_policy_hit": 160,
+          "pass": 264,
+          "unknown": 0
+        }
+      },
+      "pairs": {
+        "constant_vs_content_sha256": {
+          "changed_decision": 0,
+          "different_sha": 0,
+          "neither_artifact": 160,
+          "one_artifact": 0,
+          "same_sha": 264
+        },
+        "original_vs_constant": {
+          "changed_decision": 0,
+          "different_sha": 0,
+          "neither_artifact": 160,
+          "one_artifact": 0,
+          "same_sha": 264
+        },
+        "original_vs_content_sha256": {
+          "changed_decision": 0,
+          "different_sha": 0,
+          "neither_artifact": 160,
+          "one_artifact": 0,
+          "same_sha": 264
+        }
+      }
+    },
+    "standard": {
+      "any_different_positive_sha_inputs": 5,
+      "any_different_positive_sha_tasks": 5,
+      "decisions": {
+        "constant": {
+          "no_policy_hit": 198,
+          "pass": 226,
+          "unknown": 0
+        },
+        "content_sha256": {
+          "no_policy_hit": 198,
+          "pass": 226,
+          "unknown": 0
+        },
+        "original": {
+          "no_policy_hit": 198,
+          "pass": 226,
+          "unknown": 0
+        }
+      },
+      "pairs": {
+        "constant_vs_content_sha256": {
+          "changed_decision": 0,
+          "different_sha": 4,
+          "neither_artifact": 198,
+          "one_artifact": 0,
+          "same_sha": 222
+        },
+        "original_vs_constant": {
+          "changed_decision": 0,
+          "different_sha": 4,
+          "neither_artifact": 198,
+          "one_artifact": 0,
+          "same_sha": 222
+        },
+        "original_vs_content_sha256": {
+          "changed_decision": 0,
+          "different_sha": 2,
+          "neither_artifact": 198,
+          "one_artifact": 0,
+          "same_sha": 224
+        }
+      }
+    },
+    "tasks": 199,
+    "unique_inputs": 424
+  },
+  "by_size": {
+    "2x2": {
+      "compatible": {
+        "any_different_positive_sha_inputs": 0,
+        "any_different_positive_sha_tasks": 0,
+        "decisions": {
+          "constant": {
+            "no_policy_hit": 114,
+            "pass": 221,
+            "unknown": 0
+          },
+          "content_sha256": {
+            "no_policy_hit": 114,
+            "pass": 221,
+            "unknown": 0
+          },
+          "original": {
+            "no_policy_hit": 114,
+            "pass": 221,
+            "unknown": 0
+          }
+        },
+        "pairs": {
+          "constant_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 114,
+            "one_artifact": 0,
+            "same_sha": 221
+          },
+          "original_vs_constant": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 114,
+            "one_artifact": 0,
+            "same_sha": 221
+          },
+          "original_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 114,
+            "one_artifact": 0,
+            "same_sha": 221
+          }
+        }
+      },
+      "standard": {
+        "any_different_positive_sha_inputs": 5,
+        "any_different_positive_sha_tasks": 5,
+        "decisions": {
+          "constant": {
+            "no_policy_hit": 141,
+            "pass": 194,
+            "unknown": 0
+          },
+          "content_sha256": {
+            "no_policy_hit": 141,
+            "pass": 194,
+            "unknown": 0
+          },
+          "original": {
+            "no_policy_hit": 141,
+            "pass": 194,
+            "unknown": 0
+          }
+        },
+        "pairs": {
+          "constant_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 4,
+            "neither_artifact": 141,
+            "one_artifact": 0,
+            "same_sha": 190
+          },
+          "original_vs_constant": {
+            "changed_decision": 0,
+            "different_sha": 4,
+            "neither_artifact": 141,
+            "one_artifact": 0,
+            "same_sha": 190
+          },
+          "original_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 2,
+            "neither_artifact": 141,
+            "one_artifact": 0,
+            "same_sha": 192
+          }
+        }
+      },
+      "tasks": 161,
+      "unique_inputs": 335
+    },
+    "2x4": {
+      "compatible": {
+        "any_different_positive_sha_inputs": 0,
+        "any_different_positive_sha_tasks": 0,
+        "decisions": {
+          "constant": {
+            "no_policy_hit": 46,
+            "pass": 43,
+            "unknown": 0
+          },
+          "content_sha256": {
+            "no_policy_hit": 46,
+            "pass": 43,
+            "unknown": 0
+          },
+          "original": {
+            "no_policy_hit": 46,
+            "pass": 43,
+            "unknown": 0
+          }
+        },
+        "pairs": {
+          "constant_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 46,
+            "one_artifact": 0,
+            "same_sha": 43
+          },
+          "original_vs_constant": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 46,
+            "one_artifact": 0,
+            "same_sha": 43
+          },
+          "original_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 46,
+            "one_artifact": 0,
+            "same_sha": 43
+          }
+        }
+      },
+      "standard": {
+        "any_different_positive_sha_inputs": 0,
+        "any_different_positive_sha_tasks": 0,
+        "decisions": {
+          "constant": {
+            "no_policy_hit": 57,
+            "pass": 32,
+            "unknown": 0
+          },
+          "content_sha256": {
+            "no_policy_hit": 57,
+            "pass": 32,
+            "unknown": 0
+          },
+          "original": {
+            "no_policy_hit": 57,
+            "pass": 32,
+            "unknown": 0
+          }
+        },
+        "pairs": {
+          "constant_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 57,
+            "one_artifact": 0,
+            "same_sha": 32
+          },
+          "original_vs_constant": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 57,
+            "one_artifact": 0,
+            "same_sha": 32
+          },
+          "original_vs_content_sha256": {
+            "changed_decision": 0,
+            "different_sha": 0,
+            "neither_artifact": 57,
+            "one_artifact": 0,
+            "same_sha": 32
+          }
+        }
+      },
+      "tasks": 38,
+      "unique_inputs": 89
+    }
+  },
+  "constant_key": "fixed-layout-key-v1",
+  "content_key": "SHA-256 of UTF-8 JSON, sorted keys, no extra spaces, unescaped Unicode.",
+  "frozen_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "observed_content_draws": 760,
+  "original_key_receipt_sha256": "403f1cefa2181c260a56b57f9e566b4d27ed10baf6a77a83d08bdd6d58e0aa43",
+  "study": "Post-hoc offline sensitivity to the key ordering the frozen candidate menu. Each key sees identical content, source, entry and fonts. Decisions and positive A2UI byte hashes are separate measurements. A change in artifact bytes has no visual or preference judgment."
+}
