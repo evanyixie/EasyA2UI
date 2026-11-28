@@ -49,6 +49,7 @@ TABLES = (
     "paper/out/tables/formal_numeric_fidelity.json",
     "paper/out/tables/formal_font_size.json",
     "paper/out/tables/fixed_tree_density.json",
+    "paper/out/tables/formal_repair_b5.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -139,6 +140,7 @@ def _readme(anonymous: bool) -> str:
 - [六档正文数值出处、参考值覆盖与修复前后配对]({TABLES[25]})
 - [六档声明字号、同一字段配对与设备取证范围]({TABLES[26]})
 - [固定布局树，分别改变字号和留白的四格结果]({TABLES[27]})
+- [正式 B5 修复轮次、候选新增违规及同初稿请求预算]({TABLES[28]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -177,6 +179,8 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 运行 `python cardgen-proto/exp/studies/six_arms/formal_font_size.py <正式批保管目录>` 可复核 C-05 的两条字号线、同一字段的字号差异，以及归档设备控件树能否提供实际字号。输出仅含汇总。
 
 保管方运行 `python cardgen-proto/exp/studies/six_arms/fixed_tree_density.py <正式批保管目录>` 可重放 12 题共 120 份已生成的布局树，核对字号与留白的四格结果。需要登记的常规和粗体字库及测量器；支持通过既有的 `SIX_ARMS_FONT_REGULAR`、`SIX_ARMS_FONT_BOLD`、`SIX_ARMS_MEASURE_PY` 指向等摘要的文件。
+
+同样的测量环境可运行 `python cardgen-proto/exp/studies/six_arms/formal_repair_b5.py <正式批保管目录>`。复算需要六档的原件、终件、逐轮候选和独立修复实验的归档回包。程序核对证据摘要，使用原字号与测量器，分别计数候选产生的几何违规和真正提交到终件的违规。
 
 A2 文字越界复测入口为 `cardgen-proto/exp/studies/six_arms/formal_web_geometry.py <正式批保管目录>`。Windows 上使用本机 Edge，实测依赖 websockets 17.0.1。完整 Git 检出可直接读取固定版本的排版代码。单独使用发布包时，把 `EASY_A2UI_RENDERER_SOURCE` 指向历史提交 `7680f7a7` 的 `cardgen-proto/tools/gen_card_compare.py`，保留源文件字节，程序会核验 SHA-256。
 
