@@ -43,6 +43,7 @@ TABLES = (
     "paper/out/tables/paired_resource_differences.json",
     "paper/out/tables/layout_order_sensitivity.json",
     "paper/out/tables/endpoint_stability_scores_dev.json",
+    "paper/out/tables/formal_web_geometry.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -128,6 +129,7 @@ def _readme(anonymous: bool) -> str:
 - [A6 同一动态数值是否跨控件重复显示]({TABLES[17]})
 - [六档缓存命中、未命中与输出用量]({TABLES[18]}) · [同题耗时与输入、输出 token 的配对差和区间]({TABLES[19]})
 - [同一内容下改变候选顺序的结果]({TABLES[20]}) · [两道开发题各六档十次的端到端稳定性]({TABLES[21]})
+- [正式首件与终件的浏览器文字越界、卡内截断及同题差值]({TABLES[22]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -158,6 +160,8 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 ## 正式结果的复核条件
 
 保管方逐题复算需要冻结输入、对应版本的执行器、历史模型回包、原件与回执。视觉与交互结论另需对应的设备和评审证据。这些逐题材料由保管方隔离保存。
+
+A2 文字越界复测入口为 `cardgen-proto/exp/studies/six_arms/formal_web_geometry.py <正式批保管目录>`。Windows 上使用本机 Edge，实测依赖 websockets 17.0.1。完整 Git 检出可直接读取固定版本的排版代码。单独使用发布包时，把 `EASY_A2UI_RENDERER_SOURCE` 指向历史提交 `7680f7a7` 的 `cardgen-proto/tools/gen_card_compare.py`，保留源文件字节，程序会核验 SHA-256。
 
 演练全部六档时，将 `SIX_ARMS_MEASURE_PY` 设为本包 `cardgen-proto/exp/studies/six_arms/reference_text_measure.py` 的绝对路径，并用 `SIX_ARMS_FONT_REGULAR` 和 `SIX_ARMS_FONT_BOLD` 指定两款字体。去掉第一条命令中的 `--arms L1 L2 L3 L4`，三条命令另用新的批次与回放目录。使用原参考字体的独立发布包已复现六个合成席位，六个匹配，新增物理请求零次。与正式批逐字节比对还需匹配冻结字体和 Pillow、FreeType 版本。运行回归测试另需 pytest。另行实发模型请求需要 httpx、获授权的 API 密钥和联网环境。论文中的首次调用耗时来自历史实测。
 """

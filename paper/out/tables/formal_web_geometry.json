@@ -1,0 +1,594 @@
+{
+  "assigned_per_phase": 1314,
+  "bootstrap": {
+    "interval": "percentile 95% inclusive",
+    "replicates": 10000,
+    "seed": 20261124
+  },
+  "by_phase_arm": {
+    "final": {
+      "L1": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 18,
+          "lossless_binding_bridge": 192
+        },
+        "cards_with_any_node_above4": 0,
+        "cards_with_any_overflow": 0,
+        "cards_with_horizontal_text_clipping_above4": 34,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 210,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 210,
+          "missing": 5,
+          "unsupported": 4
+        },
+        "text_nodes": 939,
+        "total_above4_nodes": 0,
+        "total_overflow_px": 0
+      },
+      "L2": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 1,
+          "lossless_binding_bridge": 157
+        },
+        "cards_with_any_node_above4": 1,
+        "cards_with_any_overflow": 1,
+        "cards_with_horizontal_text_clipping_above4": 80,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 158,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 158,
+          "missing": 61,
+          "unsupported": 0
+        },
+        "text_nodes": 752,
+        "total_above4_nodes": 2,
+        "total_overflow_px": 38
+      },
+      "L3": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 1,
+          "lossless_binding_bridge": 159
+        },
+        "cards_with_any_node_above4": 2,
+        "cards_with_any_overflow": 2,
+        "cards_with_horizontal_text_clipping_above4": 87,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 160,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 160,
+          "missing": 59,
+          "unsupported": 0
+        },
+        "text_nodes": 743,
+        "total_above4_nodes": 12,
+        "total_overflow_px": 612
+      },
+      "L4": {
+        "assigned": 219,
+        "binding_modes": {
+          "lossless_binding_bridge": 187
+        },
+        "cards_with_any_node_above4": 5,
+        "cards_with_any_overflow": 6,
+        "cards_with_horizontal_text_clipping_above4": 104,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 187,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0,
+        "median_overflow_px_per_card": 0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 187,
+          "missing": 32,
+          "unsupported": 0
+        },
+        "text_nodes": 931,
+        "total_above4_nodes": 12,
+        "total_overflow_px": 305
+      },
+      "L5": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 1,
+          "lossless_binding_bridge": 149
+        },
+        "cards_with_any_node_above4": 0,
+        "cards_with_any_overflow": 0,
+        "cards_with_horizontal_text_clipping_above4": 0,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 150,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 150,
+          "missing": 69,
+          "unsupported": 0
+        },
+        "text_nodes": 644,
+        "total_above4_nodes": 0,
+        "total_overflow_px": 0
+      },
+      "L6": {
+        "assigned": 219,
+        "binding_modes": {
+          "lossless_binding_bridge": 115
+        },
+        "cards_with_any_node_above4": 0,
+        "cards_with_any_overflow": 0,
+        "cards_with_horizontal_text_clipping_above4": 0,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 115,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0,
+        "median_overflow_px_per_card": 0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 115,
+          "missing": 104,
+          "unsupported": 0
+        },
+        "text_nodes": 425,
+        "total_above4_nodes": 0,
+        "total_overflow_px": 0
+      }
+    },
+    "first": {
+      "L1": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 18,
+          "lossless_binding_bridge": 192
+        },
+        "cards_with_any_node_above4": 0,
+        "cards_with_any_overflow": 0,
+        "cards_with_horizontal_text_clipping_above4": 43,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 210,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 210,
+          "missing": 5,
+          "unsupported": 4
+        },
+        "text_nodes": 939,
+        "total_above4_nodes": 0,
+        "total_overflow_px": 0
+      },
+      "L2": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 1,
+          "lossless_binding_bridge": 157
+        },
+        "cards_with_any_node_above4": 1,
+        "cards_with_any_overflow": 1,
+        "cards_with_horizontal_text_clipping_above4": 95,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 158,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 158,
+          "missing": 61,
+          "unsupported": 0
+        },
+        "text_nodes": 752,
+        "total_above4_nodes": 2,
+        "total_overflow_px": 38
+      },
+      "L3": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 1,
+          "lossless_binding_bridge": 159
+        },
+        "cards_with_any_node_above4": 2,
+        "cards_with_any_overflow": 2,
+        "cards_with_horizontal_text_clipping_above4": 99,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 160,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 160,
+          "missing": 59,
+          "unsupported": 0
+        },
+        "text_nodes": 743,
+        "total_above4_nodes": 12,
+        "total_overflow_px": 612
+      },
+      "L4": {
+        "assigned": 219,
+        "binding_modes": {
+          "lossless_binding_bridge": 187
+        },
+        "cards_with_any_node_above4": 5,
+        "cards_with_any_overflow": 6,
+        "cards_with_horizontal_text_clipping_above4": 119,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 187,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0,
+        "median_overflow_px_per_card": 0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 187,
+          "missing": 32,
+          "unsupported": 0
+        },
+        "text_nodes": 931,
+        "total_above4_nodes": 12,
+        "total_overflow_px": 305
+      },
+      "L5": {
+        "assigned": 219,
+        "binding_modes": {
+          "historical_text_equal": 1,
+          "lossless_binding_bridge": 149
+        },
+        "cards_with_any_node_above4": 0,
+        "cards_with_any_overflow": 0,
+        "cards_with_horizontal_text_clipping_above4": 0,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 150,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0.0,
+        "median_overflow_px_per_card": 0.0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 150,
+          "missing": 69,
+          "unsupported": 0
+        },
+        "text_nodes": 644,
+        "total_above4_nodes": 0,
+        "total_overflow_px": 0
+      },
+      "L6": {
+        "assigned": 219,
+        "binding_modes": {
+          "lossless_binding_bridge": 115
+        },
+        "cards_with_any_node_above4": 0,
+        "cards_with_any_overflow": 0,
+        "cards_with_horizontal_text_clipping_above4": 0,
+        "declared_canvas_differs_from_request": 0,
+        "measured_cards_with_text": 115,
+        "measured_zero_text_cards": 0,
+        "median_above4_nodes_per_card": 0,
+        "median_overflow_px_per_card": 0,
+        "statuses": {
+          "browser_error": 0,
+          "measured": 115,
+          "missing": 104,
+          "unsupported": 0
+        },
+        "text_nodes": 425,
+        "total_above4_nodes": 0,
+        "total_overflow_px": 0
+      }
+    }
+  },
+  "environment": {
+    "browser_executable": "msedge.exe",
+    "browser_versions": [
+      "157.0.4341.42"
+    ],
+    "os": "Windows",
+    "os_version": "10.0.26200",
+    "renderer_blobs": [
+      "701ddca87d15fab4f1e97972cd3951283b12fa28"
+    ],
+    "runtime": [
+      {
+        "devicePixelRatio": 1,
+        "jsVersion": "15.7.11.4",
+        "pageUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
+        "product": "Edg/157.0.4341.42",
+        "protocolVersion": "1.3",
+        "revision": "@7b1486be4607d53d9f93841b7c776bc525ca74b7",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+      }
+    ]
+  },
+  "families": 200,
+  "measurement_conditions": "Offline post-hoc replay of emitted first and final artifacts. CSS text boxes, excluding button labels, are compared with the artifact root rectangle. The viewport declared by the request is cross-checked separately. One outward edge must exceed 0.6 CSS px before rounding, and a node is over threshold if any rounded edge exceeds four CSS px. Blink flex sizing and system fonts may differ from the phone.",
+  "paired": {
+    "final": {
+      "L5_minus_L4": {
+        "above4_nodes": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 128,
+          "family_median_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 127
+          },
+          "known_task_pairs": 144,
+          "missing_task_pairs": 75,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 143
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "available_both": 144,
+        "available_left_only": 6,
+        "available_neither": 26,
+        "available_right_only": 43,
+        "horizontal_text_clipping_over4": {
+          "both": 0,
+          "left_only": 0,
+          "neither": 69,
+          "right_only": 75
+        },
+        "overflow_px": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 128,
+          "family_median_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 127
+          },
+          "known_task_pairs": 144,
+          "missing_task_pairs": 75,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 143
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "L6_minus_L5": {
+        "above4_nodes": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 98,
+          "family_median_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 98
+          },
+          "known_task_pairs": 110,
+          "missing_task_pairs": 109,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 110
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "available_both": 110,
+        "available_left_only": 5,
+        "available_neither": 64,
+        "available_right_only": 40,
+        "horizontal_text_clipping_over4": {
+          "both": 0,
+          "left_only": 0,
+          "neither": 110,
+          "right_only": 0
+        },
+        "overflow_px": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 98,
+          "family_median_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 98
+          },
+          "known_task_pairs": 110,
+          "missing_task_pairs": 109,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 110
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "first": {
+      "L5_minus_L4": {
+        "above4_nodes": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 128,
+          "family_median_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 127
+          },
+          "known_task_pairs": 144,
+          "missing_task_pairs": 75,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 143
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "available_both": 144,
+        "available_left_only": 6,
+        "available_neither": 26,
+        "available_right_only": 43,
+        "horizontal_text_clipping_over4": {
+          "both": 0,
+          "left_only": 0,
+          "neither": 54,
+          "right_only": 90
+        },
+        "overflow_px": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 128,
+          "family_median_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 127
+          },
+          "known_task_pairs": 144,
+          "missing_task_pairs": 75,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 1,
+            "p_two_sided": 1.0,
+            "w_negative": 1.0,
+            "w_positive": 0.0,
+            "zeros": 143
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "L6_minus_L5": {
+        "above4_nodes": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 98,
+          "family_median_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 98
+          },
+          "known_task_pairs": 110,
+          "missing_task_pairs": 109,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 110
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "available_both": 110,
+        "available_left_only": 5,
+        "available_neither": 64,
+        "available_right_only": 40,
+        "horizontal_text_clipping_over4": {
+          "both": 0,
+          "left_only": 0,
+          "neither": 110,
+          "right_only": 0
+        },
+        "overflow_px": {
+          "assigned": 219,
+          "equal_family_median_difference": 0.0,
+          "families_with_known_pairs": 98,
+          "family_median_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 98
+          },
+          "known_task_pairs": 110,
+          "missing_task_pairs": 109,
+          "paired_median_difference": 0.0,
+          "query_signed_rank": {
+            "nonzero": 0,
+            "p_two_sided": null,
+            "w_negative": 0.0,
+            "w_positive": 0.0,
+            "zeros": 110
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "paired_method": "Negative left-minus-right favors the first arm on overflow only. The median of within-task differences is estimated on common measurable text-bearing pairs. The percentile interval resamples whole families. Two-sided signed-rank p values are unadjusted and descriptive; family sensitivity uses one median per family.",
+  "private_observations_sha256": "1a36df991ba39ecfa1c406bbd5bdeed25018e1e69da1f4ee57697bf009d77143",
+  "scope": "Edge/Blink CSS text-box overflow relative to the artifact's declared root rectangle. Measured zero-text cards are counted separately and excluded from overflow comparisons. No imputation for missing artifacts, unsupported rendering or browser errors. First and final checkpoints remain separate.",
+  "tasks": 219,
+  "unique_artifact_canvas_pairs": 1079,
+  "unique_observation_states": {
+    "measured": 1075,
+    "unassessed": 4
+  },
+  "units": "overflow_px sums rounded outward CSS pixels across text nodes and edges. above4_nodes counts each text node once if at least one rounded edge strictly exceeds four CSS pixels."
+}
