@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "formal_six_arm_technical_and_time": {
+    "cohort": {
+      "assigned_tasks": 219,
+      "families": 200,
+      "assigned_seats": 1314
+    },
+    "endpoint": "Recorded common technical acceptance.",
+    "timing": "Executor seconds include network waits and stop before device rendering. Unit time divides the entire arm's recorded seconds, including failures, by recorded final technical accepts.",
+    "columns": [
+      "arm",
+      "assigned",
+      "first_emitted",
+      "first_direct_accept",
+      "final_accept",
+      "unknown_final_status",
+      "median_executor_seconds_per_task",
+      "total_executor_seconds",
+      "seconds_per_final_accept",
+      "request_intents",
+      "confirmed_physical_attempts",
+      "intents_with_unknown_attempts"
+    ],
+    "rows": [
+      [
+        "L1",
+        219,
+        214,
+        0,
+        91,
+        6,
+        4.177391,
+        979.092599,
+        10.759259,
+        219,
+        215,
+        4
+      ],
+      [
+        "L2",
+        219,
+        158,
+        0,
+        30,
+        3,
+        15.339063,
+        3174.999433,
+        105.833314,
+        951,
+        948,
+        3
+      ],
+      [
+        "L3",
+        219,
+        160,
+        0,
+        29,
+        5,
+        11.685197,
+        2434.346557,
+        83.942985,
+        786,
+        781,
+        5
+      ],
+      [
+        "L4",
+        219,
+        187,
+        0,
+        28,
+        3,
+        8.401975,
+        1774.74589,
+        63.383782,
+        600,
+        597,
+        3
+      ],
+      [
+        "L5",
+        219,
+        150,
+        150,
+        150,
+        1,
+        5.280295,
+        1143.004996,
+        7.620033,
+        406,
+        405,
+        1
+      ],
+      [
+        "L6",
+        219,
+        115,
+        115,
+        115,
+        0,
+        2.849381,
+        650.550968,
+        5.656965,
+        219,
+        219,
+        0
+      ]
+    ],
+    "paired_family_bootstrap": {
+      "draws": 10000,
+      "seed": 20261124,
+      "comparisons": {
+        "L5_vs_L4_all": {
+          "accepted_difference_pp": {
+            "point": 55.7078,
+            "percentile95": [
+              47.2574,
+              63.9269
+            ]
+          },
+          "seconds_per_accept_ratio": {
+            "point": 0.1202,
+            "percentile95": [
+              0.0541,
+              0.199
+            ]
+          }
+        },
+        "L5_vs_L6_all": {
+          "accepted_difference_pp": {
+            "point": 15.9817,
+            "percentile95": [
+              10.1942,
+              22.1698
+            ]
+          },
+          "seconds_per_accept_ratio": {
+            "point": 1.347,
+            "percentile95": [
+              1.1837,
+              1.5096
+            ]
+          }
+        }
+      }
+    },
+    "l5_vs_l6_seconds_per_net_additional_accept": {
+      "point": 14.0701,
+      "percentile95": [
+        10.1464,
+        22.0158
+      ]
+    }
+  },
+  "formal_native_narrow_screen": {
+    "endpoint": "Final captured artifact with complete evidence of declared text/button identity and sample text, within-card leaf control boxes and absence of positive-area leaf-box overlaps.",
+    "scope": "Same host and registered sample values. This screen covers declared controls; content omissions, glyph clipping, action outcomes and human preference need separate evidence.",
+    "columns": [
+      "arm",
+      "assigned",
+      "captured",
+      "complete_no_finding",
+      "observed_leaf_geometry_finding",
+      "captured_incomplete_without_observed_finding",
+      "uncaptured"
+    ],
+    "rows": [
+      [
+        "L1",
+        219,
+        211,
+        147,
+        60,
+        4,
+        8
+      ],
+      [
+        "L2",
+        219,
+        158,
+        118,
+        37,
+        3,
+        61
+      ],
+      [
+        "L3",
+        219,
+        160,
+        116,
+        40,
+        4,
+        59
+      ],
+      [
+        "L4",
+        219,
+        187,
+        136,
+        47,
+        4,
+        32
+      ],
+      [
+        "L5",
+        219,
+        150,
+        150,
+        0,
+        0,
+        69
+      ],
+      [
+        "L6",
+        219,
+        115,
+        115,
+        0,
+        0,
+        104
+      ]
+    ],
+    "contrasts": {
+      "L5_vs_L4": {
+        "both": 122,
+        "first_only": 28,
+        "second_only": 14,
+        "neither": 55,
+        "observed_difference_pp": 6.3927,
+        "cluster_percentile95_pp": [
+          0.8695,
+          12.2642
+        ]
+      },
+      "L5_vs_L6": {
+        "both": 110,
+        "first_only": 40,
+        "second_only": 5,
+        "neither": 64,
+        "observed_difference_pp": 15.9817,
+        "cluster_percentile95_pp": [
+          10.1322,
+          22.2727
+        ]
+      },
+      "L5_vs_L1": {
+        "both": 110,
+        "first_only": 40,
+        "second_only": 37,
+        "neither": 32,
+        "observed_difference_pp": 1.3699,
+        "cluster_percentile95_pp": [
+          -7.0423,
+          9.7561
+        ]
+      }
+    }
+  },
+  "fixed_content_group_external_replay": {
+    "scope": "Post-hoc replay of existing formal 2x2 tasks outside tuning and diagnostic families. Earlier visual exposure remains. Family exclusions included a targeted model-only diagnostic set.",
+    "endpoint": "Same fixed content, reading order, standard type sizes, 150x150vp and technical export checks across program stages and archived model trees.",
+    "selection": {
+      "all_formal_small": 169,
+      "remaining_after_group_exclusions": 112,
+      "prior_content_rejected": 15,
+      "no_prior_content_response": 1,
+      "strictly_unexposed_usable": 0
+    },
+    "program_stage_order": [
+      "original_menu",
+      "generic_structures",
+      "adjacent_auxiliary_widths",
+      "entity_scoped_geometry"
+    ],
+    "outside_tuning_and_diagnostics": {
+      "usable": 96,
+      "families": 85,
+      "program_stage_accepts": [
+        64,
+        65,
+        65,
+        74
+      ],
+      "prior_accepted_outputs_changed": 0,
+      "ordered_model_tree_accepts": 64,
+      "free_order_model_tree_accepts": 64,
+      "both": 63,
+      "program_only": 11,
+      "model_only": 1,
+      "neither": 21,
+      "net_gain_families": 9
+    },
+    "replay_timing": {
+      "scope": "Program search in memory. Excludes model, device and disk times.",
+      "stage_median_ms": [
+        3.578,
+        3.7,
+        3.7,
+        3.7
+      ],
+      "stage_p95_ms": [
+        25.695,
+        28.92,
+        35.438,
+        211.913
+      ]
+    },
+    "exploratory_family_bootstrap_gain_percentile95_pp": [
+      4.211,
+      18.182
+    ],
+    "nested_sensitivity_including_tuning": {
+      "usable": 153,
+      "families": 136,
+      "program_stage_accepts": [
+        73,
+        80,
+        81,
+        95
+      ],
+      "prior_accepted_outputs_changed": 0,
+      "ordered_model_tree_accepts": 71,
+      "free_order_model_tree_accepts": 72,
+      "both": 68,
+      "program_only": 27,
+      "model_only": 3,
+      "neither": 55,
+      "net_gain_families": 20
+    },
+    "new_model_calls": 0,
+    "new_device_calls": 0
+  },
+  "fixed_content_review_calibration": {
+    "scope": "Earlier fixed-content two-arm study, both independent overall judgments per pictured seat. Original and confirmed ratings refer to the same seats.",
+    "pictured_seats": 238,
+    "distinct_image_bytes": 210,
+    "unpictured_seats": 200,
+    "paired_tasks_with_both_images": 104,
+    "reference_geometry_row_keys": [
+      "verified",
+      "mismatch"
+    ],
+    "human_columns": [
+      "both_pass",
+      "both_fail",
+      "disagree",
+      "unresolved"
+    ],
+    "original": {
+      "verified": [
+        101,
+        24,
+        54,
+        1
+      ],
+      "mismatch": [
+        6,
+        41,
+        11,
+        0
+      ]
+    },
+    "final": {
+      "verified": [
+        122,
+        26,
+        32,
+        0
+      ],
+      "mismatch": [
+        14,
+        41,
+        3,
+        0
+      ]
+    }
+  },
+  "native_action_entry_geometry": {
+    "scope": "Counts per checkpoint. Raw first and final share captures. This measures archived controls and does not score business necessity or actual navigation.",
+    "issued_buttons": 589,
+    "captured_buttons": 586,
+    "visible_enabled_clickable_intersecting_canvas": 543,
+    "missing_native_control_id": 43,
+    "no_capture": 3,
+    "full_original_box_matching_label_and_disjoint_by_arm_L1_to_L6": [77, 60, 58, 68, 82, 40],
+    "all_buttons_meeting_same_criteria_seats_by_arm_L1_to_L6": [64, 51, 52, 59, 70, 39]
+  },
+  "battery_settings_terminal_probe": {
+    "requests_with_emitted_entry": 5,
+    "final_artifacts_with_entry": 13,
+    "explicit_navigation_requests": 1,
+    "explicit_navigation_final_artifacts_with_entry": 2,
+    "explicit_navigation_entries_entirely_outside_canvas": 2,
+    "eligible_optional_entries_physically_tapped": 9,
+    "observed_battery_settings_arrivals": 0,
+    "foreground_samples_retaining_card_host": 36,
+    "last_sample_seconds_after_tap_command_return_range": [3.94, 4.00],
+    "direct_same_uri_verified_subpage": true,
+    "new_model_calls": 0
+  },
+  "explicit_action_access_sensitivity": {
+    "scope": "Post hoc on the frozen six-arm batch; an explicitly requested entry must be reachable in the experimental host.",
+    "distinct_requests": 3,
+    "distinct_clock_entries_tapped_without_observed_arrival": 12,
+    "distinct_required_battery_entries_absent_from_native_frame": 2,
+    "newly_resolved_seats_per_checkpoint": 14,
+    "original_known_fails_per_checkpoint": 317,
+    "combined_known_fails_per_checkpoint": 331,
+    "combined_unknown_per_checkpoint": 983,
+    "upper_possible_deliveries_by_arm": {"L1": 212, "L2": 159, "L3": 163, "L4": 187, "L5": 149, "L6": 113},
+    "possible_net_wins": {"L5_minus_L4": [-187, 149], "L5_minus_L6": [-113, 149]},
+    "possible_L5_minus_L6_assuming_equal_outcome_for_identical_cards": [-85, 121]
+  },
+  "explicit_fact_substudies": {
+    "scope": "Post hoc, input-registered descriptive screens. Selection, native control text, pixel readability, original request accuracy and independent delivery are separate outcomes.",
+    "arm_order": ["L1", "L2", "L3", "L4", "L5", "L6"],
+    "same_candidate_selection": {
+      "distinct_requests": 21,
+      "step_requests": 14,
+      "step_families": 13,
+      "program_kept_step": 8,
+      "model_kept_step_L2_to_L6": [14, 14, 14, 14, 14],
+      "date_requests": 7,
+      "program_kept_date": 7,
+      "model_kept_date_L2_to_L6": [7, 7, 7, 6, 7],
+      "missing_date_callbacks_L2_to_L6": [0, 0, 0, 1, 0],
+      "steps_kept_by_source_order_fallback": 8,
+      "steps_beyond_fallback_limit": 5,
+      "steps_displaced_by_other_lexical_hit": 1
+    },
+    "step_final_pixels": {
+      "assigned_per_arm": 14,
+      "captured_and_bound": [12, 14, 13, 14, 13, 9],
+      "readable_target_by_assistant": [11, 3, 2, 3, 13, 9],
+      "positive_target_by_offline_ocr": [10, 3, 2, 3, 13, 9],
+      "only_prefix_visible_by_assistant": [1, 11, 11, 11, 0, 0],
+      "prefix_only_despite_passing_whole_card_native_control_screen": 28,
+      "unique_target_crops_final": 52,
+      "unique_target_crops_across_checkpoints": 56,
+      "ocr_disagreement_with_positive_assistant_reading_on_final": 1
+    },
+    "explicit_numeric_first_frame": {
+      "requests": 6,
+      "families": 5,
+      "explicit_numeric_facts": 9,
+      "frozen_sample_contradicts_requested_value": 5,
+      "frozen_sample_placeholder": 3,
+      "no_current_time_field": 1,
+      "captured_seats_per_checkpoint": 30,
+      "already_stage_rejected_seats_per_checkpoint": 6,
+      "unique_native_capture_receipts_across_checkpoints": 47,
+      "unique_native_image_bytes_across_checkpoints": 34,
+      "additional_failures_per_checkpoint_over_explicit_action_sensitivity": 30,
+      "combined_failures": 361,
+      "combined_unknown": 953,
+      "L5_minus_L6_unrestricted_possible_net_wins": [-108, 144],
+      "technical_accepted_excluding_six_on_remaining_213": [88, 25, 25, 23, 145, 110],
+      "groups_in_213": 195,
+      "technical_accepted_excluding_six_and_two_reconstructed_on_211": [87, 25, 25, 23, 143, 108]
+    }
+  },
+  "source_receipt_sha256": {
+    "explicit_reference_selection": "906abbe640899d4227f160f9c9d9021b298930e2d6fd4eddb0679ae1dd3d5eb8",
+    "step_input_register": "28d1bb620d145e19f193f1cc0c73a56ca35bfac23396ebea3ce652ca2c3c4226",
+    "step_selection_mechanism": "211112b456c38747c505d46bcfb8901cf638f9c802ba857d22a1e0800c63e8c4",
+    "step_control_text": "17dadd678acacd0fa75aa5334c24d974dd15097e07c503d273a0e4c7c3b79d82",
+    "step_crop_readability": "9477223b53fb1c1cc2f46f15e00de235d5eee7416cbfcdbb3d862ef465dded6e",
+    "step_control_geometry_cross": "b8e2d549a321689033e195c3ff5907d6f3de9d069ecb232ec08a3c78edcb49d4",
+    "step_offline_ocr_cross": "58c015fcf039adb1714252da2494495dc8124678a1f774bc1454d31203258351",
+    "explicit_numeric_input_register": "8cc83f79a0726dea074545642d1d1a6c5604dde0b4928cbf1d02136c5199ec3d",
+    "explicit_numeric_and_action_sensitivity": "cec227440f57fe0cd89950918c1f217a4bcaf20a3eecc3aba4ee76a500fefaf5",
+    "explicit_action_access_sensitivity": "5febb1656fd86838b1bd2369cd2fec5bbee8627970a4338df913886d82e3fe62",
+    "native_action_entry_geometry_aggregate": "063e87eedfb4fbf236dbc6d9d3cf062a6b35a02b1e1d364da83a2310b0743e7e",
+    "battery_settings_tap_summary": "fc3c6aa10452f367554a345d4a4e0215d0fe685a46f82f54d0d4365bd855dce6",
+    "formal_technical_cost": "c3efacf230adc54ac836ff0bd5bda098b9cb3bc858f14099abe2782398953688",
+    "formal_tradeoff": "739e3c45da84ba8b812c88ae2d25acf13980390b0de6300522b09058b0732a66",
+    "native_final_screen": "22594817cbb36ceef378321ff1a6b685b87779933ed00cd4614db69ce9efce92",
+    "layout_replay_rules": "cfa82059ef2aac1f650654d2695dd5613b79964be945d29d9853e508d799b462",
+    "layout_replay": "56362f6c4cd75fac43f927db2e15f2a0cefe7b39f51fccb0ae97fc064287838d",
+    "layout_replay_verification": "450a1033d625baffee467538551c5577d67dd473df03822a4ceca055bbd19435",
+    "geometry_review_calibration": "6aa1616e3799bb295a71f0e00492174dc6ea9fbe7083fa66b81c56e888fdeec6"
+  }
+}

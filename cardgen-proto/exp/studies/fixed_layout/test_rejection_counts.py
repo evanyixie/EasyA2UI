@@ -4,16 +4,17 @@ import json
 import sys
 from types import SimpleNamespace
 
-import pytest
-
+import coverage_by_load
 import evidence
+import pytest
 import rejection_counts as diagnostics
 
 
 def adapter(row):
     exp = row["value"]
     if isinstance(exp, str):
-        raise ValueError("不支持原始表达式")
+        # The diagnostic checks the exception type from the original adapter.
+        raise ValueError("不支持原始表达式")  # noqa: TRY004
     if exp is None:
         raise KeyError("synthetic-business-key")
     if exp is False:
@@ -31,7 +32,9 @@ def sealed_fixture(root):
     ]
     queue, hashes, inputs, full = [], {}, [], {}
     for task, value, status in rows:
-        line = json.dumps({"task_id": task, "value": value}).encode()
+        line = json.dumps(
+            {"task_id": task, "value": value, "size": "2x4", "D": 3, "A": 1}
+        ).encode()
         inputs.append(line)
         digest = evidence.digest(line)
         queue.append({"task_id": task, "input_line_sha256": digest})
@@ -82,6 +85,40 @@ def sealed_fixture(root):
         },
     )
     return source
+
+
+def test_coverage_keeps_common_rejections_in_both_size_and_action_denominators(
+    tmp_path,
+):
+    source = sealed_fixture(tmp_path)
+    by_group = coverage_by_load.summarize(tmp_path, source)["strata"]
+    expected = {
+        "assigned": 5,
+        "common_admitted": 1,
+        "model_first": 1,
+        "program_first": 1,
+        "paired_first": 1,
+        "model_transport_unknown": 0,
+    }
+    for label in ("all", "2x4", "2x4/D+A=4", "with_action"):
+        assert by_group[label] == expected
+
+    path = tmp_path / "results/fourth/model_model/receipt.json"
+    receipt = evidence.read(path)
+    receipt["status"] = "geometry_transport_unknown"
+    evidence.atomic(path, receipt)
+    with pytest.raises(ValueError, match="摘要"):
+        coverage_by_load.summarize(tmp_path, source)
+
+    seal = evidence.read(tmp_path / "seal.json")
+    seal["arm_receipt_sha256"][path.relative_to(tmp_path).as_posix()] = evidence.sha(
+        path
+    )
+    evidence.atomic(tmp_path / "seal.json", seal)
+    result = coverage_by_load.summarize(tmp_path, source)["strata"]["all"]
+    assert result == dict(
+        expected, model_first=0, paired_first=0, model_transport_unknown=1
+    )
 
 
 def test_public_counts_use_one_input_and_preserve_unknown(tmp_path, monkeypatch):

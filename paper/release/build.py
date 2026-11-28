@@ -1,28 +1,10 @@
-"""组装复现包：一条命令，从仓库挑子集打成压缩包。
+"""组装六档研究的公开复现包。使用 --check 预检，--anonymous 生成匿名版标题。"""
 
-原则：**复现包不是第二份代码**。它每次从当前仓库组装，因此永远不会和主线漂移。
-
-用法：
-    python paper/release/build.py                  # 生成 paper/release/复现包.zip
-    python paper/release/build.py --anonymous      # 双盲版：去掉专利材料与署名
-    python paper/release/build.py --check          # 只检查要打包的文件是否齐全
-
-包里有什么：
-    cardgen_proto/src/          产品路径（第四个方案本体）
-    cardgen_proto/rules/     封闭域资产
-    cardgen_proto/data/gold/    49 条金标
-    cardgen_proto/exp/          实验区（三个方案的实现、跑批、度量）
-    cardgen_proto/tests/        回归测试
-    paper/data/                 闭卷题、标注、人评清单
-    paper/方案/                 实验设计
-    README.md                   三条命令：跑一条 / 跑主表 / 出统计（构建时生成）
-
-不打包：runs/、out/、专利材料、config/llm.json（含密钥）、日志。
-"""
 from __future__ import annotations
 
 import argparse
-import shutil
+import posixpath
+import re
 import subprocess
 import sys
 import tempfile
@@ -31,112 +13,152 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent / "复现包.zip"
-
-# (源相对路径, 包内路径)
-INCLUDE = [
-    ("cardgen-proto/src", "cardgen_proto/src"),
-    ("cardgen-proto/rules", "cardgen_proto/rules"),
-    ("cardgen-proto/data/gold", "cardgen_proto/data/gold"),
-    ("cardgen-proto/exp", "cardgen_proto/exp"),
-    ("cardgen-proto/tests", "cardgen_proto/tests"),
-    ("paper/data", "paper/data"),
-    ("paper/方案", "paper/方案"),
-]
-
-EXCLUDE_DIRS = {"__pycache__", "runs", "logs", ".cache", ".slidep", "专利材料"}
-EXCLUDE_FILES = {"llm.json", ".gitkeep"}
 STUDIES = Path("cardgen-proto/exp/studies")
+CODE_DIRS = ("cardgen-proto/src", "cardgen-proto/rules", "cardgen-proto/exp", "cardgen-proto/tests")
+REPORTS = (
+    "paper/方案/论文实验方案.md",
+    "paper/方案/正式实验结果与进度.md",
+    "paper/方案/补强L6与L5的同内容布局对照.md",
+)
+TABLES = (
+    "paper/out/tables/six_arm_evidence_20261128.json",
+    "paper/out/tables/six_arm_robustness_20261128.json",
+    "paper/out/tables/enhanced_l6_vs_l5_fixed_content.json",
+    "paper/out/tables/six_arm_failure_modes_20261128.json",
+    "paper/out/tables/six_arm_cost_frontier.json",
+    "paper/out/tables/enhanced_l6_layout_distributions.json",
+)
+FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
+PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
+STUDY_ASSETS = {
+    STUDIES / ".gitattributes",
+    STUDIES / "dataset/form.html",
+    STUDIES / "fixed_layout/review.html",
+    STUDIES / "genui71/external-demo.patch",
+    STUDIES / "six_arms/fixtures/synthetic.json",
+}
+EXCLUDE_DIRS = {"__pycache__", "runs", "logs", "out", ".cache", ".slidep", "专利材料"}
+EXCLUDE_FILES = {"llm.json", ".gitkeep"}
 
 
-def study_release_files(repo: Path) -> set[Path]:
-    """实验目录也能生成盲卷和原件；发布包只读取 Git 登记的文件。"""
-    if not (repo / STUDIES).is_dir():
+def study_release_files(repo: Path, paths: tuple[str, ...] = (STUDIES.as_posix(),)) -> set[Path]:
+    """列出指定范围已登记的文件，默认仅查询实验程序目录。"""
+    if not any((repo / path).exists() for path in paths):
         return set()
-    raw = subprocess.check_output(["git", "-C", str(repo), "ls-files", "-z", "--", STUDIES.as_posix()])
-    return {repo / name.decode("utf-8") for name in raw.split(b"\0") if name}
+    raw = subprocess.check_output(
+        ["git", "-C", str(repo), "ls-files", "-z", "--", *paths]
+    )
+    return {repo / item.decode("utf-8") for item in raw.split(b"\0") if item}
 
 
 def collect() -> list[tuple[Path, str]]:
-    pairs: list[tuple[Path, str]] = []
-    published = study_release_files(REPO)
-    for src_rel, dst_rel in INCLUDE:
-        src = REPO / src_rel
-        if not src.exists():
-            continue
-        if src.is_file():
-            pairs.append((src, dst_rel))
-            continue
-        for p in sorted(src.rglob("*")):
-            if p.is_dir() or any(part in EXCLUDE_DIRS for part in p.parts):
+    """只遍历 Git 登记的代码和明确公开的文件，保留正文链接使用的仓库路径。"""
+    pairs = []
+    for path in sorted(study_release_files(REPO, (*CODE_DIRS, *PUBLIC_FILES))):
+        relative = path.relative_to(REPO)
+        name = relative.as_posix()
+        if name not in PUBLIC_FILES:
+            if not any(name.startswith(root + "/") for root in CODE_DIRS):
                 continue
-            if p.name in EXCLUDE_FILES:
+            if path.name in EXCLUDE_FILES or EXCLUDE_DIRS.intersection(relative.parts):
                 continue
-            if p.is_relative_to(REPO / STUDIES) and (p not in published or p.is_symlink()):
+            if relative.is_relative_to(STUDIES) and path.suffix != ".py" and relative not in STUDY_ASSETS:
                 continue
-            pairs.append((p, str(Path(dst_rel) / p.relative_to(src))))
+        if path.is_file() and path.resolve() == path:
+            pairs.append((path, name))
     return pairs
+
+
+def missing_material(pairs: list[tuple[Path, str]]) -> list[str]:
+    names = {name for _, name in pairs}
+    required = {
+        *PUBLIC_FILES,
+        "cardgen-proto/exp/studies/six_arms/study.py",
+        "cardgen-proto/exp/studies/six_arms/fixtures/synthetic.json",
+    }
+    missing = required - names
+    directories = {p.as_posix() for name in names for p in Path(name).parents}
+    # 先检查允许公开的正文所指向的本地文件。引用只用于预检，不能扩大收录范围。
+    for report in REPORTS:
+        if report not in names:
+            continue
+        content = (REPO / report).read_text(encoding="utf-8")
+        prose = re.sub(r"^```.*?^```[^\n]*", "", content, flags=re.MULTILINE | re.DOTALL)
+        for link in re.findall(r"\[[^\]\n]+\]\(([^)\s]+)\)", prose):
+            target = link.partition("#")[0]
+            if target and "://" not in target:
+                destination = posixpath.normpath(posixpath.join(posixpath.dirname(report), target))
+                if destination not in names and destination not in directories:
+                    missing.add(destination)
+    return sorted(missing)
+
+
+def _readme(anonymous: bool) -> str:
+    title = "卡片生成六档实验" if anonymous else "EasyA2UI 卡片生成六档实验"
+    return f"""# {title}
+
+正式实验以 219 题比较 L1–L6，共 1,314 个席位。补强 L6 的布局对照使用其中可固定内容的 187 题，单独报告。
+
+- [论文实验设计]({REPORTS[0]})
+- [六档正式结果与证据范围]({REPORTS[1]}) · [机读汇总]({TABLES[0]}) · [稳健性汇总]({TABLES[1]})
+- [补强 L6 与 L5 的同内容布局对照]({REPORTS[2]}) · [机读汇总]({TABLES[2]}) · [复算通过数与耗时所用的分布]({TABLES[5]})
+- [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
+- [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
+
+## 用公开材料离线演练
+
+使用 Python 3.11 或更新版本，在解压目录依次执行以下命令。`demo-batch` 和 `demo-replay` 须为新目录。这条演练使用一份合成请求和内置模型回复，仅需标准库。
+
+```sh
+python cardgen-proto/exp/studies/six_arms/study.py freeze cardgen-proto/exp/studies/six_arms/fixtures/synthetic.json demo-batch --arms L1 L2 L3 L4
+python cardgen-proto/exp/studies/six_arms/study.py fixture demo-batch
+python cardgen-proto/exp/studies/six_arms/study.py replay demo-batch demo-replay
+```
+
+预期匹配 4 个席位，新增物理请求 0 次。逐席结果见 `demo-replay/replay.json`。上述机读表给出正式观测和补充分析的汇总值。
+
+## 正式结果的复核条件
+
+保管方逐题复算需要冻结输入、对应版本的执行器、历史模型回包、原件与回执。视觉与交互结论另需对应的设备和评审证据。这些逐题材料由保管方隔离保存。
+
+L5、L6 的参考几何检查还需要匹配冻结版本的 Pillow、FreeType、测量模块以及常规和粗体字体。通过 `SIX_ARMS_MEASURE_PY`、`SIX_ARMS_FONT_REGULAR` 和 `SIX_ARMS_FONT_BOLD` 指定对应文件。配好这些依赖后，在上述第一条命令中去掉 `--arms L1 L2 L3 L4` 并另用新的批次和回放目录，即可离线演练全部六档。运行回归测试另需 pytest。另行实发模型请求需要 httpx、获授权的 API 密钥和联网环境。论文中的首次调用耗时来自历史实测。
+"""
 
 
 def build(anonymous: bool = False) -> Path:
     pairs = collect()
-    with tempfile.TemporaryDirectory() as tmp:
-        stage = Path(tmp) / "release"
-        for src, dst in pairs:
-            target = stage / dst
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, target)
-        _write_readme(stage, anonymous)
-        if OUT.exists():
-            OUT.unlink()
-        with zipfile.ZipFile(OUT, "w", zipfile.ZIP_DEFLATED) as zf:
-            for p in sorted(stage.rglob("*")):
-                if p.is_file():
-                    zf.write(p, p.relative_to(stage))
+    missing = missing_material(pairs)
+    if missing:
+        raise ValueError("缺少已登记的发布材料或正文引用：" + "、".join(missing))
+    with tempfile.TemporaryDirectory(dir=OUT.parent) as tmp:
+        archive = Path(tmp) / "release.zip"
+        with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as zf:
+            for source, name in pairs:
+                zf.write(source, name)
+            zf.writestr("README.md", _readme(anonymous))
+        archive.replace(OUT)
     return OUT
 
 
-def _write_readme(stage: Path, anonymous: bool) -> None:
-    note = "（双盲评审版，作者与单位信息已移除）" if anonymous else ""
-    text = f"""# 复现包 {note}
-
-## 环境
-只依赖 Python 3.10+ 标准库，无需安装第三方包。
-
-## 三条命令
-1. 跑一条（看效果）：
-   `python -m exp.runners.run_condition --condition L4 --query "看下手机和耳机的电量"`
-2. 跑主表（四档 × 49 条）：
-   `python -m exp.runners.run_condition --all`
-3. 出统计（表 1 / 表 2 / 表 3）：
-   `python exp.metrics.build_metrics_report`
-
-## 条件与配置的对应
-见 `cardgen_proto/exp/conditions.py`（这张表同时是论文附录的映射表）。
-
-## 已知限制
-- 未训练任何模型；模型调用走 `cardgen_proto/src/M1_extract.py` 的统一通道；
-- 开发集（49 条）与程序规则同源，属开卷；独立验证看 `paper/data/heldout/`。
-"""
-    (stage / "README.md").write_text(text, encoding="utf-8")
-
-
 def main(argv: list[str]) -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--anonymous", action="store_true")
-    ap.add_argument("--check", action="store_true")
-    args = ap.parse_args(argv)
-
-    pairs = collect()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--anonymous", action="store_true")
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args(argv)
     if args.check:
-        missing = [s for s, _ in INCLUDE if not (REPO / s).exists()]
-        print(f"待打包文件 {len(pairs)} 个")
+        pairs = collect()
+        print(f"发布清单共 {len(pairs) + 1} 个文件（含 README）")
+        missing = missing_material(pairs)
         if missing:
-            print("缺少：" + "、".join(missing))
+            print("缺少已登记的发布材料或正文引用：" + "、".join(missing))
             return 1
         return 0
-
-    out = build(args.anonymous)
-    print(f"已生成 {out}（{len(pairs)} 个文件，{out.stat().st_size // 1024} KB）")
+    try:
+        out = build(args.anonymous)
+    except ValueError as exc:
+        print(exc, file=sys.stderr)
+        return 1
+    print(f"已生成 {out}（{out.stat().st_size // 1024} KB）")
     return 0
 
 

@@ -1,0 +1,379 @@
+{
+  "assigned_tasks": 219,
+  "counts_by_arm": {
+    "L1": {
+      "accepted": 91,
+      "artifact": 3,
+      "one_shot": 1,
+      "reference_geometry": 118,
+      "unknown": 6
+    },
+    "L2": {
+      "accepted": 30,
+      "content": 27,
+      "emit": 1,
+      "geometry": 1,
+      "reference_geometry": 128,
+      "theme": 29,
+      "unknown": 3
+    },
+    "L3": {
+      "accepted": 29,
+      "content": 27,
+      "geometry": 1,
+      "reference_geometry": 131,
+      "theme": 26,
+      "unknown": 5
+    },
+    "L4": {
+      "accepted": 28,
+      "content": 28,
+      "geometry": 1,
+      "reference_geometry": 159,
+      "unknown": 3
+    },
+    "L5": {
+      "accepted": 150,
+      "content": 31,
+      "geometry": 37,
+      "unknown": 1
+    },
+    "L6": {
+      "accepted": 115,
+      "content": 32,
+      "geometry": 72
+    }
+  },
+  "l5_l6_paired_stopping_points": [
+    {
+      "L5": "accepted",
+      "L6": "accepted",
+      "tasks": 110
+    },
+    {
+      "L5": "accepted",
+      "L6": "content",
+      "tasks": 4
+    },
+    {
+      "L5": "accepted",
+      "L6": "geometry",
+      "tasks": 36
+    },
+    {
+      "L5": "content",
+      "L6": "accepted",
+      "tasks": 1
+    },
+    {
+      "L5": "content",
+      "L6": "content",
+      "tasks": 27
+    },
+    {
+      "L5": "content",
+      "L6": "geometry",
+      "tasks": 3
+    },
+    {
+      "L5": "geometry",
+      "L6": "accepted",
+      "tasks": 3
+    },
+    {
+      "L5": "geometry",
+      "L6": "content",
+      "tasks": 1
+    },
+    {
+      "L5": "geometry",
+      "L6": "geometry",
+      "tasks": 33
+    },
+    {
+      "L5": "unknown",
+      "L6": "accepted",
+      "tasks": 1
+    }
+  ],
+  "native_screen_of_captured_finals": {
+    "accepted": {
+      "complete_no_leaf_box_issue": 443,
+      "confirmed_leaf_box_issue": 0,
+      "incomplete_without_observed_issue": 0
+    },
+    "geometry_unknown": {
+      "complete_no_leaf_box_issue": 0,
+      "confirmed_leaf_box_issue": 0,
+      "incomplete_without_observed_issue": 2
+    },
+    "geometry_unresolved": {
+      "complete_no_leaf_box_issue": 339,
+      "confirmed_leaf_box_issue": 184,
+      "incomplete_without_observed_issue": 13
+    }
+  },
+  "source_sha256": {
+    "native_screen": "a4ceaee6a1b502865a9628362ed19c5f9c52f443470d63316ed5d5ffc18b5432",
+    "observations": "620c51e4c95436dfa15b0cf2bd429ece8cd873b88716d481a3f7f3afc047fad2",
+    "seats": "8a14e60a953e8b7e445df7985c7512ceefff94f0fcc404cc62bf6a6c51f83e72"
+  },
+  "terminal_reasons": [
+    {
+      "arms": {
+        "L1": 91,
+        "L2": 30,
+        "L3": 29,
+        "L4": 28,
+        "L5": 150,
+        "L6": 115
+      },
+      "reason": "accepted",
+      "stage": "accepted",
+      "total": 443
+    },
+    {
+      "arms": {
+        "L1": 1
+      },
+      "reason": "DUPLICATE_ID_OR_DISCONNECTED_TREE",
+      "stage": "artifact",
+      "total": 1
+    },
+    {
+      "arms": {
+        "L1": 1
+      },
+      "reason": "DUPLICATE_PARENT_OR_CYCLE",
+      "stage": "artifact",
+      "total": 1
+    },
+    {
+      "arms": {
+        "L1": 1
+      },
+      "reason": "UNAUTHORIZED_HANDLER",
+      "stage": "artifact",
+      "total": 1
+    },
+    {
+      "arms": {
+        "L2": 1,
+        "L3": 2,
+        "L4": 2,
+        "L5": 1,
+        "L6": 2
+      },
+      "reason": "empty_unit",
+      "stage": "content",
+      "total": 8
+    },
+    {
+      "arms": {
+        "L2": 5,
+        "L3": 6,
+        "L4": 5,
+        "L5": 5,
+        "L6": 6
+      },
+      "reason": "entity_numeral",
+      "stage": "content",
+      "total": 27
+    },
+    {
+      "arms": {
+        "L2": 12,
+        "L3": 11,
+        "L4": 14,
+        "L5": 17,
+        "L6": 17
+      },
+      "reason": "first_frame_value",
+      "stage": "content",
+      "total": 71
+    },
+    {
+      "arms": {
+        "L2": 2,
+        "L3": 2,
+        "L4": 2,
+        "L5": 2,
+        "L6": 2
+      },
+      "reason": "json_syntax",
+      "stage": "content",
+      "total": 10
+    },
+    {
+      "arms": {
+        "L2": 3,
+        "L3": 3,
+        "L4": 3,
+        "L5": 3,
+        "L6": 2
+      },
+      "reason": "label_numeral",
+      "stage": "content",
+      "total": 14
+    },
+    {
+      "arms": {
+        "L2": 3,
+        "L3": 2,
+        "L4": 1,
+        "L5": 2,
+        "L6": 2
+      },
+      "reason": "literal_source",
+      "stage": "content",
+      "total": 10
+    },
+    {
+      "arms": {
+        "L2": 1,
+        "L3": 1,
+        "L4": 1,
+        "L5": 1,
+        "L6": 1
+      },
+      "reason": "non_scalar",
+      "stage": "content",
+      "total": 5
+    },
+    {
+      "arms": {
+        "L2": 1
+      },
+      "reason": "json_syntax",
+      "stage": "emit",
+      "total": 1
+    },
+    {
+      "arms": {
+        "L5": 33,
+        "L6": 72
+      },
+      "reason": "card_height",
+      "stage": "geometry",
+      "total": 105
+    },
+    {
+      "arms": {
+        "L5": 4
+      },
+      "reason": "component_lines",
+      "stage": "geometry",
+      "total": 4
+    },
+    {
+      "arms": {
+        "L2": 1,
+        "L3": 1,
+        "L4": 1
+      },
+      "reason": "json_extra_data",
+      "stage": "geometry",
+      "total": 3
+    },
+    {
+      "arms": {
+        "L1": 1
+      },
+      "reason": "json_syntax",
+      "stage": "one_shot",
+      "total": 1
+    },
+    {
+      "arms": {
+        "L1": 100,
+        "L2": 67,
+        "L3": 75,
+        "L4": 85
+      },
+      "reason": "text_and_container",
+      "stage": "reference_geometry",
+      "total": 327
+    },
+    {
+      "arms": {
+        "L1": 18,
+        "L2": 61,
+        "L3": 56,
+        "L4": 74
+      },
+      "reason": "text_only",
+      "stage": "reference_geometry",
+      "total": 209
+    },
+    {
+      "arms": {
+        "L2": 29,
+        "L3": 26
+      },
+      "reason": "json_extra_data",
+      "stage": "theme",
+      "total": 55
+    },
+    {
+      "arms": {
+        "L3": 2,
+        "L5": 1
+      },
+      "reason": "callback_content",
+      "stage": "unknown",
+      "total": 3
+    },
+    {
+      "arms": {
+        "L2": 2,
+        "L3": 2,
+        "L4": 2
+      },
+      "reason": "callback_geometry",
+      "stage": "unknown",
+      "total": 6
+    },
+    {
+      "arms": {
+        "L1": 4
+      },
+      "reason": "callback_one_shot",
+      "stage": "unknown",
+      "total": 4
+    },
+    {
+      "arms": {
+        "L4": 1
+      },
+      "reason": "callback_structure",
+      "stage": "unknown",
+      "total": 1
+    },
+    {
+      "arms": {
+        "L2": 1,
+        "L3": 1
+      },
+      "reason": "callback_theme",
+      "stage": "unknown",
+      "total": 2
+    },
+    {
+      "arms": {
+        "L1": 1
+      },
+      "reason": "first_frame_unresolved",
+      "stage": "unknown",
+      "total": 1
+    },
+    {
+      "arms": {
+        "L1": 1
+      },
+      "reason": "unsupported_expression",
+      "stage": "unknown",
+      "total": 1
+    }
+  ],
+  "terminal_seats": 1314
+}
