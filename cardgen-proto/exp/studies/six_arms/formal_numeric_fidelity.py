@@ -130,10 +130,22 @@ def run(root, vault):
         a4_sha == published_a4["coverage_count_receipt_sha256"],
         "Published A4a inputs or counts differ",
     )
+    primary_receipt = sorted(
+        (
+            row["task"],
+            row["arm"],
+            row["phase"],
+            row["metrics"]["status"],
+            row["metrics"]["supported"],
+            row["metrics"]["total"],
+        )
+        for row in ledger
+    )
     return {
         "reference_evidence": refs.summary(references),
         "historical_matcher_sha256_lf": MATCHER_SHA,
         "coverage_count_receipt_sha256": a4_sha,
+        "primary_count_receipt_sha256": digest(encode(primary_receipt)),
         "numeric_count_receipt_sha256": digest(
             encode(
                 sorted((r["task"], r["arm"], r["phase"], r["metrics"]) for r in ledger)

@@ -1,0 +1,1716 @@
+{
+  "coverage_count_receipt_sha256": "8d9d5e737e0d1411379345ded3bbd174a075702879b4bccfa5ed4b128b0e8377",
+  "formal": {
+    "assigned_tasks": 219,
+    "basis": "C-01 and C-03 exclude missing artifacts and empty numeric data from precision. Arm micro means pool measured fragments. Macro means weight each measured card equally. The original rule tests reference or query support; strict uses its own recorded counts. The sample diagnostic adds strict snapshot matches among originally unsupported fragments. Pairwise differences subtract the left arm from the right on tasks with both cards measurable. The interval resamples entire families and uses the task-weighted mean paired difference. Within-arm changes pair the same task at the first and final checkpoints. Only pairs with measured data at both checkpoints enter score and fragment-count changes.",
+    "bootstrap": {
+      "interval": "inclusive percentile 95%",
+      "replicates": 10000,
+      "seed": 20261124
+    },
+    "phases": {
+      "after_common_repair": {
+        "arms": {
+          "L1": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 27,
+            "cards_with_snapshot_extra": 26,
+            "excluded_cards": 35,
+            "measured_cards": 184,
+            "original_source_fragments": {
+              "both_supported": 5,
+              "fact_only_supported": 291,
+              "query_only_supported": 34
+            },
+            "snapshot_supported_extra": 46,
+            "status_counts": {
+              "empty_data": 26,
+              "measured": 184,
+              "missing_reference": 0,
+              "no_artifact": 5,
+              "unresolved_text": 4
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 118,
+                "cards_with_no_supported_fragments": 9,
+                "macro_mean": 0.8092197204968944,
+                "micro_mean": 0.7534246575342466,
+                "supported_fragments": 330,
+                "unsupported_fragments": 108
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 137,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8740424430641822,
+                "micro_mean": 0.8584474885844748,
+                "supported_fragments": 376,
+                "unsupported_fragments": 62
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 59,
+                "cards_with_no_supported_fragments": 48,
+                "macro_mean": 0.5139169254658386,
+                "micro_mean": 0.4520547945205479,
+                "supported_fragments": 198,
+                "unsupported_fragments": 240
+              }
+            },
+            "total_measured_fragments": 438
+          },
+          "L2": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 18,
+            "cards_with_snapshot_extra": 20,
+            "excluded_cards": 81,
+            "measured_cards": 138,
+            "original_source_fragments": {
+              "both_supported": 5,
+              "fact_only_supported": 207,
+              "query_only_supported": 26
+            },
+            "snapshot_supported_extra": 39,
+            "status_counts": {
+              "empty_data": 20,
+              "measured": 138,
+              "missing_reference": 0,
+              "no_artifact": 61,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 92,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8149413388543824,
+                "micro_mean": 0.7555555555555555,
+                "supported_fragments": 238,
+                "unsupported_fragments": 77
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 105,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8803657694962043,
+                "micro_mean": 0.8793650793650793,
+                "supported_fragments": 277,
+                "unsupported_fragments": 38
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 39,
+                "cards_with_no_supported_fragments": 40,
+                "macro_mean": 0.4752070393374741,
+                "micro_mean": 0.44126984126984126,
+                "supported_fragments": 139,
+                "unsupported_fragments": 176
+              }
+            },
+            "total_measured_fragments": 315
+          },
+          "L3": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 17,
+            "cards_with_snapshot_extra": 23,
+            "excluded_cards": 80,
+            "measured_cards": 139,
+            "original_source_fragments": {
+              "both_supported": 7,
+              "fact_only_supported": 202,
+              "query_only_supported": 24
+            },
+            "snapshot_supported_extra": 42,
+            "status_counts": {
+              "empty_data": 21,
+              "measured": 139,
+              "missing_reference": 0,
+              "no_artifact": 59,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 95,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8186793422404933,
+                "micro_mean": 0.7516129032258064,
+                "supported_fragments": 233,
+                "unsupported_fragments": 77
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 110,
+                "cards_with_no_supported_fragments": 6,
+                "macro_mean": 0.8936279547790339,
+                "micro_mean": 0.8870967741935484,
+                "supported_fragments": 275,
+                "unsupported_fragments": 35
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 41,
+                "cards_with_no_supported_fragments": 44,
+                "macro_mean": 0.4776378896882494,
+                "micro_mean": 0.43548387096774194,
+                "supported_fragments": 135,
+                "unsupported_fragments": 175
+              }
+            },
+            "total_measured_fragments": 310
+          },
+          "L4": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 23,
+            "cards_with_snapshot_extra": 34,
+            "excluded_cards": 55,
+            "measured_cards": 164,
+            "original_source_fragments": {
+              "both_supported": 7,
+              "fact_only_supported": 265,
+              "query_only_supported": 30
+            },
+            "snapshot_supported_extra": 61,
+            "status_counts": {
+              "empty_data": 23,
+              "measured": 164,
+              "missing_reference": 0,
+              "no_artifact": 32,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 102,
+                "cards_with_no_supported_fragments": 8,
+                "macro_mean": 0.7991289198606272,
+                "micro_mean": 0.7330097087378641,
+                "supported_fragments": 302,
+                "unsupported_fragments": 110
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 124,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.885256968641115,
+                "micro_mean": 0.8810679611650486,
+                "supported_fragments": 363,
+                "unsupported_fragments": 49
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 39,
+                "cards_with_no_supported_fragments": 49,
+                "macro_mean": 0.45548054587688735,
+                "micro_mean": 0.42718446601941745,
+                "supported_fragments": 176,
+                "unsupported_fragments": 236
+              }
+            },
+            "total_measured_fragments": 412
+          },
+          "L5": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 17,
+            "cards_with_snapshot_extra": 20,
+            "excluded_cards": 93,
+            "measured_cards": 126,
+            "original_source_fragments": {
+              "both_supported": 5,
+              "fact_only_supported": 180,
+              "query_only_supported": 26
+            },
+            "snapshot_supported_extra": 29,
+            "status_counts": {
+              "empty_data": 24,
+              "measured": 126,
+              "missing_reference": 0,
+              "no_artifact": 69,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 83,
+                "cards_with_no_supported_fragments": 8,
+                "macro_mean": 0.8171107331821618,
+                "micro_mean": 0.7785977859778598,
+                "supported_fragments": 211,
+                "unsupported_fragments": 60
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 98,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.885978835978836,
+                "micro_mean": 0.8856088560885609,
+                "supported_fragments": 240,
+                "unsupported_fragments": 31
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 36,
+                "cards_with_no_supported_fragments": 36,
+                "macro_mean": 0.4907879818594104,
+                "micro_mean": 0.47601476014760147,
+                "supported_fragments": 129,
+                "unsupported_fragments": 142
+              }
+            },
+            "total_measured_fragments": 271
+          },
+          "L6": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 17,
+            "cards_with_snapshot_extra": 10,
+            "excluded_cards": 127,
+            "measured_cards": 92,
+            "original_source_fragments": {
+              "both_supported": 4,
+              "fact_only_supported": 114,
+              "query_only_supported": 20
+            },
+            "snapshot_supported_extra": 14,
+            "status_counts": {
+              "empty_data": 23,
+              "measured": 92,
+              "missing_reference": 0,
+              "no_artifact": 104,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 69,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8342391304347826,
+                "micro_mean": 0.8165680473372781,
+                "supported_fragments": 138,
+                "unsupported_fragments": 31
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 76,
+                "cards_with_no_supported_fragments": 6,
+                "macro_mean": 0.8894927536231884,
+                "micro_mean": 0.8994082840236687,
+                "supported_fragments": 152,
+                "unsupported_fragments": 17
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 25,
+                "cards_with_no_supported_fragments": 30,
+                "macro_mean": 0.4621376811594203,
+                "micro_mean": 0.4556213017751479,
+                "supported_fragments": 77,
+                "unsupported_fragments": 92
+              }
+            },
+            "total_measured_fragments": 169
+          }
+        },
+        "paired": {
+          "L5_minus_L4": {
+            "assigned_pairs": 219,
+            "families_with_measured_pairs": 105,
+            "left_arm": "L4",
+            "left_only_measured": 43,
+            "measured_pairs": 121,
+            "neither_measured": 50,
+            "right_arm": "L5",
+            "right_only_measured": 5,
+            "support": {
+              "original": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.8129279811097992,
+                "paired_family_percentile_ci95": [
+                  -0.0015097990777338602,
+                  0.0318586290014203
+                ],
+                "right_macro_mean": 0.8255312868949233,
+                "right_minus_left_macro_difference": 0.012603305785123966,
+                "wins": {
+                  "left": 2,
+                  "right": 7,
+                  "tie": 112
+                }
+              },
+              "original_plus_snapshot": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.884504132231405,
+                "paired_family_percentile_ci95": [
+                  -0.005814292296850436,
+                  0.008484848484848486
+                ],
+                "right_macro_mean": 0.8856749311294766,
+                "right_minus_left_macro_difference": 0.0011707988980716253,
+                "wins": {
+                  "left": 3,
+                  "right": 3,
+                  "tie": 115
+                }
+              },
+              "strict": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.4785615899252263,
+                "paired_family_percentile_ci95": [
+                  -0.0013127133997630827,
+                  0.04863636363636363
+                ],
+                "right_macro_mean": 0.4997737111373475,
+                "right_minus_left_macro_difference": 0.021212121212121213,
+                "wins": {
+                  "left": 3,
+                  "right": 9,
+                  "tie": 109
+                }
+              }
+            }
+          },
+          "L6_minus_L5": {
+            "assigned_pairs": 219,
+            "families_with_measured_pairs": 75,
+            "left_arm": "L5",
+            "left_only_measured": 39,
+            "measured_pairs": 87,
+            "neither_measured": 88,
+            "right_arm": "L6",
+            "right_only_measured": 5,
+            "support": {
+              "original": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.8314176245210728,
+                "paired_family_percentile_ci95": [
+                  -0.0026041666666666665,
+                  0.008823529411764706
+                ],
+                "right_macro_mean": 0.8333333333333334,
+                "right_minus_left_macro_difference": 0.0019157088122605363,
+                "wins": {
+                  "left": 1,
+                  "right": 1,
+                  "tie": 85
+                }
+              },
+              "original_plus_snapshot": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.8840996168582376,
+                "paired_family_percentile_ci95": [
+                  -0.0032467532467532465,
+                  0.0
+                ],
+                "right_macro_mean": 0.8831417624521073,
+                "right_minus_left_macro_difference": -0.0009578544061302681,
+                "wins": {
+                  "left": 1,
+                  "right": 0,
+                  "tie": 86
+                }
+              },
+              "strict": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.47509578544061304,
+                "paired_family_percentile_ci95": [
+                  -0.04112554112554112,
+                  0.018939393939393933
+                ],
+                "right_macro_mean": 0.4674329501915709,
+                "right_minus_left_macro_difference": -0.007662835249042145,
+                "wins": {
+                  "left": 3,
+                  "right": 3,
+                  "tie": 81
+                }
+              }
+            }
+          }
+        }
+      },
+      "raw_first": {
+        "arms": {
+          "L1": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 27,
+            "cards_with_snapshot_extra": 26,
+            "excluded_cards": 35,
+            "measured_cards": 184,
+            "original_source_fragments": {
+              "both_supported": 5,
+              "fact_only_supported": 291,
+              "query_only_supported": 34
+            },
+            "snapshot_supported_extra": 46,
+            "status_counts": {
+              "empty_data": 26,
+              "measured": 184,
+              "missing_reference": 0,
+              "no_artifact": 5,
+              "unresolved_text": 4
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 118,
+                "cards_with_no_supported_fragments": 9,
+                "macro_mean": 0.8092197204968944,
+                "micro_mean": 0.7534246575342466,
+                "supported_fragments": 330,
+                "unsupported_fragments": 108
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 137,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8740424430641822,
+                "micro_mean": 0.8584474885844748,
+                "supported_fragments": 376,
+                "unsupported_fragments": 62
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 59,
+                "cards_with_no_supported_fragments": 48,
+                "macro_mean": 0.5139169254658386,
+                "micro_mean": 0.4520547945205479,
+                "supported_fragments": 198,
+                "unsupported_fragments": 240
+              }
+            },
+            "total_measured_fragments": 438
+          },
+          "L2": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 18,
+            "cards_with_snapshot_extra": 20,
+            "excluded_cards": 81,
+            "measured_cards": 138,
+            "original_source_fragments": {
+              "both_supported": 5,
+              "fact_only_supported": 207,
+              "query_only_supported": 26
+            },
+            "snapshot_supported_extra": 39,
+            "status_counts": {
+              "empty_data": 20,
+              "measured": 138,
+              "missing_reference": 0,
+              "no_artifact": 61,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 92,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8149413388543824,
+                "micro_mean": 0.7555555555555555,
+                "supported_fragments": 238,
+                "unsupported_fragments": 77
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 105,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8803657694962043,
+                "micro_mean": 0.8793650793650793,
+                "supported_fragments": 277,
+                "unsupported_fragments": 38
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 39,
+                "cards_with_no_supported_fragments": 40,
+                "macro_mean": 0.4752070393374741,
+                "micro_mean": 0.44126984126984126,
+                "supported_fragments": 139,
+                "unsupported_fragments": 176
+              }
+            },
+            "total_measured_fragments": 315
+          },
+          "L3": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 17,
+            "cards_with_snapshot_extra": 23,
+            "excluded_cards": 80,
+            "measured_cards": 139,
+            "original_source_fragments": {
+              "both_supported": 7,
+              "fact_only_supported": 202,
+              "query_only_supported": 24
+            },
+            "snapshot_supported_extra": 42,
+            "status_counts": {
+              "empty_data": 21,
+              "measured": 139,
+              "missing_reference": 0,
+              "no_artifact": 59,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 95,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8186793422404933,
+                "micro_mean": 0.7516129032258064,
+                "supported_fragments": 233,
+                "unsupported_fragments": 77
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 110,
+                "cards_with_no_supported_fragments": 6,
+                "macro_mean": 0.8936279547790339,
+                "micro_mean": 0.8870967741935484,
+                "supported_fragments": 275,
+                "unsupported_fragments": 35
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 41,
+                "cards_with_no_supported_fragments": 44,
+                "macro_mean": 0.4776378896882494,
+                "micro_mean": 0.43548387096774194,
+                "supported_fragments": 135,
+                "unsupported_fragments": 175
+              }
+            },
+            "total_measured_fragments": 310
+          },
+          "L4": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 23,
+            "cards_with_snapshot_extra": 34,
+            "excluded_cards": 55,
+            "measured_cards": 164,
+            "original_source_fragments": {
+              "both_supported": 7,
+              "fact_only_supported": 265,
+              "query_only_supported": 30
+            },
+            "snapshot_supported_extra": 61,
+            "status_counts": {
+              "empty_data": 23,
+              "measured": 164,
+              "missing_reference": 0,
+              "no_artifact": 32,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 102,
+                "cards_with_no_supported_fragments": 8,
+                "macro_mean": 0.7991289198606272,
+                "micro_mean": 0.7330097087378641,
+                "supported_fragments": 302,
+                "unsupported_fragments": 110
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 124,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.885256968641115,
+                "micro_mean": 0.8810679611650486,
+                "supported_fragments": 363,
+                "unsupported_fragments": 49
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 39,
+                "cards_with_no_supported_fragments": 49,
+                "macro_mean": 0.45548054587688735,
+                "micro_mean": 0.42718446601941745,
+                "supported_fragments": 176,
+                "unsupported_fragments": 236
+              }
+            },
+            "total_measured_fragments": 412
+          },
+          "L5": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 17,
+            "cards_with_snapshot_extra": 20,
+            "excluded_cards": 93,
+            "measured_cards": 126,
+            "original_source_fragments": {
+              "both_supported": 5,
+              "fact_only_supported": 180,
+              "query_only_supported": 26
+            },
+            "snapshot_supported_extra": 29,
+            "status_counts": {
+              "empty_data": 24,
+              "measured": 126,
+              "missing_reference": 0,
+              "no_artifact": 69,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 83,
+                "cards_with_no_supported_fragments": 8,
+                "macro_mean": 0.8171107331821618,
+                "micro_mean": 0.7785977859778598,
+                "supported_fragments": 211,
+                "unsupported_fragments": 60
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 98,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.885978835978836,
+                "micro_mean": 0.8856088560885609,
+                "supported_fragments": 240,
+                "unsupported_fragments": 31
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 36,
+                "cards_with_no_supported_fragments": 36,
+                "macro_mean": 0.4907879818594104,
+                "micro_mean": 0.47601476014760147,
+                "supported_fragments": 129,
+                "unsupported_fragments": 142
+              }
+            },
+            "total_measured_fragments": 271
+          },
+          "L6": {
+            "assigned_cards": 219,
+            "cards_with_query_only_support": 17,
+            "cards_with_snapshot_extra": 10,
+            "excluded_cards": 127,
+            "measured_cards": 92,
+            "original_source_fragments": {
+              "both_supported": 4,
+              "fact_only_supported": 114,
+              "query_only_supported": 20
+            },
+            "snapshot_supported_extra": 14,
+            "status_counts": {
+              "empty_data": 23,
+              "measured": 92,
+              "missing_reference": 0,
+              "no_artifact": 104,
+              "unresolved_text": 0
+            },
+            "support": {
+              "original": {
+                "cards_with_all_fragments_supported": 69,
+                "cards_with_no_supported_fragments": 7,
+                "macro_mean": 0.8342391304347826,
+                "micro_mean": 0.8165680473372781,
+                "supported_fragments": 138,
+                "unsupported_fragments": 31
+              },
+              "original_plus_snapshot": {
+                "cards_with_all_fragments_supported": 76,
+                "cards_with_no_supported_fragments": 6,
+                "macro_mean": 0.8894927536231884,
+                "micro_mean": 0.8994082840236687,
+                "supported_fragments": 152,
+                "unsupported_fragments": 17
+              },
+              "strict": {
+                "cards_with_all_fragments_supported": 25,
+                "cards_with_no_supported_fragments": 30,
+                "macro_mean": 0.4621376811594203,
+                "micro_mean": 0.4556213017751479,
+                "supported_fragments": 77,
+                "unsupported_fragments": 92
+              }
+            },
+            "total_measured_fragments": 169
+          }
+        },
+        "paired": {
+          "L5_minus_L4": {
+            "assigned_pairs": 219,
+            "families_with_measured_pairs": 105,
+            "left_arm": "L4",
+            "left_only_measured": 43,
+            "measured_pairs": 121,
+            "neither_measured": 50,
+            "right_arm": "L5",
+            "right_only_measured": 5,
+            "support": {
+              "original": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.8129279811097992,
+                "paired_family_percentile_ci95": [
+                  -0.0015097990777338602,
+                  0.0318586290014203
+                ],
+                "right_macro_mean": 0.8255312868949233,
+                "right_minus_left_macro_difference": 0.012603305785123966,
+                "wins": {
+                  "left": 2,
+                  "right": 7,
+                  "tie": 112
+                }
+              },
+              "original_plus_snapshot": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.884504132231405,
+                "paired_family_percentile_ci95": [
+                  -0.005814292296850436,
+                  0.008484848484848486
+                ],
+                "right_macro_mean": 0.8856749311294766,
+                "right_minus_left_macro_difference": 0.0011707988980716253,
+                "wins": {
+                  "left": 3,
+                  "right": 3,
+                  "tie": 115
+                }
+              },
+              "strict": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.4785615899252263,
+                "paired_family_percentile_ci95": [
+                  -0.0013127133997630827,
+                  0.04863636363636363
+                ],
+                "right_macro_mean": 0.4997737111373475,
+                "right_minus_left_macro_difference": 0.021212121212121213,
+                "wins": {
+                  "left": 3,
+                  "right": 9,
+                  "tie": 109
+                }
+              }
+            }
+          },
+          "L6_minus_L5": {
+            "assigned_pairs": 219,
+            "families_with_measured_pairs": 75,
+            "left_arm": "L5",
+            "left_only_measured": 39,
+            "measured_pairs": 87,
+            "neither_measured": 88,
+            "right_arm": "L6",
+            "right_only_measured": 5,
+            "support": {
+              "original": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.8314176245210728,
+                "paired_family_percentile_ci95": [
+                  -0.0026041666666666665,
+                  0.008823529411764706
+                ],
+                "right_macro_mean": 0.8333333333333334,
+                "right_minus_left_macro_difference": 0.0019157088122605363,
+                "wins": {
+                  "left": 1,
+                  "right": 1,
+                  "tie": 85
+                }
+              },
+              "original_plus_snapshot": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.8840996168582376,
+                "paired_family_percentile_ci95": [
+                  -0.0032467532467532465,
+                  0.0
+                ],
+                "right_macro_mean": 0.8831417624521073,
+                "right_minus_left_macro_difference": -0.0009578544061302681,
+                "wins": {
+                  "left": 1,
+                  "right": 0,
+                  "tie": 86
+                }
+              },
+              "strict": {
+                "interval_status": "measured_pairs_only",
+                "left_macro_mean": 0.47509578544061304,
+                "paired_family_percentile_ci95": [
+                  -0.04112554112554112,
+                  0.018939393939393933
+                ],
+                "right_macro_mean": 0.4674329501915709,
+                "right_minus_left_macro_difference": -0.007662835249042145,
+                "wins": {
+                  "left": 3,
+                  "right": 3,
+                  "tie": 81
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "within_arm_first_to_final": {
+      "L1": {
+        "assigned": 219,
+        "both_measured": 184,
+        "fragment_count": {
+          "decreased": 0,
+          "increased": 0,
+          "mean_final_minus_first": 0.0,
+          "unchanged": 184
+        },
+        "original_support": {
+          "decreased": 0,
+          "final_macro_mean": 0.8092197204968944,
+          "first_macro_mean": 0.8092197204968944,
+          "increased": 0,
+          "interval_status": "no_between_family_mean_variation",
+          "mean_final_minus_first": 0.0,
+          "paired_family_percentile_ci95": null,
+          "unchanged": 184
+        },
+        "rows_first_columns_final": {
+          "empty_data": {
+            "empty_data": 26,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "measured": {
+            "empty_data": 0,
+            "measured": 184,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "missing_reference": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "no_artifact": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 5,
+            "unresolved_text": 0
+          },
+          "unresolved_text": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 4
+          }
+        }
+      },
+      "L2": {
+        "assigned": 219,
+        "both_measured": 138,
+        "fragment_count": {
+          "decreased": 0,
+          "increased": 0,
+          "mean_final_minus_first": 0.0,
+          "unchanged": 138
+        },
+        "original_support": {
+          "decreased": 0,
+          "final_macro_mean": 0.8149413388543824,
+          "first_macro_mean": 0.8149413388543824,
+          "increased": 0,
+          "interval_status": "no_between_family_mean_variation",
+          "mean_final_minus_first": 0.0,
+          "paired_family_percentile_ci95": null,
+          "unchanged": 138
+        },
+        "rows_first_columns_final": {
+          "empty_data": {
+            "empty_data": 20,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "measured": {
+            "empty_data": 0,
+            "measured": 138,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "missing_reference": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "no_artifact": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 61,
+            "unresolved_text": 0
+          },
+          "unresolved_text": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          }
+        }
+      },
+      "L3": {
+        "assigned": 219,
+        "both_measured": 139,
+        "fragment_count": {
+          "decreased": 0,
+          "increased": 0,
+          "mean_final_minus_first": 0.0,
+          "unchanged": 139
+        },
+        "original_support": {
+          "decreased": 0,
+          "final_macro_mean": 0.8186793422404933,
+          "first_macro_mean": 0.8186793422404933,
+          "increased": 0,
+          "interval_status": "no_between_family_mean_variation",
+          "mean_final_minus_first": 0.0,
+          "paired_family_percentile_ci95": null,
+          "unchanged": 139
+        },
+        "rows_first_columns_final": {
+          "empty_data": {
+            "empty_data": 21,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "measured": {
+            "empty_data": 0,
+            "measured": 139,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "missing_reference": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "no_artifact": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 59,
+            "unresolved_text": 0
+          },
+          "unresolved_text": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          }
+        }
+      },
+      "L4": {
+        "assigned": 219,
+        "both_measured": 164,
+        "fragment_count": {
+          "decreased": 0,
+          "increased": 0,
+          "mean_final_minus_first": 0.0,
+          "unchanged": 164
+        },
+        "original_support": {
+          "decreased": 0,
+          "final_macro_mean": 0.7991289198606272,
+          "first_macro_mean": 0.7991289198606272,
+          "increased": 0,
+          "interval_status": "no_between_family_mean_variation",
+          "mean_final_minus_first": 0.0,
+          "paired_family_percentile_ci95": null,
+          "unchanged": 164
+        },
+        "rows_first_columns_final": {
+          "empty_data": {
+            "empty_data": 23,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "measured": {
+            "empty_data": 0,
+            "measured": 164,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "missing_reference": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "no_artifact": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 32,
+            "unresolved_text": 0
+          },
+          "unresolved_text": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          }
+        }
+      },
+      "L5": {
+        "assigned": 219,
+        "both_measured": 126,
+        "fragment_count": {
+          "decreased": 0,
+          "increased": 0,
+          "mean_final_minus_first": 0.0,
+          "unchanged": 126
+        },
+        "original_support": {
+          "decreased": 0,
+          "final_macro_mean": 0.8171107331821618,
+          "first_macro_mean": 0.8171107331821618,
+          "increased": 0,
+          "interval_status": "no_between_family_mean_variation",
+          "mean_final_minus_first": 0.0,
+          "paired_family_percentile_ci95": null,
+          "unchanged": 126
+        },
+        "rows_first_columns_final": {
+          "empty_data": {
+            "empty_data": 24,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "measured": {
+            "empty_data": 0,
+            "measured": 126,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "missing_reference": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "no_artifact": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 69,
+            "unresolved_text": 0
+          },
+          "unresolved_text": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          }
+        }
+      },
+      "L6": {
+        "assigned": 219,
+        "both_measured": 92,
+        "fragment_count": {
+          "decreased": 0,
+          "increased": 0,
+          "mean_final_minus_first": 0.0,
+          "unchanged": 92
+        },
+        "original_support": {
+          "decreased": 0,
+          "final_macro_mean": 0.8342391304347826,
+          "first_macro_mean": 0.8342391304347826,
+          "increased": 0,
+          "interval_status": "no_between_family_mean_variation",
+          "mean_final_minus_first": 0.0,
+          "paired_family_percentile_ci95": null,
+          "unchanged": 92
+        },
+        "rows_first_columns_final": {
+          "empty_data": {
+            "empty_data": 23,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "measured": {
+            "empty_data": 0,
+            "measured": 92,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "missing_reference": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          },
+          "no_artifact": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 104,
+            "unresolved_text": 0
+          },
+          "unresolved_text": {
+            "empty_data": 0,
+            "measured": 0,
+            "missing_reference": 0,
+            "no_artifact": 0,
+            "unresolved_text": 0
+          }
+        }
+      }
+    }
+  },
+  "historical_matcher_sha256_lf": "3bf0f319dc9fa266906d649aa4233398fa9da0c8cdefd0c4d08233776dca4376",
+  "interpretation": "Each card contributes distinct numeric fragments in first-frame Text content. Historical source support uses bidirectional text matching. A secondary diagnostic requires normalized equality of whole fragments, with conservative spelling and unit-boundary checks. Additional strict matches in registered input samples are reported among historically unsupported fragments. These checks cannot establish correct entity, denominator, units or runtime data. A4a uses the same originals. Cards with no numeric fragment and missing outputs are counted separately.",
+  "joint_a4a_a5": {
+    "after_common_repair": {
+      "L1": {
+        "at_least_80": {
+          "all_sourced": 91,
+          "empty_data": 2,
+          "some_unsourced": 34
+        },
+        "below_80": {
+          "all_sourced": 27,
+          "empty_data": 24,
+          "some_unsourced": 31
+        },
+        "unassessed": {
+          "no_artifact": 5,
+          "some_unsourced": 1,
+          "unresolved_text": 4
+        }
+      },
+      "L2": {
+        "at_least_80": {
+          "all_sourced": 77,
+          "empty_data": 2,
+          "some_unsourced": 29
+        },
+        "below_80": {
+          "all_sourced": 15,
+          "empty_data": 18,
+          "some_unsourced": 16
+        },
+        "unassessed": {
+          "no_artifact": 61,
+          "some_unsourced": 1
+        }
+      },
+      "L3": {
+        "at_least_80": {
+          "all_sourced": 82,
+          "empty_data": 3,
+          "some_unsourced": 27
+        },
+        "below_80": {
+          "all_sourced": 13,
+          "empty_data": 18,
+          "some_unsourced": 16
+        },
+        "unassessed": {
+          "no_artifact": 59,
+          "some_unsourced": 1
+        }
+      },
+      "L4": {
+        "at_least_80": {
+          "all_sourced": 86,
+          "empty_data": 3,
+          "some_unsourced": 42
+        },
+        "below_80": {
+          "all_sourced": 16,
+          "empty_data": 20,
+          "some_unsourced": 19
+        },
+        "unassessed": {
+          "no_artifact": 32,
+          "some_unsourced": 1
+        }
+      },
+      "L5": {
+        "at_least_80": {
+          "all_sourced": 71,
+          "empty_data": 3,
+          "some_unsourced": 26
+        },
+        "below_80": {
+          "all_sourced": 12,
+          "empty_data": 21,
+          "some_unsourced": 16
+        },
+        "unassessed": {
+          "no_artifact": 69,
+          "some_unsourced": 1
+        }
+      },
+      "L6": {
+        "at_least_80": {
+          "all_sourced": 65,
+          "empty_data": 3,
+          "some_unsourced": 10
+        },
+        "below_80": {
+          "all_sourced": 4,
+          "empty_data": 20,
+          "some_unsourced": 13
+        },
+        "unassessed": {
+          "no_artifact": 104
+        }
+      }
+    },
+    "raw_first": {
+      "L1": {
+        "at_least_80": {
+          "all_sourced": 91,
+          "empty_data": 2,
+          "some_unsourced": 34
+        },
+        "below_80": {
+          "all_sourced": 27,
+          "empty_data": 24,
+          "some_unsourced": 31
+        },
+        "unassessed": {
+          "no_artifact": 5,
+          "some_unsourced": 1,
+          "unresolved_text": 4
+        }
+      },
+      "L2": {
+        "at_least_80": {
+          "all_sourced": 77,
+          "empty_data": 2,
+          "some_unsourced": 29
+        },
+        "below_80": {
+          "all_sourced": 15,
+          "empty_data": 18,
+          "some_unsourced": 16
+        },
+        "unassessed": {
+          "no_artifact": 61,
+          "some_unsourced": 1
+        }
+      },
+      "L3": {
+        "at_least_80": {
+          "all_sourced": 82,
+          "empty_data": 3,
+          "some_unsourced": 27
+        },
+        "below_80": {
+          "all_sourced": 13,
+          "empty_data": 18,
+          "some_unsourced": 16
+        },
+        "unassessed": {
+          "no_artifact": 59,
+          "some_unsourced": 1
+        }
+      },
+      "L4": {
+        "at_least_80": {
+          "all_sourced": 86,
+          "empty_data": 3,
+          "some_unsourced": 42
+        },
+        "below_80": {
+          "all_sourced": 16,
+          "empty_data": 20,
+          "some_unsourced": 19
+        },
+        "unassessed": {
+          "no_artifact": 32,
+          "some_unsourced": 1
+        }
+      },
+      "L5": {
+        "at_least_80": {
+          "all_sourced": 71,
+          "empty_data": 3,
+          "some_unsourced": 26
+        },
+        "below_80": {
+          "all_sourced": 12,
+          "empty_data": 21,
+          "some_unsourced": 16
+        },
+        "unassessed": {
+          "no_artifact": 69,
+          "some_unsourced": 1
+        }
+      },
+      "L6": {
+        "at_least_80": {
+          "all_sourced": 65,
+          "empty_data": 3,
+          "some_unsourced": 10
+        },
+        "below_80": {
+          "all_sourced": 4,
+          "empty_data": 20,
+          "some_unsourced": 13
+        },
+        "unassessed": {
+          "no_artifact": 104
+        }
+      }
+    }
+  },
+  "numeric_count_receipt_sha256": "4ee917d733d2068e8908e4a9ebf73cabc52256f158b515a97499165416eb4519",
+  "primary_count_receipt_sha256": "9110a1ff78de9cb9c0acb79c32b4e84e4aa3979168ca1080f6e0dad9444da05b",
+  "query_source_check": {
+    "different_query_checkpoint_comparison": {
+      "changed_legacy_support_count": 0,
+      "changed_strict_support_count": 0,
+      "checkpoint_seats": 12
+    },
+    "tasks_with_different_original_query": 1,
+    "tasks_with_nonempty_model_query": 219,
+    "tasks_with_original_query_field": 114
+  },
+  "reference_evidence": {
+    "formal_tasks": 219,
+    "mapping_sha256": "2caa898786d4cd0512ad9ddab1d6863ee7202651dbbfca1bab3437632bb85598",
+    "reconstructed_inputs_with_reference": 2,
+    "simulated_tasks_with_reference": 0,
+    "unavailable": {},
+    "verified_a2ui_and_compact": 219
+  },
+  "reference_self_check": {
+    "assigned_cards": 219,
+    "cards_with_query_only_support": 16,
+    "cards_with_snapshot_extra": 12,
+    "excluded_cards": 18,
+    "measured_cards": 201,
+    "original_source_fragments": {
+      "both_supported": 24,
+      "fact_only_supported": 325,
+      "query_only_supported": 22
+    },
+    "snapshot_supported_extra": 15,
+    "status_counts": {
+      "empty_data": 3,
+      "measured": 201,
+      "missing_reference": 0,
+      "no_artifact": 0,
+      "unresolved_text": 15
+    },
+    "support": {
+      "original": {
+        "cards_with_all_fragments_supported": 177,
+        "cards_with_no_supported_fragments": 1,
+        "macro_mean": 0.953470741530443,
+        "micro_mean": 0.9251870324189526,
+        "supported_fragments": 371,
+        "unsupported_fragments": 30
+      },
+      "original_plus_snapshot": {
+        "cards_with_all_fragments_supported": 188,
+        "cards_with_no_supported_fragments": 1,
+        "macro_mean": 0.9718905472636816,
+        "micro_mean": 0.9625935162094763,
+        "supported_fragments": 386,
+        "unsupported_fragments": 15
+      },
+      "strict": {
+        "cards_with_all_fragments_supported": 106,
+        "cards_with_no_supported_fragments": 41,
+        "macro_mean": 0.6518952854773751,
+        "micro_mean": 0.6084788029925187,
+        "supported_fragments": 244,
+        "unsupported_fragments": 157
+      }
+    },
+    "total_measured_fragments": 401
+  },
+  "sensitivity_excluding_reconstructed_final": {
+    "arms": {
+      "L1": {
+        "assigned_cards": 217,
+        "cards_with_query_only_support": 27,
+        "cards_with_snapshot_extra": 25,
+        "excluded_cards": 35,
+        "measured_cards": 182,
+        "original_source_fragments": {
+          "both_supported": 5,
+          "fact_only_supported": 287,
+          "query_only_supported": 34
+        },
+        "snapshot_supported_extra": 45,
+        "status_counts": {
+          "empty_data": 26,
+          "measured": 182,
+          "missing_reference": 0,
+          "no_artifact": 5,
+          "unresolved_text": 4
+        },
+        "support": {
+          "original": {
+            "cards_with_all_fragments_supported": 117,
+            "cards_with_no_supported_fragments": 9,
+            "macro_mean": 0.8093210361067504,
+            "micro_mean": 0.7546296296296297,
+            "supported_fragments": 326,
+            "unsupported_fragments": 106
+          },
+          "original_plus_snapshot": {
+            "cards_with_all_fragments_supported": 136,
+            "cards_with_no_supported_fragments": 7,
+            "macro_mean": 0.8737571951857667,
+            "micro_mean": 0.8587962962962963,
+            "supported_fragments": 371,
+            "unsupported_fragments": 61
+          },
+          "strict": {
+            "cards_with_all_fragments_supported": 59,
+            "cards_with_no_supported_fragments": 47,
+            "macro_mean": 0.5184654631083202,
+            "micro_mean": 0.45601851851851855,
+            "supported_fragments": 197,
+            "unsupported_fragments": 235
+          }
+        },
+        "total_measured_fragments": 432
+      },
+      "L2": {
+        "assigned_cards": 217,
+        "cards_with_query_only_support": 18,
+        "cards_with_snapshot_extra": 20,
+        "excluded_cards": 80,
+        "measured_cards": 137,
+        "original_source_fragments": {
+          "both_supported": 5,
+          "fact_only_supported": 206,
+          "query_only_supported": 26
+        },
+        "snapshot_supported_extra": 39,
+        "status_counts": {
+          "empty_data": 20,
+          "measured": 137,
+          "missing_reference": 0,
+          "no_artifact": 60,
+          "unresolved_text": 0
+        },
+        "support": {
+          "original": {
+            "cards_with_all_fragments_supported": 91,
+            "cards_with_no_supported_fragments": 7,
+            "macro_mean": 0.813590545707334,
+            "micro_mean": 0.7547770700636943,
+            "supported_fragments": 237,
+            "unsupported_fragments": 77
+          },
+          "original_plus_snapshot": {
+            "cards_with_all_fragments_supported": 104,
+            "cards_with_no_supported_fragments": 7,
+            "macro_mean": 0.8794925269377825,
+            "micro_mean": 0.8789808917197452,
+            "supported_fragments": 276,
+            "unsupported_fragments": 38
+          },
+          "strict": {
+            "cards_with_all_fragments_supported": 39,
+            "cards_with_no_supported_fragments": 39,
+            "macro_mean": 0.4786757038581856,
+            "micro_mean": 0.4426751592356688,
+            "supported_fragments": 139,
+            "unsupported_fragments": 175
+          }
+        },
+        "total_measured_fragments": 314
+      },
+      "L3": {
+        "assigned_cards": 217,
+        "cards_with_query_only_support": 17,
+        "cards_with_snapshot_extra": 22,
+        "excluded_cards": 80,
+        "measured_cards": 137,
+        "original_source_fragments": {
+          "both_supported": 7,
+          "fact_only_supported": 200,
+          "query_only_supported": 24
+        },
+        "snapshot_supported_extra": 41,
+        "status_counts": {
+          "empty_data": 21,
+          "measured": 137,
+          "missing_reference": 0,
+          "no_artifact": 59,
+          "unresolved_text": 0
+        },
+        "support": {
+          "original": {
+            "cards_with_all_fragments_supported": 94,
+            "cards_with_no_supported_fragments": 7,
+            "macro_mean": 0.8208985053875565,
+            "micro_mean": 0.7549019607843137,
+            "supported_fragments": 231,
+            "unsupported_fragments": 75
+          },
+          "original_plus_snapshot": {
+            "cards_with_all_fragments_supported": 109,
+            "cards_with_no_supported_fragments": 6,
+            "macro_mean": 0.8945081682307959,
+            "micro_mean": 0.8888888888888888,
+            "supported_fragments": 272,
+            "unsupported_fragments": 34
+          },
+          "strict": {
+            "cards_with_all_fragments_supported": 41,
+            "cards_with_no_supported_fragments": 43,
+            "macro_mean": 0.48217761557177613,
+            "micro_mean": 0.43790849673202614,
+            "supported_fragments": 134,
+            "unsupported_fragments": 172
+          }
+        },
+        "total_measured_fragments": 306
+      },
+      "L4": {
+        "assigned_cards": 217,
+        "cards_with_query_only_support": 23,
+        "cards_with_snapshot_extra": 33,
+        "excluded_cards": 55,
+        "measured_cards": 162,
+        "original_source_fragments": {
+          "both_supported": 7,
+          "fact_only_supported": 262,
+          "query_only_supported": 30
+        },
+        "snapshot_supported_extra": 60,
+        "status_counts": {
+          "empty_data": 23,
+          "measured": 162,
+          "missing_reference": 0,
+          "no_artifact": 32,
+          "unresolved_text": 0
+        },
+        "support": {
+          "original": {
+            "cards_with_all_fragments_supported": 101,
+            "cards_with_no_supported_fragments": 8,
+            "macro_mean": 0.7997354497354497,
+            "micro_mean": 0.7346437346437347,
+            "supported_fragments": 299,
+            "unsupported_fragments": 108
+          },
+          "original_plus_snapshot": {
+            "cards_with_all_fragments_supported": 123,
+            "cards_with_no_supported_fragments": 7,
+            "macro_mean": 0.8853835978835979,
+            "micro_mean": 0.8820638820638821,
+            "supported_fragments": 359,
+            "unsupported_fragments": 48
+          },
+          "strict": {
+            "cards_with_all_fragments_supported": 39,
+            "cards_with_no_supported_fragments": 48,
+            "macro_mean": 0.45801734273956496,
+            "micro_mean": 0.4275184275184275,
+            "supported_fragments": 174,
+            "unsupported_fragments": 233
+          }
+        },
+        "total_measured_fragments": 407
+      },
+      "L5": {
+        "assigned_cards": 217,
+        "cards_with_query_only_support": 17,
+        "cards_with_snapshot_extra": 19,
+        "excluded_cards": 93,
+        "measured_cards": 124,
+        "original_source_fragments": {
+          "both_supported": 5,
+          "fact_only_supported": 177,
+          "query_only_supported": 26
+        },
+        "snapshot_supported_extra": 28,
+        "status_counts": {
+          "empty_data": 24,
+          "measured": 124,
+          "missing_reference": 0,
+          "no_artifact": 69,
+          "unresolved_text": 0
+        },
+        "support": {
+          "original": {
+            "cards_with_all_fragments_supported": 82,
+            "cards_with_no_supported_fragments": 8,
+            "macro_mean": 0.8181931643625192,
+            "micro_mean": 0.7819548872180451,
+            "supported_fragments": 208,
+            "unsupported_fragments": 58
+          },
+          "original_plus_snapshot": {
+            "cards_with_all_fragments_supported": 97,
+            "cards_with_no_supported_fragments": 7,
+            "macro_mean": 0.8861559139784946,
+            "micro_mean": 0.8872180451127819,
+            "supported_fragments": 236,
+            "unsupported_fragments": 30
+          },
+          "strict": {
+            "cards_with_all_fragments_supported": 36,
+            "cards_with_no_supported_fragments": 35,
+            "macro_mean": 0.4946716589861751,
+            "micro_mean": 0.4774436090225564,
+            "supported_fragments": 127,
+            "unsupported_fragments": 139
+          }
+        },
+        "total_measured_fragments": 266
+      },
+      "L6": {
+        "assigned_cards": 217,
+        "cards_with_query_only_support": 17,
+        "cards_with_snapshot_extra": 9,
+        "excluded_cards": 127,
+        "measured_cards": 90,
+        "original_source_fragments": {
+          "both_supported": 4,
+          "fact_only_supported": 111,
+          "query_only_supported": 20
+        },
+        "snapshot_supported_extra": 13,
+        "status_counts": {
+          "empty_data": 23,
+          "measured": 90,
+          "missing_reference": 0,
+          "no_artifact": 104,
+          "unresolved_text": 0
+        },
+        "support": {
+          "original": {
+            "cards_with_all_fragments_supported": 68,
+            "cards_with_no_supported_fragments": 7,
+            "macro_mean": 0.8361111111111111,
+            "micro_mean": 0.823170731707317,
+            "supported_fragments": 135,
+            "unsupported_fragments": 29
+          },
+          "original_plus_snapshot": {
+            "cards_with_all_fragments_supported": 75,
+            "cards_with_no_supported_fragments": 6,
+            "macro_mean": 0.8898148148148148,
+            "micro_mean": 0.9024390243902439,
+            "supported_fragments": 148,
+            "unsupported_fragments": 16
+          },
+          "strict": {
+            "cards_with_all_fragments_supported": 25,
+            "cards_with_no_supported_fragments": 29,
+            "macro_mean": 0.46685185185185185,
+            "micro_mean": 0.4573170731707317,
+            "supported_fragments": 75,
+            "unsupported_fragments": 89
+          }
+        },
+        "total_measured_fragments": 164
+      }
+    },
+    "tasks": 217
+  }
+}
