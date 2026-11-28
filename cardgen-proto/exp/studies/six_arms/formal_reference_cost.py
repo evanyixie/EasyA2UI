@@ -36,19 +36,22 @@ def encode(x):
     ).encode()
 
 
-def registries(root):
+def registered_sources(root):
     plan = json.loads(verified(root / "live/plan.json", FORMAL_PLAN))
-    sources = {}
     for case in plan["assignment"]["cases"]:
         name = case["file_id"] + ".json"
         package = root / "queue/package"
         req = json.loads(verified(package / "requests" / name, case["input_sha256"]))
         reg = json.loads(verified(package / "registry" / name, case["registry_sha256"]))
         source = trial.source_for(req, reg["data_model"])
-        sources[case["id"]] = {
+        values = {
             p: trial.lookup(source["sample_data"], p) for p in source["candidate_paths"]
         }
-    return sources
+        yield case["id"], req, source["query"], values
+
+
+def registries(root):
+    return {task: values for task, _, _, values in registered_sources(root)}
 
 
 def case_evidence(reference, registry):
