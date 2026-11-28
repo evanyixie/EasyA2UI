@@ -29,6 +29,7 @@ TABLES = (
     "paper/out/tables/enhanced_l6_layout_distributions.json",
     "paper/out/tables/enhanced_layout_native_observation.json",
     "paper/out/tables/six_arm_button_visibility.json",
+    "paper/out/tables/layout_preference_calibration.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -106,6 +107,7 @@ def _readme(anonymous: bool) -> str:
 - [补强 L6 与 L5 的同内容布局对照]({REPORTS[2]}) · [机读汇总]({TABLES[2]}) · [复算通过数与耗时所用的分布]({TABLES[5]})
 - [补强 L6 新增通过的十题与原 L5 的真机对照]({TABLES[6]})
 - [正式六档 219 题的按钮尾部省略与同题比较]({TABLES[7]})
+- [固定内容实验的参考几何、字号与人工偏好]({TABLES[8]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
