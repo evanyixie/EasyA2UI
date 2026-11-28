@@ -56,6 +56,8 @@ TABLES = (
     "paper/out/tables/model_repair_vs_layout_strategies.json",
     "paper/out/tables/formal_alarm_tab.json",
     "paper/out/tables/formal_content_only_structure_bridge.json",
+    "paper/out/tables/repair_call_limits.json",
+    "paper/out/tables/repair_content_yield.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -153,6 +155,8 @@ def _readme(anonymous: bool) -> str:
 - [同一批 219 题上 L1-M、L5 与 L6 的通过和成本]({TABLES[32]})
 - [带参闹钟入口的五份同机实点证据]({TABLES[33]})
 - [固定待排版内容和几何程序后，分别复算两种布局树的结果]({TABLES[34]})
+- [相同模型请求上限下的整卡修复与分阶段生成]({TABLES[35]})
+- [同题比较五种策略的技术通过、参考内容覆盖与数值出处]({TABLES[36]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -201,6 +205,10 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 运行 `python cardgen-proto/exp/studies/six_arms/alarm_tab_evidence.py <正式批保管目录>` 可离线核对五份带参数的闹钟动作回执和追加后的完整交付界限。
 
 运行 `python cardgen-proto/exp/studies/fixed_layout/formal_content_only_structure_bridge.py <11月25日固定内容实验保管目录>` 可用同一套冻结的几何程序复算模型和规则各自选择的结构，核对通过数、配对差值及可复用原件的字节。
+
+运行 `python cardgen-proto/exp/studies/six_arms/repair_call_limits.py <六档正式批保管目录>` 可复算全部 219 题在两种调用上限下的技术结果、实际登记调用数和用量。
+
+运行 `python cardgen-proto/exp/studies/six_arms/repair_content_yield.py <六档正式批保管目录> <保管库根目录>` 可从原始请求、参考卡和各策略的真实终件逐题核对内容，复算同时满足三项检查的数量和对应 token 用量。
 
 保管方运行 `python cardgen-proto/exp/studies/six_arms/fixed_tree_density.py <正式批保管目录>` 可重放 12 题共 120 份已生成的布局树，核对字号与留白的四格结果。需要登记的常规和粗体字库及测量器；支持通过既有的 `SIX_ARMS_FONT_REGULAR`、`SIX_ARMS_FONT_BOLD`、`SIX_ARMS_MEASURE_PY` 指向等摘要的文件。
 

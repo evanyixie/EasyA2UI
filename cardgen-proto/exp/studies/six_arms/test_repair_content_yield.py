@@ -121,6 +121,10 @@ def test_same_task_3_by_3_and_common_metered_cohort(analysis):
     group = d["token_cost"]["same_tasks_complete_usage_for_all_five"]
     assert group["L1-M"]["assigned"] == group["L5"]["assigned"] == 2
     assert group["L5"]["tokens_per_certified_on_fully_metered_tasks"] == 30
+    extra = analysis.paired(rows, "L5", baseline="L6")
+    assert extra["states_l6_rows_l5_columns"]["pass"]["fail"] == 1
+    assert extra["certified_difference_rate_l5_minus_l6"] == -1 / 3
+    assert extra["latent_difference_rate_bounds_l5_minus_l6"] == [-1 / 3, -1 / 3]
     assert (
         d["l1m_initial_to_terminal"]["different_coverage_or_numeric_counts_or_status"]
         == 0

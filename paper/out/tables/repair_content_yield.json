@@ -1,0 +1,511 @@
+{
+  "additional_l5_minus_l6": {
+    "certified_difference_family_percentile_ci95": [
+      -0.004608828298344427,
+      0.061904761904761914
+    ],
+    "certified_difference_rate_l5_minus_l6": 0.0273972602739726,
+    "latent_difference_rate_bounds_l5_minus_l6": [
+      0.0136986301369863,
+      0.045662100456621
+    ],
+    "original_five_strategy_table_sha256": "eb3dea71aa3439b12fbf69ab803be910a26dd8af2023857a464064c7de93cf5b",
+    "states_l6_rows_l5_columns": {
+      "fail": {
+        "fail": 140,
+        "missing": 1,
+        "pass": 10
+      },
+      "missing": {
+        "fail": 0,
+        "missing": 3,
+        "pass": 0
+      },
+      "pass": {
+        "fail": 4,
+        "missing": 0,
+        "pass": 61
+      }
+    },
+    "timing": "Added after the marginal five-strategy counts were observed. Same joint rule and family bootstrap."
+  },
+  "assigned_tasks": 219,
+  "independent_families": 200,
+  "l1m_initial_to_terminal": {
+    "both_artifacts": 211,
+    "different_coverage_or_numeric_counts_or_status": 0,
+    "different_wire_bytes": 101
+  },
+  "pairs": {
+    "L1": {
+      "certified_difference_family_percentile_ci95": [
+        -0.037558685446009384,
+        0.03809523809523809
+      ],
+      "certified_difference_rate_other_minus_l1m": 0.0,
+      "latent_difference_rate_bounds_other_minus_l1m": [
+        -0.0365296803652968,
+        0.0319634703196347
+      ],
+      "states_l1m_rows_comparator_columns": {
+        "fail": {
+          "fail": 156,
+          "missing": 0,
+          "pass": 8
+        },
+        "missing": {
+          "fail": 1,
+          "missing": 7,
+          "pass": 0
+        },
+        "pass": {
+          "fail": 8,
+          "missing": 0,
+          "pass": 39
+        }
+      }
+    },
+    "L1-NR": {
+      "certified_difference_family_percentile_ci95": [
+        -0.2955491990846682,
+        -0.14218009478672985
+      ],
+      "certified_difference_rate_other_minus_l1m": -0.2146118721461187,
+      "latent_difference_rate_bounds_other_minus_l1m": [
+        -0.2511415525114155,
+        -0.1872146118721461
+      ],
+      "states_l1m_rows_comparator_columns": {
+        "fail": {
+          "fail": 164,
+          "missing": 0,
+          "pass": 0
+        },
+        "missing": {
+          "fail": 2,
+          "missing": 6,
+          "pass": 0
+        },
+        "pass": {
+          "fail": 47,
+          "missing": 0,
+          "pass": 0
+        }
+      }
+    },
+    "L5": {
+      "certified_difference_family_percentile_ci95": [
+        0.05963302752293578,
+        0.16355140186915887
+      ],
+      "certified_difference_rate_other_minus_l1m": 0.1095890410958904,
+      "latent_difference_rate_bounds_other_minus_l1m": [
+        0.0730593607305936,
+        0.1278538812785388
+      ],
+      "states_l1m_rows_comparator_columns": {
+        "fail": {
+          "fail": 136,
+          "missing": 2,
+          "pass": 26
+        },
+        "missing": {
+          "fail": 3,
+          "missing": 2,
+          "pass": 3
+        },
+        "pass": {
+          "fail": 5,
+          "missing": 0,
+          "pass": 42
+        }
+      }
+    },
+    "L6": {
+      "certified_difference_family_percentile_ci95": [
+        0.03554772393538913,
+        0.13181818181818178
+      ],
+      "certified_difference_rate_other_minus_l1m": 0.0821917808219178,
+      "latent_difference_rate_bounds_other_minus_l1m": [
+        0.045662100456621,
+        0.0958904109589041
+      ],
+      "states_l1m_rows_comparator_columns": {
+        "fail": {
+          "fail": 142,
+          "missing": 1,
+          "pass": 21
+        },
+        "missing": {
+          "fail": 3,
+          "missing": 2,
+          "pass": 3
+        },
+        "pass": {
+          "fail": 6,
+          "missing": 0,
+          "pass": 41
+        }
+      }
+    }
+  },
+  "private_row_sha256": "71f7c8bdffe324fb4d2f02e016dfce4830f8e83633a33658051607a4ea434cbd",
+  "registered_original_input_subset": {
+    "assigned_tasks": 217,
+    "independent_families": 198,
+    "joint_states": {
+      "L1": {
+        "fail": 163,
+        "missing": 7,
+        "pass": 47
+      },
+      "L1-M": {
+        "fail": 163,
+        "missing": 8,
+        "pass": 46
+      },
+      "L1-NR": {
+        "fail": 211,
+        "missing": 6
+      },
+      "L5": {
+        "fail": 143,
+        "missing": 4,
+        "pass": 70
+      },
+      "L6": {
+        "fail": 150,
+        "missing": 3,
+        "pass": 64
+      }
+    },
+    "l5_minus_l6": {
+      "certified_difference_family_percentile_ci95": [
+        -0.0047619047619047615,
+        0.06280193236714976
+      ],
+      "certified_difference_rate_l5_minus_l6": 0.027649769585253458,
+      "latent_difference_rate_bounds_l5_minus_l6": [
+        0.013824884792626729,
+        0.04608294930875576
+      ],
+      "states_l6_rows_l5_columns": {
+        "fail": {
+          "fail": 139,
+          "missing": 1,
+          "pass": 10
+        },
+        "missing": {
+          "fail": 0,
+          "missing": 3,
+          "pass": 0
+        },
+        "pass": {
+          "fail": 4,
+          "missing": 0,
+          "pass": 60
+        }
+      }
+    }
+  },
+  "scope": "Post-hoc joint of archived common technical pass, >=80% A4a reference value coverage and at least one numeric token with every token supported by a reference or request under the original A5 matcher. Empty numeric cards have no A5 rating. Any known failure is decisive. Other unassessed dimensions remain missing. Counts refer to each strategy's own card on the same request. Bootstrap resamples registered families 10,000 times, seed 20261124, for the difference in obtained passes. The comparator and L1-M are not equal-budget. Token costs include failed work in the stated cohorts. No claim about complete business quality, actual invoicing, or the Web geometry B4 endpoint.",
+  "strategies": {
+    "L1": {
+      "content_among_technical_passes": {
+        "at_least_80": {
+          "all_sourced": 47,
+          "empty_data": 1,
+          "some_unsourced": 6
+        },
+        "below_80": {
+          "all_sourced": 6,
+          "empty_data": 16,
+          "some_unsourced": 14
+        },
+        "unassessed": {
+          "some_unsourced": 1
+        }
+      },
+      "coverage": {
+        "at_least_80": 127,
+        "below_80": 82,
+        "unassessed": 10
+      },
+      "coverage_state": {
+        "empty_reference": 1,
+        "measured": 209,
+        "no_artifact": 5,
+        "unresolved_text": 4
+      },
+      "joint": {
+        "fail": 165,
+        "missing": 7,
+        "pass": 47
+      },
+      "numeric_fidelity": {
+        "all_sourced": 118,
+        "empty_data": 26,
+        "no_artifact": 5,
+        "some_unsourced": 66,
+        "unresolved_text": 4
+      },
+      "tasks": 219,
+      "technical": {
+        "fail": 122,
+        "missing": 6,
+        "pass": 91
+      }
+    },
+    "L1-M": {
+      "content_among_technical_passes": {
+        "at_least_80": {
+          "all_sourced": 47,
+          "empty_data": 1,
+          "some_unsourced": 8
+        },
+        "below_80": {
+          "all_sourced": 8,
+          "empty_data": 19,
+          "some_unsourced": 17
+        },
+        "unassessed": {
+          "some_unsourced": 1
+        }
+      },
+      "coverage": {
+        "at_least_80": 127,
+        "below_80": 81,
+        "unassessed": 11
+      },
+      "coverage_state": {
+        "empty_reference": 1,
+        "measured": 208,
+        "no_artifact": 8,
+        "unresolved_text": 2
+      },
+      "joint": {
+        "fail": 164,
+        "missing": 8,
+        "pass": 47
+      },
+      "numeric_fidelity": {
+        "all_sourced": 117,
+        "empty_data": 26,
+        "no_artifact": 8,
+        "some_unsourced": 66,
+        "unresolved_text": 2
+      },
+      "tasks": 219,
+      "technical": {
+        "fail": 111,
+        "missing": 7,
+        "pass": 101
+      }
+    },
+    "L1-NR": {
+      "content_among_technical_passes": {
+        "at_least_80": {},
+        "below_80": {},
+        "unassessed": {}
+      },
+      "coverage": {
+        "at_least_80": 127,
+        "below_80": 82,
+        "unassessed": 10
+      },
+      "coverage_state": {
+        "empty_reference": 1,
+        "measured": 209,
+        "no_artifact": 5,
+        "unresolved_text": 4
+      },
+      "joint": {
+        "fail": 213,
+        "missing": 6
+      },
+      "numeric_fidelity": {
+        "all_sourced": 118,
+        "empty_data": 26,
+        "no_artifact": 5,
+        "some_unsourced": 66,
+        "unresolved_text": 4
+      },
+      "tasks": 219,
+      "technical": {
+        "fail": 213,
+        "missing": 6
+      }
+    },
+    "L5": {
+      "content_among_technical_passes": {
+        "at_least_80": {
+          "all_sourced": 71,
+          "empty_data": 3,
+          "some_unsourced": 26
+        },
+        "below_80": {
+          "all_sourced": 12,
+          "empty_data": 21,
+          "some_unsourced": 16
+        },
+        "unassessed": {
+          "some_unsourced": 1
+        }
+      },
+      "coverage": {
+        "at_least_80": 100,
+        "below_80": 49,
+        "unassessed": 70
+      },
+      "coverage_state": {
+        "empty_reference": 1,
+        "measured": 149,
+        "no_artifact": 69
+      },
+      "joint": {
+        "fail": 144,
+        "missing": 4,
+        "pass": 71
+      },
+      "numeric_fidelity": {
+        "all_sourced": 83,
+        "empty_data": 24,
+        "no_artifact": 69,
+        "some_unsourced": 43
+      },
+      "tasks": 219,
+      "technical": {
+        "fail": 68,
+        "missing": 1,
+        "pass": 150
+      }
+    },
+    "L6": {
+      "content_among_technical_passes": {
+        "at_least_80": {
+          "all_sourced": 65,
+          "empty_data": 3,
+          "some_unsourced": 10
+        },
+        "below_80": {
+          "all_sourced": 4,
+          "empty_data": 20,
+          "some_unsourced": 13
+        },
+        "unassessed": {}
+      },
+      "coverage": {
+        "at_least_80": 78,
+        "below_80": 37,
+        "unassessed": 104
+      },
+      "coverage_state": {
+        "measured": 115,
+        "no_artifact": 104
+      },
+      "joint": {
+        "fail": 151,
+        "missing": 3,
+        "pass": 65
+      },
+      "numeric_fidelity": {
+        "all_sourced": 69,
+        "empty_data": 23,
+        "no_artifact": 104,
+        "some_unsourced": 23
+      },
+      "tasks": 219,
+      "technical": {
+        "fail": 104,
+        "pass": 115
+      }
+    }
+  },
+  "token_cost": {
+    "per_strategy_complete_usage": {
+      "L1": {
+        "assigned": 219,
+        "certified_on_those_tasks": 47,
+        "fully_metered_tasks": 215,
+        "missing_or_incomplete_meter": 4,
+        "tokens_all_fully_metered_tasks": 556704,
+        "tokens_per_certified_on_fully_metered_tasks": 11844.765957446809
+      },
+      "L1-M": {
+        "assigned": 219,
+        "certified_on_those_tasks": 47,
+        "fully_metered_tasks": 214,
+        "missing_or_incomplete_meter": 5,
+        "tokens_all_fully_metered_tasks": 2078002,
+        "tokens_per_certified_on_fully_metered_tasks": 44212.8085106383
+      },
+      "L1-NR": {
+        "assigned": 219,
+        "certified_on_those_tasks": 0,
+        "fully_metered_tasks": 215,
+        "missing_or_incomplete_meter": 4,
+        "tokens_all_fully_metered_tasks": 556704,
+        "tokens_per_certified_on_fully_metered_tasks": null
+      },
+      "L5": {
+        "assigned": 219,
+        "certified_on_those_tasks": 71,
+        "fully_metered_tasks": 218,
+        "missing_or_incomplete_meter": 1,
+        "tokens_all_fully_metered_tasks": 948575,
+        "tokens_per_certified_on_fully_metered_tasks": 13360.211267605633
+      },
+      "L6": {
+        "assigned": 219,
+        "certified_on_those_tasks": 65,
+        "fully_metered_tasks": 219,
+        "missing_or_incomplete_meter": 0,
+        "tokens_all_fully_metered_tasks": 511433,
+        "tokens_per_certified_on_fully_metered_tasks": 7868.2
+      }
+    },
+    "same_tasks_complete_usage_for_all_five": {
+      "L1": {
+        "assigned": 213,
+        "certified_on_those_tasks": 47,
+        "fully_metered_tasks": 213,
+        "missing_or_incomplete_meter": 0,
+        "tokens_all_fully_metered_tasks": 552054,
+        "tokens_per_certified_on_fully_metered_tasks": 11745.829787234043
+      },
+      "L1-M": {
+        "assigned": 213,
+        "certified_on_those_tasks": 47,
+        "fully_metered_tasks": 213,
+        "missing_or_incomplete_meter": 0,
+        "tokens_all_fully_metered_tasks": 2072556,
+        "tokens_per_certified_on_fully_metered_tasks": 44096.936170212764
+      },
+      "L1-NR": {
+        "assigned": 213,
+        "certified_on_those_tasks": 0,
+        "fully_metered_tasks": 213,
+        "missing_or_incomplete_meter": 0,
+        "tokens_all_fully_metered_tasks": 552054,
+        "tokens_per_certified_on_fully_metered_tasks": null
+      },
+      "L5": {
+        "assigned": 213,
+        "certified_on_those_tasks": 69,
+        "fully_metered_tasks": 213,
+        "missing_or_incomplete_meter": 0,
+        "tokens_all_fully_metered_tasks": 925047,
+        "tokens_per_certified_on_fully_metered_tasks": 13406.478260869566
+      },
+      "L6": {
+        "assigned": 213,
+        "certified_on_those_tasks": 62,
+        "fully_metered_tasks": 213,
+        "missing_or_incomplete_meter": 0,
+        "tokens_all_fully_metered_tasks": 497839,
+        "tokens_per_certified_on_fully_metered_tasks": 8029.6612903225805
+      }
+    }
+  }
+}

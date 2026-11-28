@@ -1,0 +1,96 @@
+{
+  "L5": {
+    "assigned": 219,
+    "both_obtained": 92,
+    "difference_bounds_with_unknown_outcomes": [
+      0.1689497716894977,
+      0.2009132420091324
+    ],
+    "families": 200,
+    "family_bootstrap_ci95_for_obtained_difference": [
+      0.125,
+      0.2701482822447776
+    ],
+    "maximum_request_intents_per_task": 2,
+    "neither_obtained": 54,
+    "obtained_difference_staged_minus_whole_card": 0.1963470319634703,
+    "only_staged_obtained": 58,
+    "only_whole_card_obtained": 15,
+    "strategies": {
+      "staged": {
+        "metered_tokens": 948575,
+        "request_intents": 406,
+        "states": {
+          "fail": 68,
+          "missing": 1,
+          "pass": 150
+        },
+        "tasks_by_request_count": {
+          "1": 32,
+          "2": 187
+        },
+        "unmetered_requests": 1
+      },
+      "whole_card": {
+        "metered_tokens": 1096769,
+        "request_intents": 340,
+        "states": {
+          "fail": 106,
+          "missing": 6,
+          "pass": 107
+        },
+        "tasks_by_request_count": {
+          "1": 98,
+          "2": 121
+        },
+        "unmetered_requests": 4
+      }
+    }
+  },
+  "L6": {
+    "assigned": 219,
+    "both_obtained": 77,
+    "difference_bounds_with_unknown_outcomes": [
+      0.0821917808219178,
+      0.1095890410958904
+    ],
+    "families": 200,
+    "family_bootstrap_ci95_for_obtained_difference": [
+      0.04405154185022027,
+      0.17674418604651163
+    ],
+    "maximum_request_intents_per_task": 1,
+    "neither_obtained": 90,
+    "obtained_difference_staged_minus_whole_card": 0.1095890410958904,
+    "only_staged_obtained": 38,
+    "only_whole_card_obtained": 14,
+    "strategies": {
+      "staged": {
+        "metered_tokens": 511433,
+        "request_intents": 219,
+        "states": {
+          "fail": 104,
+          "missing": 0,
+          "pass": 115
+        },
+        "tasks_by_request_count": {
+          "1": 219
+        },
+        "unmetered_requests": 0
+      },
+      "whole_card": {
+        "metered_tokens": 556704,
+        "request_intents": 219,
+        "states": {
+          "fail": 122,
+          "missing": 6,
+          "pass": 91
+        },
+        "tasks_by_request_count": {
+          "1": 219
+        },
+        "unmetered_requests": 4
+      }
+    }
+  }
+}

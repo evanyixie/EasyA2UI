@@ -15,7 +15,7 @@ from six_arms import repair_strategy_comparison as comparison
 from six_arms.cost_frontier import TECH_LEDGER, usage
 from six_arms.fixed_content_repeats import check, digest
 from six_arms.formal_reference_cost import ROOT, encode, registered_sources
-from six_arms.paired_delivery_bounds import verified
+from six_arms.paired_delivery_bounds import ROSTER, verified
 from six_arms.repair_budget import load_comparisons
 from six_arms.technical_yield import DECISION, read_lines
 from six_arms.web_geometry_inputs import load_inputs
@@ -23,6 +23,7 @@ from six_arms.web_geometry_inputs import load_inputs
 STRATEGIES = ("L1-NR", "L1", "L1-M", "L5", "L6")
 TABLE = ROOT / "paper/out/tables/repair_content_yield.json"
 PREVIOUS = "326de4787bd2af3405eb6fbd6491c65eebd6ed067a02ab64ce682fe997cfdadc"
+INITIAL_TABLE = "eb3dea71aa3439b12fbf69ab803be910a26dd8af2023857a464064c7de93cf5b"
 STATES = ("pass", "fail", "missing")
 
 
@@ -87,12 +88,17 @@ def arm_summary(records):
     }
 
 
-def paired(rows, other):
+def paired(rows, other, *, baseline="L1-M"):
+    if baseline == "L1-M":
+        axes, difference = "l1m_rows_comparator_columns", "other_minus_l1m"
+    else:
+        check((baseline, other) == ("L6", "L5"), "Unregistered paired comparison")
+        axes, difference = "l6_rows_l5_columns", "l5_minus_l6"
     roster = [{"task_id": r["task"], "family_id": r["family"]} for r in rows]
     votes = [
         {
             "task_id": r["task"],
-            "A": r["L1-M"]["joint"],
+            "A": r[baseline]["joint"],
             "B": r[other]["joint"],
             "missing_reason": "One or more required observations unavailable.",
         }
@@ -112,16 +118,14 @@ def paired(rows, other):
         ],
     )
     return {
-        "states_l1m_rows_comparator_columns": {
-            a: {b: mat[a, b] for b in STATES} for a in STATES
-        },
-        "certified_difference_rate_other_minus_l1m": observed[
+        f"states_{axes}": {a: {b: mat[a, b] for b in STATES} for a in STATES},
+        f"certified_difference_rate_{difference}": observed[
             "all_assigned_point_difference"
         ],
         "certified_difference_family_percentile_ci95": observed[
             "paired_cluster_percentile_ci95"
         ],
-        "latent_difference_rate_bounds_other_minus_l1m": bounds,
+        f"latent_difference_rate_bounds_{difference}": bounds,
     }
 
 
@@ -196,9 +200,12 @@ def summarize(rows):
 
 def load_usage(root, repairs):
     """The two pinned receipts contain the originally verified per-call usage."""
-    previous = json.loads(
-        verified(TABLE.with_name("model_repair_vs_layout_strategies.json"), PREVIOUS)
+    published = TABLE.with_name("model_repair_vs_layout_strategies.json").read_bytes()
+    check(
+        digest(published.replace(b"\r\n", b"\n")) == PREVIOUS,
+        "Public cost table changed",
     )
+    previous = json.loads(published)
     totals = previous["resource_costs"]["all_assigned"]
     ledger = read_lines(root / TECH_LEDGER, comparison.PINS[TECH_LEDGER])
     out = {a: {} for a in STRATEGIES}
@@ -291,23 +298,20 @@ def run(root, vault):
             ]
             check(seat.family == case["family"], "Mismatched task family")
             sha, path = seat.artifact_sha256, seat.path
-            tech = DECISION[seat.execution_status]
+            tech = (
+                case[arm]
+                if arm in ("L5", "L6", "L1-M")
+                else DECISION[case["initial_status"]]
+            )
             if arm == "L1-NR" and sha:
                 tech = comparison.verdict(rr["first_common"])
-            if arm == "L1-M":
-                tech = case[arm]
-                if rr["model_eligibility"] != "no_trigger":
-                    sha = rr["model_sha256"]
-                    path = (
-                        root
-                        / "rq2_followup_20261127/state"
-                        / task
-                        / "terminal.a2ui.jsonl"
-                        if sha
-                        else None
-                    )
-            if arm in ("L5", "L6"):
-                check(tech == case[arm], "Original terminal state differs")
+            if arm == "L1-M" and rr["model_eligibility"] != "no_trigger":
+                sha = rr["model_sha256"]
+                path = (
+                    root / "rq2_followup_20261127/state" / task / "terminal.a2ui.jsonl"
+                    if sha
+                    else None
+                )
             check(
                 bool(sha) == bool(path) and (tech != "pass" or sha),
                 "Missing certified artifact",
@@ -324,7 +328,35 @@ def run(root, vault):
                 "tokens": usage_by_arm[arm][task],
             }
         rows.append(row)
-    return summarize(rows)
+    result = summarize(rows)
+    check(
+        digest(encode(result)) == INITIAL_TABLE,
+        "Original five-strategy aggregate changed",
+    )
+    result["additional_l5_minus_l6"] = {
+        "original_five_strategy_table_sha256": INITIAL_TABLE,
+        "timing": "Added after the marginal five-strategy counts were observed. Same joint rule and family bootstrap.",
+        **paired(rows, "L5", baseline="L6"),
+    }
+    roster = read_lines(root / "analysis/roster.jsonl", ROSTER)
+    historical_inputs = {
+        r["task_id"] for r in roster if r["included_in_217_sensitivity"]
+    }
+    original = [r for r in rows if r["task"] in historical_inputs]
+    check(
+        len(original) == len(historical_inputs) == 217,
+        "Mismatch with the registered sensitivity cohort",
+    )
+    result["registered_original_input_subset"] = {
+        "assigned_tasks": len(original),
+        "independent_families": len({r["family"] for r in original}),
+        "joint_states": {
+            a: dict(sorted(Counter(r[a]["joint"] for r in original).items()))
+            for a in STRATEGIES
+        },
+        "l5_minus_l6": paired(original, "L5", baseline="L6"),
+    }
+    return result
 
 
 if __name__ == "__main__":
