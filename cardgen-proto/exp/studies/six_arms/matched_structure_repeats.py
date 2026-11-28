@@ -28,11 +28,17 @@ class Reply:
     prompt: bytes
     wire: bytes
     request_id: str
-    product: dict
+    product: dict | None
 
 
 def archived(stage_dir, stage):
-    """Bind a successful physical reply to both the transport seal and outcome."""
+    """Return the sealed reply of a stage that passed its contract."""
+    verify(stage["status"] == "completed", "original stage did not pass")
+    return received_reply(stage_dir, stage)
+
+
+def received_reply(stage_dir, stage):
+    """Bind the physical reply to its records independently of the contract verdict."""
     seal = json.loads((stage_dir / "seal.json").read_bytes())
     prompt = (stage_dir / "messages.json").read_bytes()
     wire = (stage_dir / "response.txt").read_bytes()
@@ -48,17 +54,19 @@ def archived(stage_dir, stage):
         "stage archive disagrees with frozen outcome",
     )
     verify(
-        seal["state"] == stage["status"] == "completed"
+        seal["state"] == "completed"
+        and stage["status"] in {"completed", "stage_rejected"}
         and call["http_status"] == 200
         and call["physical_attempts"] == 1
         and call["requested_model"] == call["returned_model"] == "deepseek-flash"
         and call["request_id"],
         "missing independent successful formal model call",
     )
-    return Reply(prompt, wire, call["request_id"], stage["product"])
+    product = stage["product"] if stage["status"] == "completed" else None
+    return Reply(prompt, wire, call["request_id"], product)
 
 
-def missing_response(stage_dir, stage, target):
+def missing_prompt(stage_dir, stage):
     seal = json.loads((stage_dir / "seal.json").read_bytes())
     prompt = (stage_dir / "messages.json").read_bytes()
     receipt = (stage_dir / "call.json").read_bytes()
@@ -72,6 +80,11 @@ def missing_response(stage_dir, stage, target):
         and not (stage_dir / "response.txt").exists(),
         "unverified missing structure reply",
     )
+    return prompt
+
+
+def missing_response(stage_dir, stage, target):
+    prompt = missing_prompt(stage_dir, stage)
     return (
         "same_message_missing_reply"
         if prompt == target.prompt
@@ -209,7 +222,7 @@ def summary(groups):
     }
 
 
-def run(base):
+def load_batch(base):
     sys.dont_write_bytecode = True
     sys.path.insert(0, str(base / "queue"))
     prep = importlib.import_module("prepare_queue")
@@ -232,9 +245,14 @@ def run(base):
             "frozen dependency differs",
         )
     load = prep.FrozenPackage(base / "queue/package")
-    groups, decisions, donor_calls, request_ids = [], Counter(), Counter(), set()
     cases = plan["assignment"]["cases"]
     verify(len({c["id"] for c in cases}) == len(cases) == 219, "invalid roster")
+    return prep, plan_sha, load, cases
+
+
+def run(base):
+    prep, plan_sha, load, cases = load_batch(base)
+    groups, decisions, donor_calls, request_ids = [], Counter(), Counter(), set()
 
     def outcome(case, arm):
         path = base / "live" / case["file_id"] / arm / "outcome.json"

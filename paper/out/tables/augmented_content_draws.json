@@ -1,0 +1,592 @@
+{
+  "all": {
+    "compatible": {
+      "accepted_content_draws_for_extreme_counts": 760,
+      "accepted_content_program_minus_model_extreme_counts": [
+        -93,
+        -92
+      ],
+      "all_scheduled_program_minus_model_extreme_counts": [
+        -96,
+        -89
+      ],
+      "on_missing_structure_program_confirmed": 1,
+      "on_ready_model_confirmed": 615,
+      "on_ready_pairs": {
+        "both_confirmed": 512,
+        "model_only_confirmed": 103,
+        "neither_confirmed": 134,
+        "program_only_confirmed": 10
+      },
+      "on_ready_program_confirmed": 522,
+      "ready_model_decisions": {
+        "accepted": 615,
+        "stage_rejected": 144
+      },
+      "ready_model_unknown_program_confirmed": 0,
+      "ready_program_decisions": {
+        "no_policy_hit": 237,
+        "pass": 522
+      },
+      "ready_program_minus_model_extreme_counts": [
+        -93,
+        -93
+      ],
+      "ready_program_unknown_model_confirmed": 0
+    },
+    "content_and_structure_status": {
+      "content_rejected": 113,
+      "content_unknown": 3,
+      "ready": 759,
+      "structure_unknown": 1
+    },
+    "distinct_tasks_with_both_inputs": 199,
+    "ready_content_and_structure": 759,
+    "scheduled": 876,
+    "standard": {
+      "accepted_content_draws_for_extreme_counts": 760,
+      "accepted_content_program_minus_model_extreme_counts": [
+        99,
+        102
+      ],
+      "all_scheduled_program_minus_model_extreme_counts": [
+        96,
+        105
+      ],
+      "on_missing_structure_program_confirmed": 1,
+      "on_ready_model_confirmed": 356,
+      "on_ready_pairs": {
+        "both_confirmed": 341,
+        "model_only_confirmed": 15,
+        "neither_confirmed": 287,
+        "program_only_confirmed": 116
+      },
+      "on_ready_program_confirmed": 457,
+      "ready_model_decisions": {
+        "fail": 401,
+        "pass": 356,
+        "unknown": 2
+      },
+      "ready_model_unknown_program_confirmed": 0,
+      "ready_program_decisions": {
+        "no_policy_hit": 302,
+        "pass": 457
+      },
+      "ready_program_minus_model_extreme_counts": [
+        99,
+        101
+      ],
+      "ready_program_unknown_model_confirmed": 0
+    }
+  },
+  "by_canvas": {
+    "2x2": {
+      "compatible": {
+        "accepted_content_draws_for_extreme_counts": 620,
+        "accepted_content_program_minus_model_extreme_counts": [
+          -75,
+          -74
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          -78,
+          -71
+        ],
+        "on_missing_structure_program_confirmed": 1,
+        "on_ready_model_confirmed": 519,
+        "on_ready_pairs": {
+          "both_confirmed": 443,
+          "model_only_confirmed": 76,
+          "neither_confirmed": 99,
+          "program_only_confirmed": 1
+        },
+        "on_ready_program_confirmed": 444,
+        "ready_model_decisions": {
+          "accepted": 519,
+          "stage_rejected": 100
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 175,
+          "pass": 444
+        },
+        "ready_program_minus_model_extreme_counts": [
+          -75,
+          -75
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      },
+      "content_and_structure_status": {
+        "content_rejected": 53,
+        "content_unknown": 3,
+        "ready": 619,
+        "structure_unknown": 1
+      },
+      "distinct_tasks_with_both_inputs": 161,
+      "ready_content_and_structure": 619,
+      "scheduled": 676,
+      "standard": {
+        "accepted_content_draws_for_extreme_counts": 620,
+        "accepted_content_program_minus_model_extreme_counts": [
+          93,
+          94
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          90,
+          97
+        ],
+        "on_missing_structure_program_confirmed": 1,
+        "on_ready_model_confirmed": 301,
+        "on_ready_pairs": {
+          "both_confirmed": 293,
+          "model_only_confirmed": 8,
+          "neither_confirmed": 217,
+          "program_only_confirmed": 101
+        },
+        "on_ready_program_confirmed": 394,
+        "ready_model_decisions": {
+          "fail": 318,
+          "pass": 301
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 225,
+          "pass": 394
+        },
+        "ready_program_minus_model_extreme_counts": [
+          93,
+          93
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      }
+    },
+    "2x4": {
+      "compatible": {
+        "accepted_content_draws_for_extreme_counts": 140,
+        "accepted_content_program_minus_model_extreme_counts": [
+          -18,
+          -18
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          -18,
+          -18
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 96,
+        "on_ready_pairs": {
+          "both_confirmed": 69,
+          "model_only_confirmed": 27,
+          "neither_confirmed": 35,
+          "program_only_confirmed": 9
+        },
+        "on_ready_program_confirmed": 78,
+        "ready_model_decisions": {
+          "accepted": 96,
+          "stage_rejected": 44
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 62,
+          "pass": 78
+        },
+        "ready_program_minus_model_extreme_counts": [
+          -18,
+          -18
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      },
+      "content_and_structure_status": {
+        "content_rejected": 60,
+        "ready": 140
+      },
+      "distinct_tasks_with_both_inputs": 38,
+      "ready_content_and_structure": 140,
+      "scheduled": 200,
+      "standard": {
+        "accepted_content_draws_for_extreme_counts": 140,
+        "accepted_content_program_minus_model_extreme_counts": [
+          6,
+          8
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          6,
+          8
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 55,
+        "on_ready_pairs": {
+          "both_confirmed": 48,
+          "model_only_confirmed": 7,
+          "neither_confirmed": 70,
+          "program_only_confirmed": 15
+        },
+        "on_ready_program_confirmed": 63,
+        "ready_model_decisions": {
+          "fail": 83,
+          "pass": 55,
+          "unknown": 2
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 77,
+          "pass": 63
+        },
+        "ready_program_minus_model_extreme_counts": [
+          6,
+          8
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      }
+    }
+  },
+  "by_content_donor": {
+    "L2": {
+      "compatible": {
+        "accepted_content_draws_for_extreme_counts": 192,
+        "accepted_content_program_minus_model_extreme_counts": [
+          -26,
+          -26
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          -26,
+          -26
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 157,
+        "on_ready_pairs": {
+          "both_confirmed": 128,
+          "model_only_confirmed": 29,
+          "neither_confirmed": 32,
+          "program_only_confirmed": 3
+        },
+        "on_ready_program_confirmed": 131,
+        "ready_model_decisions": {
+          "accepted": 157,
+          "stage_rejected": 35
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 61,
+          "pass": 131
+        },
+        "ready_program_minus_model_extreme_counts": [
+          -26,
+          -26
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      },
+      "content_and_structure_status": {
+        "content_rejected": 27,
+        "ready": 192
+      },
+      "distinct_tasks_with_both_inputs": 192,
+      "ready_content_and_structure": 192,
+      "scheduled": 219,
+      "standard": {
+        "accepted_content_draws_for_extreme_counts": 192,
+        "accepted_content_program_minus_model_extreme_counts": [
+          22,
+          23
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          22,
+          23
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 93,
+        "on_ready_pairs": {
+          "both_confirmed": 91,
+          "model_only_confirmed": 2,
+          "neither_confirmed": 74,
+          "program_only_confirmed": 25
+        },
+        "on_ready_program_confirmed": 116,
+        "ready_model_decisions": {
+          "fail": 98,
+          "pass": 93,
+          "unknown": 1
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 76,
+          "pass": 116
+        },
+        "ready_program_minus_model_extreme_counts": [
+          22,
+          23
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      }
+    },
+    "L3": {
+      "compatible": {
+        "accepted_content_draws_for_extreme_counts": 190,
+        "accepted_content_program_minus_model_extreme_counts": [
+          -17,
+          -17
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          -19,
+          -15
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 153,
+        "on_ready_pairs": {
+          "both_confirmed": 132,
+          "model_only_confirmed": 21,
+          "neither_confirmed": 33,
+          "program_only_confirmed": 4
+        },
+        "on_ready_program_confirmed": 136,
+        "ready_model_decisions": {
+          "accepted": 153,
+          "stage_rejected": 37
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 54,
+          "pass": 136
+        },
+        "ready_program_minus_model_extreme_counts": [
+          -17,
+          -17
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      },
+      "content_and_structure_status": {
+        "content_rejected": 27,
+        "content_unknown": 2,
+        "ready": 190
+      },
+      "distinct_tasks_with_both_inputs": 190,
+      "ready_content_and_structure": 190,
+      "scheduled": 219,
+      "standard": {
+        "accepted_content_draws_for_extreme_counts": 190,
+        "accepted_content_program_minus_model_extreme_counts": [
+          30,
+          30
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          28,
+          32
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 91,
+        "on_ready_pairs": {
+          "both_confirmed": 88,
+          "model_only_confirmed": 3,
+          "neither_confirmed": 66,
+          "program_only_confirmed": 33
+        },
+        "on_ready_program_confirmed": 121,
+        "ready_model_decisions": {
+          "fail": 99,
+          "pass": 91
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 69,
+          "pass": 121
+        },
+        "ready_program_minus_model_extreme_counts": [
+          30,
+          30
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      }
+    },
+    "L4": {
+      "compatible": {
+        "accepted_content_draws_for_extreme_counts": 191,
+        "accepted_content_program_minus_model_extreme_counts": [
+          -26,
+          -25
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          -26,
+          -25
+        ],
+        "on_missing_structure_program_confirmed": 1,
+        "on_ready_model_confirmed": 155,
+        "on_ready_pairs": {
+          "both_confirmed": 128,
+          "model_only_confirmed": 27,
+          "neither_confirmed": 34,
+          "program_only_confirmed": 1
+        },
+        "on_ready_program_confirmed": 129,
+        "ready_model_decisions": {
+          "accepted": 155,
+          "stage_rejected": 35
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 61,
+          "pass": 129
+        },
+        "ready_program_minus_model_extreme_counts": [
+          -26,
+          -26
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      },
+      "content_and_structure_status": {
+        "content_rejected": 28,
+        "ready": 190,
+        "structure_unknown": 1
+      },
+      "distinct_tasks_with_both_inputs": 190,
+      "ready_content_and_structure": 190,
+      "scheduled": 219,
+      "standard": {
+        "accepted_content_draws_for_extreme_counts": 191,
+        "accepted_content_program_minus_model_extreme_counts": [
+          23,
+          25
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          23,
+          25
+        ],
+        "on_missing_structure_program_confirmed": 1,
+        "on_ready_model_confirmed": 86,
+        "on_ready_pairs": {
+          "both_confirmed": 81,
+          "model_only_confirmed": 5,
+          "neither_confirmed": 75,
+          "program_only_confirmed": 29
+        },
+        "on_ready_program_confirmed": 110,
+        "ready_model_decisions": {
+          "fail": 103,
+          "pass": 86,
+          "unknown": 1
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 80,
+          "pass": 110
+        },
+        "ready_program_minus_model_extreme_counts": [
+          23,
+          24
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      }
+    },
+    "L5": {
+      "compatible": {
+        "accepted_content_draws_for_extreme_counts": 187,
+        "accepted_content_program_minus_model_extreme_counts": [
+          -24,
+          -24
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          -25,
+          -23
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 150,
+        "on_ready_pairs": {
+          "both_confirmed": 124,
+          "model_only_confirmed": 26,
+          "neither_confirmed": 35,
+          "program_only_confirmed": 2
+        },
+        "on_ready_program_confirmed": 126,
+        "ready_model_decisions": {
+          "accepted": 150,
+          "stage_rejected": 37
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 61,
+          "pass": 126
+        },
+        "ready_program_minus_model_extreme_counts": [
+          -24,
+          -24
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      },
+      "content_and_structure_status": {
+        "content_rejected": 31,
+        "content_unknown": 1,
+        "ready": 187
+      },
+      "distinct_tasks_with_both_inputs": 187,
+      "ready_content_and_structure": 187,
+      "scheduled": 219,
+      "standard": {
+        "accepted_content_draws_for_extreme_counts": 187,
+        "accepted_content_program_minus_model_extreme_counts": [
+          24,
+          24
+        ],
+        "all_scheduled_program_minus_model_extreme_counts": [
+          23,
+          25
+        ],
+        "on_missing_structure_program_confirmed": 0,
+        "on_ready_model_confirmed": 86,
+        "on_ready_pairs": {
+          "both_confirmed": 81,
+          "model_only_confirmed": 5,
+          "neither_confirmed": 72,
+          "program_only_confirmed": 29
+        },
+        "on_ready_program_confirmed": 110,
+        "ready_model_decisions": {
+          "fail": 101,
+          "pass": 86
+        },
+        "ready_model_unknown_program_confirmed": 0,
+        "ready_program_decisions": {
+          "no_policy_hit": 77,
+          "pass": 110
+        },
+        "ready_program_minus_model_extreme_counts": [
+          24,
+          24
+        ],
+        "ready_program_unknown_model_confirmed": 0
+      }
+    }
+  },
+  "case_level_anchor_cases": 187,
+  "case_level_anchor_comparisons": 748,
+  "case_level_anchor_sha256": "cfa535dbc31f3f846f4323b6851de827285ef180e8245986b9d33d97929b47e2",
+  "complete_four_draw_tasks": {
+    "all_four_ready": 178,
+    "all_tasks": 219,
+    "compatible": {
+      "all_four_known_tasks": 178,
+      "equal": 141,
+      "excluded_ready_tasks_with_unknown": 0,
+      "mean_within_task_program_minus_model_pp": -11.3764,
+      "model_more": 32,
+      "model_passes": 580,
+      "paired_draws": 712,
+      "program_more": 5,
+      "program_passes": 499
+    },
+    "standard": {
+      "all_four_known_tasks": 177,
+      "equal": 132,
+      "excluded_ready_tasks_with_unknown": 1,
+      "mean_within_task_program_minus_model_pp": 14.2655,
+      "model_more": 5,
+      "model_passes": 337,
+      "paired_draws": 708,
+      "program_more": 40,
+      "program_passes": 438
+    }
+  },
+  "device_runs": 0,
+  "different_program_inputs_scored": 424,
+  "frozen_benchmark_sha256": "c421c3b3cbd9b54ec21d78ab31af13b1b3e2a994d7d45ff12921f3b07c8a5aec",
+  "frozen_formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "new_network_requests": 0,
+  "study": "Post-hoc counterfactual replays on actual L2-L5 content/structure calls, with a common L5 downstream. Each policy is applied to exactly the same accepted content and source on both sides. Standard follows the historical reference size, geometry, fidelity and unchanged exit checks, with the model tree's own order. Compatible keeps a successful legacy program layout, then applies the locked enhanced fallback. A confirmed-pass table counts positive evidence; nonconfirmation may include an unknown verdict. A missing physical model structure is displayed separately and never credited as a program victory. Multiple draws share tasks, sometimes exact content. These are paired technical projections, without visual or business assessments.",
+  "unique_original_model_structure_responses": 759
+}

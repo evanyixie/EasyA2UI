@@ -35,6 +35,10 @@ TABLES = (
     "paper/out/tables/fixed_content_repeats.json",
     "paper/out/tables/enhanced_repeat_bridge.json",
     "paper/out/tables/standard_repeat_bridge.json",
+    "paper/out/tables/matched_content_repeats.json",
+    "paper/out/tables/layout_content_draws.json",
+    "paper/out/tables/augmented_content_draws.json",
+    "paper/out/tables/native_repeated_facts.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -116,6 +120,8 @@ def _readme(anonymous: bool) -> str:
 - [T03 三行协议校验器的逐项注错与合法对照]({TABLES[9]})
 - [正式批相同布局消息的历史重复]({TABLES[10]}) · [固定内容后每题十次的布局稳定性]({TABLES[11]})
 - [补强 L6 在同一批十二题上的重复结果]({TABLES[12]}) · [两档统一字号后的同题比较]({TABLES[13]})
+- [相同内容提示的选择一致性]({TABLES[14]}) · [四组内容下的原程序]({TABLES[15]}) · [两种字号下的补强程序]({TABLES[16]})
+- [A6 同一动态数值是否跨控件重复显示]({TABLES[17]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 

@@ -1,0 +1,250 @@
+{
+  "schema": "matched-content-repeats-v1",
+  "formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "arms": [
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "sampling": {
+    "model": "deepseek-flash",
+    "temperature": 0,
+    "thinking": false,
+    "max_tokens_per_response": 8192,
+    "initial_http_attempts_per_stage": 1
+  },
+  "assigned_tasks": 219,
+  "assigned_content_slots": 1095,
+  "independent_returned_replies": 1092,
+  "same_message_verified_tasks": 219,
+  "l6_anchors_reproduced": 219,
+  "new_model_calls": 0,
+  "new_device_calls": 0,
+  "observed_entry_status_by_arm": {
+    "L2": {
+      "valid_unchanged": 192,
+      "rejected_unchanged": 27
+    },
+    "L3": {
+      "valid_unchanged": 190,
+      "rejected_unchanged": 27,
+      "missing_transport": 2
+    },
+    "L4": {
+      "valid_unchanged": 191,
+      "rejected_unchanged": 28
+    },
+    "L5": {
+      "valid_unchanged": 187,
+      "rejected_unchanged": 31,
+      "missing_transport": 1
+    },
+    "L6": {
+      "valid_unchanged": 187,
+      "rejected_unchanged": 32
+    }
+  },
+  "observed_entry_totals": {
+    "valid_unchanged": 947,
+    "rejected_unchanged": 145,
+    "missing_transport": 3
+  },
+  "contract_agreement": {
+    "selected_fact_multiset": {
+      "eligible_pairs": 1841,
+      "equal_pairs": 1592,
+      "inapplicable_pairs": 0,
+      "tasks_with_comparable_pairs": 193,
+      "mean_within_task_pair_agreement": 0.861139896373057
+    },
+    "selected_fact_multiset_when_either_selected": {
+      "eligible_pairs": 1841,
+      "equal_pairs": 1592,
+      "inapplicable_pairs": 0,
+      "tasks_with_comparable_pairs": 193,
+      "mean_within_task_pair_agreement": 0.861139896373057
+    },
+    "selected_action_ids": {
+      "eligible_pairs": 1841,
+      "equal_pairs": 1831,
+      "inapplicable_pairs": 0,
+      "tasks_with_comparable_pairs": 193,
+      "mean_within_task_pair_agreement": 0.9948186528497409
+    },
+    "selected_action_ids_when_candidates_available": {
+      "eligible_pairs": 993,
+      "equal_pairs": 983,
+      "inapplicable_pairs": 848,
+      "tasks_with_comparable_pairs": 104,
+      "mean_within_task_pair_agreement": 0.9903846153846154
+    },
+    "selected_action_ids_when_either_selected": {
+      "eligible_pairs": 993,
+      "equal_pairs": 983,
+      "inapplicable_pairs": 848,
+      "tasks_with_comparable_pairs": 104,
+      "mean_within_task_pair_agreement": 0.9903846153846154
+    },
+    "selected_facts_and_actions": {
+      "eligible_pairs": 1841,
+      "equal_pairs": 1589,
+      "inapplicable_pairs": 0,
+      "tasks_with_comparable_pairs": 193,
+      "mean_within_task_pair_agreement": 0.8595854922279793
+    },
+    "registered_action_targets_when_either_selected": {
+      "eligible_pairs": 993,
+      "equal_pairs": 983,
+      "inapplicable_pairs": 848,
+      "tasks_with_comparable_pairs": 104,
+      "mean_within_task_pair_agreement": 0.9903846153846154
+    },
+    "registered_action_capabilities_when_either_selected": {
+      "eligible_pairs": 993,
+      "equal_pairs": 983,
+      "inapplicable_pairs": 848,
+      "tasks_with_comparable_pairs": 104,
+      "mean_within_task_pair_agreement": 0.9903846153846154
+    },
+    "literal_item_roles_given_same_facts_and_complete_role_tags": {
+      "eligible_pairs": 1542,
+      "equal_pairs": 1426,
+      "inapplicable_pairs": 299,
+      "tasks_with_comparable_pairs": 188,
+      "mean_within_task_pair_agreement": 0.9166666666666666
+    },
+    "literal_item_entities_given_same_facts_and_complete_entity_tags": {
+      "eligible_pairs": 1444,
+      "equal_pairs": 1222,
+      "inapplicable_pairs": 397,
+      "tasks_with_comparable_pairs": 179,
+      "mean_within_task_pair_agreement": 0.8395716945996275
+    },
+    "item_wording_given_same_nonempty_facts": {
+      "eligible_pairs": 1592,
+      "equal_pairs": 1265,
+      "inapplicable_pairs": 249,
+      "tasks_with_comparable_pairs": 192,
+      "mean_within_task_pair_agreement": 0.78359375
+    },
+    "title_wording": {
+      "eligible_pairs": 1841,
+      "equal_pairs": 1841,
+      "inapplicable_pairs": 0,
+      "tasks_with_comparable_pairs": 193,
+      "mean_within_task_pair_agreement": 1
+    },
+    "action_wording_given_same_nonempty_actions": {
+      "eligible_pairs": 983,
+      "equal_pairs": 926,
+      "inapplicable_pairs": 858,
+      "tasks_with_comparable_pairs": 104,
+      "mean_within_task_pair_agreement": 0.9378205128205128
+    },
+    "fact_order_given_same_facts_two_or_more_distinct": {
+      "eligible_pairs": 1337,
+      "equal_pairs": 1288,
+      "inapplicable_pairs": 504,
+      "tasks_with_comparable_pairs": 167,
+      "mean_within_task_pair_agreement": 0.9479041916167664
+    },
+    "action_order_given_same_actions_two_or_more_distinct": {
+      "eligible_pairs": 183,
+      "equal_pairs": 183,
+      "inapplicable_pairs": 1658,
+      "tasks_with_comparable_pairs": 20,
+      "mean_within_task_pair_agreement": 1
+    },
+    "entire_effective_contract_with_ids": {
+      "eligible_pairs": 1841,
+      "equal_pairs": 907,
+      "inapplicable_pairs": 0,
+      "tasks_with_comparable_pairs": 193,
+      "mean_within_task_pair_agreement": 0.48998272884283245
+    }
+  },
+  "comparison_rules": {
+    "sampling": "Identical within-task message bytes and common registered transport settings, with distinct provider request IDs for returned replies. These are natural repeats across arms, with no random restarts or server-side seed guarantee.",
+    "facts": "Multiset of dynamic binding paths or source-validated literal static text; duplicate occurrences retained. Titles and generated item IDs are separate.",
+    "actions": "Registered action IDs, handler payloads and registered capability IDs. Omitted handler uses the original registered target.",
+    "priority_entity": "Exact explicit role or entity strings, conditional on equal nonempty fact multisets and complete annotations on both sides. Missing tags are ineligible; lexical disagreement need not be semantic disagreement.",
+    "action_entity_owner": "Unobservable. The action row has no link to a displayed entity. Registered capability/handler identity measures business target only.",
+    "wording": "Exact title; within identical selected facts compare per-fact label, text and unit; within identical selected actions compare button labels.",
+    "order": "Compare order within items or within actions only when both select the same multiset with at least two distinct identities. The contract does not define interleaving of the two arrays.",
+    "agreements": "Pairs within tasks share draws. Report equal/eligible pairs and mean within-task rate over tasks with eligible pairs. Agreement is not correctness.",
+    "technical": "For each returned raw reply rerun the frozen L6 entry and program tail. Direct pass means exit.status=no_change. Missing transport has no observable reply; rejected content is retained as a failed input to the downstream comparison."
+  },
+  "l6_on_all_returned_replies": {
+    "eligible_tasks": 219,
+    "tasks_with_two_or_more_draws": 219,
+    "draws": 1092,
+    "first_artifacts": 586,
+    "direct_passes": 586,
+    "pairs": 2178,
+    "pairs_with_equal_raw_bytes": 933,
+    "pairs_both_direct_pass": 1119,
+    "pairs_neither_direct_pass": 957,
+    "pairs_both_first_present": 1119,
+    "pairs_same_first_bytes_when_both_present": 803,
+    "pairs_same_effective_contract_and_identical_first_outcome": 907,
+    "pairs_direct_pass_disagrees": 102,
+    "tasks_by_observed_draw_count": {
+      "4": 3,
+      "5": 216
+    },
+    "first_availability_in_repeated_tasks": {
+      "all": 105,
+      "some": 21,
+      "none": 93
+    },
+    "direct_pass_in_repeated_tasks": {
+      "all": 105,
+      "some": 21,
+      "none": 93
+    },
+    "discordant_pairs_by_content": {
+      "both_valid_different_fact_or_action_set": 52,
+      "one_content_rejected": 33,
+      "both_valid_same_fact_and_action_sets": 17
+    }
+  },
+  "l6_on_valid_content_only": {
+    "eligible_tasks": 200,
+    "tasks_with_two_or_more_draws": 193,
+    "draws": 947,
+    "first_artifacts": 586,
+    "direct_passes": 586,
+    "pairs": 1841,
+    "pairs_with_equal_raw_bytes": 847,
+    "pairs_both_direct_pass": 1119,
+    "pairs_neither_direct_pass": 653,
+    "pairs_both_first_present": 1119,
+    "pairs_same_first_bytes_when_both_present": 803,
+    "pairs_same_effective_contract_and_identical_first_outcome": 907,
+    "pairs_direct_pass_disagrees": 69,
+    "tasks_by_observed_draw_count": {
+      "0": 19,
+      "1": 7,
+      "2": 2,
+      "3": 5,
+      "4": 9,
+      "5": 177
+    },
+    "first_availability_in_repeated_tasks": {
+      "all": 111,
+      "some": 15,
+      "none": 67
+    },
+    "direct_pass_in_repeated_tasks": {
+      "all": 111,
+      "some": 15,
+      "none": 67
+    },
+    "discordant_pairs_by_content": {
+      "both_valid_different_fact_or_action_set": 52,
+      "both_valid_same_fact_and_action_sets": 17
+    }
+  }
+}
