@@ -1,0 +1,365 @@
+{
+  "accounting": {
+    "all_assigned_tokens": "Sum of provider-reported usage, including unsuccessful outputs. Missing usage is counted separately.",
+    "cost_unit": "Reported tokens; no conversion into monetary charges.",
+    "native_screen": "Full sample text and button labels matched and all observed leaf boxes inside the card without overlap.",
+    "observed_pass": "All selected tasks remain in the yield denominator, including missing decisions and uncaptured seats.",
+    "shared_usage": "Include a task only when every request intent of every compared arm has a token receipt.",
+    "timing": "Historical executor seconds, including failures and waits, excluding device rendering."
+  },
+  "all_assigned": {
+    "L1": {
+      "assigned": 219,
+      "completion_tokens": 146094,
+      "executor_seconds": 979.092599,
+      "known_physical_attempts": 215,
+      "native_screen_pass": 147,
+      "prompt_tokens": 410610,
+      "request_intents": 219,
+      "technical_pass": 91,
+      "total_tokens": 556704,
+      "unknown_attempt_intents": 4,
+      "unknown_technical": 6,
+      "unknown_usage_calls": 4
+    },
+    "L2": {
+      "assigned": 219,
+      "completion_tokens": 339510,
+      "executor_seconds": 3174.999433,
+      "known_physical_attempts": 948,
+      "native_screen_pass": 118,
+      "prompt_tokens": 2294601,
+      "request_intents": 951,
+      "technical_pass": 30,
+      "total_tokens": 2634111,
+      "unknown_attempt_intents": 3,
+      "unknown_technical": 3,
+      "unknown_usage_calls": 3
+    },
+    "L3": {
+      "assigned": 219,
+      "completion_tokens": 218226,
+      "executor_seconds": 2434.346557,
+      "known_physical_attempts": 781,
+      "native_screen_pass": 116,
+      "prompt_tokens": 1857444,
+      "request_intents": 786,
+      "technical_pass": 29,
+      "total_tokens": 2075670,
+      "unknown_attempt_intents": 5,
+      "unknown_technical": 5,
+      "unknown_usage_calls": 5
+    },
+    "L4": {
+      "assigned": 219,
+      "completion_tokens": 134992,
+      "executor_seconds": 1774.74589,
+      "known_physical_attempts": 597,
+      "native_screen_pass": 136,
+      "prompt_tokens": 1355989,
+      "request_intents": 600,
+      "technical_pass": 28,
+      "total_tokens": 1490981,
+      "unknown_attempt_intents": 3,
+      "unknown_technical": 3,
+      "unknown_usage_calls": 3
+    },
+    "L5": {
+      "assigned": 219,
+      "completion_tokens": 62331,
+      "executor_seconds": 1143.004996,
+      "known_physical_attempts": 405,
+      "native_screen_pass": 150,
+      "prompt_tokens": 886244,
+      "request_intents": 406,
+      "technical_pass": 150,
+      "total_tokens": 948575,
+      "unknown_attempt_intents": 1,
+      "unknown_technical": 1,
+      "unknown_usage_calls": 1
+    },
+    "L6": {
+      "assigned": 219,
+      "completion_tokens": 48275,
+      "executor_seconds": 650.550968,
+      "known_physical_attempts": 219,
+      "native_screen_pass": 115,
+      "prompt_tokens": 463158,
+      "request_intents": 219,
+      "technical_pass": 115,
+      "tokens_per_assigned": 2335.310502283105,
+      "tokens_per_native_screen_pass": 4447.24347826087,
+      "tokens_per_technical_pass": 4447.24347826087,
+      "total_tokens": 511433,
+      "unknown_attempt_intents": 0,
+      "unknown_technical": 0,
+      "unknown_usage_calls": 0
+    }
+  },
+  "l5_l6_complete_usage": {
+    "arms": {
+      "L5": {
+        "assigned": 218,
+        "completion_tokens": 62331,
+        "executor_seconds": 1127.121972,
+        "known_physical_attempts": 405,
+        "native_screen_pass": 150,
+        "prompt_tokens": 886244,
+        "request_intents": 405,
+        "technical_pass": 150,
+        "tokens_per_assigned": 4351.261467889908,
+        "tokens_per_native_screen_pass": 6323.833333333333,
+        "tokens_per_technical_pass": 6323.833333333333,
+        "total_tokens": 948575,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 0,
+        "unknown_usage_calls": 0
+      },
+      "L6": {
+        "assigned": 218,
+        "completion_tokens": 48157,
+        "executor_seconds": 648.009508,
+        "known_physical_attempts": 218,
+        "native_screen_pass": 114,
+        "prompt_tokens": 461227,
+        "request_intents": 218,
+        "technical_pass": 114,
+        "tokens_per_assigned": 2336.623853211009,
+        "tokens_per_native_screen_pass": 4468.2807017543855,
+        "tokens_per_technical_pass": 4468.2807017543855,
+        "total_tokens": 509384,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 0,
+        "unknown_usage_calls": 0
+      }
+    },
+    "excluded_missing_usage": 1,
+    "frontiers": {
+      "native_screen_pass": {
+        "tokens_per_assigned": [
+          "L5",
+          "L6"
+        ],
+        "tokens_per_native_screen_pass": [
+          "L5",
+          "L6"
+        ]
+      },
+      "technical_pass": {
+        "tokens_per_assigned": [
+          "L5",
+          "L6"
+        ],
+        "tokens_per_technical_pass": [
+          "L5",
+          "L6"
+        ]
+      }
+    },
+    "l5_over_l6": {
+      "incremental_seconds_per_net_technical_pass": 13.308679555555553,
+      "incremental_tokens_per_net_technical_pass": 12199.75,
+      "net_technical_passes": 36
+    },
+    "observed_pairs": {
+      "L5_L6_technical_pass": {
+        "both": 110,
+        "first_only": 40,
+        "neither_observed": 64,
+        "second_only": 4
+      }
+    },
+    "shared_tasks": 218
+  },
+  "original_delivery_cost_lower_bounds_if_nonzero_deliveries": {
+    "L1": {
+      "executor_seconds_divided_by_delivery_upper_count": 4.553919065116279,
+      "known_tokens_divided_by_delivery_upper_count": 2589.320930232558,
+      "lower_possible_deliveries": 0,
+      "upper_possible_deliveries": 215
+    },
+    "L2": {
+      "executor_seconds_divided_by_delivery_upper_count": 19.720493372670806,
+      "known_tokens_divided_by_delivery_upper_count": 16360.937888198758,
+      "lower_possible_deliveries": 0,
+      "upper_possible_deliveries": 161
+    },
+    "L3": {
+      "executor_seconds_divided_by_delivery_upper_count": 14.753615496969696,
+      "known_tokens_divided_by_delivery_upper_count": 12579.818181818182,
+      "lower_possible_deliveries": 0,
+      "upper_possible_deliveries": 165
+    },
+    "L4": {
+      "executor_seconds_divided_by_delivery_upper_count": 9.340767842105263,
+      "known_tokens_divided_by_delivery_upper_count": 7847.268421052631,
+      "lower_possible_deliveries": 0,
+      "upper_possible_deliveries": 190
+    },
+    "L5": {
+      "executor_seconds_divided_by_delivery_upper_count": 7.569569509933774,
+      "known_tokens_divided_by_delivery_upper_count": 6281.953642384106,
+      "lower_possible_deliveries": 0,
+      "upper_possible_deliveries": 151
+    },
+    "L6": {
+      "executor_seconds_divided_by_delivery_upper_count": 5.656964939130435,
+      "known_tokens_divided_by_delivery_upper_count": 4447.24347826087,
+      "lower_possible_deliveries": 0,
+      "upper_possible_deliveries": 115
+    }
+  },
+  "six_arm_complete_usage": {
+    "arms": {
+      "L1": {
+        "assigned": 203,
+        "completion_tokens": 138494,
+        "executor_seconds": 894.65016,
+        "known_physical_attempts": 203,
+        "native_screen_pass": 139,
+        "prompt_tokens": 388183,
+        "request_intents": 203,
+        "technical_pass": 84,
+        "tokens_per_assigned": 2594.4679802955666,
+        "tokens_per_native_screen_pass": 3789.043165467626,
+        "tokens_per_technical_pass": 6269.964285714285,
+        "total_tokens": 526677,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 2,
+        "unknown_usage_calls": 0
+      },
+      "L2": {
+        "assigned": 203,
+        "completion_tokens": 314381,
+        "executor_seconds": 2930.399945,
+        "known_physical_attempts": 881,
+        "native_screen_pass": 112,
+        "prompt_tokens": 2132131,
+        "request_intents": 881,
+        "technical_pass": 29,
+        "tokens_per_assigned": 12051.783251231527,
+        "tokens_per_native_screen_pass": 21843.85714285714,
+        "tokens_per_technical_pass": 84362.4827586207,
+        "total_tokens": 2446512,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 0,
+        "unknown_usage_calls": 0
+      },
+      "L3": {
+        "assigned": 203,
+        "completion_tokens": 204601,
+        "executor_seconds": 2274.056407,
+        "known_physical_attempts": 730,
+        "native_screen_pass": 109,
+        "prompt_tokens": 1739600,
+        "request_intents": 730,
+        "technical_pass": 28,
+        "tokens_per_assigned": 9577.344827586207,
+        "tokens_per_native_screen_pass": 17836.70642201835,
+        "tokens_per_technical_pass": 69435.75,
+        "total_tokens": 1944201,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 0,
+        "unknown_usage_calls": 0
+      },
+      "L4": {
+        "assigned": 203,
+        "completion_tokens": 123752,
+        "executor_seconds": 1637.115244,
+        "known_physical_attempts": 553,
+        "native_screen_pass": 127,
+        "prompt_tokens": 1255341,
+        "request_intents": 553,
+        "technical_pass": 28,
+        "tokens_per_assigned": 6793.56157635468,
+        "tokens_per_native_screen_pass": 10859.0,
+        "tokens_per_technical_pass": 49253.32142857143,
+        "total_tokens": 1379093,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 0,
+        "unknown_usage_calls": 0
+      },
+      "L5": {
+        "assigned": 203,
+        "completion_tokens": 57811,
+        "executor_seconds": 1048.654547,
+        "known_physical_attempts": 377,
+        "native_screen_pass": 139,
+        "prompt_tokens": 825449,
+        "request_intents": 377,
+        "technical_pass": 139,
+        "tokens_per_assigned": 4351.0344827586205,
+        "tokens_per_native_screen_pass": 6354.3884892086335,
+        "tokens_per_technical_pass": 6354.3884892086335,
+        "total_tokens": 883260,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 0,
+        "unknown_usage_calls": 0
+      },
+      "L6": {
+        "assigned": 203,
+        "completion_tokens": 44637,
+        "executor_seconds": 603.72784,
+        "known_physical_attempts": 203,
+        "native_screen_pass": 106,
+        "prompt_tokens": 430001,
+        "request_intents": 203,
+        "technical_pass": 106,
+        "tokens_per_assigned": 2338.118226600985,
+        "tokens_per_native_screen_pass": 4477.7169811320755,
+        "tokens_per_technical_pass": 4477.7169811320755,
+        "total_tokens": 474638,
+        "unknown_attempt_intents": 0,
+        "unknown_technical": 0,
+        "unknown_usage_calls": 0
+      }
+    },
+    "excluded_missing_usage": 16,
+    "frontiers": {
+      "native_screen_pass": {
+        "tokens_per_assigned": [
+          "L1",
+          "L6"
+        ],
+        "tokens_per_native_screen_pass": [
+          "L1"
+        ]
+      },
+      "technical_pass": {
+        "tokens_per_assigned": [
+          "L5",
+          "L6"
+        ],
+        "tokens_per_technical_pass": [
+          "L5",
+          "L6"
+        ]
+      }
+    },
+    "l5_over_l6": {
+      "incremental_seconds_per_net_technical_pass": 13.482627484848487,
+      "incremental_tokens_per_net_technical_pass": 12382.484848484848,
+      "net_technical_passes": 33
+    },
+    "observed_pairs": {
+      "L1_L5_native_screen_pass": {
+        "both": 105,
+        "first_only": 34,
+        "neither_observed": 30,
+        "second_only": 34
+      },
+      "L5_L6_technical_pass": {
+        "both": 102,
+        "first_only": 37,
+        "neither_observed": 60,
+        "second_only": 4
+      }
+    },
+    "shared_tasks": 203
+  },
+  "source_sha256": {
+    "frozen_delivery_bounds": "780fa86c0c3de817148b26efa3c1e937d5643691cc4937c516a5785e422a5a26",
+    "native": "a4ceaee6a1b502865a9628362ed19c5f9c52f443470d63316ed5d5ffc18b5432",
+    "seats": "8a14e60a953e8b7e445df7985c7512ceefff94f0fcc404cc62bf6a6c51f83e72"
+  }
+}

@@ -1,0 +1,902 @@
+diff --git a/README.md b/README.md
+index d6396197e79cd603907dbeb26783e40eb82dcbfc..c01f681d46899eaf5b40ca424c66a8191a6b9be4 100644
+--- a/README.md
++++ b/README.md
+@@ -47,0 +48,6 @@ genui-al examples/focus-2x2.json `
++本地可用 `--generation-strategy semantic-program-v1` 比较首次语义选择与程序选型：
++模型只给事实引用、对象关系、主次、展示意图和动作归属，程序选择商用组件和容器。
++默认仍为 `component-rows-v2`，已有生成链路不变。新链路目前支持商用能力候选合同，
++静态原文入口明确报未支持；它不会自动回退旧模型选择，也不执行最终模型复核。
++输出额外保留 `semantic-plan.json` 和 `program-layout-attempts.json`。
++
+diff --git a/docs/architecture.md b/docs/architecture.md
+index 4f22d652091e2aeb03e4398b0c7d0471305b76a8..86dd2f0d72db81171a4e4070074061722942d889 100644
+--- a/docs/architecture.md
++++ b/docs/architecture.md
+@@ -8 +8 @@
+-2. `selection_routing` 按候选数据绑定选择能力或静态来源路径。能力路径使用 `component-rows-v2`；静态路径使用 `query_schema.VERSION` 定义的来源协议。模型只选择组件、引用、角色、实体和动作，不生成布局几何或颜色。
++2. `selection_routing` 按候选数据绑定选择能力或静态来源路径。默认能力路径使用 `component-rows-v2`；静态路径使用 `query_schema.VERSION` 定义的来源协议。模型只选择组件、引用、角色、实体和动作，不生成布局几何或颜色。本地语义程序策略见下文，它将能力路径的组件选择交给程序。
+@@ -25,0 +26,63 @@
++## 商用 UX 本地适配
++
++本地调试以 7.1 的完整语义选择、测量、容器编排和 A2UI 输出为生成链路。商用 UX
++的组件规格以外部 CreateMyCard 冻结提交 `f13788c0` 的运行时 Recipe 和生效代码为对照，
++不将旧 Plan 接入此链路，也不修改外部参考检出。UX 文档中的旧静态组件和按钮长度说明
++须与该提交的实际合同核对后使用。
++
++首轮适配能力型 `upstream-card-v1` 的标题、核心读数、正文及信息块文字规格。
++字号、字重、行高、单位和最小行盒由同一份程序化规格提供给测量与输出；测量仍须
++保留完整文字，不能为匹配设计行盒而裁掉真实测量占高。历史 `local-card-v1` 与静态
++原文组件继续使用自身配方，尚未适配的组件不算已满足商用 UX。
++
++双业务与动作按语义实体和已接受的组件分组确定归属，局部动作优先与对应业务一同
++编排；无法唯一确定归属的全局动作保留独立操作区。等权、标题锚点、操作点击区及
++完整事实属于候选准入条件，空间分配和完整换行沿用现有有界搜索，不按业务名称、
++测试编号或样例值选择布局。具体适配以复现和回归结果为准。
++
++首轮双分区只处理无公共总标题、两个明确实体且各有一个独立动作的闭合结构。
++外层业务区等宽，列间距 12vp、背板内边距 8vp；已确认的身份叶子按区域标题
++12fp 配方测量并输出，各区 36vp 胶囊按钮沉底。正文到操作区的最小间隔使用
++紧凑 Region 的 6vp。原竖排完整可容纳时优先保留；容量拒绝后，同对象的主值
++与至多两行辅助文字可尝试既有主辅同行，内部采用有界宽度协商和 8vp 间距。
++这种主辅宽度协商与外层同级区域等宽是不同规则，不按文字长度改变业务主次。
++
++数值及适配器明确追加的单位分别使用主值与单位字号测量，两者宽度及 2vp 间距
++共同计入可用区域；三种登记份额的失败只代表当前候选域未容纳。DataDisplay
++文本结论使用独立的 60vp 居中值区，内部 Text 保留自然测量高度，不能直接把
++60vp 当成一行文字的高度。旧冻结记录缺少新字重字段时保留原字重默认行为。
++
++本地对照固定相同请求、组件意图、宿主测试尺寸、字体与主题，分别记录原版和修改版。
++参考字体预览用于观察层级和布局，不能代替真实模型生成、原生字底或端侧交互验收。
++主题、动态刷新、静态开域及完整组件目录的商用接入仍分别验收，不从局部预览推导
++完整替换已通过。
++
++## 首次语义选择与程序选型
++
++`generation_strategy="semantic-program-v1"` 是本地可选生成链路，原
++`component-rows-v2` 仍为默认。两条链路共享画布、商用组件配方、完整文字测量、
++容器编排、主题准入及 A2UI 输出，不接入 7.0 Plan，也不修改外部商用代码。
++
++新链路首次模型只选择真实事实引用、主次、对象关系、展示意图和动作归属，不生成
++具体组件、槽位、布局树、尺寸或颜色。来源、宿主必留义务和已有对象身份由程序核对；
++模型未能明确表达的需求、非法引用与未支持输入必须保留失败，不生成占位卡冒充成功。
++
++`semantic_selection` 管理该语义合同；`semantic_planner` 将合同编译为有界的合法组件
++意图候选；`semantic_generation` 用既有完整测量和容器规划逐个试排。程序可在不改变
++语义及商用规格的候选之间选择，不以缩小字号或遗漏必留内容获得可行布局。候选全部
++拒绝只说明本次登记范围未容纳，测量预算耗尽须单列，不能推断全域无解。
++
++`primary` 表示主要信息层级，不强制每个字段各占一个30fp大字块。程序先按语义结构
++选择登记组件：单读数、同对象多项指标、文字结论和记录采用各自商用配方；配方的字号
++在测量前确定，不在容量失败后按档缩字。组合读数需明确主值及其身份/辅助来源，多主值
++有歧义时由首次语义输出指定焦点，程序不能凭业务名或样值猜测。
++
++已核实的记录本体点击优先沿整条记录编排：真实动作、明确对象、已选可信日期/时间及
++既有字段合同通过后，程序使用 EventCard 保留完整记录与点击，不先套普通读数的辅助项
++上限。记录标题可以是文字焦点；普通读数仍须有可信主值。两个引用的主值与辅助状态
++沿显式焦点保留主辅关系，不能编译成两个独立的大字主值。
++
++该链路当前不自动调用语义复核或模型容量修复。一次选择的原始响应、校验结果、
++全部程序候选的完整布局结果、容量诊断与试排耗时单独保存，便于先比较首次成功率，
++再研究确有必要的兜底。
++
+diff --git a/docs/evaluation.md b/docs/evaluation.md
+index a1aaf6c249647495897b3cac0b045da23089c06a..ace366430ac08c55fa411f7c5e429e8131d734ed 100644
+--- a/docs/evaluation.md
++++ b/docs/evaluation.md
+@@ -20,0 +21,13 @@ Pillow 标记为 `pillow_reference_not_native`；冻结原生缓存与实时手
++## 首次模型与程序分工对照
++
++`component-rows-v2` 与 `semantic-program-v1` 必须使用同一实际请求、候选注册表、
++模型与温度、画布、字体、主题和内容策略。比较首次能力时每例只接受第一次语义响应，
++禁止将原链路后续修复的成功计入首次成功。连接重试属于真实物理请求，另行完整记录。
++
++固定单一合法主题时，两条链路均不调用主题模型。分别报告模型阶段、程序选型与布局、
++完整生成耗时，不能将模型耗时单独称为端到端耗时。参考字体对照不包含端侧渲染性能。
++
++生成状态与独立需求核对分开：首次生成完成、明确要求的事实/动作保留、未执行及未支持
++分别列出。程序候选试排不是模型重试；失败候选、首轮模型原始响应和全部调用均保留。
++最终成功率需说明分母、一次运行的样本规模与是否完成独立视觉验收。
++
+diff --git a/docs/measurement.md b/docs/measurement.md
+index f4ead93087e06ab02761d6ba56afb22d1c101ba9..2497609cd98975599a433d51a0e906d288e74845 100644
+--- a/docs/measurement.md
++++ b/docs/measurement.md
+@@ -8,0 +9,2 @@
++参考字体及冻结原生缓存的单次 `ReferenceMeasurements.evaluate` 内，相同文字、宽度、字号、最大行数、字重及行高的查询复用结果，三个宽度搜索层共用该缓存，下次 evaluate 重新建立。缓存保留原测量来源与容量错误，不缓存缺测或通信异常；结果中的 `oracle_query_cache` 单列命中情况，不代表原生调用次数或设备性能。实时查询发现器不使用这层只读缓存。
++
+diff --git a/docs/space-allocation.md b/docs/space-allocation.md
+index e73fa16bd54d4da858db3b1d98bc0d698a786d2d..ae99e49a9163aec445a0cca9a3523c70d9ef3ecc 100644
+--- a/docs/space-allocation.md
++++ b/docs/space-allocation.md
+@@ -8,0 +9,9 @@
++语义程序策略的两槽商用组件先沿用固定份额，必要时补查既有2至5等分网格。仍未容纳时，
++可对完整单行文字的最小宽度做每槽最多14步的0.25vp有界二分，寻找网格遗漏的狭窄可行区间。
++字体、行高、引用与间距保持不变，最后仍完整测量两个槽。原生成策略保持原份额；
++实时原生查询继续遵守原有测量预算，未完成不能声称有解或无解。
++
++新策略的InfoBlock/EmphasisText可复用`presentation`中已登记的短前缀投影。
++投影只处理适配层添加且已登记的字段前缀；原事实、值、单位和绑定不改。
++测量与输出共用同一投影标记，不添加按query或样值识别的缩写规则。
++
+diff --git a/src/genui_device/catalog.py b/src/genui_device/catalog.py
+index b099d9b6e1600d3df80380de3b0d8db8b0f56bea..aea8895f874e55372ef56d040237ca5f182d51ed 100644
+--- a/src/genui_device/catalog.py
++++ b/src/genui_device/catalog.py
+@@ -33,0 +34 @@ class Part:
++    font_weight: int | None = None
+@@ -324,0 +326,12 @@ def measure_block(
++            if aligned(request):
++                from .ux import atomic_text_recipes
++
++                recipe = atomic_text_recipes(item.component, request.size)[0]
++                icon = title_icon(request, item)
++                metric = oracle.text(
++                    texts[0], width - (28 if icon else 0), recipe.font_size * scale,
++                    max_lines=1, bold=False, line_height=recipe.line_height,
++                )
++                height = max(metric.height, (20 if icon else recipe.minimum_height) * scale)
++                part = Part(item.fact_refs[0], metric, "secondary", font_weight=400)
++                return Block(item, width, height, (part,), gap=0)
+@@ -635 +648 @@ def variants(item: Item, *, capacity_tier="established", request=None) -> tuple[
+-    from .semantic_components import aligned, compact_body_available
++    from .semantic_components import aligned, compact_body_available, compact_pair_available
+@@ -640,0 +654,2 @@ def variants(item: Item, *, capacity_tier="established", request=None) -> tuple[
++        if compact_pair_available(request, item):
++            return (0, 1, 2, 3)
+diff --git a/src/genui_device/cli.py b/src/genui_device/cli.py
+index 9307e16f16d857539f28b03205afdcfb5ed2c62a..237b07e7a8796924f86ec8e9c4880a380b1a6548 100644
+--- a/src/genui_device/cli.py
++++ b/src/genui_device/cli.py
+@@ -25,0 +26,3 @@ def main():
++    parser.add_argument("--generation-strategy",
++                        choices=["component-rows-v2", "semantic-program-v1"],
++                        help="原组件选择或首次语义选择＋程序选型；默认保留原链路")
+@@ -51 +54 @@ def main():
+-        width_policy=args.width_policy))
++        width_policy=args.width_policy, generation_strategy=args.generation_strategy))
+diff --git a/src/genui_device/container_layout.py b/src/genui_device/container_layout.py
+index 86e8b539c9acadc3166023f916e74a5ecac4aa84..dd25112df9abbb9898b38905448763a2434dc316 100644
+--- a/src/genui_device/container_layout.py
++++ b/src/genui_device/container_layout.py
+@@ -381,0 +382,3 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++    from .intent_integrity import peer_action_owners
++
++    owned_actions = peer_action_owners(request, intent)
+@@ -383,0 +387,3 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++    from .semantic_generation import explicit_peer_regions
++
++    peer_regions = explicit_peer_regions(request, document)
+@@ -388,0 +395,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++    if owned_actions:
++        gap = 12
+@@ -396,0 +405,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++    if owned_actions:
++        panel_ids = entity_ids
+@@ -415 +425,7 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
+-            for variant in variants(items[identity], capacity_tier="extended", request=request):
++            selected_item = items[identity]
++            region_heading = bool(owned_actions and len(selected_item.fact_refs) == 1
++                                  and context_heading(request, selected_item))
++            measured_item = selected_item
++            if region_heading:
++                measured_item = selected_item.model_copy(update={'component': 'SingleLineTitle'})
++            for variant in variants(measured_item, capacity_tier="extended", request=request):
+@@ -423 +439 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
+-                    block = measure_block(items[identity], request, width, oracle, variant=variant,
++                    block = measure_block(measured_item, request, width, oracle, variant=variant,
+@@ -424,0 +441,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++                    if region_heading:
++                        block = replace(block, item=selected_item)
+@@ -442 +460,5 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
+-        units = round((width - gap * (len(ids) - 1)) * 4)
++        owned_pair = bool(owned_actions) and len(ids) == 2 and all(i in items for i in ids)
++        if owned_pair:
++            owned_pair = [items[i].role for i in ids] == ['primary', 'secondary']
++        row_gap = 8 if owned_pair else gap
++        units = round((width - row_gap * (len(ids) - 1)) * 4)
+@@ -445,0 +468,4 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++        if frozenset(ids) in peer_regions:
++            same = True
++        if owned_actions and set(ids) == entity_ids:
++            same = True
+@@ -448 +474 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
+-            allocations = pair_allocations(width, gap)
++            allocations = pair_allocations(width, row_gap)
+@@ -452,0 +479,3 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++            if owned_pair:
++                entry.update(rule='owned-primary-support', gap=row_gap,
++                             cross_alignment='bottom', auxiliary_max_lines=2)
+@@ -466,0 +496,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++                if owned_pair:
++                    candidate.update(gap=row_gap, cross_alignment='bottom')
+@@ -493,0 +525,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++        if owned_actions and identity in panel_ids:
++            inset = 8
+@@ -533,0 +567,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++        if owned_actions:
++            detail = set()
+@@ -575,0 +611 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++                            support_line_limit = 2 if owned_actions else 1
+@@ -578 +614,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
+-                                and all(p['metrics']['lines'] == 1 for p in support_parts))
++                                and all(p['metrics']['lines'] <= support_line_limit
++                                        for p in support_parts))
+@@ -581,0 +619 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++                            # 双独立动作面板可用完整两行的登记辅助配方，与主值同行底对齐。
+@@ -592,0 +631,30 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++        if owned_actions and region.purpose == 'entity':
++            body = []
++            button = None
++            for child in rows:
++                if child['id'] in owned_actions:
++                    button = child
++                else:
++                    body.append(child)
++            if button is None:
++                raise CapacityError('业务分区缺少已确认归属的操作：' + identity)
++            headings = []
++            paragraphs = []
++            for child in body:
++                is_heading = all(context_heading(request, items[leaf['id']])
++                                 for leaf in leaves(child))
++                target = headings if is_heading else paragraphs
++                target.append(child)
++            text = group(identity + '_text', paragraphs, 'Column', alignment='start')
++            text['gap'] = 2
++            content_rows = [*headings, text] if headings else [text]
++            content_section = group(identity + '_content', content_rows, 'Column',
++                                    alignment='start')
++            content_section['gap'] = 6
++            spacer = dict(id=identity + '_action_space', kind='Spacer', children=[],
++                          grow=True, height=6)
++            result.update(children=[content_section, spacer, button], gap=0, grow=True,
++                          alignment='start', surface_inset=8, surface_radius=16,
++                          surface_clip=True,
++                          anchor='entity_action_footer')
++            return result
+@@ -677,0 +746,2 @@ def _plan_card_containers(request, intent, oracle, *, max_flow_attempts, width_p
++    if owned_actions:
++        content_counts = [2]
+diff --git a/src/genui_device/declarative_generation.py b/src/genui_device/declarative_generation.py
+index 40b2e04eaf9ee976f32b9e218167954165a17b87..61f0ace3ab9442db1193160973912c27a9449700 100644
+--- a/src/genui_device/declarative_generation.py
++++ b/src/genui_device/declarative_generation.py
+@@ -34 +34 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
+-                             *, selected_intent=None):
++                             *, selected_intent=None, generation_strategy='component-rows-v2'):
+@@ -43,0 +44 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
++    semantic_program = generation_strategy == 'semantic-program-v1'
+@@ -48 +49,7 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
+-            if selected_intent is not None:
++            if semantic_program:
++                from .semantic_selection import select_semantic
++
++                request, semantic_plan = await select_semantic(
++                    request, model, row['selection_attempts'])
++                put(folder/'semantic-plan.json', semantic_plan.model_dump())
++            elif selected_intent is not None:
+@@ -72,2 +79,4 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
+-            intent = normalize_intent(request, intent)
+-            validate_intent(request, intent)
++            if not semantic_program:
++                intent = normalize_intent(request, intent)
++                validate_intent(request, intent)
++                put(folder/"intent.json", intent.model_dump())
+@@ -75 +83,0 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
+-            put(folder/"intent.json", intent.model_dump())
+@@ -77 +85,4 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
+-                selected = {k for i in intent.items for k in i.fact_refs}
++                selected = ({k for i in semantic_plan.selections for k in i.fact_refs}
++                            if semantic_program else {k for i in intent.items for k in i.fact_refs})
++                action_refs = ({a.ref for a in semantic_plan.actions} if semantic_program else
++                               {i.action_ref for i in intent.items if i.action_ref})
+@@ -83,2 +94 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
+-                    selected_action_ids=sorted({i.action_ref for i in intent.items
+-                                                if i.action_ref}),
++                    selected_action_ids=sorted(action_refs),
+@@ -86,0 +97,15 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
++        if semantic_program:
++            with phase(row, 'program_component_selection'):
++                from .semantic_planner import component_candidates
++
++                program_candidates = component_candidates(request, semantic_plan)
++                if not program_candidates:
++                    raise ValueError('SEMANTIC_PROGRAM_NO_COMPONENT_CANDIDATE')
++                from .semantic_components import validate_readout_identity
++
++                for candidate in program_candidates:
++                    validate_readout_identity(request, candidate, original_request)
++                intent = normalize_intent(request, program_candidates[0])
++                validate_intent(request, intent)
++                put(folder/'intent.json', intent.model_dump())
++                row['program_candidate_count'] = len(program_candidates)
+@@ -88 +113,7 @@ async def generate_container(request, kind, model, pool, themes, folder, row,
+-            if route['profile'] == 'static_source':
++            if semantic_program:
++                from .semantic_generation import plan_components
++
++                layout = await asyncio.to_thread(plan_components, request,
++                    program_candidates, pool, folder, row)
++                intent = type(intent).model_validate(layout['intent'])
++            elif route['profile'] == 'static_source':
+diff --git a/src/genui_device/declarative_measurement.py b/src/genui_device/declarative_measurement.py
+index 17f0d112dcd8a593bd83120c1834fc9e1e487593..419b5506010b9c58fa41ebe91d08f5e5319fe131 100644
+--- a/src/genui_device/declarative_measurement.py
++++ b/src/genui_device/declarative_measurement.py
+@@ -11 +11 @@ from .contracts import admission_candidates, validate_intent
+-from .measure import CapacityError, TextMetrics
++from .measure import CachedMeasure, CapacityError, TextMeasure, TextMetrics
+@@ -367,0 +368,2 @@ class ReferenceMeasurements:
++        readonly = isinstance(self.oracle, (TextMeasure, NativeMeasure))
++        oracle = CachedMeasure(self.oracle) if readonly else self.oracle
+@@ -374 +376 @@ class ReferenceMeasurements:
+-            result = plan_card_containers(request, intent, self.oracle, **options)
++            result = plan_card_containers(request, intent, oracle, **options)
+@@ -385,0 +388,2 @@ class ReferenceMeasurements:
++        result['oracle_query_cache'] = (oracle.evidence()
++                                        if isinstance(oracle, CachedMeasure) else None)
+diff --git a/src/genui_device/emit.py b/src/genui_device/emit.py
+index 777a401d5dceb7eebffc78ffb1816c826ec62fb3..7b85d38f55bcd85d3466f01ea428b8f357ebb2b1 100644
+--- a/src/genui_device/emit.py
++++ b/src/genui_device/emit.py
+@@ -31,0 +32,3 @@ def build_component_nodes(request, block, styles=None, *, body_alignment="start"
++    commercial_focus = (
++        item.component == "DataDisplay" and request.component_contract == "upstream-card-v1"
++    )
+@@ -193,0 +197,2 @@ def build_component_nodes(request, block, styles=None, *, body_alignment="start"
++    if commercial_focus:
++        wrapper["styles"].update(alignItems="center", justifyContent="center")
+@@ -351 +356,2 @@ def build_component_nodes(request, block, styles=None, *, body_alignment="start"
+-            "fontWeight": 700 if part.bold else 400,
++            "fontWeight": part.font_weight if part.font_weight is not None
++            else 700 if part.bold else 400,
+@@ -418,0 +425,3 @@ def build_component_nodes(request, block, styles=None, *, body_alignment="start"
++            if (commercial_focus and index == 2 and block.parts[1].metrics.font_size
++                    == 21 * request.surface.font_scale):
++                margin += block.gap
+@@ -427 +436,14 @@ def build_component_nodes(request, block, styles=None, *, body_alignment="start"
+-            if index == 0 and block.header_icon:
++            if (commercial_focus and index == 1
++                    and part.metrics.font_size == 21 * request.surface.font_scale):
++                area_id = f"gd_{item.id}_value_area"
++                text_node["styles"]["margin"] = {"top": 0}
++                text_parent["children"].append(area_id)
++                nodes.append(node(
++                    area_id, "Column",
++                    dict(width=text_width,
++                         height=max(60 * request.surface.font_scale, part.metrics.height),
++                         alignItems="center", justifyContent="center", flexShrink=0,
++                         margin={"top": margin}),
++                    children=[text_id],
++                ))
++            elif index == 0 and block.header_icon:
+diff --git a/src/genui_device/intent_integrity.py b/src/genui_device/intent_integrity.py
+index 300816b85025e5f3adb7b6ac6aa4623ef8cc783b..430a16b2c748e559c31de7c76f8f78206261491d 100644
+--- a/src/genui_device/intent_integrity.py
++++ b/src/genui_device/intent_integrity.py
+@@ -74,0 +75,58 @@ def prepare_intent(request, intent, *, audit):
++def peer_action_owners(request, intent):
++    """仅闭合的双实体独立操作可进入商用双分区，不推断未知或共享动作。"""
++    from .semantic_components import aligned
++
++    if not aligned(request) or request.size != '2x4':
++        return {}
++    facts = {fact.id: fact for fact in request.facts}
++    actions = {action.id: action for action in request.actions}
++    groups = {}
++    buttons = []
++    primary_groups = set()
++    for item in intent.items:
++        if item.role == 'title':
++            return {}
++        if item.role == 'action':
++            if item.component not in {'PillButton', 'CardButton'}:
++                return {}
++            buttons.append(item)
++            continue
++        if item.action_ref or not item.fact_refs:
++            return {}
++        entities = groups.setdefault(item.group, set())
++        for ref in item.fact_refs:
++            fact = facts.get(ref)
++            if fact is None or not fact.entity:
++                return {}
++            entities.add(fact.entity)
++        if item.role == 'primary':
++            primary_groups.add(item.group)
++    if len(groups) != 2 or len(buttons) != 2 or set(groups) != primary_groups:
++        return {}
++    entity_groups = {}
++    for group, entities in groups.items():
++        if len(entities) != 1:
++            return {}
++        entity = next(iter(entities))
++        if entity in entity_groups:
++            return {}
++        entity_groups[entity] = group
++    owners = {}
++    claimed = set()
++    for item in buttons:
++        action = actions.get(item.action_ref)
++        if action is None:
++            return {}
++        if action.entity:
++            owner = entity_groups.get(action.entity)
++        else:
++            owner = item.group if item.group in groups else None
++        if owner is None or owner in claimed:
++            return {}
++        if item.group in groups and item.group != owner:
++            return {}
++        owners[item.id] = owner
++        claimed.add(owner)
++    return owners
++
++
+@@ -79,0 +138,13 @@ def canonical_actions(request, intent, *, audit=None):
++    owned = peer_action_owners(request, intent)
++    if owned:
++        items = []
++        for item in intent.items:
++            if item.id in owned and item.component == 'CardButton':
++                if audit is not None:
++                    audit.append(dict(kind='entity_action_component', item=item.id,
++                        declared_component='CardButton', component='PillButton',
++                        action_ref=item.action_ref, policy='commercial-peer-actions-v1'))
++                item = item.model_copy(update={'component': 'PillButton'})
++            items.append(item)
++        return intent.model_copy(update={'items': items})
++
+diff --git a/src/genui_device/measure.py b/src/genui_device/measure.py
+index 6aaa59bb38b56543dcdd9324ab46dad93f101de7..956e94198d858a001e37b1602a9ff394aba89ac4 100644
+--- a/src/genui_device/measure.py
++++ b/src/genui_device/measure.py
+@@ -40,0 +41,31 @@ class MeasureOracle(Protocol):
++class CachedMeasure:
++    """只读测量源的一次试排缓存；不用于会增补结果的原生查询发现器。"""
++
++    def __init__(self, oracle):
++        self.oracle, self.kind = oracle, oracle.kind
++        self.cache, self.requests, self.hits = {}, 0, 0
++
++    def text(self, value, width, font_size, *, max_lines, bold=False, line_height=1.35):
++        key = value, width, font_size, max_lines, bold, line_height
++        self.requests += 1
++        if key in self.cache:
++            self.hits += 1
++            valid, result = self.cache[key]
++            if not valid:
++                raise CapacityError(result)
++            return result
++        try:
++            result = self.oracle.text(value, width, font_size, max_lines=max_lines,
++                                      bold=bold, line_height=line_height)
++        except CapacityError as exc:
++            self.cache[key] = False, str(exc)
++            raise
++        self.cache[key] = True, result
++        return result
++
++    def evidence(self):
++        return dict(kind=self.kind, requests=self.requests, hits=self.hits,
++                    unique_queries=len(self.cache), scope='single_reference_evaluation',
++                    limitation='只读oracle调用缓存，不是实时原生查询计数或设备性能')
++
++
+diff --git a/src/genui_device/model.py b/src/genui_device/model.py
+index b7132ed93cf90939749f7de4fd1c52c49f1291e2..07529b48bb9155f2a7263be6ca0a7c181a0efeb4 100644
+--- a/src/genui_device/model.py
++++ b/src/genui_device/model.py
+@@ -93 +93,2 @@ class ChatModel:
+-            "output_protocol": 'semantic-change-review-v1' if phase == 'semantic_replan_review'
++            "output_protocol": 'semantic-selection-v1' if phase == 'semantic_selection'
++            else 'semantic-change-review-v1' if phase == 'semantic_replan_review'
+@@ -129 +130 @@ class ChatModel:
+-            "capacity_partial_selection", "capacity_partial_review"
++            "capacity_partial_selection", "capacity_partial_review", "semantic_selection"
+diff --git a/src/genui_device/native_layout.py b/src/genui_device/native_layout.py
+index 56c4e3ead1d6b4bb3556dc77ff966d64f933e2fe..e8cd91bc1eac8915e9f734f3ec75405125fd5f9b 100644
+--- a/src/genui_device/native_layout.py
++++ b/src/genui_device/native_layout.py
+@@ -251 +251,2 @@ def container_nodes(request, plan):
+-                      alignItems="start" if tree["kind"] == "Column" else "top",
++                      alignItems="start" if tree["kind"] == "Column" else
++                          tree.get('cross_alignment', 'top'),
+@@ -255 +256,2 @@ def container_nodes(request, plan):
+-            styles.update(padding=tree['surface_inset'], borderRadius=12,
++            styles.update(padding=tree['surface_inset'],
++                          borderRadius=tree.get('surface_radius', 12),
+@@ -256,0 +259,2 @@ def container_nodes(request, plan):
++            if tree.get('surface_clip'):
++                styles['clip'] = True
+diff --git a/src/genui_device/pipeline.py b/src/genui_device/pipeline.py
+index 96ce128ecea1c68c04409b97e47a6e934a64228e..72a8be0d664f48e961e43c11d1cf38406fbfdaad 100644
+--- a/src/genui_device/pipeline.py
++++ b/src/genui_device/pipeline.py
+@@ -50 +50 @@ async def generate(request, reference_root=None, *, output: Path, model=None, in
+-                   fixed_theme=None, width_policy="adaptive"):
++                   fixed_theme=None, width_policy="adaptive", generation_strategy=None):
+@@ -56,0 +57,7 @@ async def generate(request, reference_root=None, *, output: Path, model=None, in
++        strategy = generation_strategy or getattr(model, 'config', {}).get(
++            'generation_strategy', 'component-rows-v2')
++        if strategy not in {'component-rows-v2', 'semantic-program-v1'}:
++            raise ValueError('未知生成策略')
++        if intent is not None and strategy == 'semantic-program-v1':
++            raise ValueError('语义程序策略需要事实关系选择，不能混用冻结组件意图')
++        row['generation_strategy'] = strategy
+@@ -78 +85 @@ async def generate(request, reference_root=None, *, output: Path, model=None, in
+-            selected_intent=intent)
++            selected_intent=intent, generation_strategy=strategy)
+diff --git a/src/genui_device/semantic_components.py b/src/genui_device/semantic_components.py
+index 7dc5b65a284304e44a2429cd3349116dd7c14a0b..d1603488ffad086b99aa2ff39ad4667f978e9770 100644
+--- a/src/genui_device/semantic_components.py
++++ b/src/genui_device/semantic_components.py
+@@ -101,0 +102 @@ def validate_peer_readouts(request, intent):
++
+@@ -221,0 +223,13 @@ def compact_body_available(request, item):
++def compact_pair_available(request, item):
++    """语义程序选型可复用已登记前缀投影，不添加业务词或修改文字规格。"""
++    from .presentation import project_fact
++
++    semantic = request.provenance.get('semantic_selection', {})
++    if (semantic.get('protocol') != 'semantic-selection-v1'
++            or item.component not in {'InfoBlock', 'EmphasisText'} or len(item.fact_refs) != 2):
++        return False
++    facts = {fact.id: fact for fact in request.facts}
++    return any(project_fact(request, facts[ref], compact=True).text
++               != project_fact(request, facts[ref]).text for ref in item.fact_refs)
++
++
+@@ -225,0 +240 @@ def measure(item, request, width, oracle, *, variant=0):
++    from .ux import atomic_text_recipes, atomic_unit_recipe
+@@ -227 +242 @@ def measure(item, request, width, oracle, *, variant=0):
+-    compact = item.component == 'SecondaryBody' and variant == 1
++    compact = (item.component == 'SecondaryBody' and variant == 1) or variant in {2, 3}
+@@ -282,9 +296,0 @@ def measure(item, request, width, oracle, *, variant=0):
+-    supporting = item.role == "secondary"
+-    # 业务主次由模型提供；这里只应用固定的视觉层级，不随容量逐级缩字。
+-    fonts = {
+-        "EmphasizedData": (16 if supporting else 30,),
+-        "EmphasisText": (14 if supporting else 18, 12),
+-        "InfoBlock": (14 if supporting else 18, 12),
+-        "DataDisplay": (12, 48 if len(refs) > 1 and
+-                        facts[refs[1]].semantic == "metric" else 24, 12),
+-    }[item.component]
+@@ -291,0 +298,11 @@ def measure(item, request, width, oracle, *, variant=0):
++    numeric = False
++    if item.component == "DataDisplay":
++        value = facts[refs[core]]
++        display_text = value.text.removeprefix(value.prefix).strip()
++        numeric = numeric_value(value) or re.fullmatch(
++            r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[%％])?", display_text
++        ) is not None
++        if not numeric and not 1 <= len(re.sub(r"\s+", "", display_text)) <= 10:
++            raise ValueError("DataDisplay文本结论仅支持1至10个非空白字符")
++    recipes = atomic_text_recipes(item.component, request.size, numeric=numeric)
++    unit_recipe = atomic_unit_recipe(item.component)
+@@ -313,14 +330,48 @@ def measure(item, request, width, oracle, *, variant=0):
+-        return Part(k, oracle.text(value_text(facts[k], n),
+-                                     available - (2 if split_unit(facts[k], n) else 0),
+-                                     fonts[n] * scale,
+-                                     max_lines=1 if single or item.component == "EmphasizedData"
+-                                         or (
+-                                         n == core and (scalar_readout(facts[k]) or
+-                                         len(value_text(facts[k], n).strip()) <= 6))
+-                                         or bool(re.fullmatch(r'\d{4}-\d{2}-\d{2}',
+-                                                              value_text(facts[k], n)))
+-                                         else 2,
+-                                     bold=n == (1 if item.component == "DataDisplay"
+-                                                           else 0),
+-                                     line_height=(1 if item.component in {
+-                                         'EmphasisText', 'InfoBlock'} else 1.15)),
++        from .measure import CapacityError
++
++        recipe = recipes[n]
++        maximum_lines = recipe.maximum_lines
++        if single or item.component == "EmphasizedData":
++            maximum_lines = 1
++        elif item.component != "DataDisplay":
++            short_core = n == core and (
++                scalar_readout(facts[k]) or len(value_text(facts[k], n).strip()) <= 6
++            )
++            if short_core or re.fullmatch(r"\d{4}-\d{2}-\d{2}", value_text(facts[k], n)):
++                maximum_lines = 1
++        unit_metric = None
++        if split_unit(facts[k], n):
++            # 仅拆适配器明确追加的单位。用已登记的有界份额分别测量数值与小单位，
++            # 不能把整串按大字号测宽，也不能去掉单位后漏算其宽度及2vp间距。
++            number_text = value_text(facts[k], n).removesuffix(facts[k].suffix)
++            for fraction in (1 / 4, 1 / 3, 1 / 2):
++                unit_width = (available - 2) * fraction
++                number_width = available - 2 - unit_width
++                if min(unit_width, number_width) <= 0:
++                    continue
++                try:
++                    unit_metric = oracle.text(
++                        facts[k].suffix, unit_width, unit_recipe.font_size * scale,
++                        max_lines=1, line_height=unit_recipe.line_height,
++                    )
++                    metric = oracle.text(
++                        number_text, number_width, recipe.font_size * scale,
++                        max_lines=1, bold=recipe.font_weight >= 600,
++                        line_height=recipe.line_height,
++                    )
++                    break
++                except CapacityError:
++                    continue
++            else:
++                raise CapacityError("数值与单位在登记的三种宽度分配中均无法完整单行显示")
++            unit_metric = replace(
++                unit_metric, height=max(unit_metric.height, unit_recipe.minimum_height * scale)
++            )
++        else:
++            metric = oracle.text(
++                value_text(facts[k], n), available, recipe.font_size * scale,
++                max_lines=maximum_lines, bold=recipe.font_weight >= 600,
++                line_height=recipe.line_height,
++            )
++        metric = replace(metric, height=max(metric.height, recipe.minimum_height * scale))
++        return Part(k, metric,
+@@ -331,2 +382,2 @@ def measure(item, request, width, oracle, *, variant=0):
+-                       unit_metrics=oracle.text(facts[k].suffix, available, 12 * scale,
+-                           max_lines=1, line_height=1) if split_unit(facts[k], n) else None)
++                       unit_metrics=unit_metric,
++                       font_weight=recipe.font_weight)
+@@ -334 +385 @@ def measure(item, request, width, oracle, *, variant=0):
+-    if variant == 1:
++    if variant in {1, 3}:
+@@ -338 +389,2 @@ def measure(item, request, width, oracle, *, variant=0):
+-        # 最多三组宽度，完整原生测量通过才采用，不对字形逐步缩小或截断。
++        # 默认沿用三组宽度；语义程序路线再扩展有界份额，不缩字或截断。
++        allocations = []
+@@ -341 +393,13 @@ def measure(item, request, width, oracle, *, variant=0):
+-            widths = (left, width-4-left)
++            allocations.append((left, width-4-left))
++        semantic_program = request.provenance.get('semantic_selection', {}).get('protocol') == (
++            'semantic-selection-v1')
++        if semantic_program:
++            from .space_allocation import pair_allocations
++
++            # 调用方画布可为任意小数；搜索网格仅占预算内的完整0.25vp，
++            # 不要求调用者调整尺寸，也不阻断前面的原有可行份额。
++            grid_available = int((width - 4) * 4) / 4
++            if grid_available > 0:
++                allocations.extend(pair for pair in pair_allocations(grid_available + 4, 4)
++                                   if pair not in allocations)
++        for widths in allocations:
+@@ -345 +409,2 @@ def measure(item, request, width, oracle, *, variant=0):
+-                             flow='inline-pair',variant=1,part_widths=widths)
++                             flow='inline-pair',variant=variant,part_widths=widths,
++                             compact_presentation=compact)
+@@ -347,0 +413,33 @@ def measure(item, request, width, oracle, *, variant=0):
++        if semantic_program:
++            # 网格可能漏掉仅数个vp宽的可行区间。单行完整承载随可用宽度单调，
++            # 在0.25vp网格上各做有界二分，不试改字号、截字或读取样例业务。
++            budget = int((width - 4) * 4)
++
++            def minimum_width(index, reference):
++                low, high = 17, budget - 17
++                if high < low:
++                    return None
++                try:
++                    measured_part(index, reference, high / 4, True)
++                except CapacityError:
++                    return None
++                for _ in range(14):
++                    if low == high:
++                        return low
++                    middle = (low + high) // 2
++                    try:
++                        measured_part(index, reference, middle / 4, True)
++                        high = middle
++                    except CapacityError:
++                        low = middle + 1
++                return low if low == high else None
++
++            minimums = [minimum_width(index, reference) for index, reference in enumerate(refs)]
++            if all(value is not None for value in minimums) and sum(minimums) <= budget:
++                left = min(max(budget // 2, minimums[0]), budget - minimums[1])
++                widths = (left / 4, (budget - left) / 4)
++                parts = tuple(measured_part(n, key, widths[n], True)
++                              for n, key in enumerate(refs))
++                return Block(item, width, max(part.metrics.height for part in parts), parts,
++                             gap=4, flow='inline-pair', variant=variant, part_widths=widths,
++                             compact_presentation=compact)
+@@ -350,2 +448,10 @@ def measure(item, request, width, oracle, *, variant=0):
+-    return Block(item, width, sum(p.metrics.height for p in parts) + 2 * (len(parts)-1),
+-                 parts, gap=2)
++    gap = 8 if item.component == "DataDisplay" else 2
++    height = sum(p.metrics.height for p in parts) + gap * (len(parts) - 1)
++    if item.component == "DataDisplay":
++        if not numeric:
++            height += max(0, 60 * scale - parts[1].metrics.height)
++        if not numeric and len(parts) == 3:
++            height += gap
++        height = max(height, (114 if numeric else 122) * scale)
++    return Block(item, width, height, parts, gap=gap, variant=variant,
++                 compact_presentation=compact)
+diff --git a/src/genui_device/semantic_regions.py b/src/genui_device/semantic_regions.py
+index 1a03d50b1462257f75dab2457948710bcb82aa34..e1a36a8dcda119633355d5f07acb164795b3a1b4 100644
+--- a/src/genui_device/semantic_regions.py
++++ b/src/genui_device/semantic_regions.py
+@@ -11 +11 @@ def card_document(request, intent, *, task="overview", width_policy="equal"):
+-    from .intent_integrity import canonical_actions
++    from .intent_integrity import canonical_actions, peer_action_owners
+@@ -15,0 +16 @@ def card_document(request, intent, *, task="overview", width_policy="equal"):
++    owned_actions = peer_action_owners(request, intent)
+@@ -19 +20,2 @@ def card_document(request, intent, *, task="overview", width_policy="equal"):
+-    actions = [n.id for n in nodes if n.component in ACTION_COMPONENTS]
++    actions = [n.id for n in nodes if n.component in ACTION_COMPONENTS
++               and n.id not in owned_actions]
+@@ -27,0 +30,2 @@ def card_document(request, intent, *, task="overview", width_policy="equal"):
++        if item.id in owned_actions:
++            continue
+@@ -29,0 +34,4 @@ def card_document(request, intent, *, task="overview", width_policy="equal"):
++    for item in intent.items:
++        owner = owned_actions.get(item.id)
++        if owner is not None:
++            entities[owner].append(item.id)
+diff --git a/src/genui_device/ux.py b/src/genui_device/ux.py
+index b381ab59f0aa4bb6bc1bfa4ef7fcec193e8fd114..7874e71c4a810f0a34f6eaaab39f929f76e4aaaa 100644
+--- a/src/genui_device/ux.py
++++ b/src/genui_device/ux.py
+@@ -12,0 +13,46 @@ DEFAULT_TYPOGRAPHY = Typography("recipe", 24, 8)
++
++
++@dataclass(frozen=True)
++class TextRecipe:
++    """商用文字规格；测量和 A2UI 输出共用字重与行盒。"""
++
++    font_size: int
++    font_weight: int
++    line_height: float = 1.0
++    maximum_lines: int = 1
++    minimum_height: int = 0
++
++
++def atomic_text_recipes(component, size, *, numeric=False):
++    """只用于 upstream-card-v1，不改变历史复合组件和静态正文。"""
++    recipes = {
++        "SingleLineTitle": (TextRecipe(12, 400, minimum_height=12),),
++        "EmphasizedData": (TextRecipe(30, 700, minimum_height=30),),
++        "EmphasisText": (
++            TextRecipe(18, 700, maximum_lines=2, minimum_height=18),
++            TextRecipe(12, 400, line_height=16 / 12, minimum_height=16),
++        ),
++        "InfoBlock": (
++            TextRecipe(16, 700, line_height=22 / 16, minimum_height=22),
++            TextRecipe(12, 500, line_height=16 / 12, minimum_height=16),
++        ),
++        "DataDisplay": (
++            TextRecipe(12, 500, line_height=18 / 12, minimum_height=18),
++            TextRecipe(48, 700, line_height=60 / 48, minimum_height=60)
++            if numeric else TextRecipe(21, 700, line_height=1.25,
++                                       maximum_lines=2),
++            TextRecipe(14, 400, line_height=20 / 14, minimum_height=20),
++        ),
++    }
++    if component == "InfoBlock" and size == "2x4":
++        return (
++            TextRecipe(14, 700, line_height=19 / 14, minimum_height=19),
++            recipes["InfoBlock"][1],
++        )
++    return recipes[component]
++
++
++def atomic_unit_recipe(component):
++    font_size = 10 if component == "InfoBlock" else 12
++    minimum_height = 16 if component == "InfoBlock" else 12
++    return TextRecipe(font_size, 500, minimum_height=minimum_height)
+diff --git a/tests/test_atomic_composition.py b/tests/test_atomic_composition.py
+index ddfac3023c8ba1498744ef3865427ce0df69e4b3..ff3dd4fe1e60a8fd5a24de73b9b6ed7eb0b34869 100644
+--- a/tests/test_atomic_composition.py
++++ b/tests/test_atomic_composition.py
+@@ -175 +175 @@ def test_surface_budget_can_fall_back_without_losing_content():
+-def test_surface_compact_pass_precedes_dropping_the_background_panels():
++def test_measured_recipe_keeps_both_background_panels_and_all_content():
+@@ -181 +180,0 @@ def test_surface_compact_pass_precedes_dropping_the_background_panels():
+-    assert result['capacity_stages'][-1]['surface_compact']
+@@ -184,0 +184 @@ def test_surface_compact_pass_precedes_dropping_the_background_panels():
++    assert {n['id'] for n in leaves(result['tree'])} == {item.id for item in intent.items}
+diff --git a/tests/test_atomic_typography.py b/tests/test_atomic_typography.py
+index d9c4a40d7ec7b0990a7969bfe4c09a235baabbe2..205cd580c6153412e4467a4d7709924ce5b28349 100644
+--- a/tests/test_atomic_typography.py
++++ b/tests/test_atomic_typography.py
+@@ -28 +28 @@ def test_structured_units_use_small_type_and_keep_live_binding(component,unit,va
+-    assert block.parts[0].unit_metrics.font_size==12
++    assert block.parts[0].unit_metrics.font_size == (10 if component == 'InfoBlock' else 12)
+diff --git a/tests/test_capacity_repair.py b/tests/test_capacity_repair.py
+index f68e511a0f5feb54f118508c849ad466d269139f..2e930fa591cf1d793d7cff02611a04a362f6fee9 100644
+--- a/tests/test_capacity_repair.py
++++ b/tests/test_capacity_repair.py
+@@ -119 +119 @@ def test_complementary_peers_fit_without_changing_roles_fonts_or_actions():
+-    req.surface.height_vp = 118
++    req.surface.height_vp = 110
+@@ -135 +135 @@ def test_vertical_reading_order_has_priority_over_complementary_inline_fallback(
+-    req.surface.height_vp = 120
++    req.surface.height_vp = 115
+@@ -152 +152 @@ def test_multiline_support_is_not_compressed_into_a_strip_beside_primary():
+-    req.surface.height_vp = 118
++    req.surface.height_vp = 112
+@@ -170 +170 @@ def test_dense_spacing_is_explicit_and_only_used_after_normal_layouts_fail():
+-    req.surface.height_vp=103
++    req.surface.height_vp=100
+diff --git a/tests/test_composition_ux.py b/tests/test_composition_ux.py
+index 7476a08af2db83242c9fa9bb928670e3f8c0225d..a9a13366670d61cae8c96fa551e48b45961356b9 100644
+--- a/tests/test_composition_ux.py
++++ b/tests/test_composition_ux.py
+@@ -200 +200 @@ def test_square_panel_reading_order_precedes_same_font_slot_orientation():
+-    assert all([p['metrics']['font_size'] for p in n['block']['parts']] == [18, 12]
++    assert all([p['metrics']['font_size'] for p in n['block']['parts']] == [16, 12]
+diff --git a/tests/test_entity_capacity.py b/tests/test_entity_capacity.py
+index 8bff7ba6c22feb951cf8d014c47c5ee3b12e613b..85e0d66929cabcb507f3ae22cf5a710d366de077 100644
+--- a/tests/test_entity_capacity.py
++++ b/tests/test_entity_capacity.py
+@@ -116 +116 @@ def mixed_role_rows(tree):
+-def test_two_short_single_line_fields_recover_capacity_without_changing_content():
++def test_two_short_fields_keep_registered_lines_and_complete_content():
+@@ -121 +120,0 @@ def test_two_short_single_line_fields_recover_capacity_without_changing_content(
+-    assert plan['capacity_stages'][0]['status'] == 'BOUNDED_REJECTED'
+@@ -125 +123,0 @@ def test_two_short_single_line_fields_recover_capacity_without_changing_content(
+-    assert mixed_role_rows(plan['tree'])
+@@ -127,2 +125,2 @@ def test_two_short_single_line_fields_recover_capacity_without_changing_content(
+-    assert len(support['parts']) == 2
+-    assert all(p['metrics']['lines'] == 1 and p['metrics']['font_size'] == 12
++    expected_font = 14 if len(support['parts']) == 1 else 12
++    assert all(p['metrics']['lines'] == 1 and p['metrics']['font_size'] == expected_font
+@@ -130 +128,4 @@ def test_two_short_single_line_fields_recover_capacity_without_changing_content(
+-    assert [p['fact_id'] for p in support['parts']] == ['aux0', 'aux1']
++    references = []
++    for part in support['parts']:
++        references.extend([part['fact_id'], *part['extra_fact_ids']])
++    assert references == ['aux0', 'aux1']
+diff --git a/tests/test_peer_identity_order.py b/tests/test_peer_identity_order.py
+index 53282b4e45e35d03091b598c6392fdddbcc736b2..f972ac2c6cbe0c0aee2dd6f71b1386c8ad9c61d0 100644
+--- a/tests/test_peer_identity_order.py
++++ b/tests/test_peer_identity_order.py
+@@ -62,2 +62,2 @@ def test_identity_above_value_preserves_slots_styles_geometry_and_binding(compon
+-        assert identity['styles']['fontWeight'] == 400
+-        assert value['styles']['fontSize'] == 18
++        assert identity['styles']['fontWeight'] == (500 if component == 'InfoBlock' else 400)
++        assert value['styles']['fontSize'] == (14 if component == 'InfoBlock' else 18)
+diff --git a/tests/test_query_efficiency.py b/tests/test_query_efficiency.py
+index c2418df45c34aec99c4774abd349f007dab82aa6..f9fc2ac280c0a58cf399e833d2414a85cf4ed668 100644
+--- a/tests/test_query_efficiency.py
++++ b/tests/test_query_efficiency.py
+@@ -184 +184 @@ def test_attached_event_action_deduplicates_only_empty_button_and_keeps_payload(
+-def test_two_text_slots_preserve_context_and_primary_is_stronger_than_supporting(oracle):
++def test_components_keep_context_and_fixed_sizes_independent_of_role(oracle):
+@@ -193 +193,3 @@ def test_two_text_slots_preserve_context_and_primary_is_stronger_than_supporting
+-    assert block.parts[0].metrics.font_size > support.parts[0].metrics.font_size
++    assert [part.metrics.font_size for part in block.parts] == [14, 12]
++    assert support.parts[0].metrics.font_size == 18
++    assert support.item.role == 'secondary'
+diff --git a/tests/test_sparse_focus_alignment.py b/tests/test_sparse_focus_alignment.py
+index 76e10ddef874d12fae00b688d4265bc0d38db787..cc4d6fbe6145dcba194e151dd9ca424c79947685 100644
+--- a/tests/test_sparse_focus_alignment.py
++++ b/tests/test_sparse_focus_alignment.py
+@@ -36 +36 @@ def test_sparse_focus_center_does_not_change_slots_roles_fonts_or_title(value, k
+-    assert [p['metrics']['font_size'] for p in main['block']['parts']] == [18, 12]
++    assert [p['metrics']['font_size'] for p in main['block']['parts']] == [16, 12]
+diff --git a/tests/test_upstream_component_contract.py b/tests/test_upstream_component_contract.py
+index 0cbc6e8c1ab66295672b136fad4ca1cd3729e298..1d230c946e1607c3fe04ace52afac13e2be9f825 100644
+--- a/tests/test_upstream_component_contract.py
++++ b/tests/test_upstream_component_contract.py
+@@ -210,4 +210,4 @@ def test_core_value_projection_preserves_unit_path_and_updates(oracle):
+-@pytest.mark.parametrize("component,primary_font,secondary_font", [
+-    ("EmphasizedData", 30, 16), ("EmphasisText", 18, 14), ("InfoBlock", 18, 14)])
+-def test_model_role_changes_fixed_visual_tier_without_capacity_shrinking(
+-        oracle, component, primary_font, secondary_font):
++@pytest.mark.parametrize("component,font", [
++    ("EmphasizedData", 30), ("EmphasisText", 18), ("InfoBlock", 14)])
++def test_model_role_keeps_registered_component_size_without_capacity_shrinking(
++        oracle, component, font):
+@@ -219,2 +219,2 @@ def test_model_role_changes_fixed_visual_tier_without_capacity_shrinking(
+-    assert primary.parts[0].metrics.font_size == primary_font
+-    assert secondary.parts[0].metrics.font_size == secondary_font
++    assert primary.parts[0].metrics.font_size == font
++    assert secondary.parts[0].metrics.font_size == font
+@@ -223 +223 @@ def test_model_role_changes_fixed_visual_tier_without_capacity_shrinking(
+-    assert narrower.parts[0].metrics.font_size == secondary_font
++    assert narrower.parts[0].metrics.font_size == font

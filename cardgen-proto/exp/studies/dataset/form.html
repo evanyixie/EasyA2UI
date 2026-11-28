@@ -1,0 +1,81 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>独立评审</title>
+<style>
+*{box-sizing:border-box}body{margin:32px auto;padding:0 18px;max-width:900px;background:#f6f8fa;color:#142332;font:16px/1.55 system-ui,"Microsoft YaHei",sans-serif}
+h1{font-size:25px;margin:0}h2{font-size:19px}section,fieldset,details{background:#fff;border:1px solid #d1d9df;border-radius:8px;margin:12px 0;padding:14px}
+button,select,input,textarea{font:inherit}button{cursor:pointer;border:1px solid #99a9b6;border-radius:6px;background:#fff;padding:6px 12px;margin:3px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2879bf}
+textarea{display:block;width:100%;min-height:65px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.4 monospace}
+fieldset label{display:block;margin:6px 0;overflow-wrap:anywhere}img{display:block;max-width:100%;max-height:420px;margin:12px 0}
+.state{color:#164f77}.wide{width:100%}a{color:#174f82}
+</style><h1 id="title">独立评审</h1><p id="guide"></p>
+<section><label>评审人姓名或唯一工作代号 <input id="who" autocomplete="off"></label>
+<label style="display:block"><input id="ind" type="checkbox">我按本角色权限独立完成，未参考其他评审人的回答。</label></section>
+<nav><button id="prev">上一题</button><button id="next">下一题</button><button id="pending">下一道未完成</button>
+<button id="export">导出正式回收 JSON</button><button id="backup">备份草稿</button><label>恢复草稿 <input id="load" type="file" accept=".json"></label></nav>
+<p class="state" id="status" aria-live="polite"></p>
+<section><h2 id="caseTitle"></h2><div id="case"></div><div id="form"></div></section>
+<script>
+const p=/*PACKET*/;
+const by=id=>document.getElementById(id), key="paper-review/"+p.role+"/"+p.version;
+let state={i:0,reviewer:"",independent:false,answers:{}},storageOK=true;
+try{const s=localStorage.getItem(key);if(s)Object.assign(state,JSON.parse(s))}catch{storageOK=false}
+const empty=()=>p.mode==="must"?{state:"",must:[],literal:[],note:""}:p.mode==="layout"?{layout:"",note:""}:{protocol:"",content:"",binding:"",note:""};
+function node(tag,text){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e}
+function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch{storageOK=false}}
+function src(q){return ["originalQuery","userQuery","title","description"].map(k=>q.request?.[k]||"").join("\n")}
+function ok(q,a){
+ if(!a)return false;
+ if(p.mode==="layout")return !!a.layout&&(!["不属于14类","无法判定","尺寸信息不足"].includes(a.layout)||!!a.note.trim());
+ if(p.mode==="gold")return !!(a.protocol&&a.content&&a.binding)&&([a.protocol,a.content,a.binding].every(s=>s==="符合")||!!a.note.trim());
+ if(!a.state)return false; const lit=a.literal;
+ if(new Set(lit).size!==lit.length||lit.some(s=>!src(q).includes(s)))return false;
+ return a.state==="已判定"?a.must.length+lit.length>0:!a.must.length&&!lit.length&&!!a.note.trim();
+}
+function done(){return p.cases.filter(q=>ok(q,state.answers[q.id])).length}
+function progress(){by("status").textContent="已完成 "+done()+" / "+p.cases.length+(storageOK?" · 已在此浏览器暂存":" · 本地存储不可用，请备份草稿")}
+function edit(){save();progress()}
+function labelSelect(box,label,values,old,cb){
+ const l=node("label",label+" "),el=node("select");el.append(node("option",""));for(const val of values)el.append(node("option",val));
+ el.value=old||"";el.onchange=()=>{cb(el.value);edit()};l.append(el);box.append(l,node("br"));
+}
+function textArea(box,label,old,cb){
+ const l=node("label",label),el=node("textarea");el.value=old||"";el.oninput=()=>{cb(el.value);edit()};l.append(el);box.append(l);
+}
+function draw(){
+ state.i=Math.max(0,Math.min(state.i,p.cases.length-1));const q=p.cases[state.i],a=state.answers[q.id]??=empty();
+ by("caseTitle").textContent=(state.i+1)+" / "+p.cases.length+"　"+q.id;
+ const c=by("case"),f=by("form");c.replaceChildren();f.replaceChildren();
+ if(q.request){const rq=q.request;const query=rq.originalQuery||rq.userQuery||rq.description||rq.title||"原请求缺少文字";c.append(node("p",query));
+ const d=node("details");d.append(node("summary","查看原请求中的提问、尺寸与候选参数"),node("pre",JSON.stringify(rq,null,2)));c.append(d);}
+ if(q.assets){for(const u of q.assets){if(u.endsWith(".png")){const im=node("img");im.src=u;im.alt="匿名参考卡";c.append(im)}else{const l=node("a",u.split("/").pop());l.href=u;l.target="_blank";l.rel="noopener noreferrer";c.append(l,document.createTextNode("　"))}}}
+ if(p.mode==="must"){
+ labelSelect(f,"判定",["已判定","无必显项","证据不足"],a.state,v=>a.state=v);
+ const group=node("fieldset");group.append(node("legend","选择用户明确要求或完成任务所需的核心字段和动作"));
+ for(const [id,desc] of q.choices){const l=node("label"),cb=node("input");cb.type="checkbox";cb.checked=a.must.includes(id);
+ cb.onchange=()=>{a.must=cb.checked?[...new Set([...a.must,id])]:a.must.filter(x=>x!==id);edit()};
+ l.append(cb,document.createTextNode(" "+id+"　"+desc));group.append(l)}f.append(group);
+ textArea(f,"候选字段之外的必显内容（对象、条件、缺失的动作等）：每行一个原文证据片段，保留原字。",a.literal.join("\n"),v=>a.literal=v.split(/\r?\n/).map(t=>t.trim()).filter(Boolean));
+ }else if(p.mode==="layout"){
+ labelSelect(f,"只凭图片观察布局",p.layout_classes,a.layout,v=>a.layout=v);
+ }else{
+ for(const [k,l] of [["protocol","协议合规（Compact、A2UI、实际产物可对照）"],["content","内容完整（对象、主次、事实动作、可见性）"],["binding","绑定正确（候选、原始/展开路径、样值、动作归属）"]])
+ labelSelect(f,l,["符合","不符合","证据不足"],a[k],v=>a[k]=v);
+ }
+ textArea(f,"判据或证据位置（有异常、未知、无必显项时必填）",a.note,v=>a.note=v);
+ progress();save();
+}
+function dl(obj,name){const u=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:"application/json"}));const l=node("a");l.href=u;l.download=name;l.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+by("title").textContent="独立评审 · "+p.role;
+by("guide").textContent=p.mode==="must"?"只看原请求与候选。候选给出可用能力；只勾选明确点名或核心所需的数据和动作，不能把所有候选当必显。用不同段落表达同一事实只算一项。无把握时说明原因；不查看参考卡。":p.mode==="layout"?"只凭截图选择商用目录中最贴近的骨架。S为小卡，W为宽卡；同屏独立背板看分区，顺序/相对区域按主内容与动作判断。超出目录或图像不足可以明示。不要查询其 DSL 或另一份标注。":"仅独立抽检指定主参考。按当前原请求检查协议、事实及绑定。每个维度都要作答；不能从截图证明的动态/跳转行为可写证据不足。";
+by("who").value=state.reviewer;by("ind").checked=state.independent;
+by("who").oninput=e=>{state.reviewer=e.target.value;edit()};by("ind").onchange=e=>{state.independent=e.target.checked;edit()};
+by("prev").onclick=()=>{state.i--;draw()};by("next").onclick=()=>{state.i++;draw()};
+by("pending").onclick=()=>{for(let d=1;d<=p.cases.length;d++){let x=(state.i+d)%p.cases.length;if(!ok(p.cases[x],state.answers[p.cases[x].id])){state.i=x;break}}draw()};
+by("export").onclick=()=>{if(!state.reviewer.trim()||!state.independent||done()!==p.cases.length){alert("请填写评审身份、确认独立作答，并完成全部题。");return}
+ dl({role:p.role,version:p.version,reviewer:state.reviewer.trim(),independent:true,submitted_at:new Date().toISOString(),answers:state.answers},p.role+".json")};
+by("backup").onclick=()=>dl({draft:true,role:p.role,version:p.version,state},p.role+"-草稿.json");
+by("load").onchange=async e=>{try{const x=JSON.parse(await e.target.files[0].text());if(!x.draft||x.role!==p.role||x.version!==p.version)throw 1;
+ state=x.state;by("who").value=state.reviewer;by("ind").checked=state.independent;draw()}catch{alert("不是本卷的草稿。")}};
+draw();
+</script></html>

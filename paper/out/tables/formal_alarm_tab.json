@@ -1,0 +1,87 @@
+{
+  "alarm_tab_observed": 0,
+  "assigned_arms": [
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "clock_foreground_at_samples": 0,
+  "distinct_tasks": 1,
+  "excluded_without_tap": 1,
+  "matched_original_images": 5,
+  "observed_target_onclick_then_unregistered_dispatch": 5,
+  "physical_taps": 5,
+  "post_tap_focus_samples": 20,
+  "posthoc_explicit_action_sensitivity": {
+    "217/after_common_repair": {
+      "known_fail": 335,
+      "known_pass": 0,
+      "paired_net_bounds": {
+        "L5-L4": [
+          -184,
+          146
+        ],
+        "L5-L6": [
+          -110,
+          146
+        ]
+      },
+      "unknown": 967
+    },
+    "217/raw_first": {
+      "known_fail": 335,
+      "known_pass": 0,
+      "paired_net_bounds": {
+        "L5-L4": [
+          -184,
+          146
+        ],
+        "L5-L6": [
+          -110,
+          146
+        ]
+      },
+      "unknown": 967
+    },
+    "219/after_common_repair": {
+      "known_fail": 336,
+      "known_pass": 0,
+      "paired_net_bounds": {
+        "L5-L4": [
+          -186,
+          148
+        ],
+        "L5-L6": [
+          -112,
+          148
+        ]
+      },
+      "unknown": 978
+    },
+    "219/raw_first": {
+      "known_fail": 336,
+      "known_pass": 0,
+      "paired_net_bounds": {
+        "L5-L4": [
+          -186,
+          148
+        ],
+        "L5-L6": [
+          -112,
+          148
+        ]
+      },
+      "unknown": 978
+    }
+  },
+  "schema": "formal_alarm_tab.v1",
+  "scope": "Same registered host. No alarm contents or in-app screenshot were collected. Five physical taps cover both checkpoints. The original formal endpoint is unchanged.",
+  "source_sha256": {
+    "physical_evidence_bundle": "fc753f995cb94ca22f7a989b7b330ebe029aab05bacecc9486996421fb877cbb",
+    "prior_action_sensitivity": "5febb1656fd86838b1bd2369cd2fec5bbee8627970a4338df913886d82e3fe62",
+    "queue": "c59abaa95f4ed2d819a1418eb0d0fd64d87f436322d871300231f909c11cf44e"
+  },
+  "target": "The request specified opening Clock. Its handler additionally specified the alarm tab."
+}

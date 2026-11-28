@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "scope": "Post hoc, fixed-content native follow-up. All and only the original-program failures rescued by enhanced L6 under the previously used font-size rule.",
+  "fixed_content_population": 187,
+  "selected_requests": 10,
+  "selected_families": 10,
+  "size_counts": {"2x2": 4, "2x4": 6},
+  "new_model_calls": 0,
+  "new_human_ratings": 0,
+  "action_clicks": 0,
+  "by_arm": {
+    "L5": {
+      "assigned": 10,
+      "original_final_artifacts_captured": 9,
+      "reused_captures": 9,
+      "new_captures": 0,
+      "geometry_stage_rejected_without_capture": 1,
+      "captures_ready_with_warnings": 9,
+      "captures_with_all_control_text_matching_and_positive_boxes_inside_without_overlap": 9,
+      "text_controls": 58,
+      "button_controls": 11,
+      "captured_cards_with_buttons": 7,
+      "buttons_with_visible_renderer_ellipsis": 5,
+      "cards_with_visible_renderer_ellipsis": 4
+    },
+    "enhanced_L6": {
+      "assigned": 10,
+      "original_final_artifacts_captured": 10,
+      "reused_captures": 0,
+      "new_captures": 10,
+      "geometry_stage_rejected_without_capture": 0,
+      "captures_ready_with_warnings": 10,
+      "captures_with_all_control_text_matching_and_positive_boxes_inside_without_overlap": 10,
+      "text_controls": 64,
+      "button_controls": 13,
+      "captured_cards_with_buttons": 8,
+      "buttons_with_visible_renderer_ellipsis": 9,
+      "cards_with_visible_renderer_ellipsis": 6
+    }
+  },
+  "paired_card_endpoint": "At least one button shows a renderer-added ellipsis in the native screenshot.",
+  "both_arms_captured": {"both": 4, "only_L5": 0, "only_enhanced_L6": 1, "neither": 4},
+  "both_arms_captured_with_buttons": {"both": 4, "only_L5": 0, "only_enhanced_L6": 1, "neither": 2},
+  "pairs_without_buttons_on_either_side": 2,
+  "unpaired_enhanced_L6_capture_with_visible_renderer_ellipsis": 1,
+  "button_pixel_check": {
+    "method": "Two AI-assisted readings of the same screenshot pixels. The second reading recorded all button crops in masked, shuffled order before comparing original labels and the earlier record.",
+    "buttons_read": 24,
+    "source_labels_containing_ellipsis": 0,
+    "uncertain_button_crops_in_second_reading": 0,
+    "captured_cards_with_agreement_on_visible_short_forms": 19
+  },
+  "separate_width_probe": {
+    "scope": "Same-device controlled width changes for two existing button labels. These diagnostic renders are excluded from the 19 original screenshots.",
+    "labels": 2,
+    "font_size_fp": 14,
+    "font_weight": 500,
+    "original_controls_rendered_again": 2,
+    "new_width_variants_rendered": 9,
+    "action_clicks": 0,
+    "reference_horizontal_width_reserved_vp": 16,
+    "observations": [
+      {
+        "label_han_characters": 4,
+        "reference_text_advance_vp": 56,
+        "tested_widths_with_ellipsis_vp": [72, 84],
+        "tested_widths_with_full_label_vp": [88, 92, 96, 120]
+      },
+      {
+        "label_han_characters": 6,
+        "reference_text_advance_vp": 84,
+        "tested_widths_with_ellipsis_vp": [100, 112],
+        "tested_widths_with_full_label_vp": [120, 128, 280]
+      }
+    ],
+    "limits": "Tested discrete widths on one host and font configuration. The experiment did not measure a universal minimum width or a runtime padding constant."
+  },
+  "limits": "This sample was selected on enhanced-L6 recovery. Control bounds and reported text do not establish glyph completeness, human preference, business correctness or action execution.",
+  "source_receipts_sha256": {
+    "fixed_content_population": "67442c8bd70bb82a85b85a86d61208c801a4c5364ed1157ce9da5cb45a954651",
+    "selection_and_capture_registration": "b755f8933a4b6d60663e4c297d7783bf905224f908576f2738c913c156ffbdfa",
+    "enhanced_capture_verification": "3c789bed6295666870c27f2e25404524b8892997c4c9dcb35580d9c3301738b9",
+    "original_model_capture_verification": "a43d445aa4af70b6c05b76ba446cdaad493cfd41513aef5e3903e152e53eb394",
+    "both_arm_control_audit": "e47c4d4cfc20800e52a283dd1f72fdd9639e97b93fcbba8caa9c3e6ca4ca20be",
+    "first_pixel_reading": "4bf4d85d826456113d2eb55b904e33fad58ba2515138f5e6c4a6a0f6284c1450",
+    "masked_second_pixel_reading": "ac9449941d87f4509aaabbb066591879a65cf170b83fb65dcfe9e4e71760dca6",
+    "controlled_width_registration": "4cc419c5949124d46e3ce0b7d00d28982e33cc7f80bc35c4c3235953805f3dca",
+    "controlled_width_captures": "93c115789a0060eafcc3aa3351aec583542f2da6f43a58dc3b05b1b94a0107eb",
+    "controlled_width_measurements": "0249ad975f2e6f76ca2e561582cc284f6e26b5d1abf0bf518b931692ce593d35",
+    "controlled_width_findings": "4b1b4ed558b2bde19bbba19c2801a9cbfe3934835cdeaced3e2ddfe21f51829e"
+  }
+}

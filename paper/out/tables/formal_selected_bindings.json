@@ -1,0 +1,450 @@
+{
+  "formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "l1_unobservable_seats_per_checkpoint": 219,
+  "native_text_audit_sha256": "06161a0ac6b0571d55ca1fd47b6f31202d30af30122c0e5c031fe4fb1902280d",
+  "observations_sha256": "620c51e4c95436dfa15b0cf2bd429ece8cd873b88716d481a3f7f3afc047fad2",
+  "phases": {
+    "after_common_repair": {
+      "arms": {
+        "L2": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 192,
+            "accepted_with_dynamic_paths": 191,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 155,
+            "all_selected_referenced": 157,
+            "artifacts": 158,
+            "captures": 158,
+            "emitted_with_dynamic_paths": 157,
+            "native_confirmed_task_paths": 559,
+            "referenced_task_paths": 561,
+            "seats": 219,
+            "selected_task_paths": 707,
+            "selected_task_paths_with_artifact": 561,
+            "selected_task_paths_without_artifact": 146,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "stage_rejected": 27,
+            "valid_unchanged": 192
+          }
+        },
+        "L3": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 190,
+            "accepted_with_dynamic_paths": 189,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 155,
+            "all_selected_referenced": 159,
+            "artifacts": 160,
+            "captures": 160,
+            "emitted_with_dynamic_paths": 159,
+            "native_confirmed_task_paths": 530,
+            "referenced_task_paths": 545,
+            "seats": 219,
+            "selected_task_paths": 686,
+            "selected_task_paths_with_artifact": 545,
+            "selected_task_paths_without_artifact": 141,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "callback_failed": 2,
+            "stage_rejected": 27,
+            "valid_unchanged": 190
+          }
+        },
+        "L4": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 191,
+            "accepted_with_dynamic_paths": 191,
+            "all_selected_native_confirmed": 181,
+            "all_selected_referenced": 187,
+            "artifacts": 187,
+            "captures": 187,
+            "emitted_with_dynamic_paths": 187,
+            "native_confirmed_task_paths": 686,
+            "referenced_task_paths": 703,
+            "seats": 219,
+            "selected_task_paths": 711,
+            "selected_task_paths_with_artifact": 703,
+            "selected_task_paths_without_artifact": 8,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "stage_rejected": 28,
+            "valid_unchanged": 191
+          }
+        },
+        "L5": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 187,
+            "accepted_with_dynamic_paths": 186,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 149,
+            "all_selected_referenced": 149,
+            "artifacts": 150,
+            "captures": 150,
+            "emitted_with_dynamic_paths": 149,
+            "native_confirmed_task_paths": 462,
+            "referenced_task_paths": 462,
+            "seats": 219,
+            "selected_task_paths": 678,
+            "selected_task_paths_with_artifact": 462,
+            "selected_task_paths_without_artifact": 216,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "callback_failed": 1,
+            "stage_rejected": 31,
+            "valid_unchanged": 187
+          }
+        },
+        "L6": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 187,
+            "accepted_with_dynamic_paths": 186,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 115,
+            "all_selected_referenced": 115,
+            "artifacts": 115,
+            "captures": 115,
+            "emitted_with_dynamic_paths": 115,
+            "native_confirmed_task_paths": 291,
+            "referenced_task_paths": 291,
+            "seats": 219,
+            "selected_task_paths": 687,
+            "selected_task_paths_with_artifact": 291,
+            "selected_task_paths_without_artifact": 396,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "stage_rejected": 32,
+            "valid_unchanged": 187
+          }
+        }
+      },
+      "overall": {
+        "counts": {
+          "absent_task_paths": 0,
+          "accepted_selections": 947,
+          "accepted_with_dynamic_paths": 943,
+          "accepted_without_dynamic_paths": 4,
+          "all_selected_native_confirmed": 755,
+          "all_selected_referenced": 767,
+          "artifacts": 770,
+          "captures": 770,
+          "emitted_with_dynamic_paths": 767,
+          "native_confirmed_task_paths": 2528,
+          "referenced_task_paths": 2562,
+          "seats": 1095,
+          "selected_task_paths": 3469,
+          "selected_task_paths_with_artifact": 2562,
+          "selected_task_paths_without_artifact": 907,
+          "unresolved_artifact_task_paths": 0
+        },
+        "entry_outcomes": {
+          "callback_failed": 3,
+          "stage_rejected": 145,
+          "valid_unchanged": 947
+        }
+      },
+      "same_paths_on_emitted_pairs": {
+        "L2_L3": {
+          "artifact_availability_on_same_nonempty_set": {
+            "both": 124,
+            "neither": 9,
+            "only_first": 17,
+            "only_second": 17
+          },
+          "assigned": 219,
+          "both_confirmed": 120,
+          "both_emitted_same_nonempty_set": 124,
+          "missing_arm_at_one_sided_exits": {
+            "L2": {
+              "callback_failed/geometry": 2,
+              "callback_failed/theme": 1,
+              "stage_rejected/emit": 1,
+              "stage_rejected/geometry": 1,
+              "stage_rejected/theme": 12
+            },
+            "L3": {
+              "callback_failed/geometry": 1,
+              "stage_rejected/geometry": 1,
+              "stage_rejected/theme": 15
+            }
+          },
+          "neither_confirmed": 1,
+          "only_first_confirmed": 2,
+          "only_second_confirmed": 1,
+          "same_nonempty_selected_path_set": 167
+        },
+        "L4_L5": {
+          "artifact_availability_on_same_nonempty_set": {
+            "both": 130,
+            "only_first": 26,
+            "only_second": 3
+          },
+          "assigned": 219,
+          "both_confirmed": 130,
+          "both_emitted_same_nonempty_set": 130,
+          "missing_arm_at_one_sided_exits": {
+            "L4": {
+              "callback_failed/geometry": 2,
+              "callback_failed/structure": 1
+            },
+            "L5": {
+              "stage_rejected/geometry": 26
+            }
+          },
+          "same_nonempty_selected_path_set": 159
+        },
+        "L5_L6": {
+          "artifact_availability_on_same_nonempty_set": {
+            "both": 106,
+            "neither": 29,
+            "only_first": 27,
+            "only_second": 2
+          },
+          "assigned": 219,
+          "both_confirmed": 106,
+          "both_emitted_same_nonempty_set": 106,
+          "missing_arm_at_one_sided_exits": {
+            "L5": {
+              "stage_rejected/geometry": 2
+            },
+            "L6": {
+              "stage_rejected/geometry": 27
+            }
+          },
+          "same_nonempty_selected_path_set": 164
+        }
+      }
+    },
+    "raw_first": {
+      "arms": {
+        "L2": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 192,
+            "accepted_with_dynamic_paths": 191,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 155,
+            "all_selected_referenced": 157,
+            "artifacts": 158,
+            "captures": 158,
+            "emitted_with_dynamic_paths": 157,
+            "native_confirmed_task_paths": 559,
+            "referenced_task_paths": 561,
+            "seats": 219,
+            "selected_task_paths": 707,
+            "selected_task_paths_with_artifact": 561,
+            "selected_task_paths_without_artifact": 146,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "stage_rejected": 27,
+            "valid_unchanged": 192
+          }
+        },
+        "L3": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 190,
+            "accepted_with_dynamic_paths": 189,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 154,
+            "all_selected_referenced": 159,
+            "artifacts": 160,
+            "captures": 160,
+            "emitted_with_dynamic_paths": 159,
+            "native_confirmed_task_paths": 529,
+            "referenced_task_paths": 545,
+            "seats": 219,
+            "selected_task_paths": 686,
+            "selected_task_paths_with_artifact": 545,
+            "selected_task_paths_without_artifact": 141,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "callback_failed": 2,
+            "stage_rejected": 27,
+            "valid_unchanged": 190
+          }
+        },
+        "L4": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 191,
+            "accepted_with_dynamic_paths": 191,
+            "all_selected_native_confirmed": 181,
+            "all_selected_referenced": 187,
+            "artifacts": 187,
+            "captures": 187,
+            "emitted_with_dynamic_paths": 187,
+            "native_confirmed_task_paths": 686,
+            "referenced_task_paths": 703,
+            "seats": 219,
+            "selected_task_paths": 711,
+            "selected_task_paths_with_artifact": 703,
+            "selected_task_paths_without_artifact": 8,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "stage_rejected": 28,
+            "valid_unchanged": 191
+          }
+        },
+        "L5": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 187,
+            "accepted_with_dynamic_paths": 186,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 149,
+            "all_selected_referenced": 149,
+            "artifacts": 150,
+            "captures": 150,
+            "emitted_with_dynamic_paths": 149,
+            "native_confirmed_task_paths": 462,
+            "referenced_task_paths": 462,
+            "seats": 219,
+            "selected_task_paths": 678,
+            "selected_task_paths_with_artifact": 462,
+            "selected_task_paths_without_artifact": 216,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "callback_failed": 1,
+            "stage_rejected": 31,
+            "valid_unchanged": 187
+          }
+        },
+        "L6": {
+          "counts": {
+            "absent_task_paths": 0,
+            "accepted_selections": 187,
+            "accepted_with_dynamic_paths": 186,
+            "accepted_without_dynamic_paths": 1,
+            "all_selected_native_confirmed": 115,
+            "all_selected_referenced": 115,
+            "artifacts": 115,
+            "captures": 115,
+            "emitted_with_dynamic_paths": 115,
+            "native_confirmed_task_paths": 291,
+            "referenced_task_paths": 291,
+            "seats": 219,
+            "selected_task_paths": 687,
+            "selected_task_paths_with_artifact": 291,
+            "selected_task_paths_without_artifact": 396,
+            "unresolved_artifact_task_paths": 0
+          },
+          "entry_outcomes": {
+            "stage_rejected": 32,
+            "valid_unchanged": 187
+          }
+        }
+      },
+      "overall": {
+        "counts": {
+          "absent_task_paths": 0,
+          "accepted_selections": 947,
+          "accepted_with_dynamic_paths": 943,
+          "accepted_without_dynamic_paths": 4,
+          "all_selected_native_confirmed": 754,
+          "all_selected_referenced": 767,
+          "artifacts": 770,
+          "captures": 770,
+          "emitted_with_dynamic_paths": 767,
+          "native_confirmed_task_paths": 2527,
+          "referenced_task_paths": 2562,
+          "seats": 1095,
+          "selected_task_paths": 3469,
+          "selected_task_paths_with_artifact": 2562,
+          "selected_task_paths_without_artifact": 907,
+          "unresolved_artifact_task_paths": 0
+        },
+        "entry_outcomes": {
+          "callback_failed": 3,
+          "stage_rejected": 145,
+          "valid_unchanged": 947
+        }
+      },
+      "same_paths_on_emitted_pairs": {
+        "L2_L3": {
+          "artifact_availability_on_same_nonempty_set": {
+            "both": 124,
+            "neither": 9,
+            "only_first": 17,
+            "only_second": 17
+          },
+          "assigned": 219,
+          "both_confirmed": 119,
+          "both_emitted_same_nonempty_set": 124,
+          "missing_arm_at_one_sided_exits": {
+            "L2": {
+              "callback_failed/geometry": 2,
+              "callback_failed/theme": 1,
+              "stage_rejected/emit": 1,
+              "stage_rejected/geometry": 1,
+              "stage_rejected/theme": 12
+            },
+            "L3": {
+              "callback_failed/geometry": 1,
+              "stage_rejected/geometry": 1,
+              "stage_rejected/theme": 15
+            }
+          },
+          "neither_confirmed": 1,
+          "only_first_confirmed": 3,
+          "only_second_confirmed": 1,
+          "same_nonempty_selected_path_set": 167
+        },
+        "L4_L5": {
+          "artifact_availability_on_same_nonempty_set": {
+            "both": 130,
+            "only_first": 26,
+            "only_second": 3
+          },
+          "assigned": 219,
+          "both_confirmed": 130,
+          "both_emitted_same_nonempty_set": 130,
+          "missing_arm_at_one_sided_exits": {
+            "L4": {
+              "callback_failed/geometry": 2,
+              "callback_failed/structure": 1
+            },
+            "L5": {
+              "stage_rejected/geometry": 26
+            }
+          },
+          "same_nonempty_selected_path_set": 159
+        },
+        "L5_L6": {
+          "artifact_availability_on_same_nonempty_set": {
+            "both": 106,
+            "neither": 29,
+            "only_first": 27,
+            "only_second": 2
+          },
+          "assigned": 219,
+          "both_confirmed": 106,
+          "both_emitted_same_nonempty_set": 106,
+          "missing_arm_at_one_sided_exits": {
+            "L5": {
+              "stage_rejected/geometry": 2
+            },
+            "L6": {
+              "stage_rejected/geometry": 27
+            }
+          },
+          "same_nonempty_selected_path_set": 164
+        }
+      }
+    }
+  }
+}

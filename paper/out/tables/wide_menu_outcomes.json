@@ -1,0 +1,257 @@
+{
+  "all_assigned": {
+    "tasks": 50,
+    "families": 50,
+    "assessed_pairs": 50,
+    "model": {
+      "pass": 10,
+      "fail": 40,
+      "unknown": 0
+    },
+    "program": {
+      "pass": 11,
+      "fail": 39,
+      "unknown": 0
+    },
+    "model_by_program": {
+      "pass": {
+        "pass": 10,
+        "fail": 0,
+        "unknown": 0
+      },
+      "fail": {
+        "pass": 1,
+        "fail": 39,
+        "unknown": 0
+      },
+      "unknown": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 0
+      }
+    },
+    "program_minus_model_pass_count_bounds": [
+      1,
+      1
+    ],
+    "shared_unknown_pairs_contribute_zero_difference": 0,
+    "same_selected_id": 22
+  },
+  "multiple": {
+    "tasks": 33,
+    "families": 33,
+    "assessed_pairs": 33,
+    "model": {
+      "pass": 9,
+      "fail": 24,
+      "unknown": 0
+    },
+    "program": {
+      "pass": 10,
+      "fail": 23,
+      "unknown": 0
+    },
+    "model_by_program": {
+      "pass": {
+        "pass": 9,
+        "fail": 0,
+        "unknown": 0
+      },
+      "fail": {
+        "pass": 1,
+        "fail": 23,
+        "unknown": 0
+      },
+      "unknown": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 0
+      }
+    },
+    "program_minus_model_pass_count_bounds": [
+      1,
+      1
+    ],
+    "shared_unknown_pairs_contribute_zero_difference": 0,
+    "same_selected_id": 21
+  },
+  "forced": {
+    "tasks": 1,
+    "families": 1,
+    "assessed_pairs": 1,
+    "model": {
+      "pass": 1,
+      "fail": 0,
+      "unknown": 0
+    },
+    "program": {
+      "pass": 1,
+      "fail": 0,
+      "unknown": 0
+    },
+    "model_by_program": {
+      "pass": {
+        "pass": 1,
+        "fail": 0,
+        "unknown": 0
+      },
+      "fail": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 0
+      },
+      "unknown": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 0
+      }
+    },
+    "program_minus_model_pass_count_bounds": [
+      0,
+      0
+    ],
+    "shared_unknown_pairs_contribute_zero_difference": 0,
+    "same_selected_id": 1
+  },
+  "multiple_with_any_known_pass": {
+    "tasks": 14,
+    "families": 14,
+    "assessed_pairs": 14,
+    "model": {
+      "pass": 9,
+      "fail": 5,
+      "unknown": 0
+    },
+    "program": {
+      "pass": 10,
+      "fail": 4,
+      "unknown": 0
+    },
+    "model_by_program": {
+      "pass": {
+        "pass": 9,
+        "fail": 0,
+        "unknown": 0
+      },
+      "fail": {
+        "pass": 1,
+        "fail": 4,
+        "unknown": 0
+      },
+      "unknown": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 0
+      }
+    },
+    "program_minus_model_pass_count_bounds": [
+      1,
+      1
+    ],
+    "shared_unknown_pairs_contribute_zero_difference": 0,
+    "same_selected_id": 10
+  },
+  "multiple_with_known_pass_and_fail": {
+    "tasks": 10,
+    "families": 10,
+    "assessed_pairs": 10,
+    "model": {
+      "pass": 5,
+      "fail": 5,
+      "unknown": 0
+    },
+    "program": {
+      "pass": 6,
+      "fail": 4,
+      "unknown": 0
+    },
+    "model_by_program": {
+      "pass": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "fail": {
+        "pass": 1,
+        "fail": 4,
+        "unknown": 0
+      },
+      "unknown": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 0
+      }
+    },
+    "program_minus_model_pass_count_bounds": [
+      1,
+      1
+    ],
+    "shared_unknown_pairs_contribute_zero_difference": 0,
+    "same_selected_id": 8
+  },
+  "cohort": {
+    "content_rejected": 16,
+    "multiple": 33,
+    "forced": 1
+  },
+  "candidate_count": 186,
+  "candidate_verdicts": {
+    "pass": 50,
+    "fail": 136
+  },
+  "nonempty_menu_patterns": {
+    "pass+fail": 10,
+    "fail": 19,
+    "pass": 5
+  },
+  "choice_dispositions_multiple": {
+    "selected": 33
+  },
+  "requests": {
+    "local_intents": 33,
+    "confirmed": 33,
+    "uncertain": 0,
+    "http_status": {
+      "200": 33
+    },
+    "known_usage": 33,
+    "attempts_without_usage": 0,
+    "known_tokens": {
+      "prompt_tokens": 55321,
+      "completion_tokens": 198,
+      "total_tokens": 55519
+    }
+  },
+  "choice_timing_multiple": {
+    "program": {
+      "n": 33,
+      "median_ms": 0.0101
+    },
+    "model": {
+      "n": 33,
+      "median_ms": 921.875
+    },
+    "http": {
+      "n": 33,
+      "median_ms": 921.742
+    },
+    "paired_model_minus_program": {
+      "n": 33,
+      "median_ms": 921.8645
+    }
+  },
+  "evidence_sha256": {
+    "cohort": "407ea1efa0a633936c8fa95b294ac1de68c54ecd54823ac1e54e5903d2113523",
+    "program": "8e993a877938433bdba75aad2a24386c280ef2f448ca7077e9e662ea6fff90f4",
+    "model": "acf9eabeb0d8d860e1fe90c08f92099486d00f051e6b7fa2b127addde383eb0d"
+  },
+  "measurement": {
+    "fonts": {
+      "REGULAR": "297b088424be212207df2ce8b98e335468b782aa6b96832af0b8b773d711e2b1",
+      "BOLD": "43a424b85e47fb53a17b3b32026a71801f86f8e022ca6798d186b47d39fa5f01"
+    },
+    "measurer": "c5ebc7d13c94a73f2e48af6df51a045b8dd8b61c68a40c2dfc0ec69e16526f17",
+    "pillow": "12.3.0",
+    "freetype": "2.14.3"
+  }
+}

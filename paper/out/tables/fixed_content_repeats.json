@@ -1,0 +1,449 @@
+{
+  "design": "Exploratory, fixed accepted L5 content. Ten new structure draws or program executions per task and arm. Task-level summaries refer to these twelve tasks.",
+  "formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "independent_successful_request_ids": 120,
+  "paired_acceptance_histogram": [
+    {
+      "L5_passes_out_of_ten": 1,
+      "L6_passes_out_of_ten": 0,
+      "tasks": 1
+    },
+    {
+      "L5_passes_out_of_ten": 5,
+      "L6_passes_out_of_ten": 0,
+      "tasks": 1
+    },
+    {
+      "L5_passes_out_of_ten": 7,
+      "L6_passes_out_of_ten": 0,
+      "tasks": 1
+    },
+    {
+      "L5_passes_out_of_ten": 9,
+      "L6_passes_out_of_ten": 0,
+      "tasks": 1
+    },
+    {
+      "L5_passes_out_of_ten": 9,
+      "L6_passes_out_of_ten": 10,
+      "tasks": 1
+    },
+    {
+      "L5_passes_out_of_ten": 10,
+      "L6_passes_out_of_ten": 0,
+      "tasks": 2
+    },
+    {
+      "L5_passes_out_of_ten": 10,
+      "L6_passes_out_of_ten": 10,
+      "tasks": 5
+    }
+  ],
+  "paired_technical_tasks": {
+    "all_ten": {
+      "L5_only": 2,
+      "L6_only": 1,
+      "both": 5,
+      "neither": 4
+    },
+    "any_ten": {
+      "L5_only": 6,
+      "both": 6
+    }
+  },
+  "provider_status": {
+    "200": 120
+  },
+  "results": {
+    "L5": {
+      "agreement": {
+        "final": {
+          "all_ten_identical": 3,
+          "all_ten_observed": 7,
+          "none_observed": 0,
+          "observed_draws": 101,
+          "partially_observed": 5,
+          "two_or_more_observed_variants": 8
+        },
+        "first": {
+          "all_ten_identical": 3,
+          "all_ten_observed": 7,
+          "none_observed": 0,
+          "observed_draws": 101,
+          "partially_observed": 5,
+          "two_or_more_observed_variants": 8
+        },
+        "structure": {
+          "all_ten_identical": 3,
+          "all_ten_observed": 12,
+          "none_observed": 0,
+          "observed_draws": 120,
+          "partially_observed": 0,
+          "two_or_more_observed_variants": 9
+        }
+      },
+      "draws": 120,
+      "median_draw_ms_excluding_content": 1118.059,
+      "median_task_median_structure_ms": 1080.944,
+      "tasks": 12,
+      "technical": {
+        "accepted_draws": 101,
+        "failure_stages": {
+          "geometry": 19
+        },
+        "tasks_by_accepted_draws": {
+          "1": 1,
+          "5": 1,
+          "7": 1,
+          "9": 2,
+          "10": 7
+        },
+        "terminal_statuses": {
+          "accepted": 101,
+          "stage_rejected": 19
+        }
+      }
+    },
+    "L6": {
+      "agreement": {
+        "final": {
+          "all_ten_identical": 6,
+          "all_ten_observed": 6,
+          "none_observed": 6,
+          "observed_draws": 60,
+          "partially_observed": 0,
+          "two_or_more_observed_variants": 0
+        },
+        "first": {
+          "all_ten_identical": 6,
+          "all_ten_observed": 6,
+          "none_observed": 6,
+          "observed_draws": 60,
+          "partially_observed": 0,
+          "two_or_more_observed_variants": 0
+        },
+        "structure": {
+          "all_ten_identical": 12,
+          "all_ten_observed": 12,
+          "none_observed": 0,
+          "observed_draws": 120,
+          "partially_observed": 0,
+          "two_or_more_observed_variants": 0
+        }
+      },
+      "draws": 120,
+      "median_draw_ms_excluding_content": 4.162,
+      "median_task_median_structure_ms": 0.104,
+      "tasks": 12,
+      "technical": {
+        "accepted_draws": 60,
+        "failure_stages": {
+          "geometry": 60
+        },
+        "tasks_by_accepted_draws": {
+          "0": 6,
+          "10": 6
+        },
+        "terminal_statuses": {
+          "accepted": 60,
+          "stage_rejected": 60
+        }
+      }
+    }
+  },
+  "sampling": {
+    "distinct_families": 12,
+    "per_stratum": 2,
+    "population": 187,
+    "population_families": 170,
+    "predraw_lock_sha256": "94f558190ddf9610a1fd0ac76342976296868ee04d7bec44ce08709d45200613",
+    "seed": "EasyA2UI/fixed-content/structure-repeat/v1",
+    "strata": [
+      {
+        "load_band": "low",
+        "load_histogram": {
+          "1": 26,
+          "2": 11
+        },
+        "max_load": 2,
+        "min_load": 1,
+        "population_families": 27,
+        "population_tasks": 37,
+        "size": "2x2"
+      },
+      {
+        "load_band": "middle",
+        "load_histogram": {
+          "3": 29,
+          "4": 35
+        },
+        "max_load": 4,
+        "min_load": 3,
+        "population_families": 61,
+        "population_tasks": 64,
+        "size": "2x2"
+      },
+      {
+        "load_band": "high",
+        "load_histogram": {
+          "10": 2,
+          "5": 23,
+          "6": 13,
+          "7": 9,
+          "8": 5
+        },
+        "max_load": 10,
+        "min_load": 5,
+        "population_families": 49,
+        "population_tasks": 52,
+        "size": "2x2"
+      },
+      {
+        "load_band": "low",
+        "load_histogram": {
+          "2": 1,
+          "4": 4,
+          "5": 6
+        },
+        "max_load": 5,
+        "min_load": 2,
+        "population_families": 11,
+        "population_tasks": 11,
+        "size": "2x4"
+      },
+      {
+        "load_band": "middle",
+        "load_histogram": {
+          "6": 2,
+          "7": 9
+        },
+        "max_load": 7,
+        "min_load": 6,
+        "population_families": 11,
+        "population_tasks": 11,
+        "size": "2x4"
+      },
+      {
+        "load_band": "high",
+        "load_histogram": {
+          "10": 2,
+          "11": 1,
+          "13": 2,
+          "15": 2,
+          "8": 2,
+          "9": 3
+        },
+        "max_load": 15,
+        "min_load": 8,
+        "population_families": 12,
+        "population_tasks": 12,
+        "size": "2x4"
+      }
+    ]
+  },
+  "seat_receipts_digest": "37a083b22738f2b728fd5c904c30980be2090853e62a94f0e46d17cec8df1c17",
+  "selection_sha256": "819a5f79679ca24caa62137b8c5c9a647c94319e367e0ed7a25ed50405baf444",
+  "size_breakdown": {
+    "2x2": {
+      "L5": {
+        "agreement": {
+          "final": {
+            "all_ten_identical": 2,
+            "all_ten_observed": 5,
+            "none_observed": 0,
+            "observed_draws": 59,
+            "partially_observed": 1,
+            "two_or_more_observed_variants": 4
+          },
+          "first": {
+            "all_ten_identical": 2,
+            "all_ten_observed": 5,
+            "none_observed": 0,
+            "observed_draws": 59,
+            "partially_observed": 1,
+            "two_or_more_observed_variants": 4
+          },
+          "structure": {
+            "all_ten_identical": 2,
+            "all_ten_observed": 6,
+            "none_observed": 0,
+            "observed_draws": 60,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 4
+          }
+        },
+        "draws": 60,
+        "median_draw_ms_excluding_content": 1001.381,
+        "median_task_median_structure_ms": 1010.103,
+        "tasks": 6,
+        "technical": {
+          "accepted_draws": 59,
+          "failure_stages": {
+            "geometry": 1
+          },
+          "tasks_by_accepted_draws": {
+            "9": 1,
+            "10": 5
+          },
+          "terminal_statuses": {
+            "accepted": 59,
+            "stage_rejected": 1
+          }
+        }
+      },
+      "L6": {
+        "agreement": {
+          "final": {
+            "all_ten_identical": 5,
+            "all_ten_observed": 5,
+            "none_observed": 1,
+            "observed_draws": 50,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 0
+          },
+          "first": {
+            "all_ten_identical": 5,
+            "all_ten_observed": 5,
+            "none_observed": 1,
+            "observed_draws": 50,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 0
+          },
+          "structure": {
+            "all_ten_identical": 6,
+            "all_ten_observed": 6,
+            "none_observed": 0,
+            "observed_draws": 60,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 0
+          }
+        },
+        "draws": 60,
+        "median_draw_ms_excluding_content": 3.141,
+        "median_task_median_structure_ms": 0.095,
+        "tasks": 6,
+        "technical": {
+          "accepted_draws": 50,
+          "failure_stages": {
+            "geometry": 10
+          },
+          "tasks_by_accepted_draws": {
+            "0": 1,
+            "10": 5
+          },
+          "terminal_statuses": {
+            "accepted": 50,
+            "stage_rejected": 10
+          }
+        }
+      }
+    },
+    "2x4": {
+      "L5": {
+        "agreement": {
+          "final": {
+            "all_ten_identical": 1,
+            "all_ten_observed": 2,
+            "none_observed": 0,
+            "observed_draws": 42,
+            "partially_observed": 4,
+            "two_or_more_observed_variants": 4
+          },
+          "first": {
+            "all_ten_identical": 1,
+            "all_ten_observed": 2,
+            "none_observed": 0,
+            "observed_draws": 42,
+            "partially_observed": 4,
+            "two_or_more_observed_variants": 4
+          },
+          "structure": {
+            "all_ten_identical": 1,
+            "all_ten_observed": 6,
+            "none_observed": 0,
+            "observed_draws": 60,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 5
+          }
+        },
+        "draws": 60,
+        "median_draw_ms_excluding_content": 1234.578,
+        "median_task_median_structure_ms": 1179.41,
+        "tasks": 6,
+        "technical": {
+          "accepted_draws": 42,
+          "failure_stages": {
+            "geometry": 18
+          },
+          "tasks_by_accepted_draws": {
+            "1": 1,
+            "5": 1,
+            "7": 1,
+            "9": 1,
+            "10": 2
+          },
+          "terminal_statuses": {
+            "accepted": 42,
+            "stage_rejected": 18
+          }
+        }
+      },
+      "L6": {
+        "agreement": {
+          "final": {
+            "all_ten_identical": 1,
+            "all_ten_observed": 1,
+            "none_observed": 5,
+            "observed_draws": 10,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 0
+          },
+          "first": {
+            "all_ten_identical": 1,
+            "all_ten_observed": 1,
+            "none_observed": 5,
+            "observed_draws": 10,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 0
+          },
+          "structure": {
+            "all_ten_identical": 6,
+            "all_ten_observed": 6,
+            "none_observed": 0,
+            "observed_draws": 60,
+            "partially_observed": 0,
+            "two_or_more_observed_variants": 0
+          }
+        },
+        "draws": 60,
+        "median_draw_ms_excluding_content": 5.803,
+        "median_task_median_structure_ms": 0.122,
+        "tasks": 6,
+        "technical": {
+          "accepted_draws": 10,
+          "failure_stages": {
+            "geometry": 50
+          },
+          "tasks_by_accepted_draws": {
+            "0": 5,
+            "10": 1
+          },
+          "terminal_statuses": {
+            "accepted": 10,
+            "stage_rejected": 50
+          }
+        }
+      }
+    }
+  },
+  "structure_tokens": {
+    "completion_tokens": 11706,
+    "prompt_tokens": 281250,
+    "total_tokens": 292956
+  },
+  "study_plan_sha256": "89e5882deb5615a414671d69ae4f208aea5299333bff4af834cd09a9413ce041",
+  "task_counts_by_size": {
+    "2x2": 6,
+    "2x4": 6
+  }
+}

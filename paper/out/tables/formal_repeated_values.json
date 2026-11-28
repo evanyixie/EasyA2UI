@@ -1,0 +1,541 @@
+{
+  "assigned_checkpoints": 2628,
+  "checkpoint_counts_sha256": "db2ba055320f05050560b0ccee8b13aa393a81a2a0a2c0c39875c496c9ae545a",
+  "formal": {
+    "after_common_repair": {
+      "L1": {
+        "all_values": {
+          "across_only": 55,
+          "both": 10,
+          "cards_with_duplicate": 36,
+          "cards_with_reference_values": 209,
+          "duplicated": 71,
+          "joined_only": 0,
+          "reference_values": 669,
+          "within_only": 6
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 25,
+          "both": 9,
+          "cards_with_duplicate": 28,
+          "cards_with_reference_values": 205,
+          "duplicated": 40,
+          "joined_only": 0,
+          "reference_values": 370,
+          "within_only": 6
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 209,
+          "missing_reference": 0,
+          "no_artifact": 5,
+          "unresolved_text": 4
+        },
+        "strict_numeric": {
+          "across_only": 17,
+          "both": 0,
+          "cards_with_duplicate": 12,
+          "cards_with_reference_values": 203,
+          "duplicated": 19,
+          "joined_only": 0,
+          "reference_values": 330,
+          "within_only": 2
+        }
+      },
+      "L2": {
+        "all_values": {
+          "across_only": 31,
+          "both": 6,
+          "cards_with_duplicate": 26,
+          "cards_with_reference_values": 157,
+          "duplicated": 38,
+          "joined_only": 0,
+          "reference_values": 434,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 14,
+          "both": 6,
+          "cards_with_duplicate": 17,
+          "cards_with_reference_values": 154,
+          "duplicated": 21,
+          "joined_only": 0,
+          "reference_values": 249,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 157,
+          "missing_reference": 0,
+          "no_artifact": 61,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 6,
+          "both": 0,
+          "cards_with_duplicate": 6,
+          "cards_with_reference_values": 153,
+          "duplicated": 6,
+          "joined_only": 0,
+          "reference_values": 220,
+          "within_only": 0
+        }
+      },
+      "L3": {
+        "all_values": {
+          "across_only": 26,
+          "both": 5,
+          "cards_with_duplicate": 23,
+          "cards_with_reference_values": 159,
+          "duplicated": 32,
+          "joined_only": 0,
+          "reference_values": 441,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 10,
+          "both": 5,
+          "cards_with_duplicate": 13,
+          "cards_with_reference_values": 154,
+          "duplicated": 16,
+          "joined_only": 0,
+          "reference_values": 247,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 159,
+          "missing_reference": 0,
+          "no_artifact": 59,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 4,
+          "both": 0,
+          "cards_with_duplicate": 4,
+          "cards_with_reference_values": 152,
+          "duplicated": 4,
+          "joined_only": 0,
+          "reference_values": 216,
+          "within_only": 0
+        }
+      },
+      "L4": {
+        "all_values": {
+          "across_only": 35,
+          "both": 8,
+          "cards_with_duplicate": 32,
+          "cards_with_reference_values": 186,
+          "duplicated": 44,
+          "joined_only": 0,
+          "reference_values": 548,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 15,
+          "both": 8,
+          "cards_with_duplicate": 20,
+          "cards_with_reference_values": 181,
+          "duplicated": 24,
+          "joined_only": 0,
+          "reference_values": 319,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 186,
+          "missing_reference": 0,
+          "no_artifact": 32,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 5,
+          "both": 0,
+          "cards_with_duplicate": 5,
+          "cards_with_reference_values": 179,
+          "duplicated": 5,
+          "joined_only": 0,
+          "reference_values": 277,
+          "within_only": 0
+        }
+      },
+      "L5": {
+        "all_values": {
+          "across_only": 16,
+          "both": 5,
+          "cards_with_duplicate": 19,
+          "cards_with_reference_values": 149,
+          "duplicated": 22,
+          "joined_only": 0,
+          "reference_values": 403,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 7,
+          "both": 5,
+          "cards_with_duplicate": 13,
+          "cards_with_reference_values": 144,
+          "duplicated": 13,
+          "joined_only": 0,
+          "reference_values": 230,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 149,
+          "missing_reference": 0,
+          "no_artifact": 69,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 2,
+          "both": 0,
+          "cards_with_duplicate": 2,
+          "cards_with_reference_values": 142,
+          "duplicated": 2,
+          "joined_only": 0,
+          "reference_values": 205,
+          "within_only": 0
+        }
+      },
+      "L6": {
+        "all_values": {
+          "across_only": 9,
+          "both": 1,
+          "cards_with_duplicate": 10,
+          "cards_with_reference_values": 115,
+          "duplicated": 11,
+          "joined_only": 0,
+          "reference_values": 262,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 3,
+          "both": 1,
+          "cards_with_duplicate": 5,
+          "cards_with_reference_values": 111,
+          "duplicated": 5,
+          "joined_only": 0,
+          "reference_values": 153,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 0,
+          "measured": 115,
+          "missing_reference": 0,
+          "no_artifact": 104,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 1,
+          "both": 0,
+          "cards_with_duplicate": 1,
+          "cards_with_reference_values": 109,
+          "duplicated": 1,
+          "joined_only": 0,
+          "reference_values": 136,
+          "within_only": 0
+        }
+      }
+    },
+    "raw_first": {
+      "L1": {
+        "all_values": {
+          "across_only": 55,
+          "both": 10,
+          "cards_with_duplicate": 36,
+          "cards_with_reference_values": 209,
+          "duplicated": 71,
+          "joined_only": 0,
+          "reference_values": 669,
+          "within_only": 6
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 25,
+          "both": 9,
+          "cards_with_duplicate": 28,
+          "cards_with_reference_values": 205,
+          "duplicated": 40,
+          "joined_only": 0,
+          "reference_values": 370,
+          "within_only": 6
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 209,
+          "missing_reference": 0,
+          "no_artifact": 5,
+          "unresolved_text": 4
+        },
+        "strict_numeric": {
+          "across_only": 17,
+          "both": 0,
+          "cards_with_duplicate": 12,
+          "cards_with_reference_values": 203,
+          "duplicated": 19,
+          "joined_only": 0,
+          "reference_values": 330,
+          "within_only": 2
+        }
+      },
+      "L2": {
+        "all_values": {
+          "across_only": 31,
+          "both": 6,
+          "cards_with_duplicate": 26,
+          "cards_with_reference_values": 157,
+          "duplicated": 38,
+          "joined_only": 0,
+          "reference_values": 434,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 14,
+          "both": 6,
+          "cards_with_duplicate": 17,
+          "cards_with_reference_values": 154,
+          "duplicated": 21,
+          "joined_only": 0,
+          "reference_values": 249,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 157,
+          "missing_reference": 0,
+          "no_artifact": 61,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 6,
+          "both": 0,
+          "cards_with_duplicate": 6,
+          "cards_with_reference_values": 153,
+          "duplicated": 6,
+          "joined_only": 0,
+          "reference_values": 220,
+          "within_only": 0
+        }
+      },
+      "L3": {
+        "all_values": {
+          "across_only": 26,
+          "both": 5,
+          "cards_with_duplicate": 23,
+          "cards_with_reference_values": 159,
+          "duplicated": 32,
+          "joined_only": 0,
+          "reference_values": 441,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 10,
+          "both": 5,
+          "cards_with_duplicate": 13,
+          "cards_with_reference_values": 154,
+          "duplicated": 16,
+          "joined_only": 0,
+          "reference_values": 247,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 159,
+          "missing_reference": 0,
+          "no_artifact": 59,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 4,
+          "both": 0,
+          "cards_with_duplicate": 4,
+          "cards_with_reference_values": 152,
+          "duplicated": 4,
+          "joined_only": 0,
+          "reference_values": 216,
+          "within_only": 0
+        }
+      },
+      "L4": {
+        "all_values": {
+          "across_only": 35,
+          "both": 8,
+          "cards_with_duplicate": 32,
+          "cards_with_reference_values": 186,
+          "duplicated": 44,
+          "joined_only": 0,
+          "reference_values": 548,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 15,
+          "both": 8,
+          "cards_with_duplicate": 20,
+          "cards_with_reference_values": 181,
+          "duplicated": 24,
+          "joined_only": 0,
+          "reference_values": 319,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 186,
+          "missing_reference": 0,
+          "no_artifact": 32,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 5,
+          "both": 0,
+          "cards_with_duplicate": 5,
+          "cards_with_reference_values": 179,
+          "duplicated": 5,
+          "joined_only": 0,
+          "reference_values": 277,
+          "within_only": 0
+        }
+      },
+      "L5": {
+        "all_values": {
+          "across_only": 16,
+          "both": 5,
+          "cards_with_duplicate": 19,
+          "cards_with_reference_values": 149,
+          "duplicated": 22,
+          "joined_only": 0,
+          "reference_values": 403,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 7,
+          "both": 5,
+          "cards_with_duplicate": 13,
+          "cards_with_reference_values": 144,
+          "duplicated": 13,
+          "joined_only": 0,
+          "reference_values": 230,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 1,
+          "measured": 149,
+          "missing_reference": 0,
+          "no_artifact": 69,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 2,
+          "both": 0,
+          "cards_with_duplicate": 2,
+          "cards_with_reference_values": 142,
+          "duplicated": 2,
+          "joined_only": 0,
+          "reference_values": 205,
+          "within_only": 0
+        }
+      },
+      "L6": {
+        "all_values": {
+          "across_only": 9,
+          "both": 1,
+          "cards_with_duplicate": 10,
+          "cards_with_reference_values": 115,
+          "duplicated": 11,
+          "joined_only": 0,
+          "reference_values": 262,
+          "within_only": 1
+        },
+        "assigned": 219,
+        "digit_values": {
+          "across_only": 3,
+          "both": 1,
+          "cards_with_duplicate": 5,
+          "cards_with_reference_values": 111,
+          "duplicated": 5,
+          "joined_only": 0,
+          "reference_values": 153,
+          "within_only": 1
+        },
+        "states": {
+          "empty_reference": 0,
+          "measured": 115,
+          "missing_reference": 0,
+          "no_artifact": 104,
+          "unresolved_text": 0
+        },
+        "strict_numeric": {
+          "across_only": 1,
+          "both": 0,
+          "cards_with_duplicate": 1,
+          "cards_with_reference_values": 109,
+          "duplicated": 1,
+          "joined_only": 0,
+          "reference_values": 136,
+          "within_only": 0
+        }
+      }
+    }
+  },
+  "historical_matcher_sha256_lf": "3bf0f319dc9fa266906d649aa4233398fa9da0c8cdefd0c4d08233776dca4376",
+  "interpretation": "Each distinct original reference spelling contributes at most once per card. The historical count uses non-overlapping substrings after normalization on joined Text. Digit values include labels containing decimal digits. Strict counts require the entire reference value to match an intact numeric token in an individual Text. Within/across refer to Text controls, and joined_only requires concatenating them. No button labels, device pixels, referent identity, or judgment of unwanted redundancy are inferred.",
+  "reference_counts_sha256": "35ef7f6aaeae8108a131d35d26747ed161624f2ab1efb11339b3518ef99b4781",
+  "reference_evidence": {
+    "formal_tasks": 219,
+    "mapping_sha256": "2caa898786d4cd0512ad9ddab1d6863ee7202651dbbfca1bab3437632bb85598",
+    "reconstructed_inputs_with_reference": 2,
+    "simulated_tasks_with_reference": 0,
+    "unavailable": {},
+    "verified_a2ui_and_compact": 219
+  },
+  "reference_self_check": {
+    "all_values": {
+      "across_only": 36,
+      "both": 9,
+      "cards_with_duplicate": 32,
+      "cards_with_reference_values": 203,
+      "duplicated": 46,
+      "joined_only": 0,
+      "reference_values": 630,
+      "within_only": 1
+    },
+    "assigned": 219,
+    "digit_values": {
+      "across_only": 18,
+      "both": 8,
+      "cards_with_duplicate": 23,
+      "cards_with_reference_values": 198,
+      "duplicated": 27,
+      "joined_only": 0,
+      "reference_values": 352,
+      "within_only": 1
+    },
+    "states": {
+      "empty_reference": 1,
+      "measured": 203,
+      "missing_reference": 0,
+      "no_artifact": 0,
+      "unresolved_text": 15
+    },
+    "strict_numeric": {
+      "across_only": 11,
+      "both": 0,
+      "cards_with_duplicate": 10,
+      "cards_with_reference_values": 196,
+      "duplicated": 11,
+      "joined_only": 0,
+      "reference_values": 309,
+      "within_only": 0
+    }
+  }
+}

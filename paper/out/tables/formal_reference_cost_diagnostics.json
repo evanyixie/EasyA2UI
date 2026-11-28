@@ -1,0 +1,1189 @@
+{
+  "assigned_tasks": 219,
+  "joint_outcomes": {
+    "arms": {
+      "L1": {
+        "assigned": 219,
+        "both_decisions_known": 209,
+        "qualified_by_horizontal_clip": {
+          "fail": {
+            "absent": 76,
+            "present": 6,
+            "unknown": 5
+          },
+          "pass": {
+            "absent": 99,
+            "present": 28,
+            "unknown": 0
+          },
+          "unknown": {
+            "absent": 1,
+            "present": 0,
+            "unknown": 4
+          }
+        }
+      },
+      "L2": {
+        "assigned": 219,
+        "both_decisions_known": 157,
+        "qualified_by_horizontal_clip": {
+          "fail": {
+            "absent": 31,
+            "present": 18,
+            "unknown": 61
+          },
+          "pass": {
+            "absent": 47,
+            "present": 61,
+            "unknown": 0
+          },
+          "unknown": {
+            "absent": 0,
+            "present": 1,
+            "unknown": 0
+          }
+        }
+      },
+      "L3": {
+        "assigned": 219,
+        "both_decisions_known": 159,
+        "qualified_by_horizontal_clip": {
+          "fail": {
+            "absent": 24,
+            "present": 24,
+            "unknown": 59
+          },
+          "pass": {
+            "absent": 49,
+            "present": 62,
+            "unknown": 0
+          },
+          "unknown": {
+            "absent": 0,
+            "present": 1,
+            "unknown": 0
+          }
+        }
+      },
+      "L4": {
+        "assigned": 219,
+        "both_decisions_known": 186,
+        "qualified_by_horizontal_clip": {
+          "fail": {
+            "absent": 37,
+            "present": 23,
+            "unknown": 32
+          },
+          "pass": {
+            "absent": 46,
+            "present": 80,
+            "unknown": 0
+          },
+          "unknown": {
+            "absent": 0,
+            "present": 1,
+            "unknown": 0
+          }
+        }
+      },
+      "L5": {
+        "assigned": 219,
+        "both_decisions_known": 149,
+        "qualified_by_horizontal_clip": {
+          "fail": {
+            "absent": 49,
+            "present": 0,
+            "unknown": 69
+          },
+          "pass": {
+            "absent": 100,
+            "present": 0,
+            "unknown": 0
+          },
+          "unknown": {
+            "absent": 1,
+            "present": 0,
+            "unknown": 0
+          }
+        }
+      },
+      "L6": {
+        "assigned": 219,
+        "both_decisions_known": 115,
+        "qualified_by_horizontal_clip": {
+          "fail": {
+            "absent": 37,
+            "present": 0,
+            "unknown": 104
+          },
+          "pass": {
+            "absent": 78,
+            "present": 0,
+            "unknown": 0
+          },
+          "unknown": {
+            "absent": 0,
+            "present": 0,
+            "unknown": 0
+          }
+        }
+      }
+    },
+    "checkpoint": "after_common_repair",
+    "coverage_threshold_percent": 80,
+    "pairs": {
+      "L4_L5": {
+        "assigned_pairs": 219,
+        "both_artifacts": 144,
+        "both_artifacts_and_assessable_coverage_geometry": {
+          "left_pass": 95,
+          "left_vs_right": {
+            "fail": {
+              "fail": 45,
+              "pass": 3,
+              "unknown": 0
+            },
+            "pass": {
+              "fail": 1,
+              "pass": 94,
+              "unknown": 0
+            },
+            "unknown": {
+              "fail": 0,
+              "pass": 0,
+              "unknown": 0
+            }
+          },
+          "pairs": 143,
+          "right_pass": 97
+        },
+        "left": "L4",
+        "only_one_confirmed_qualified": {
+          "L4": {
+            "no_artifact_breakdown": {
+              "stage_rejected": 31
+            },
+            "opposite_failed": 32,
+            "opposite_reason": {
+              "coverage_below_80": 1,
+              "frame_overflow": 0,
+              "indeterminate": 0,
+              "multiple_observed_failures": 0,
+              "no_artifact": 31,
+              "protocol": 0
+            },
+            "opposite_unknown": 0
+          },
+          "L5": {
+            "no_artifact_breakdown": {
+              "stage_rejected": 1,
+              "transport_failed": 2
+            },
+            "opposite_failed": 6,
+            "opposite_reason": {
+              "coverage_below_80": 2,
+              "frame_overflow": 1,
+              "indeterminate": 0,
+              "multiple_observed_failures": 0,
+              "no_artifact": 3,
+              "protocol": 0
+            },
+            "opposite_unknown": 0
+          }
+        },
+        "right": "L5"
+      },
+      "L5_L6": {
+        "assigned_pairs": 219,
+        "both_artifacts": 110,
+        "both_artifacts_and_assessable_coverage_geometry": {
+          "left_pass": 75,
+          "left_vs_right": {
+            "fail": {
+              "fail": 35,
+              "pass": 0,
+              "unknown": 0
+            },
+            "pass": {
+              "fail": 1,
+              "pass": 74,
+              "unknown": 0
+            },
+            "unknown": {
+              "fail": 0,
+              "pass": 0,
+              "unknown": 0
+            }
+          },
+          "pairs": 110,
+          "right_pass": 74
+        },
+        "left": "L5",
+        "only_one_confirmed_qualified": {
+          "L5": {
+            "no_artifact_breakdown": {
+              "stage_rejected": 25
+            },
+            "opposite_failed": 26,
+            "opposite_reason": {
+              "coverage_below_80": 1,
+              "frame_overflow": 0,
+              "indeterminate": 0,
+              "multiple_observed_failures": 0,
+              "no_artifact": 25,
+              "protocol": 0
+            },
+            "opposite_unknown": 0
+          },
+          "L6": {
+            "no_artifact_breakdown": {
+              "stage_rejected": 4
+            },
+            "opposite_failed": 4,
+            "opposite_reason": {
+              "coverage_below_80": 0,
+              "frame_overflow": 0,
+              "indeterminate": 0,
+              "multiple_observed_failures": 0,
+              "no_artifact": 4,
+              "protocol": 0
+            },
+            "opposite_unknown": 0
+          }
+        },
+        "right": "L6"
+      }
+    },
+    "scope": "Horizontal clipping means at least one measured Web Text node exceeds its own box horizontally by >4 CSS px. Only Text nodes are measured. This secondary observation does not change C-04. An observed failure can coexist with an unmeasured condition. Opposite unknown and opposite fail are reported separately."
+  },
+  "literal_reference_coverage": {
+    "basis": "A4a reference-value coverage. Emitted, measurable cards supply the observed means. On all assigned seats an absent artifact contributes zero delivery, and a present artifact with an unknown score contributes [0,1] to the macro-score and threshold bounds. The micro mean weights individual reference facts; a known empty reference contributes no facts. An unknown reference size or zero total makes the full micro bound unavailable.",
+    "phases": {
+      "after_common_repair": {
+        "L1": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.6998114138525097,
+              0.7226424640808202
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.6761768901569187,
+              0.6961483594864479
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 94,
+                "known_pass": 120,
+                "pass_count_bounds": [
+                  120,
+                  125
+                ],
+                "pass_rate_bounds": [
+                  0.547945205479452,
+                  0.5707762557077626
+                ],
+                "unknown": 5
+              },
+              "60": {
+                "known_fail": 61,
+                "known_pass": 153,
+                "pass_count_bounds": [
+                  153,
+                  158
+                ],
+                "pass_rate_bounds": [
+                  0.6986301369863014,
+                  0.7214611872146118
+                ],
+                "unknown": 5
+              },
+              "80": {
+                "known_fail": 87,
+                "known_pass": 127,
+                "pass_count_bounds": [
+                  127,
+                  132
+                ],
+                "pass_rate_bounds": [
+                  0.5799086757990868,
+                  0.6027397260273972
+                ],
+                "unknown": 5
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 209,
+            "hits": 474,
+            "macro_mean": 0.7332952135583714,
+            "micro_mean": 0.7085201793721974,
+            "threshold_pass_counts": {
+              "100": 120,
+              "60": 153,
+              "80": 127
+            },
+            "total_facts": 669
+          },
+          "emitted_unknown": 5,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1,
+            "unresolved_text": 4
+          },
+          "no_artifact": 5,
+          "no_artifact_by_reason": {
+            "stage_rejected": 1,
+            "transport_failed": 4
+          }
+        },
+        "L2": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.5588062622309198,
+              0.5633724722765819
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.46504992867332384,
+              0.46504992867332384
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 111,
+                "known_pass": 107,
+                "pass_count_bounds": [
+                  107,
+                  108
+                ],
+                "pass_rate_bounds": [
+                  0.4885844748858447,
+                  0.4931506849315068
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 95,
+                "known_pass": 123,
+                "pass_count_bounds": [
+                  123,
+                  124
+                ],
+                "pass_rate_bounds": [
+                  0.5616438356164384,
+                  0.5662100456621004
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 110,
+                "known_pass": 108,
+                "pass_count_bounds": [
+                  108,
+                  109
+                ],
+                "pass_rate_bounds": [
+                  0.4931506849315068,
+                  0.4977168949771689
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 157,
+            "hits": 326,
+            "macro_mean": 0.779481346678799,
+            "micro_mean": 0.7511520737327189,
+            "threshold_pass_counts": {
+              "100": 107,
+              "60": 123,
+              "80": 108
+            },
+            "total_facts": 434
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 61,
+          "no_artifact_by_reason": {
+            "stage_rejected": 58,
+            "transport_failed": 3
+          }
+        },
+        "L3": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.5636986301369863,
+              0.5682648401826484
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.47075606276747506,
+              0.47075606276747506
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 110,
+                "known_pass": 108,
+                "pass_count_bounds": [
+                  108,
+                  109
+                ],
+                "pass_rate_bounds": [
+                  0.4931506849315068,
+                  0.4977168949771689
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 97,
+                "known_pass": 121,
+                "pass_count_bounds": [
+                  121,
+                  122
+                ],
+                "pass_rate_bounds": [
+                  0.5525114155251142,
+                  0.5570776255707762
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 106,
+                "known_pass": 112,
+                "pass_count_bounds": [
+                  112,
+                  113
+                ],
+                "pass_rate_bounds": [
+                  0.5114155251141552,
+                  0.5159817351598174
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 159,
+            "hits": 330,
+            "macro_mean": 0.7764150943396226,
+            "micro_mean": 0.7482993197278912,
+            "threshold_pass_counts": {
+              "100": 108,
+              "60": 121,
+              "80": 112
+            },
+            "total_facts": 441
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 59,
+          "no_artifact_by_reason": {
+            "stage_rejected": 54,
+            "transport_failed": 5
+          }
+        },
+        "L4": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.6629593389867362,
+              0.6675255490323984
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.6005706134094151,
+              0.6005706134094151
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 92,
+                "known_pass": 126,
+                "pass_count_bounds": [
+                  126,
+                  127
+                ],
+                "pass_rate_bounds": [
+                  0.5753424657534246,
+                  0.5799086757990868
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 74,
+                "known_pass": 144,
+                "pass_count_bounds": [
+                  144,
+                  145
+                ],
+                "pass_rate_bounds": [
+                  0.6575342465753424,
+                  0.6621004566210046
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 87,
+                "known_pass": 131,
+                "pass_count_bounds": [
+                  131,
+                  132
+                ],
+                "pass_rate_bounds": [
+                  0.5981735159817352,
+                  0.6027397260273972
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 186,
+            "hits": 421,
+            "macro_mean": 0.7805811571940604,
+            "micro_mean": 0.7682481751824818,
+            "threshold_pass_counts": {
+              "100": 126,
+              "60": 144,
+              "80": 131
+            },
+            "total_facts": 548
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 32,
+          "no_artifact_by_reason": {
+            "stage_rejected": 29,
+            "transport_failed": 3
+          }
+        },
+        "L5": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.5107088497499457,
+              0.5152750597956077
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.41797432239657634,
+              0.41797432239657634
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 120,
+                "known_pass": 98,
+                "pass_count_bounds": [
+                  98,
+                  99
+                ],
+                "pass_rate_bounds": [
+                  0.4474885844748858,
+                  0.4520547945205479
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 106,
+                "known_pass": 112,
+                "pass_count_bounds": [
+                  112,
+                  113
+                ],
+                "pass_rate_bounds": [
+                  0.5114155251141552,
+                  0.5159817351598174
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 118,
+                "known_pass": 100,
+                "pass_count_bounds": [
+                  100,
+                  101
+                ],
+                "pass_rate_bounds": [
+                  0.45662100456621,
+                  0.4611872146118721
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 149,
+            "hits": 293,
+            "macro_mean": 0.7506391818472355,
+            "micro_mean": 0.7270471464019851,
+            "threshold_pass_counts": {
+              "100": 98,
+              "60": 112,
+              "80": 100
+            },
+            "total_facts": 403
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 69,
+          "no_artifact_by_reason": {
+            "stage_rejected": 68,
+            "transport_failed": 1
+          }
+        },
+        "L6": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.37777777777777777,
+              0.37777777777777777
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.2524964336661912,
+              0.2524964336661912
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 142,
+                "known_pass": 77,
+                "pass_count_bounds": [
+                  77,
+                  77
+                ],
+                "pass_rate_bounds": [
+                  0.3515981735159817,
+                  0.3515981735159817
+                ],
+                "unknown": 0
+              },
+              "60": {
+                "known_fail": 135,
+                "known_pass": 84,
+                "pass_count_bounds": [
+                  84,
+                  84
+                ],
+                "pass_rate_bounds": [
+                  0.3835616438356164,
+                  0.3835616438356164
+                ],
+                "unknown": 0
+              },
+              "80": {
+                "known_fail": 141,
+                "known_pass": 78,
+                "pass_count_bounds": [
+                  78,
+                  78
+                ],
+                "pass_rate_bounds": [
+                  0.3561643835616438,
+                  0.3561643835616438
+                ],
+                "unknown": 0
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 115,
+            "hits": 177,
+            "macro_mean": 0.7194202898550724,
+            "micro_mean": 0.6755725190839694,
+            "threshold_pass_counts": {
+              "100": 77,
+              "60": 84,
+              "80": 78
+            },
+            "total_facts": 262
+          },
+          "emitted_unknown": 0,
+          "emitted_unknown_by_reason": {},
+          "no_artifact": 104,
+          "no_artifact_by_reason": {
+            "stage_rejected": 104
+          }
+        }
+      },
+      "raw_first": {
+        "L1": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.6998114138525097,
+              0.7226424640808202
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.6761768901569187,
+              0.6961483594864479
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 94,
+                "known_pass": 120,
+                "pass_count_bounds": [
+                  120,
+                  125
+                ],
+                "pass_rate_bounds": [
+                  0.547945205479452,
+                  0.5707762557077626
+                ],
+                "unknown": 5
+              },
+              "60": {
+                "known_fail": 61,
+                "known_pass": 153,
+                "pass_count_bounds": [
+                  153,
+                  158
+                ],
+                "pass_rate_bounds": [
+                  0.6986301369863014,
+                  0.7214611872146118
+                ],
+                "unknown": 5
+              },
+              "80": {
+                "known_fail": 87,
+                "known_pass": 127,
+                "pass_count_bounds": [
+                  127,
+                  132
+                ],
+                "pass_rate_bounds": [
+                  0.5799086757990868,
+                  0.6027397260273972
+                ],
+                "unknown": 5
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 209,
+            "hits": 474,
+            "macro_mean": 0.7332952135583714,
+            "micro_mean": 0.7085201793721974,
+            "threshold_pass_counts": {
+              "100": 120,
+              "60": 153,
+              "80": 127
+            },
+            "total_facts": 669
+          },
+          "emitted_unknown": 5,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1,
+            "unresolved_text": 4
+          },
+          "no_artifact": 5,
+          "no_artifact_by_reason": {
+            "stage_rejected": 1,
+            "transport_failed": 4
+          }
+        },
+        "L2": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.5588062622309198,
+              0.5633724722765819
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.46504992867332384,
+              0.46504992867332384
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 111,
+                "known_pass": 107,
+                "pass_count_bounds": [
+                  107,
+                  108
+                ],
+                "pass_rate_bounds": [
+                  0.4885844748858447,
+                  0.4931506849315068
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 95,
+                "known_pass": 123,
+                "pass_count_bounds": [
+                  123,
+                  124
+                ],
+                "pass_rate_bounds": [
+                  0.5616438356164384,
+                  0.5662100456621004
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 110,
+                "known_pass": 108,
+                "pass_count_bounds": [
+                  108,
+                  109
+                ],
+                "pass_rate_bounds": [
+                  0.4931506849315068,
+                  0.4977168949771689
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 157,
+            "hits": 326,
+            "macro_mean": 0.779481346678799,
+            "micro_mean": 0.7511520737327189,
+            "threshold_pass_counts": {
+              "100": 107,
+              "60": 123,
+              "80": 108
+            },
+            "total_facts": 434
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 61,
+          "no_artifact_by_reason": {
+            "stage_rejected": 58,
+            "transport_failed": 3
+          }
+        },
+        "L3": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.5636986301369863,
+              0.5682648401826484
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.47075606276747506,
+              0.47075606276747506
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 110,
+                "known_pass": 108,
+                "pass_count_bounds": [
+                  108,
+                  109
+                ],
+                "pass_rate_bounds": [
+                  0.4931506849315068,
+                  0.4977168949771689
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 97,
+                "known_pass": 121,
+                "pass_count_bounds": [
+                  121,
+                  122
+                ],
+                "pass_rate_bounds": [
+                  0.5525114155251142,
+                  0.5570776255707762
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 106,
+                "known_pass": 112,
+                "pass_count_bounds": [
+                  112,
+                  113
+                ],
+                "pass_rate_bounds": [
+                  0.5114155251141552,
+                  0.5159817351598174
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 159,
+            "hits": 330,
+            "macro_mean": 0.7764150943396226,
+            "micro_mean": 0.7482993197278912,
+            "threshold_pass_counts": {
+              "100": 108,
+              "60": 121,
+              "80": 112
+            },
+            "total_facts": 441
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 59,
+          "no_artifact_by_reason": {
+            "stage_rejected": 54,
+            "transport_failed": 5
+          }
+        },
+        "L4": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.6629593389867362,
+              0.6675255490323984
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.6005706134094151,
+              0.6005706134094151
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 92,
+                "known_pass": 126,
+                "pass_count_bounds": [
+                  126,
+                  127
+                ],
+                "pass_rate_bounds": [
+                  0.5753424657534246,
+                  0.5799086757990868
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 74,
+                "known_pass": 144,
+                "pass_count_bounds": [
+                  144,
+                  145
+                ],
+                "pass_rate_bounds": [
+                  0.6575342465753424,
+                  0.6621004566210046
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 87,
+                "known_pass": 131,
+                "pass_count_bounds": [
+                  131,
+                  132
+                ],
+                "pass_rate_bounds": [
+                  0.5981735159817352,
+                  0.6027397260273972
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 186,
+            "hits": 421,
+            "macro_mean": 0.7805811571940604,
+            "micro_mean": 0.7682481751824818,
+            "threshold_pass_counts": {
+              "100": 126,
+              "60": 144,
+              "80": 131
+            },
+            "total_facts": 548
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 32,
+          "no_artifact_by_reason": {
+            "stage_rejected": 29,
+            "transport_failed": 3
+          }
+        },
+        "L5": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.5107088497499457,
+              0.5152750597956077
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.41797432239657634,
+              0.41797432239657634
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 120,
+                "known_pass": 98,
+                "pass_count_bounds": [
+                  98,
+                  99
+                ],
+                "pass_rate_bounds": [
+                  0.4474885844748858,
+                  0.4520547945205479
+                ],
+                "unknown": 1
+              },
+              "60": {
+                "known_fail": 106,
+                "known_pass": 112,
+                "pass_count_bounds": [
+                  112,
+                  113
+                ],
+                "pass_rate_bounds": [
+                  0.5114155251141552,
+                  0.5159817351598174
+                ],
+                "unknown": 1
+              },
+              "80": {
+                "known_fail": 118,
+                "known_pass": 100,
+                "pass_count_bounds": [
+                  100,
+                  101
+                ],
+                "pass_rate_bounds": [
+                  0.45662100456621,
+                  0.4611872146118721
+                ],
+                "unknown": 1
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 149,
+            "hits": 293,
+            "macro_mean": 0.7506391818472355,
+            "micro_mean": 0.7270471464019851,
+            "threshold_pass_counts": {
+              "100": 98,
+              "60": 112,
+              "80": 100
+            },
+            "total_facts": 403
+          },
+          "emitted_unknown": 1,
+          "emitted_unknown_by_reason": {
+            "empty_reference": 1
+          },
+          "no_artifact": 69,
+          "no_artifact_by_reason": {
+            "stage_rejected": 68,
+            "transport_failed": 1
+          }
+        },
+        "L6": {
+          "all_assigned": {
+            "known_total_facts": 701,
+            "macro_score_bounds": [
+              0.37777777777777777,
+              0.37777777777777777
+            ],
+            "micro_mean_bounds_if_denominator_complete": [
+              0.2524964336661912,
+              0.2524964336661912
+            ],
+            "missing_fact_denominators": 0,
+            "thresholds": {
+              "100": {
+                "known_fail": 142,
+                "known_pass": 77,
+                "pass_count_bounds": [
+                  77,
+                  77
+                ],
+                "pass_rate_bounds": [
+                  0.3515981735159817,
+                  0.3515981735159817
+                ],
+                "unknown": 0
+              },
+              "60": {
+                "known_fail": 135,
+                "known_pass": 84,
+                "pass_count_bounds": [
+                  84,
+                  84
+                ],
+                "pass_rate_bounds": [
+                  0.3835616438356164,
+                  0.3835616438356164
+                ],
+                "unknown": 0
+              },
+              "80": {
+                "known_fail": 141,
+                "known_pass": 78,
+                "pass_count_bounds": [
+                  78,
+                  78
+                ],
+                "pass_rate_bounds": [
+                  0.3561643835616438,
+                  0.3561643835616438
+                ],
+                "unknown": 0
+              }
+            }
+          },
+          "assigned": 219,
+          "emitted_measured": {
+            "cards": 115,
+            "hits": 177,
+            "macro_mean": 0.7194202898550724,
+            "micro_mean": 0.6755725190839694,
+            "threshold_pass_counts": {
+              "100": 77,
+              "60": 84,
+              "80": 78
+            },
+            "total_facts": 262
+          },
+          "emitted_unknown": 0,
+          "emitted_unknown_by_reason": {},
+          "no_artifact": 104,
+          "no_artifact_by_reason": {
+            "stage_rejected": 104
+          }
+        }
+      }
+    },
+    "tasks": 219
+  }
+}

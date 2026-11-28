@@ -1,0 +1,158 @@
+{
+  "both_program_backend_artifacts": 88,
+  "both_program_backend_artifacts_identical": 16,
+  "freeze_sha256": "5e26a7fafe099bb816d644efd6e34d1221b88f3325bc4e260ea363028bc41d62",
+  "identical_trees_among_paired": 22,
+  "model_tree_artifact_identical_to_either_historical_artifact_on_same_task": 19,
+  "original_seal_sha256": "130b6be7c098770a4eb300312b783f44db7e22ed945c06c01823295dc45113bc",
+  "per_case_receipt_sha256": "e70a3f6dd7725f6640bbc7814bfa07c5246919c1ed7856d55b60dec260ea9291",
+  "results": {
+    "assigned": {
+      "both_conclusive_fail": 111,
+      "both_conclusive_pass": 62,
+      "families": 200,
+      "model_tree": {
+        "frozen_semantic_and_action_contract": {
+          "unresolved": 26,
+          "verified": 62
+        },
+        "states": {
+          "geometry_rejected": 44,
+          "pass": 62,
+          "shared_rejected": 82,
+          "static_unknown": 26,
+          "structure_rejected": 3,
+          "transport_unknown": 2
+        },
+        "strict_reference_geometry_pass": 88,
+        "wire_emitted": 88
+      },
+      "obtained_pass_difference_family_ci95": [
+        0.009569377990430622,
+        0.057971014492753624
+      ],
+      "obtained_pass_difference_rate": 0.0319634703196347,
+      "one_or_more_unknown": 40,
+      "only_model_pass_other_fail": 0,
+      "only_program_pass_other_fail": 6,
+      "program_minus_model_rate_bounds": [
+        -0.0958904109589041,
+        0.2054794520547945
+      ],
+      "program_tree": {
+        "frozen_semantic_and_action_contract": {
+          "mismatch": 1,
+          "unresolved": 38,
+          "verified": 69
+        },
+        "states": {
+          "failed_check": 1,
+          "geometry_rejected": 28,
+          "pass": 69,
+          "shared_rejected": 82,
+          "static_unknown": 38,
+          "structure_rejected": 1
+        },
+        "strict_reference_geometry_pass": 108,
+        "wire_emitted": 108
+      },
+      "tasks": 219
+    },
+    "both_original_trees_accepted": {
+      "both_conclusive_fail": 28,
+      "both_conclusive_pass": 62,
+      "families": 117,
+      "model_tree": {
+        "frozen_semantic_and_action_contract": {
+          "unresolved": 26,
+          "verified": 62
+        },
+        "states": {
+          "geometry_rejected": 44,
+          "pass": 62,
+          "static_unknown": 26
+        },
+        "strict_reference_geometry_pass": 88,
+        "wire_emitted": 88
+      },
+      "obtained_pass_difference_family_ci95": [
+        0.007936507936507936,
+        0.075
+      ],
+      "obtained_pass_difference_rate": 0.03787878787878788,
+      "one_or_more_unknown": 37,
+      "only_model_pass_other_fail": 0,
+      "only_program_pass_other_fail": 5,
+      "program_minus_model_rate_bounds": [
+        -0.1590909090909091,
+        0.3181818181818182
+      ],
+      "program_tree": {
+        "frozen_semantic_and_action_contract": {
+          "mismatch": 1,
+          "unresolved": 37,
+          "verified": 67
+        },
+        "states": {
+          "failed_check": 1,
+          "geometry_rejected": 27,
+          "pass": 67,
+          "static_unknown": 37
+        },
+        "strict_reference_geometry_pass": 105,
+        "wire_emitted": 105
+      },
+      "tasks": 132
+    },
+    "shared_content_ready": {
+      "both_conclusive_fail": 29,
+      "both_conclusive_pass": 62,
+      "families": 122,
+      "model_tree": {
+        "frozen_semantic_and_action_contract": {
+          "unresolved": 26,
+          "verified": 62
+        },
+        "states": {
+          "geometry_rejected": 44,
+          "pass": 62,
+          "static_unknown": 26,
+          "structure_rejected": 3,
+          "transport_unknown": 2
+        },
+        "strict_reference_geometry_pass": 88,
+        "wire_emitted": 88
+      },
+      "obtained_pass_difference_family_ci95": [
+        0.016,
+        0.0935251798561151
+      ],
+      "obtained_pass_difference_rate": 0.051094890510948905,
+      "one_or_more_unknown": 40,
+      "only_model_pass_other_fail": 0,
+      "only_program_pass_other_fail": 6,
+      "program_minus_model_rate_bounds": [
+        -0.15328467153284672,
+        0.3284671532846715
+      ],
+      "program_tree": {
+        "frozen_semantic_and_action_contract": {
+          "mismatch": 1,
+          "unresolved": 38,
+          "verified": 69
+        },
+        "states": {
+          "failed_check": 1,
+          "geometry_rejected": 28,
+          "pass": 69,
+          "static_unknown": 38,
+          "structure_rejected": 1
+        },
+        "strict_reference_geometry_pass": 108,
+        "wire_emitted": 108
+      },
+      "tasks": 137
+    }
+  },
+  "scope": "Post-hoc common-backend replay of the November 25 fixed-content study. The model received visible units, roles, entities, relations, action owners, preferences, a canvas and a reference width table. The rules read only fields from that projection and computed needed widths with the frozen font metrics. The model could submit any accepted Row/Column tree; the fixed rules produced a tree of that grammar without enumerating a common finite menu. Both original trees kept their submitted topology and leaf IDs through the same frozen geometry, emitter, protocol, reference geometry and static source/action checks. Identical wire bytes identify candidates for same-task screenshot reuse. This replay adds no device or independent human observations. The separate 187-case experiment used different content contracts."
+}

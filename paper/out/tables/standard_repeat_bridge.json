@@ -1,0 +1,83 @@
+{
+  "anonymous_grouped_pass_counts": [
+    {
+      "cases": 2,
+      "model_passes_in_ten": 0,
+      "program_passes_in_ten": 0
+    },
+    {
+      "cases": 2,
+      "model_passes_in_ten": 0,
+      "program_passes_in_ten": 10
+    },
+    {
+      "cases": 1,
+      "model_passes_in_ten": 1,
+      "program_passes_in_ten": 0
+    },
+    {
+      "cases": 2,
+      "model_passes_in_ten": 4,
+      "program_passes_in_ten": 0
+    },
+    {
+      "cases": 1,
+      "model_passes_in_ten": 5,
+      "program_passes_in_ten": 10
+    },
+    {
+      "cases": 1,
+      "model_passes_in_ten": 6,
+      "program_passes_in_ten": 0
+    },
+    {
+      "cases": 3,
+      "model_passes_in_ten": 10,
+      "program_passes_in_ten": 10
+    }
+  ],
+  "cases": 12,
+  "cases_by_number_of_passes": {
+    "equal": 5,
+    "model_more": 4,
+    "program_more": 3
+  },
+  "device_runs": 0,
+  "historical_model_checks": 12,
+  "model_compatible_to_strict": {
+    "both": 50,
+    "compatible_only": 51,
+    "neither": 19,
+    "strict_only": 0
+  },
+  "model_nonpass_reason_mentions": {
+    "compact_font": 51,
+    "geometry": 19
+  },
+  "new_provider_calls": 0,
+  "original_model_accepted": 101,
+  "paired_confirmed_pass": {
+    "both": 35,
+    "model_only": 15,
+    "neither": 45,
+    "program_only": 25
+  },
+  "paired_repetitions": 120,
+  "scope": "Post-hoc supplementary fixed-content assay using only the frozen replies and program runs; no new calls, images or ratings. Both sides use the benchmark's original standard-font role sizes. The strict reference also enforces frame capacity, source fidelity and an unchanged common exit. The model side retains each emitted tree and its leaf order. The enhanced program uses its locked candidate enumeration. The 120 pairs are ten repetitions on each of twelve cases.",
+  "source_sha256": {
+    "benchmark": "c421c3b3cbd9b54ec21d78ab31af13b1b3e2a994d7d45ff12921f3b07c8a5aec",
+    "followup_program_rounds": "5476c41c3a27ada4094c7635815e31fad29876114adb8e8461c07a4de5750812",
+    "matched_complete": "03386f6d151a860cf1198aa81443463f85fd74844489f06fa6c7dd8a283549f8",
+    "matched_plan": "89e5882deb5615a414671d69ae4f208aea5299333bff4af834cd09a9413ce041",
+    "paired187": "67442c8bd70bb82a85b85a86d61208c801a4c5364ed1157ce9da5cb45a954651",
+    "selection": "819a5f79679ca24caa62137b8c5c9a647c94319e367e0ed7a25ed50405baf444",
+    "small": "58151ddfd06ee432e5bda663608025e77e99eba3b13788c350bd3c68deb8be6f",
+    "timed187": "cfa535dbc31f3f846f4323b6851de827285ef180e8245986b9d33d97929b47e2",
+    "wide": "fb950950ad042afb86adeb7ef590a1a3c4825c95d3f1a985fb01830d88af7824"
+  },
+  "strict_model_verdicts": {
+    "fail": 70,
+    "pass": 50
+  },
+  "strict_program_accepted": 60
+}

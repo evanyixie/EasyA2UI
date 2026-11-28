@@ -1,0 +1,16 @@
+{
+  "counts": {
+    "actions_with_entity_in_selection": 0,
+    "model_has_nested_button": 19,
+    "model_prompt_has_either_extra": 65,
+    "model_prompt_has_unselected_action": 2,
+    "model_prompt_has_unselected_path": 64,
+    "nonempty_query_in_model_prompt": 187,
+    "original_program_has_nested_button": 0,
+    "paired": 187,
+    "selected_action_cards": 101
+  },
+  "formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "paired_content_receipt_sha256": "67442c8bd70bb82a85b85a86d61208c801a4c5364ed1157ce9da5cb45a954651",
+  "scope": "Original L5 versus the original L6 router given the same accepted L5 content. Nested means a button below a non-root container. These counts establish which inputs were available and which references survived, not whether a model used the extra context or a particular grouping was appropriate."
+}

@@ -1,0 +1,2931 @@
+{
+  "coverage_count_receipt_sha256": "8d9d5e737e0d1411379345ded3bbd174a075702879b4bccfa5ed4b128b0e8377",
+  "coverage_states_by_phase": {
+    "after_common_repair": {
+      "empty_reference": 5,
+      "measured": 975,
+      "no_artifact": 330,
+      "unresolved_text": 4
+    },
+    "raw_first": {
+      "empty_reference": 5,
+      "measured": 975,
+      "no_artifact": 330,
+      "unresolved_text": 4
+    }
+  },
+  "evidence": {
+    "formal_tasks": 219,
+    "mapping_sha256": "2caa898786d4cd0512ad9ddab1d6863ee7202651dbbfca1bab3437632bb85598",
+    "reconstructed_inputs_with_reference": 2,
+    "simulated_tasks_with_reference": 0,
+    "unavailable": {},
+    "verified_a2ui_and_compact": 219
+  },
+  "formal": {
+    "cost": "Final spent tokens across all assigned seats, including failures, divided by qualified cards. The lower numerator includes fully metered seats and any known subtotals supplied for incomplete seats. Remaining unmetered cost is nonnegative and has no assumed upper bound. Conditional bounds require >=1 qualified card. No cost is defined for zero qualifying cards. No first-phase cost is estimated.",
+    "coverage_basis": "A4a only. A4b has no independently supplied must-show labels in this analysis.",
+    "phases": {
+      "after_common_repair": {
+        "L4_L5_meter_complete": {
+          "arms": {
+            "L4": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 214,
+                "missing_counts": 0
+              },
+              "assigned": 215,
+              "metering": {
+                "all_assigned_tokens": 1474317,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 1474317,
+                "known_complete_seat_tokens": 1474317,
+                "known_seats": 215,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 12084.565573770491,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 12184.438016528926,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 93,
+                  "pass": 121,
+                  "qualified_count_bounds": [
+                    121,
+                    122
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 10530.835714285715,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 10606.597122302159,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 75,
+                  "pass": 139,
+                  "qualified_count_bounds": [
+                    139,
+                    140
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 11608.795275590552,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 11700.92857142857,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 88,
+                  "pass": 126,
+                  "qualified_count_bounds": [
+                    126,
+                    127
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L5": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 214,
+                "missing_counts": 0
+              },
+              "assigned": 215,
+              "metering": {
+                "all_assigned_tokens": 936521,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 936521,
+                "known_complete_seat_tokens": 936521,
+                "known_seats": 215,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9654.855670103092,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 9755.427083333334,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 118,
+                  "pass": 96,
+                  "qualified_count_bounds": [
+                    96,
+                    97
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 8437.126126126126,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 8513.827272727272,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 104,
+                  "pass": 110,
+                  "qualified_count_bounds": [
+                    110,
+                    111
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9459.808080808081,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 9556.336734693878,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 116,
+                  "pass": 98,
+                  "qualified_count_bounds": [
+                    98,
+                    99
+                  ],
+                  "unknown": 1
+                }
+              }
+            }
+          },
+          "assigned_tasks": 215,
+          "distinct_families": 196,
+          "paired": {
+            "L4_L5": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -26,
+                  -24
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 89,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 29,
+                    "pass": 92,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -30,
+                  -28
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 71,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 33,
+                    "pass": 106,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -29,
+                  -27
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 84,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 32,
+                    "pass": 94,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "L5_L6_meter_complete": {
+          "arms": {
+            "L5": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 217,
+                "missing_counts": 0
+              },
+              "assigned": 218,
+              "metering": {
+                "all_assigned_tokens": 948575,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 948575,
+                "known_complete_seat_tokens": 948575,
+                "known_seats": 218,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9581.565656565657,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 9679.336734693878,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 119,
+                  "pass": 98,
+                  "qualified_count_bounds": [
+                    98,
+                    99
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 8394.469026548673,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 8469.419642857143,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 105,
+                  "pass": 112,
+                  "qualified_count_bounds": [
+                    112,
+                    113
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9391.831683168317,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 9485.75,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 117,
+                  "pass": 100,
+                  "qualified_count_bounds": [
+                    100,
+                    101
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L6": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 217,
+                "missing_counts": 0
+              },
+              "assigned": 218,
+              "metering": {
+                "all_assigned_tokens": 509384,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 509384,
+                "known_complete_seat_tokens": 509384,
+                "known_seats": 218,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6615.376623376624,
+                    "lower_if_positive": 6615.376623376624,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6615.376623376624,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 141,
+                  "pass": 77,
+                  "qualified_count_bounds": [
+                    77,
+                    77
+                  ],
+                  "unknown": 0
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6064.0952380952385,
+                    "lower_if_positive": 6064.0952380952385,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6064.0952380952385,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 134,
+                  "pass": 84,
+                  "qualified_count_bounds": [
+                    84,
+                    84
+                  ],
+                  "unknown": 0
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6530.5641025641025,
+                    "lower_if_positive": 6530.5641025641025,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6530.5641025641025,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 140,
+                  "pass": 78,
+                  "qualified_count_bounds": [
+                    78,
+                    78
+                  ],
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "assigned_tasks": 218,
+          "distinct_families": 199,
+          "paired": {
+            "L5_L6": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -22,
+                  -21
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 115,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 25,
+                    "pass": 73,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -29,
+                  -28
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 101,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 32,
+                    "pass": 80,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -23,
+                  -22
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 113,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 26,
+                    "pass": 74,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "all_assigned": {
+          "arms": {
+            "L1": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 214,
+                "missing_counts": 4
+              },
+              "assigned": 219,
+              "metering": {
+                "all_assigned_tokens": null,
+                "incomplete_seats_with_subtotal": 4,
+                "known_accounted_tokens": 556704,
+                "known_complete_seat_tokens": 556704,
+                "known_seats": 215,
+                "missing_or_incomplete_seats": 4,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 4453.632,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 94,
+                  "pass": 120,
+                  "qualified_count_bounds": [
+                    120,
+                    125
+                  ],
+                  "unknown": 5
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 3523.4430379746836,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 61,
+                  "pass": 153,
+                  "qualified_count_bounds": [
+                    153,
+                    158
+                  ],
+                  "unknown": 5
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 4217.454545454545,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 87,
+                  "pass": 127,
+                  "qualified_count_bounds": [
+                    127,
+                    132
+                  ],
+                  "unknown": 5
+                }
+              }
+            },
+            "L2": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "metering": {
+                "all_assigned_tokens": null,
+                "incomplete_seats_with_subtotal": 3,
+                "known_accounted_tokens": 2634111,
+                "known_complete_seat_tokens": 2616226,
+                "known_seats": 216,
+                "missing_or_incomplete_seats": 3,
+                "reported_subtotals_on_incomplete_seats": 17885
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 24389.916666666668,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 111,
+                  "pass": 107,
+                  "qualified_count_bounds": [
+                    107,
+                    108
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 21415.536585365855,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 96,
+                  "pass": 122,
+                  "qualified_count_bounds": [
+                    122,
+                    123
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 24166.155963302754,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 110,
+                  "pass": 108,
+                  "qualified_count_bounds": [
+                    108,
+                    109
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L3": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "metering": {
+                "all_assigned_tokens": null,
+                "incomplete_seats_with_subtotal": 5,
+                "known_accounted_tokens": 2075670,
+                "known_complete_seat_tokens": 2057013,
+                "known_seats": 214,
+                "missing_or_incomplete_seats": 5,
+                "reported_subtotals_on_incomplete_seats": 18657
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 19219.166666666668,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 111,
+                  "pass": 107,
+                  "qualified_count_bounds": [
+                    107,
+                    108
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 17154.297520661155,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 98,
+                  "pass": 120,
+                  "qualified_count_bounds": [
+                    120,
+                    121
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 18532.76785714286,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 107,
+                  "pass": 111,
+                  "qualified_count_bounds": [
+                    111,
+                    112
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L4": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "metering": {
+                "all_assigned_tokens": null,
+                "incomplete_seats_with_subtotal": 3,
+                "known_accounted_tokens": 1490981,
+                "known_complete_seat_tokens": 1480867,
+                "known_seats": 216,
+                "missing_or_incomplete_seats": 3,
+                "reported_subtotals_on_incomplete_seats": 10114
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 12221.155737704918,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 97,
+                  "pass": 121,
+                  "qualified_count_bounds": [
+                    121,
+                    122
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 10649.864285714286,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 79,
+                  "pass": 139,
+                  "qualified_count_bounds": [
+                    139,
+                    140
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 11740.007874015748,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 92,
+                  "pass": 126,
+                  "qualified_count_bounds": [
+                    126,
+                    127
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L5": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "metering": {
+                "all_assigned_tokens": null,
+                "incomplete_seats_with_subtotal": 1,
+                "known_accounted_tokens": 948575,
+                "known_complete_seat_tokens": 948575,
+                "known_seats": 218,
+                "missing_or_incomplete_seats": 1,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9581.565656565657,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 120,
+                  "pass": 98,
+                  "qualified_count_bounds": [
+                    98,
+                    99
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 8394.469026548673,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 106,
+                  "pass": 112,
+                  "qualified_count_bounds": [
+                    112,
+                    113
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9391.831683168317,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": null,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 118,
+                  "pass": 100,
+                  "qualified_count_bounds": [
+                    100,
+                    101
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L6": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "metering": {
+                "all_assigned_tokens": 511433,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 511433,
+                "known_complete_seat_tokens": 511433,
+                "known_seats": 219,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6641.987012987013,
+                    "lower_if_positive": 6641.987012987013,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6641.987012987013,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 142,
+                  "pass": 77,
+                  "qualified_count_bounds": [
+                    77,
+                    77
+                  ],
+                  "unknown": 0
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6088.488095238095,
+                    "lower_if_positive": 6088.488095238095,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6088.488095238095,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 135,
+                  "pass": 84,
+                  "qualified_count_bounds": [
+                    84,
+                    84
+                  ],
+                  "unknown": 0
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6556.833333333333,
+                    "lower_if_positive": 6556.833333333333,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6556.833333333333,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 141,
+                  "pass": 78,
+                  "qualified_count_bounds": [
+                    78,
+                    78
+                  ],
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "assigned_tasks": 219,
+          "distinct_families": 200,
+          "paired": {
+            "L4_L5": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -24,
+                  -22
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 91,
+                    "pass": 6,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 29,
+                    "pass": 92,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -28,
+                  -26
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 73,
+                    "pass": 6,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 33,
+                    "pass": 106,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -27,
+                  -25
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 86,
+                    "pass": 6,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 32,
+                    "pass": 94,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              }
+            },
+            "L5_L6": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -22,
+                  -21
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 116,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 25,
+                    "pass": 73,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -29,
+                  -28
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 102,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 32,
+                    "pass": 80,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -23,
+                  -22
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 114,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 26,
+                    "pass": 74,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "six_arm_meter_complete": {
+          "arms": {
+            "L1": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 198,
+                "missing_counts": 4
+              },
+              "assigned": 203,
+              "metering": {
+                "all_assigned_tokens": 526677,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 526677,
+                "known_complete_seat_tokens": 526677,
+                "known_seats": 203,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 4463.364406779661,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 4660.858407079646,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 85,
+                  "pass": 113,
+                  "qualified_count_bounds": [
+                    113,
+                    118
+                  ],
+                  "unknown": 5
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 3511.18,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 3632.255172413793,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 53,
+                  "pass": 145,
+                  "qualified_count_bounds": [
+                    145,
+                    150
+                  ],
+                  "unknown": 5
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 4213.416,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 4388.975,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 78,
+                  "pass": 120,
+                  "qualified_count_bounds": [
+                    120,
+                    125
+                  ],
+                  "unknown": 5
+                }
+              }
+            },
+            "L2": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 202,
+                "missing_counts": 0
+              },
+              "assigned": 203,
+              "metering": {
+                "all_assigned_tokens": 2446512,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 2446512,
+                "known_complete_seat_tokens": 2446512,
+                "known_seats": 203,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 24222.89108910891,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 24465.12,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 102,
+                  "pass": 100,
+                  "qualified_count_bounds": [
+                    100,
+                    101
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 21090.620689655174,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 21274.017391304347,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 87,
+                  "pass": 115,
+                  "qualified_count_bounds": [
+                    115,
+                    116
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 23985.41176470588,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 24222.89108910891,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 101,
+                  "pass": 101,
+                  "qualified_count_bounds": [
+                    101,
+                    102
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L3": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 202,
+                "missing_counts": 0
+              },
+              "assigned": 203,
+              "metering": {
+                "all_assigned_tokens": 1944201,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 1944201,
+                "known_complete_seat_tokens": 1944201,
+                "known_seats": 203,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 19060.79411764706,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 19249.51485148515,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 101,
+                  "pass": 101,
+                  "qualified_count_bounds": [
+                    101,
+                    102
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 16906.095652173914,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 17054.394736842107,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 88,
+                  "pass": 114,
+                  "qualified_count_bounds": [
+                    114,
+                    115
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 18341.51886792453,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 18516.2,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 97,
+                  "pass": 105,
+                  "qualified_count_bounds": [
+                    105,
+                    106
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L4": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 202,
+                "missing_counts": 0
+              },
+              "assigned": 203,
+              "metering": {
+                "all_assigned_tokens": 1379093,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 1379093,
+                "known_complete_seat_tokens": 1379093,
+                "known_seats": 203,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 12204.362831858407,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 12313.330357142857,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 90,
+                  "pass": 112,
+                  "qualified_count_bounds": [
+                    112,
+                    113
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 10527.42748091603,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 10608.407692307692,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 72,
+                  "pass": 130,
+                  "qualified_count_bounds": [
+                    130,
+                    131
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 11687.228813559323,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 11787.119658119658,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 85,
+                  "pass": 117,
+                  "qualified_count_bounds": [
+                    117,
+                    118
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L5": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 202,
+                "missing_counts": 0
+              },
+              "assigned": 203,
+              "metering": {
+                "all_assigned_tokens": 883260,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 883260,
+                "known_complete_seat_tokens": 883260,
+                "known_seats": 203,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9706.153846153846,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 9814.0,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 112,
+                  "pass": 90,
+                  "qualified_count_bounds": [
+                    90,
+                    91
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 8412.0,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 8492.884615384615,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 98,
+                  "pass": 104,
+                  "qualified_count_bounds": [
+                    104,
+                    105
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": null,
+                    "lower_if_positive": 9497.41935483871,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 9600.652173913044,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 110,
+                  "pass": 92,
+                  "qualified_count_bounds": [
+                    92,
+                    93
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L6": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 202,
+                "missing_counts": 0
+              },
+              "assigned": 203,
+              "metering": {
+                "all_assigned_tokens": 474638,
+                "incomplete_seats_with_subtotal": 0,
+                "known_accounted_tokens": 474638,
+                "known_complete_seat_tokens": 474638,
+                "known_seats": 203,
+                "missing_or_incomplete_seats": 0,
+                "reported_subtotals_on_incomplete_seats": 0
+              },
+              "thresholds": {
+                "100": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6592.194444444444,
+                    "lower_if_positive": 6592.194444444444,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6592.194444444444,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 131,
+                  "pass": 72,
+                  "qualified_count_bounds": [
+                    72,
+                    72
+                  ],
+                  "unknown": 0
+                },
+                "60": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6008.0759493670885,
+                    "lower_if_positive": 6008.0759493670885,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6008.0759493670885,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 124,
+                  "pass": 79,
+                  "qualified_count_bounds": [
+                    79,
+                    79
+                  ],
+                  "unknown": 0
+                },
+                "80": {
+                  "b4_tokens": {
+                    "exact_tokens_per_qualified": 6501.890410958904,
+                    "lower_if_positive": 6501.890410958904,
+                    "positive_qualified_possible": true,
+                    "upper_if_positive": 6501.890410958904,
+                    "zero_qualified_possible": false
+                  },
+                  "fail": 130,
+                  "pass": 73,
+                  "qualified_count_bounds": [
+                    73,
+                    73
+                  ],
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "assigned_tasks": 203,
+          "distinct_families": 184,
+          "paired": {
+            "L4_L5": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -23,
+                  -21
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 87,
+                    "pass": 3,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 25,
+                    "pass": 87,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -27,
+                  -25
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 69,
+                    "pass": 3,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 29,
+                    "pass": 101,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -26,
+                  -24
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 82,
+                    "pass": 3,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 28,
+                    "pass": 89,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              }
+            },
+            "L5_L6": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -19,
+                  -18
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 108,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 22,
+                    "pass": 68,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -26,
+                  -25
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 94,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 29,
+                    "pass": 75,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -20,
+                  -19
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 106,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 23,
+                    "pass": 69,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "raw_first": {
+        "all_assigned": {
+          "arms": {
+            "L1": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 214,
+                "missing_counts": 4
+              },
+              "assigned": 219,
+              "thresholds": {
+                "100": {
+                  "fail": 94,
+                  "pass": 120,
+                  "qualified_count_bounds": [
+                    120,
+                    125
+                  ],
+                  "unknown": 5
+                },
+                "60": {
+                  "fail": 61,
+                  "pass": 153,
+                  "qualified_count_bounds": [
+                    153,
+                    158
+                  ],
+                  "unknown": 5
+                },
+                "80": {
+                  "fail": 87,
+                  "pass": 127,
+                  "qualified_count_bounds": [
+                    127,
+                    132
+                  ],
+                  "unknown": 5
+                }
+              }
+            },
+            "L2": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "thresholds": {
+                "100": {
+                  "fail": 111,
+                  "pass": 107,
+                  "qualified_count_bounds": [
+                    107,
+                    108
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "fail": 96,
+                  "pass": 122,
+                  "qualified_count_bounds": [
+                    122,
+                    123
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "fail": 110,
+                  "pass": 108,
+                  "qualified_count_bounds": [
+                    108,
+                    109
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L3": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "thresholds": {
+                "100": {
+                  "fail": 111,
+                  "pass": 107,
+                  "qualified_count_bounds": [
+                    107,
+                    108
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "fail": 98,
+                  "pass": 120,
+                  "qualified_count_bounds": [
+                    120,
+                    121
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "fail": 107,
+                  "pass": 111,
+                  "qualified_count_bounds": [
+                    111,
+                    112
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L4": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "thresholds": {
+                "100": {
+                  "fail": 97,
+                  "pass": 121,
+                  "qualified_count_bounds": [
+                    121,
+                    122
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "fail": 79,
+                  "pass": 139,
+                  "qualified_count_bounds": [
+                    139,
+                    140
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "fail": 92,
+                  "pass": 126,
+                  "qualified_count_bounds": [
+                    126,
+                    127
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L5": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "thresholds": {
+                "100": {
+                  "fail": 120,
+                  "pass": 98,
+                  "qualified_count_bounds": [
+                    98,
+                    99
+                  ],
+                  "unknown": 1
+                },
+                "60": {
+                  "fail": 106,
+                  "pass": 112,
+                  "qualified_count_bounds": [
+                    112,
+                    113
+                  ],
+                  "unknown": 1
+                },
+                "80": {
+                  "fail": 118,
+                  "pass": 100,
+                  "qualified_count_bounds": [
+                    100,
+                    101
+                  ],
+                  "unknown": 1
+                }
+              }
+            },
+            "L6": {
+              "a4a": {
+                "empty_reference": 1,
+                "known_fraction": 218,
+                "missing_counts": 0
+              },
+              "assigned": 219,
+              "thresholds": {
+                "100": {
+                  "fail": 142,
+                  "pass": 77,
+                  "qualified_count_bounds": [
+                    77,
+                    77
+                  ],
+                  "unknown": 0
+                },
+                "60": {
+                  "fail": 135,
+                  "pass": 84,
+                  "qualified_count_bounds": [
+                    84,
+                    84
+                  ],
+                  "unknown": 0
+                },
+                "80": {
+                  "fail": 141,
+                  "pass": 78,
+                  "qualified_count_bounds": [
+                    78,
+                    78
+                  ],
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "assigned_tasks": 219,
+          "distinct_families": 200,
+          "paired": {
+            "L4_L5": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -24,
+                  -22
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 91,
+                    "pass": 6,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 29,
+                    "pass": 92,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -28,
+                  -26
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 73,
+                    "pass": 6,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 33,
+                    "pass": 106,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -27,
+                  -25
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 86,
+                    "pass": 6,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 32,
+                    "pass": 94,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 0,
+                    "pass": 0,
+                    "unknown": 1
+                  }
+                }
+              }
+            },
+            "L5_L6": {
+              "100": {
+                "right_minus_left_qualified_count_bounds": [
+                  -22,
+                  -21
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 116,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 25,
+                    "pass": 73,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "60": {
+                "right_minus_left_qualified_count_bounds": [
+                  -29,
+                  -28
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 102,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 32,
+                    "pass": 80,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              },
+              "80": {
+                "right_minus_left_qualified_count_bounds": [
+                  -23,
+                  -22
+                ],
+                "rows_left_columns_right": {
+                  "fail": {
+                    "fail": 114,
+                    "pass": 4,
+                    "unknown": 0
+                  },
+                  "pass": {
+                    "fail": 26,
+                    "pass": 74,
+                    "unknown": 0
+                  },
+                  "unknown": {
+                    "fail": 1,
+                    "pass": 0,
+                    "unknown": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "primary_threshold_percent": 80,
+    "qualification": "Protocol passes AND measured geometry passes AND A4a hits / reference count reaches threshold. Empty references and missing counts make coverage unknown. A known failed condition settles a failure."
+  },
+  "inputs": {
+    "after_common_repair": {
+      "absence_reason": {
+        "stage_rejected": 314,
+        "transport_failed": 16
+      },
+      "geometry_evidence": {
+        "measured": 980,
+        "no_artifact": 330,
+        "unsupported": 4
+      },
+      "protocol_evidence": {
+        "empty_violations": 984,
+        "no_artifact": 330
+      },
+      "token_meter_complete_seats": 1298,
+      "violation_occurrences_by_code": {}
+    },
+    "raw_first": {
+      "absence_reason": {
+        "stage_rejected": 314,
+        "transport_failed": 16
+      },
+      "geometry_evidence": {
+        "measured": 980,
+        "no_artifact": 330,
+        "unsupported": 4
+      },
+      "protocol_evidence": {
+        "empty_violations": 984,
+        "no_artifact": 330
+      },
+      "token_meter_complete_seats": 0,
+      "violation_occurrences_by_code": {}
+    }
+  },
+  "method": "Historical A4a unique reference-data values, matched against resolved Text content in component order with the original value matcher. Button labels are outside this metric. Composition requires protocol pass, reference value coverage at threshold, and no Text node over four CSS px. Main coverage threshold 80%, sensitivity 60% and 100%. Independent must-show A4b and business delivery are not scored.",
+  "reference_control": {
+    "cases": 219,
+    "fact_instances_across_tasks": 701,
+    "positive_reference_fact_counts": {
+      "1": 49,
+      "10": 2,
+      "13": 1,
+      "2": 33,
+      "3": 59,
+      "4": 31,
+      "5": 20,
+      "6": 12,
+      "7": 8,
+      "8": 3
+    },
+    "reference_against_own_text": {
+      "measured": 203,
+      "passing": {
+        "100": 183,
+        "60": 197,
+        "80": 189
+      },
+      "states": {
+        "empty_reference": 1,
+        "measured": 203,
+        "unresolved_text": 15
+      },
+      "unassessed": 16
+    },
+    "reference_states": {
+      "empty_reference": 1,
+      "facts_extracted": 218
+    },
+    "same_value_any_candidate": 545,
+    "same_value_same_path": 545,
+    "tasks_all_values_at_same_paths": 156,
+    "tasks_no_value_at_same_path": 32
+  },
+  "sensitivity_final": {
+    "all_reference_values_in_registered_samples_at_same_paths": {
+      "arms": {
+        "L1": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 3242.1147540983607,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 34,
+            "pass": 119,
+            "qualified_count_bounds": [
+              119,
+              122
+            ],
+            "unknown": 3
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 2727.848275862069,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 11,
+            "pass": 142,
+            "qualified_count_bounds": [
+              142,
+              145
+            ],
+            "unknown": 3
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 3114.472440944882,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 29,
+            "pass": 124,
+            "qualified_count_bounds": [
+              124,
+              127
+            ],
+            "unknown": 3
+          }
+        },
+        "L2": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 18394.0,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 50,
+            "pass": 106,
+            "qualified_count_bounds": [
+              106,
+              106
+            ],
+            "unknown": 0
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 16664.649572649574,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 39,
+            "pass": 117,
+            "qualified_count_bounds": [
+              117,
+              117
+            ],
+            "unknown": 0
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 18394.0,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 50,
+            "pass": 106,
+            "qualified_count_bounds": [
+              106,
+              106
+            ],
+            "unknown": 0
+          }
+        },
+        "L3": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 14515.047619047618,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 51,
+            "pass": 105,
+            "qualified_count_bounds": [
+              105,
+              105
+            ],
+            "unknown": 0
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 13369.122807017544,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 42,
+            "pass": 114,
+            "qualified_count_bounds": [
+              114,
+              114
+            ],
+            "unknown": 0
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 14243.73831775701,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 49,
+            "pass": 107,
+            "qualified_count_bounds": [
+              107,
+              107
+            ],
+            "unknown": 0
+          }
+        },
+        "L4": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 9173.85,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 36,
+            "pass": 120,
+            "qualified_count_bounds": [
+              120,
+              120
+            ],
+            "unknown": 0
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 8277.157894736842,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 23,
+            "pass": 133,
+            "qualified_count_bounds": [
+              133,
+              133
+            ],
+            "unknown": 0
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 9023.459016393443,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 34,
+            "pass": 122,
+            "qualified_count_bounds": [
+              122,
+              122
+            ],
+            "unknown": 0
+          }
+        },
+        "L5": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 7186.587628865979,
+              "lower_if_positive": 7186.587628865979,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 7186.587628865979,
+              "zero_qualified_possible": false
+            },
+            "fail": 59,
+            "pass": 97,
+            "qualified_count_bounds": [
+              97,
+              97
+            ],
+            "unknown": 0
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 6395.40366972477,
+              "lower_if_positive": 6395.40366972477,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 6395.40366972477,
+              "zero_qualified_possible": false
+            },
+            "fail": 47,
+            "pass": 109,
+            "qualified_count_bounds": [
+              109,
+              109
+            ],
+            "unknown": 0
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 7113.255102040816,
+              "lower_if_positive": 7113.255102040816,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 7113.255102040816,
+              "zero_qualified_possible": false
+            },
+            "fail": 58,
+            "pass": 98,
+            "qualified_count_bounds": [
+              98,
+              98
+            ],
+            "unknown": 0
+          }
+        },
+        "L6": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 4879.413333333333,
+              "lower_if_positive": 4879.413333333333,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 4879.413333333333,
+              "zero_qualified_possible": false
+            },
+            "fail": 81,
+            "pass": 75,
+            "qualified_count_bounds": [
+              75,
+              75
+            ],
+            "unknown": 0
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 4517.975308641975,
+              "lower_if_positive": 4517.975308641975,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 4517.975308641975,
+              "zero_qualified_possible": false
+            },
+            "fail": 75,
+            "pass": 81,
+            "qualified_count_bounds": [
+              81,
+              81
+            ],
+            "unknown": 0
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 4879.413333333333,
+              "lower_if_positive": 4879.413333333333,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 4879.413333333333,
+              "zero_qualified_possible": false
+            },
+            "fail": 81,
+            "pass": 75,
+            "qualified_count_bounds": [
+              75,
+              75
+            ],
+            "unknown": 0
+          }
+        }
+      },
+      "tasks": 156
+    },
+    "excluding_reconstructed_inputs": {
+      "arms": {
+        "L1": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 4423.814516129032,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 93,
+            "pass": 119,
+            "qualified_count_bounds": [
+              119,
+              124
+            ],
+            "unknown": 5
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 3516.3653846153848,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 61,
+            "pass": 151,
+            "qualified_count_bounds": [
+              151,
+              156
+            ],
+            "unknown": 5
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 4219.638461538461,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 87,
+            "pass": 125,
+            "qualified_count_bounds": [
+              125,
+              130
+            ],
+            "unknown": 5
+          }
+        },
+        "L2": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 24286.654205607476,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 110,
+            "pass": 106,
+            "qualified_count_bounds": [
+              106,
+              107
+            ],
+            "unknown": 1
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 21300.590163934427,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 95,
+            "pass": 121,
+            "qualified_count_bounds": [
+              121,
+              122
+            ],
+            "unknown": 1
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 24061.777777777777,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 109,
+            "pass": 107,
+            "qualified_count_bounds": [
+              107,
+              108
+            ],
+            "unknown": 1
+          }
+        },
+        "L3": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 19113.58878504673,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 110,
+            "pass": 106,
+            "qualified_count_bounds": [
+              106,
+              107
+            ],
+            "unknown": 1
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 17042.95,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 97,
+            "pass": 119,
+            "qualified_count_bounds": [
+              119,
+              120
+            ],
+            "unknown": 1
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 18424.81081081081,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 106,
+            "pass": 110,
+            "qualified_count_bounds": [
+              110,
+              111
+            ],
+            "unknown": 1
+          }
+        },
+        "L4": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 12141.537190082645,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 96,
+            "pass": 120,
+            "qualified_count_bounds": [
+              120,
+              121
+            ],
+            "unknown": 1
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 10645.840579710144,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 79,
+            "pass": 137,
+            "qualified_count_bounds": [
+              137,
+              138
+            ],
+            "unknown": 1
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 11659.730158730159,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 91,
+            "pass": 125,
+            "qualified_count_bounds": [
+              125,
+              126
+            ],
+            "unknown": 1
+          }
+        },
+        "L5": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 9539.397959183674,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 119,
+            "pass": 97,
+            "qualified_count_bounds": [
+              97,
+              98
+            ],
+            "unknown": 1
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 8422.17117117117,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 106,
+            "pass": 110,
+            "qualified_count_bounds": [
+              110,
+              111
+            ],
+            "unknown": 1
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 9348.61,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 117,
+            "pass": 99,
+            "qualified_count_bounds": [
+              99,
+              100
+            ],
+            "unknown": 1
+          }
+        },
+        "L6": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 6640.144736842105,
+              "lower_if_positive": 6640.144736842105,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 6640.144736842105,
+              "zero_qualified_possible": false
+            },
+            "fail": 141,
+            "pass": 76,
+            "qualified_count_bounds": [
+              76,
+              76
+            ],
+            "unknown": 0
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 6154.280487804878,
+              "lower_if_positive": 6154.280487804878,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 6154.280487804878,
+              "zero_qualified_possible": false
+            },
+            "fail": 135,
+            "pass": 82,
+            "qualified_count_bounds": [
+              82,
+              82
+            ],
+            "unknown": 0
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 6553.909090909091,
+              "lower_if_positive": 6553.909090909091,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 6553.909090909091,
+              "zero_qualified_possible": false
+            },
+            "fail": 140,
+            "pass": 77,
+            "qualified_count_bounds": [
+              77,
+              77
+            ],
+            "unknown": 0
+          }
+        }
+      },
+      "tasks": 217
+    },
+    "transport_failure_treated_as_unobserved": {
+      "arms": {
+        "L1": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 4315.53488372093,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 90,
+            "pass": 120,
+            "qualified_count_bounds": [
+              120,
+              129
+            ],
+            "unknown": 9
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 3436.4444444444443,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 57,
+            "pass": 153,
+            "qualified_count_bounds": [
+              153,
+              162
+            ],
+            "unknown": 9
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 4093.4117647058824,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 83,
+            "pass": 127,
+            "qualified_count_bounds": [
+              127,
+              136
+            ],
+            "unknown": 9
+          }
+        },
+        "L2": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 23730.72972972973,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 108,
+            "pass": 107,
+            "qualified_count_bounds": [
+              107,
+              111
+            ],
+            "unknown": 4
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 20905.64285714286,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 93,
+            "pass": 122,
+            "qualified_count_bounds": [
+              122,
+              126
+            ],
+            "unknown": 4
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 23518.848214285714,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 107,
+            "pass": 108,
+            "qualified_count_bounds": [
+              108,
+              112
+            ],
+            "unknown": 4
+          }
+        },
+        "L3": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 18368.7610619469,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 106,
+            "pass": 107,
+            "qualified_count_bounds": [
+              107,
+              113
+            ],
+            "unknown": 6
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 16473.571428571428,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 93,
+            "pass": 120,
+            "qualified_count_bounds": [
+              120,
+              126
+            ],
+            "unknown": 6
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 17740.76923076923,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 102,
+            "pass": 111,
+            "qualified_count_bounds": [
+              111,
+              117
+            ],
+            "unknown": 6
+          }
+        },
+        "L4": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 11927.848,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 94,
+            "pass": 121,
+            "qualified_count_bounds": [
+              121,
+              125
+            ],
+            "unknown": 4
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 10426.44055944056,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 76,
+            "pass": 139,
+            "qualified_count_bounds": [
+              139,
+              143
+            ],
+            "unknown": 4
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 11469.084615384616,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 89,
+            "pass": 126,
+            "qualified_count_bounds": [
+              126,
+              130
+            ],
+            "unknown": 4
+          }
+        },
+        "L5": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 9485.75,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 119,
+            "pass": 98,
+            "qualified_count_bounds": [
+              98,
+              100
+            ],
+            "unknown": 2
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 8320.833333333334,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 105,
+            "pass": 112,
+            "qualified_count_bounds": [
+              112,
+              114
+            ],
+            "unknown": 2
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": null,
+              "lower_if_positive": 9299.754901960785,
+              "positive_qualified_possible": true,
+              "upper_if_positive": null,
+              "zero_qualified_possible": false
+            },
+            "fail": 117,
+            "pass": 100,
+            "qualified_count_bounds": [
+              100,
+              102
+            ],
+            "unknown": 2
+          }
+        },
+        "L6": {
+          "100": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 6641.987012987013,
+              "lower_if_positive": 6641.987012987013,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 6641.987012987013,
+              "zero_qualified_possible": false
+            },
+            "fail": 142,
+            "pass": 77,
+            "qualified_count_bounds": [
+              77,
+              77
+            ],
+            "unknown": 0
+          },
+          "60": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 6088.488095238095,
+              "lower_if_positive": 6088.488095238095,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 6088.488095238095,
+              "zero_qualified_possible": false
+            },
+            "fail": 135,
+            "pass": 84,
+            "qualified_count_bounds": [
+              84,
+              84
+            ],
+            "unknown": 0
+          },
+          "80": {
+            "b4_tokens": {
+              "exact_tokens_per_qualified": 6556.833333333333,
+              "lower_if_positive": 6556.833333333333,
+              "positive_qualified_possible": true,
+              "upper_if_positive": 6556.833333333333,
+              "zero_qualified_possible": false
+            },
+            "fail": 141,
+            "pass": 78,
+            "qualified_count_bounds": [
+              78,
+              78
+            ],
+            "unknown": 0
+          }
+        }
+      },
+      "tasks": 219
+    }
+  }
+}

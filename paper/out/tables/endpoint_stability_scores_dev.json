@@ -1,0 +1,1406 @@
+{
+  "schema": "endpoint-stability-scores-v1",
+  "cohort": "development",
+  "plan_sha256": "ae76d40791882ff821418622ee2f50fd7a13ee4fb4d67388e75fed31003ed5f5",
+  "tasks": 2,
+  "assigned_seats": 120,
+  "terminal_statuses": {
+    "accepted": 47,
+    "geometry_unknown": 2,
+    "geometry_unresolved": 41,
+    "stage_rejected": 30
+  },
+  "stage_receipts": 307,
+  "distinct_http200_reply_ids": 307,
+  "verified_source_files_and_registry_entries": 2,
+  "verified_runner_entrypoint_file": false,
+  "interpretation": {
+    "content": "Accepted content-stage product only. Item count excludes separately listed actions. All six semantic fields are structurally unobservable in L1. No inferred theme, type or hint. An empty item list supports count zero only.",
+    "first_final": "Artifact bytes regardless of geometry. Raw bytes include surface IDs. Masked bytes replace only top-level operation surfaceId value tokens.",
+    "accepted_final": "Ten technically accepted final artifacts required. Geometry unknown remains unknown.",
+    "bounds": "Bounds over assigned tasks per arm. A known nonproduction or observed unequal pair disproves ten identical products; missing-only draws cannot establish equality.",
+    "inference": "Wilson only for complete binary outcomes in twelve formal tasks; descriptive, without adjustment for stratification. Development counts describe two tasks only."
+  },
+  "arms": {
+    "L1": {
+      "content.domain": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.size": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.theme": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.item_count": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.item_types": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.typed_hints": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "first.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "first.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          7,
+          11,
+          2
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          7,
+          11,
+          2
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      }
+    },
+    "L2": {
+      "content.domain": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.size": {
+        "tasks_yes_no_unknown": [
+          2,
+          0,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          1.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.theme": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.item_count": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.item_types": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.typed_hints": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "first.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          15,
+          5,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "first.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          15,
+          5,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          15,
+          5,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          15,
+          5,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          7,
+          13,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          7,
+          13,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      }
+    },
+    "L3": {
+      "content.domain": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          18,
+          0,
+          2
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.size": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          18,
+          0,
+          2
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.theme": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.item_count": {
+        "tasks_yes_no_unknown": [
+          0,
+          1,
+          1
+        ],
+        "tasks_decidable": 1,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          18,
+          0,
+          2
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.item_types": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.typed_hints": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "first.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          14,
+          6,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "first.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          14,
+          6,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          14,
+          6,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          14,
+          6,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          5,
+          15,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          5,
+          15,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      }
+    },
+    "L4": {
+      "content.domain": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "content.size": {
+        "tasks_yes_no_unknown": [
+          2,
+          0,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          1.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.theme": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.item_count": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.item_types": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.typed_hints": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "first.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "first.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          1,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          5,
+          15,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          5,
+          15,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      }
+    },
+    "L5": {
+      "content.domain": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.size": {
+        "tasks_yes_no_unknown": [
+          2,
+          0,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          1.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.theme": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.item_count": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 2,
+        "draws_observed_absent_unknown": [
+          20,
+          0,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.item_types": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.typed_hints": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "first.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          13,
+          7,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "first.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          13,
+          7,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          13,
+          7,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          13,
+          7,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          13,
+          7,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      },
+      "accepted_final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          0,
+          2,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          13,
+          7,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.0
+        ],
+        "wilson95": null
+      }
+    },
+    "L6": {
+      "content.domain": {
+        "tasks_yes_no_unknown": [
+          0,
+          1,
+          1
+        ],
+        "tasks_decidable": 1,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          0,
+          1
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.size": {
+        "tasks_yes_no_unknown": [
+          1,
+          0,
+          1
+        ],
+        "tasks_decidable": 1,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          0,
+          1
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.theme": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.item_count": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          19,
+          0,
+          1
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "content.item_types": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "content.typed_hints": {
+        "tasks_yes_no_unknown": [
+          0,
+          0,
+          2
+        ],
+        "tasks_decidable": 0,
+        "tasks_all_ten_observable": 0,
+        "draws_observed_absent_unknown": [
+          0,
+          0,
+          20
+        ],
+        "assigned_rate_bounds": [
+          0.0,
+          1.0
+        ],
+        "wilson95": null
+      },
+      "first.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          10,
+          10,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "first.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          10,
+          10,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          10,
+          10,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          10,
+          10,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "accepted_final.raw_bytes": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          10,
+          10,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      },
+      "accepted_final.surface_masked_bytes": {
+        "tasks_yes_no_unknown": [
+          1,
+          1,
+          0
+        ],
+        "tasks_decidable": 2,
+        "tasks_all_ten_observable": 1,
+        "draws_observed_absent_unknown": [
+          10,
+          10,
+          0
+        ],
+        "assigned_rate_bounds": [
+          0.5,
+          0.5
+        ],
+        "wilson95": null
+      }
+    }
+  }
+}

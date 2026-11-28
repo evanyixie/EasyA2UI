@@ -1,0 +1,220 @@
+{
+  "assignment": "SS/CS/SC/CC are actually tried on each draw. Standard roles use the frozen 20/14/12fp rules, compact 16/12/12fp; root padding and child gap are respectively 10/4vp or 8/2vp. All four cells retain text, actions, tree, order, reference fonts, measurement and width allocation.",
+  "calibration": {
+    "archived_accepted_exit": 101,
+    "archived_completed_geometry": 101,
+    "archived_geometry_or_capacity_rejection_reproduced": 120,
+    "archived_strict_policy_pass": 50
+  },
+  "geometric_feasibility": {
+    "bit_order": [
+      "SS",
+      "CS",
+      "SC",
+      "CC"
+    ],
+    "cases_by_fit_count_in_cell_order": [
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          0,
+          9,
+          0,
+          9
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          0,
+          10,
+          0,
+          10
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          0,
+          10,
+          10,
+          10
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          1,
+          1,
+          1,
+          5
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          4,
+          6,
+          6,
+          7
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          4,
+          9,
+          9,
+          9
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          5,
+          10,
+          10,
+          10
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          6,
+          10,
+          10,
+          10
+        ],
+        "tasks": 1
+      },
+      {
+        "counts": [
+          10,
+          10,
+          10,
+          10
+        ],
+        "tasks": 3
+      }
+    ],
+    "cells": {
+      "CC": {
+        "equal_task_weight_rate": 0.8416666666666667,
+        "fit": 101
+      },
+      "CS": {
+        "equal_task_weight_rate": 0.7916666666666666,
+        "fit": 95
+      },
+      "SC": {
+        "equal_task_weight_rate": 0.6333333333333333,
+        "fit": 76
+      },
+      "SS": {
+        "equal_task_weight_rate": 0.4166666666666667,
+        "fit": 50
+      }
+    },
+    "conditional_differences": {
+      "compact_font_at_compact_spacing": {
+        "equal_task_weight_difference": 0.20833333333333334,
+        "gained_draws": 25,
+        "higher_tasks": 5,
+        "lost_draws": 0,
+        "lower_tasks": 0,
+        "tied_draws": 95,
+        "tied_tasks": 7
+      },
+      "compact_font_at_standard_spacing": {
+        "equal_task_weight_difference": 0.375,
+        "gained_draws": 45,
+        "higher_tasks": 7,
+        "lost_draws": 0,
+        "lower_tasks": 0,
+        "tied_draws": 75,
+        "tied_tasks": 5
+      },
+      "compact_spacing_at_compact_font": {
+        "equal_task_weight_difference": 0.05,
+        "gained_draws": 6,
+        "higher_tasks": 3,
+        "lost_draws": 0,
+        "lower_tasks": 0,
+        "tied_draws": 114,
+        "tied_tasks": 9
+      },
+      "compact_spacing_at_standard_font": {
+        "equal_task_weight_difference": 0.21666666666666667,
+        "gained_draws": 26,
+        "higher_tasks": 5,
+        "lost_draws": 0,
+        "lower_tasks": 0,
+        "tied_draws": 94,
+        "tied_tasks": 7
+      }
+    },
+    "draw_fit_pattern_counts": {
+      "0000": 19,
+      "0001": 6,
+      "0101": 19,
+      "0111": 26,
+      "1111": 50
+    },
+    "draws": 120,
+    "interaction_equal_task_weight": -0.16666666666666666,
+    "tasks": 12
+  },
+  "geometry_vs_historical_policy": [
+    {
+      "compact_geometry_fit": false,
+      "draws": 19,
+      "historical_exit_accepted": false,
+      "historical_strict_pass": false,
+      "standard_geometry_fit": false
+    },
+    {
+      "compact_geometry_fit": true,
+      "draws": 51,
+      "historical_exit_accepted": true,
+      "historical_strict_pass": false,
+      "standard_geometry_fit": false
+    },
+    {
+      "compact_geometry_fit": true,
+      "draws": 50,
+      "historical_exit_accepted": true,
+      "historical_strict_pass": true,
+      "standard_geometry_fit": true
+    }
+  ],
+  "inputs": {
+    "fonts_and_measurer": {
+      "HarmonyOS_Sans_SC_Bold.ttf": "43a424b85e47fb53a17b3b32026a71801f86f8e022ca6798d186b47d39fa5f01",
+      "HarmonyOS_Sans_SC_Regular.ttf": "297b088424be212207df2ce8b98e335468b782aa6b96832af0b8b773d711e2b1",
+      "measure.py": "c5ebc7d13c94a73f2e48af6df51a045b8dd8b61c68a40c2dfc0ec69e16526f17"
+    },
+    "freetype": "2.14.3",
+    "pillow": "12.3.0",
+    "prior_replay": "50b317c69376142d09ff4426749931ac5644365dce22a1d6669e3a8d7284c228",
+    "repeat_plan": "89e5882deb5615a414671d69ae4f208aea5299333bff4af834cd09a9413ce041"
+  },
+  "paired_draw_digests": {
+    "fits": "f411cf8c9e177802e7494b8df3d3ad42e40936739a4ca97b79f1bfccf0cad3f1",
+    "solver_fits": "f411cf8c9e177802e7494b8df3d3ad42e40936739a4ca97b79f1bfccf0cad3f1"
+  },
+  "scope": "Fixed model trees and selected content from the original 12 cases and ten independent replies each. First letter: role fonts; second: gap and root padding. The geometric outcome requires that the complete frozen solver fits the tree and its children fit their frames. It does not re-score native output quality or end-to-end delivery.",
+  "solver_passes_rejected_by_geometry_checks": {
+    "CC": 0,
+    "CS": 0,
+    "SC": 0,
+    "SS": 0
+  }
+}

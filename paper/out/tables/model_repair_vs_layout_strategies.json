@@ -1,0 +1,308 @@
+{
+  "resource_costs": {
+    "all_assigned": {
+      "L1_M": {
+        "assigned": 219,
+        "completion_tokens": 385030,
+        "confirmed_physical_attempts": 549,
+        "metered_requests": 549,
+        "prompt_cache_hit_tokens": 998528,
+        "prompt_cache_miss_tokens": 696906,
+        "prompt_tokens": 1695434,
+        "provider_ids": 549,
+        "request_intents": 554,
+        "tasks_with_any_intent": 219,
+        "tasks_with_complete_usage": 214,
+        "total_tokens": 2080464,
+        "unknown_physical_attempt_intents": 5,
+        "unknown_usage_calls": 5
+      },
+      "L1_initial": {
+        "assigned": 219,
+        "completion_tokens": 146094,
+        "confirmed_physical_attempts": 215,
+        "metered_requests": 215,
+        "prompt_cache_hit_tokens": 276352,
+        "prompt_cache_miss_tokens": 134258,
+        "prompt_tokens": 410610,
+        "provider_ids": 215,
+        "request_intents": 219,
+        "tasks_with_any_intent": 219,
+        "tasks_with_complete_usage": 215,
+        "total_tokens": 556704,
+        "unknown_physical_attempt_intents": 4,
+        "unknown_usage_calls": 4
+      },
+      "L5": {
+        "assigned": 219,
+        "completion_tokens": 62331,
+        "confirmed_physical_attempts": 405,
+        "metered_requests": 405,
+        "prompt_cache_hit_tokens": 752357,
+        "prompt_cache_miss_tokens": 133887,
+        "prompt_tokens": 886244,
+        "provider_ids": 405,
+        "request_intents": 406,
+        "tasks_with_any_intent": 219,
+        "tasks_with_complete_usage": 218,
+        "total_tokens": 948575,
+        "unknown_physical_attempt_intents": 1,
+        "unknown_usage_calls": 1
+      },
+      "L6": {
+        "assigned": 219,
+        "completion_tokens": 48275,
+        "confirmed_physical_attempts": 219,
+        "metered_requests": 219,
+        "prompt_cache_hit_tokens": 401895,
+        "prompt_cache_miss_tokens": 61263,
+        "prompt_tokens": 463158,
+        "provider_ids": 219,
+        "request_intents": 219,
+        "tasks_with_any_intent": 219,
+        "tasks_with_complete_usage": 219,
+        "total_tokens": 511433,
+        "unknown_physical_attempt_intents": 0,
+        "unknown_usage_calls": 0
+      },
+      "model_repair_added": {
+        "assigned": 219,
+        "completion_tokens": 238936,
+        "confirmed_physical_attempts": 334,
+        "metered_requests": 334,
+        "prompt_cache_hit_tokens": 722176,
+        "prompt_cache_miss_tokens": 562648,
+        "prompt_tokens": 1284824,
+        "provider_ids": 334,
+        "request_intents": 335,
+        "tasks_with_any_intent": 212,
+        "tasks_with_complete_usage": 218,
+        "total_tokens": 1523760,
+        "unknown_physical_attempt_intents": 1,
+        "unknown_usage_calls": 1
+      }
+    },
+    "paired_complete": {
+      "L1_M_vs_L5": {
+        "L1_M": {
+          "assigned": 213,
+          "completion_tokens": 383600,
+          "confirmed_physical_attempts": 546,
+          "metered_requests": 546,
+          "prompt_cache_hit_tokens": 994432,
+          "prompt_cache_miss_tokens": 694524,
+          "prompt_tokens": 1688956,
+          "provider_ids": 546,
+          "request_intents": 546,
+          "tasks_with_any_intent": 213,
+          "tasks_with_complete_usage": 213,
+          "total_tokens": 2072556,
+          "unknown_physical_attempt_intents": 0,
+          "unknown_usage_calls": 0
+        },
+        "all_assigned_intent_median_L1_M_minus_comparator": 1,
+        "assigned": 219,
+        "both_missing": 0,
+        "comparator": {
+          "assigned": 213,
+          "completion_tokens": 60740,
+          "confirmed_physical_attempts": 395,
+          "metered_requests": 395,
+          "prompt_cache_hit_tokens": 734949,
+          "prompt_cache_miss_tokens": 129358,
+          "prompt_tokens": 864307,
+          "provider_ids": 395,
+          "request_intents": 395,
+          "tasks_with_any_intent": 213,
+          "tasks_with_complete_usage": 213,
+          "total_tokens": 925047,
+          "unknown_physical_attempt_intents": 0,
+          "unknown_usage_calls": 0
+        },
+        "complete_usage_pairs": 213,
+        "left_only_missing": 5,
+        "median_L1_M_minus_comparator": {
+          "completion_tokens": 1463,
+          "prompt_cache_hit_tokens": 1664,
+          "prompt_cache_miss_tokens": 2732,
+          "prompt_tokens": 4618,
+          "request_intents": 1,
+          "total_tokens": 6009
+        },
+        "right_only_missing": 1
+      },
+      "L1_M_vs_L6": {
+        "L1_M": {
+          "assigned": 214,
+          "completion_tokens": 384526,
+          "confirmed_physical_attempts": 548,
+          "metered_requests": 548,
+          "prompt_cache_hit_tokens": 997248,
+          "prompt_cache_miss_tokens": 696228,
+          "prompt_tokens": 1693476,
+          "provider_ids": 548,
+          "request_intents": 548,
+          "tasks_with_any_intent": 214,
+          "tasks_with_complete_usage": 214,
+          "total_tokens": 2078002,
+          "unknown_physical_attempt_intents": 0,
+          "unknown_usage_calls": 0
+        },
+        "all_assigned_intent_median_L1_M_minus_comparator": 2,
+        "assigned": 219,
+        "both_missing": 0,
+        "comparator": {
+          "assigned": 214,
+          "completion_tokens": 47152,
+          "confirmed_physical_attempts": 214,
+          "metered_requests": 214,
+          "prompt_cache_hit_tokens": 392423,
+          "prompt_cache_miss_tokens": 60313,
+          "prompt_tokens": 452736,
+          "provider_ids": 214,
+          "request_intents": 214,
+          "tasks_with_any_intent": 214,
+          "tasks_with_complete_usage": 214,
+          "total_tokens": 499888,
+          "unknown_physical_attempt_intents": 0,
+          "unknown_usage_calls": 0
+        },
+        "complete_usage_pairs": 214,
+        "left_only_missing": 5,
+        "median_L1_M_minus_comparator": {
+          "completion_tokens": 1519.5,
+          "prompt_cache_hit_tokens": 3712.0,
+          "prompt_cache_miss_tokens": 3065.0,
+          "prompt_tokens": 6817.0,
+          "request_intents": 2.0,
+          "total_tokens": 8307.5
+        },
+        "right_only_missing": 0
+      }
+    },
+    "scope": "L1 one-shot generation once plus its actual, separately executed model repair on the same frozen first draft. L5 and L6 are the original generation runs. Metered token totals are observed subtotals including failed seats; missing usage is unknown.",
+    "sources": {
+      "followup_plan": "f07f04cc41ff711fc590cc68e0f67ac821f94b75c9728b5065b8fdd34cab19ae",
+      "followup_verification": "1352508f1fb9a3b3793bbbaa7b1b08349e8911876ec4df5909f142d3d1effc7a",
+      "formal_seats": "8a14e60a953e8b7e445df7985c7512ceefff94f0fcc404cc62bf6a6c51f83e72",
+      "original_endpoints": "620c51e4c95436dfa15b0cf2bd429ece8cd873b88716d481a3f7f3afc047fad2",
+      "paired": "bf341baa5135848d0df1fdf86c69c670307f88608febf98b5b87d65bf0126f72"
+    },
+    "timing": "Generation and model repair were executed in different batches. Their sum is not a measured end-to-end latency; no full-chain latency or actual invoiced charge is available."
+  },
+  "technical_results": {
+    "assigned_tasks": 219,
+    "bootstrap": {
+      "method": "Resample entire registered families with replacement, preserving same-request pairing; each assigned task has equal weight within a draw. Percentile 95% for obtained technical success only.",
+      "replicates": 10000,
+      "seed": 20261124
+    },
+    "independent_families": 200,
+    "initial_model_repair_eligibility": {
+      "awaiting_first_repair": 212,
+      "no_first_artifact": 5,
+      "trigger_unknown": 2
+    },
+    "no_original_reasons": {
+      "callback_failed": 4,
+      "stage_rejected": 1
+    },
+    "original_common_passes": 0,
+    "pairs": {
+      "L5": {
+        "all_five_no_original_counted_as_failed_net_bounds": [
+          46,
+          50
+        ],
+        "assigned": 219,
+        "both_certified": 85,
+        "certified_difference_cluster_ci95": [
+          0.14761904761904765,
+          0.3014354066985646
+        ],
+        "certified_difference_rate_other_minus_l1m": 0.2237442922374429,
+        "latent_net_other_minus_l1m_bounds": [
+          42,
+          50
+        ],
+        "neither_certified": 53,
+        "net_certified_other_minus_l1m": 49,
+        "only_l1m_certified": 16,
+        "only_other_certified": 65,
+        "paired_states_l1m_rows_other_columns": {
+          "fail": {
+            "fail": 51,
+            "missing": 0,
+            "pass": 60
+          },
+          "missing": {
+            "fail": 2,
+            "missing": 0,
+            "pass": 5
+          },
+          "pass": {
+            "fail": 15,
+            "missing": 1,
+            "pass": 85
+          }
+        }
+      },
+      "L6": {
+        "all_five_no_original_counted_as_failed_net_bounds": [
+          11,
+          14
+        ],
+        "assigned": 219,
+        "both_certified": 77,
+        "certified_difference_cluster_ci95": [
+          -0.004739336492890996,
+          0.13526570048309175
+        ],
+        "certified_difference_rate_other_minus_l1m": 0.0639269406392694,
+        "latent_net_other_minus_l1m_bounds": [
+          7,
+          14
+        ],
+        "neither_certified": 80,
+        "net_certified_other_minus_l1m": 14,
+        "only_l1m_certified": 24,
+        "only_other_certified": 38,
+        "paired_states_l1m_rows_other_columns": {
+          "fail": {
+            "fail": 77,
+            "missing": 0,
+            "pass": 34
+          },
+          "missing": {
+            "fail": 3,
+            "missing": 0,
+            "pass": 4
+          },
+          "pass": {
+            "fail": 24,
+            "missing": 0,
+            "pass": 77
+          }
+        }
+      }
+    },
+    "scope": "Same original requests. L1-M retries a retained L1 original up to twice, whereas L5 and L6 start from the original request. The comparison of strategies was proposed in section 8; its exact paired analysis and missing-data sensitivities were specified after the original runs. Missing transport or an unassessable trigger stays unknown in the three-state comparison. Every assigned task counts toward obtained success. The RQ2 sensitivity treats all missing L1 originals as observed process failures. This is not an equal-budget, visual-quality or complete-delivery comparison.",
+    "terminal_counts": {
+      "L1-M": {
+        "fail": 111,
+        "missing": 7,
+        "pass": 101
+      },
+      "L5": {
+        "fail": 68,
+        "missing": 1,
+        "pass": 150
+      },
+      "L6": {
+        "fail": 104,
+        "missing": 0,
+        "pass": 115
+      }
+    }
+  }
+}

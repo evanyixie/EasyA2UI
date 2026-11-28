@@ -1,0 +1,68 @@
+{
+  "cases": 12,
+  "design": "Post-hoc program-only replay of the two locked 187-case policies on the same 12 independently selected cases, ten independent executions of each policy per case. Each method recomputes the layout from frozen content. A match on an accepted artifact requires a hash of the historical A2UI file. Missing outputs only count as missing.",
+  "device_runs": 0,
+  "families": 12,
+  "method_executions": 240,
+  "methods": {
+    "compatible": {
+      "accepted_hash_matches_historical_file": 60,
+      "by_canvas": {
+        "2x2": {
+          "accepted": 50,
+          "cases": 6,
+          "executions": 60
+        },
+        "2x4": {
+          "accepted": 10,
+          "cases": 6,
+          "executions": 60
+        }
+      },
+      "cases_with_all_10_accepted_and_byte_identical": 6,
+      "cases_with_no_accepted_artifact_in_10": 6,
+      "matched_original_program_by_repetition": {
+        "both_accepted": 60,
+        "enhanced_only": 0,
+        "neither_accepted": 60,
+        "original_only": 0,
+        "previously_accepted_byte_identical": 60
+      },
+      "no_accepted_artifact": 60,
+      "technical_accepted": 60,
+      "technical_outcome_matches_historical": 120
+    },
+    "standard": {
+      "accepted_hash_matches_historical_file": 60,
+      "by_canvas": {
+        "2x2": {
+          "accepted": 50,
+          "cases": 6,
+          "executions": 60
+        },
+        "2x4": {
+          "accepted": 10,
+          "cases": 6,
+          "executions": 60
+        }
+      },
+      "cases_with_all_10_accepted_and_byte_identical": 6,
+      "cases_with_no_accepted_artifact_in_10": 6,
+      "no_accepted_artifact": 60,
+      "technical_accepted": 60,
+      "technical_outcome_matches_historical": 120
+    }
+  },
+  "new_model_calls": 0,
+  "repetitions": 10,
+  "source_sha256": {
+    "benchmark": "c421c3b3cbd9b54ec21d78ab31af13b1b3e2a994d7d45ff12921f3b07c8a5aec",
+    "matched_complete": "03386f6d151a860cf1198aa81443463f85fd74844489f06fa6c7dd8a283549f8",
+    "matched_plan": "89e5882deb5615a414671d69ae4f208aea5299333bff4af834cd09a9413ce041",
+    "paired187": "67442c8bd70bb82a85b85a86d61208c801a4c5364ed1157ce9da5cb45a954651",
+    "selection": "819a5f79679ca24caa62137b8c5c9a647c94319e367e0ed7a25ed50405baf444",
+    "small": "58151ddfd06ee432e5bda663608025e77e99eba3b13788c350bd3c68deb8be6f",
+    "timed187": "cfa535dbc31f3f846f4323b6851de827285ef180e8245986b9d33d97929b47e2",
+    "wide": "fb950950ad042afb86adeb7ef590a1a3c4825c95d3f1a985fb01830d88af7824"
+  }
+}

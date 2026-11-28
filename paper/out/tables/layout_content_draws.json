@@ -1,0 +1,168 @@
+{
+  "all": {
+    "assigned_draws": 876,
+    "both": 465,
+    "compared": 759,
+    "model_accepted": 615,
+    "model_only": 150,
+    "neither": 139,
+    "program_accepted": 470,
+    "program_only": 5,
+    "program_pass_when_model_structure_unknown": 1,
+    "statuses": {
+      "content_rejected": 113,
+      "content_unknown": 3,
+      "ready": 759,
+      "structure_unknown": 1
+    }
+  },
+  "by_archived_donor": {
+    "L2": {
+      "assigned_draws": 219,
+      "both": 118,
+      "compared": 192,
+      "model_accepted": 157,
+      "model_only": 39,
+      "neither": 34,
+      "program_accepted": 119,
+      "program_only": 1,
+      "program_pass_when_model_structure_unknown": 0,
+      "statuses": {
+        "content_rejected": 27,
+        "ready": 192
+      }
+    },
+    "L3": {
+      "assigned_draws": 219,
+      "both": 116,
+      "compared": 190,
+      "model_accepted": 153,
+      "model_only": 37,
+      "neither": 35,
+      "program_accepted": 118,
+      "program_only": 2,
+      "program_pass_when_model_structure_unknown": 0,
+      "statuses": {
+        "content_rejected": 27,
+        "content_unknown": 2,
+        "ready": 190
+      }
+    },
+    "L4": {
+      "assigned_draws": 219,
+      "both": 116,
+      "compared": 190,
+      "model_accepted": 155,
+      "model_only": 39,
+      "neither": 34,
+      "program_accepted": 117,
+      "program_only": 1,
+      "program_pass_when_model_structure_unknown": 1,
+      "statuses": {
+        "content_rejected": 28,
+        "ready": 190,
+        "structure_unknown": 1
+      }
+    },
+    "L5": {
+      "assigned_draws": 219,
+      "both": 115,
+      "compared": 187,
+      "model_accepted": 150,
+      "model_only": 35,
+      "neither": 36,
+      "program_accepted": 116,
+      "program_only": 1,
+      "program_pass_when_model_structure_unknown": 0,
+      "statuses": {
+        "content_rejected": 31,
+        "content_unknown": 1,
+        "ready": 187
+      }
+    }
+  },
+  "design": "All four model-structure donor arms, original temperature-zero run. One paired replay per archived accepted content and received structure. Same source, content and common frozen downstream within each comparison. Post-hoc, technical acceptance only.",
+  "donor_outcomes_sha256_in_order": "9db520b6277a86bdc840f90b378d34f87b8cfe5c26229060a383d6488ba27b9c",
+  "formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "new_device_runs": 0,
+  "new_model_calls": 0,
+  "tasks_by_complete_pairs": {
+    "0": 20,
+    "1": 7,
+    "2": 2,
+    "3": 12,
+    "4": 178
+  },
+  "tasks_with_four_complete_pairs": [
+    {
+      "model_passes": 0,
+      "program_passes": 0,
+      "tasks": 23
+    },
+    {
+      "model_passes": 0,
+      "program_passes": 4,
+      "tasks": 1
+    },
+    {
+      "model_passes": 1,
+      "program_passes": 0,
+      "tasks": 6
+    },
+    {
+      "model_passes": 1,
+      "program_passes": 1,
+      "tasks": 1
+    },
+    {
+      "model_passes": 2,
+      "program_passes": 0,
+      "tasks": 3
+    },
+    {
+      "model_passes": 2,
+      "program_passes": 3,
+      "tasks": 1
+    },
+    {
+      "model_passes": 3,
+      "program_passes": 0,
+      "tasks": 4
+    },
+    {
+      "model_passes": 3,
+      "program_passes": 1,
+      "tasks": 1
+    },
+    {
+      "model_passes": 3,
+      "program_passes": 3,
+      "tasks": 2
+    },
+    {
+      "model_passes": 4,
+      "program_passes": 0,
+      "tasks": 24
+    },
+    {
+      "model_passes": 4,
+      "program_passes": 1,
+      "tasks": 1
+    },
+    {
+      "model_passes": 4,
+      "program_passes": 2,
+      "tasks": 2
+    },
+    {
+      "model_passes": 4,
+      "program_passes": 3,
+      "tasks": 4
+    },
+    {
+      "model_passes": 4,
+      "program_passes": 4,
+      "tasks": 105
+    }
+  ]
+}

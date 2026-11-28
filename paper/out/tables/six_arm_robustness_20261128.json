@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "scope": "Exploratory analyses of the frozen cohort and post-run local layout search.",
+  "receipts_sha256": {
+    "date": "473cb1c726ca5ac8f280c49d4a2b21b345f0d9d0b13d92821e612d53d2f05a15",
+    "samples": "80a2267d77f70833f649ed4b76f784f62adfe63956c085cba870578fe66785ba",
+    "strata": "adf0ae2c53c996df6b636e8b79cef72dd1e1b81928b79ef4653ccf1a1947e5ee",
+    "adjacent": "b2b02ddf214444cf009e96a98a0fe96b87ba5c6251958cc295bc8c48831b306e",
+    "tuning": "9ff7a894b2a756f7668b0666467f35c47ff8a34f90f680a25c355e95ed44dac5",
+    "replay": "774a2d9b700e48635efafdc5d8538a576244cc6e8801df96f717713c0bd78691",
+    "speed_check": "bebde8b127c5d64f013318133bc024736be933d4d90147a8c43a65cd87846763"
+  },
+  "adjacent_observed_technical_yield": {
+    "L2-L1": {
+      "tasks": 219,
+      "families": 200,
+      "either_underlying_status_unknown": 9,
+      "only_earlier_observed_pass": 65,
+      "only_later_observed_pass": 4,
+      "later_minus_earlier_observed_pass": -61,
+      "family_net_difference_histogram": {
+        "-3": 1,
+        "-2": 1,
+        "-1": 60,
+        "0": 134,
+        "1": 4
+      },
+      "task_mcnemar_exact": 3.1147468230931924e-15,
+      "family_swap_exact": 1.8465779036067054e-14,
+      "task_mcnemar_exact_holm_four_secondary": 1.245898729237277e-14,
+      "family_swap_exact_holm_four_secondary": 7.386311614426821e-14
+    },
+    "L3-L2": {
+      "tasks": 219,
+      "families": 200,
+      "either_underlying_status_unknown": 8,
+      "only_earlier_observed_pass": 3,
+      "only_later_observed_pass": 2,
+      "later_minus_earlier_observed_pass": -1,
+      "family_net_difference_histogram": {
+        "-1": 3,
+        "0": 195,
+        "1": 2
+      },
+      "task_mcnemar_exact": 1,
+      "family_swap_exact": 1,
+      "task_mcnemar_exact_holm_four_secondary": 1,
+      "family_swap_exact_holm_four_secondary": 1
+    },
+    "L4-L3": {
+      "tasks": 219,
+      "families": 200,
+      "either_underlying_status_unknown": 8,
+      "only_earlier_observed_pass": 5,
+      "only_later_observed_pass": 4,
+      "later_minus_earlier_observed_pass": -1,
+      "family_net_difference_histogram": {
+        "-1": 5,
+        "0": 191,
+        "1": 4
+      },
+      "task_mcnemar_exact": 1,
+      "family_swap_exact": 1,
+      "task_mcnemar_exact_holm_four_secondary": 1,
+      "family_swap_exact_holm_four_secondary": 1
+    },
+    "L5-L4": {
+      "tasks": 219,
+      "families": 200,
+      "either_underlying_status_unknown": 4,
+      "only_earlier_observed_pass": 0,
+      "only_later_observed_pass": 122,
+      "later_minus_earlier_observed_pass": 122,
+      "family_net_difference_histogram": {
+        "0": 84,
+        "1": 111,
+        "2": 4,
+        "3": 1
+      },
+      "task_mcnemar_exact": 3.76158192263132e-37,
+      "family_swap_exact": 2.407412430484045e-35,
+      "task_mcnemar_exact_holm_four_secondary": null,
+      "family_swap_exact_holm_four_secondary": null
+    },
+    "L6-L5": {
+      "tasks": 219,
+      "families": 200,
+      "either_underlying_status_unknown": 1,
+      "only_earlier_observed_pass": 40,
+      "only_later_observed_pass": 5,
+      "later_minus_earlier_observed_pass": -35,
+      "family_net_difference_histogram": {
+        "-2": 2,
+        "-1": 36,
+        "0": 157,
+        "1": 5
+      },
+      "task_mcnemar_exact": 7.878384167270269e-8,
+      "family_swap_exact": 2.012884579016827e-7,
+      "task_mcnemar_exact_holm_four_secondary": 2.3635152501810808e-7,
+      "family_swap_exact_holm_four_secondary": 6.038653737050481e-7
+    }
+  },
+  "declared_dynamic_path_samples": {
+    "n_paths": 1445,
+    "n_tasks": 219,
+    "path_instances": {
+      "empty_string": 2,
+      "literal_example": 169,
+      "other_present": 1274
+    },
+    "tasks_any_by_value_type": {
+      "any_empty_or_missing": 1,
+      "empty_string": 1,
+      "literal_example": 49,
+      "other_present": 192
+    },
+    "tasks_by_bucket": {
+      "all_literal": 27,
+      "no_literal": 170,
+      "some_literal": 22
+    }
+  },
+  "yield_by_input_literal_example": {
+    "some_or_all_exact_literal": {
+      "by_arm": {
+        "L1": {
+          "native_control_frame": 30,
+          "technical": 20
+        },
+        "L2": {
+          "native_control_frame": 28,
+          "technical": 1
+        },
+        "L3": {
+          "native_control_frame": 26,
+          "technical": 1
+        },
+        "L4": {
+          "native_control_frame": 32,
+          "technical": 2
+        },
+        "L5": {
+          "native_control_frame": 36,
+          "technical": 36
+        },
+        "L6": {
+          "native_control_frame": 30,
+          "technical": 30
+        }
+      },
+      "n": 49
+    },
+    "zero_exact_literal": {
+      "by_arm": {
+        "L1": {
+          "native_control_frame": 117,
+          "technical": 71
+        },
+        "L2": {
+          "native_control_frame": 90,
+          "technical": 29
+        },
+        "L3": {
+          "native_control_frame": 90,
+          "technical": 28
+        },
+        "L4": {
+          "native_control_frame": 104,
+          "technical": 26
+        },
+        "L5": {
+          "native_control_frame": 114,
+          "technical": 114
+        },
+        "L6": {
+          "native_control_frame": 85,
+          "technical": 85
+        }
+      },
+      "n": 170
+    }
+  },
+  "explicit_date": {
+    "literal_requirement": "当前日期",
+    "tasks": 7,
+    "literal_updated_time_tasks": 0,
+    "date_sample_value": "示例",
+    "by_arm": {
+      "L1": {
+        "missing": {},
+        "n": 7,
+        "original_technical_pass": 6,
+        "source_emitted": 7,
+        "states": {
+          "native_bound_sample_verified": 7
+        }
+      },
+      "L2": {
+        "missing": {
+          "stage_rejected": 1
+        },
+        "n": 7,
+        "original_technical_pass": 0,
+        "source_emitted": 6,
+        "states": {
+          "native_bound_sample_verified": 6,
+          "no_capture": 1
+        }
+      },
+      "L3": {
+        "missing": {
+          "stage_rejected": 3
+        },
+        "n": 7,
+        "original_technical_pass": 0,
+        "source_emitted": 4,
+        "states": {
+          "native_bound_sample_verified": 4,
+          "no_capture": 3
+        }
+      },
+      "L4": {
+        "missing": {
+          "transport_failed": 1
+        },
+        "n": 7,
+        "original_technical_pass": 0,
+        "source_emitted": 6,
+        "states": {
+          "native_bound_sample_verified": 6,
+          "no_capture": 1
+        }
+      },
+      "L5": {
+        "missing": {
+          "stage_rejected": 1,
+          "transport_failed": 1
+        },
+        "n": 7,
+        "original_technical_pass": 5,
+        "source_emitted": 5,
+        "states": {
+          "native_bound_sample_verified": 5,
+          "no_capture": 2
+        }
+      },
+      "L6": {
+        "missing": {
+          "stage_rejected": 1
+        },
+        "n": 7,
+        "original_technical_pass": 6,
+        "source_emitted": 6,
+        "states": {
+          "native_bound_sample_verified": 6,
+          "no_capture": 1
+        }
+      }
+    }
+  },
+  "exact_width_cache": {
+    "timing": "Per task median of five paired alternating runs, then cohort median and nearest-rank P95; local layout including checks only.",
+    "cohorts": {
+      "tuning": {
+        "tasks": 37,
+        "families": 33,
+        "pairs_per_task": 5,
+        "matches_all_frozen_per_task_decisions": true,
+        "raw_accepted_outputs_verified": 17,
+        "timing": {
+          "all": {
+            "tasks": 37,
+            "variants": {
+              "frozen": {
+                "mean_ms": 75.805,
+                "median_ms": 39.678,
+                "p95_ms": 231.361
+              },
+              "per_card_exact_lengths": {
+                "mean_ms": 25.033,
+                "median_ms": 24.854,
+                "p95_ms": 49.553
+              }
+            }
+          },
+          "entered_scoped_fallback": {
+            "tasks": 24,
+            "variants": {
+              "frozen": {
+                "mean_ms": 108.923,
+                "median_ms": 96.34,
+                "p95_ms": 231.361
+              },
+              "per_card_exact_lengths": {
+                "mean_ms": 30.643,
+                "median_ms": 28.632,
+                "p95_ms": 49.553
+              }
+            }
+          },
+          "returned_before_scoped_fallback": {
+            "tasks": 13,
+            "variants": {
+              "frozen": {
+                "mean_ms": 14.665,
+                "median_ms": 12.893,
+                "p95_ms": 40.345
+              },
+              "per_card_exact_lengths": {
+                "mean_ms": 14.676,
+                "median_ms": 12.655,
+                "p95_ms": 40.794
+              }
+            }
+          }
+        }
+      },
+      "replay": {
+        "tasks": 96,
+        "families": 85,
+        "pairs_per_task": 5,
+        "matches_all_frozen_per_task_decisions": true,
+        "raw_accepted_outputs_verified": 74,
+        "timing": {
+          "all": {
+            "tasks": 96,
+            "variants": {
+              "frozen": {
+                "mean_ms": 45.016,
+                "median_ms": 3.67,
+                "p95_ms": 221.066
+              },
+              "per_card_exact_lengths": {
+                "mean_ms": 15.999,
+                "median_ms": 3.718,
+                "p95_ms": 66.246
+              }
+            }
+          },
+          "entered_scoped_fallback": {
+            "tasks": 31,
+            "variants": {
+              "frozen": {
+                "mean_ms": 130.813,
+                "median_ms": 61.464,
+                "p95_ms": 459.223
+              },
+              "per_card_exact_lengths": {
+                "mean_ms": 40.99,
+                "median_ms": 25.664,
+                "p95_ms": 74.408
+              }
+            }
+          },
+          "returned_before_scoped_fallback": {
+            "tasks": 65,
+            "variants": {
+              "frozen": {
+                "mean_ms": 4.098,
+                "median_ms": 2.977,
+                "p95_ms": 11.192
+              },
+              "per_card_exact_lengths": {
+                "mean_ms": 4.081,
+                "median_ms": 3.065,
+                "p95_ms": 11.678
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

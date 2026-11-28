@@ -1,0 +1,4 @@
+# 冻结工具按文件字节计算摘要，不随检出平台改写换行。
+* text=auto eol=lf
+# 外部演示的原始测试带文件末空行，作为逐字节还原的来源保留。
+genui71/tests/test_commercial_atomic_recipes.py whitespace=-blank-at-eof

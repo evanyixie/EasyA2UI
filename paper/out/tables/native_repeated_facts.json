@@ -1,0 +1,415 @@
+{
+  "frozen_source_sha256": {
+    "capture_index": "e4c9dd93fa2a2712897775e48fe47951c2ecbccb48dd2292a28b9cd02e8f4170",
+    "control_text": "06161a0ac6b0571d55ca1fd47b6f31202d30af30122c0e5c031fe4fb1902280d",
+    "observations": "620c51e4c95436dfa15b0cf2bd429ece8cd873b88716d481a3f7f3afc047fad2"
+  },
+  "original_A6_boundary": "The paper's A6 counts repeated numerical values on the rendered card even when the source is literal. This audit requires identical typed samples on a single registry path at separate controls. A captured card with incomplete controls and no proven repeat remains unknown. A card without a capture has no native observation. Matched numeric controls include distinct Text/Button IDs even if the underlying fact differs. Sources outside the candidate grammar and values encoded only in action parameters are unassessed.",
+  "scope": "Post-hoc RQ1/A6 lower-bound study. Count the same registered scalar binding with at least one decimal digit in two different native Text or Button IDs. Domains, dates and names containing a decimal digit remain eligible; the matched path establishes fact identity. Distinct paths with equal values, repetitions within one node, unbound literals and action parameters are outside the metric. Exact host control text is checked against decoded bindings and literals, the card bytes and registered sample. Positive controls must report visible, nonzero opacity, in-card and disjoint leaf boxes. Full painted glyphs and semantic redundancy are not inferred; repeated context may be intentional.",
+  "stages": {
+    "after_common_repair": {
+      "L4_L5_same_task": {
+        "assigned": 219,
+        "both_captured": 144,
+        "complete_both": {
+          "L4_only": 0,
+          "L5_only": 0,
+          "both": 0,
+          "neither": 139,
+          "paired": 139
+        },
+        "complete_with_numeric_binding_both": {
+          "L4_only": 0,
+          "L5_only": 0,
+          "both": 0,
+          "neither": 116,
+          "paired": 116
+        },
+        "complete_with_two_or_more_numeric_controls_both": {
+          "L4_only": 0,
+          "L5_only": 0,
+          "both": 0,
+          "neither": 46,
+          "paired": 46
+        },
+        "joint_state_counts": [
+          {
+            "L4": "complete_without_repeat",
+            "L5": "complete_without_repeat",
+            "cases": 139
+          },
+          {
+            "L4": "complete_without_repeat",
+            "L5": "no_capture",
+            "cases": 27
+          },
+          {
+            "L4": "incomplete_without_confirmed_repeat",
+            "L5": "complete_without_repeat",
+            "cases": 5
+          },
+          {
+            "L4": "incomplete_without_confirmed_repeat",
+            "L5": "no_capture",
+            "cases": 16
+          },
+          {
+            "L4": "no_capture",
+            "L5": "complete_without_repeat",
+            "cases": 6
+          },
+          {
+            "L4": "no_capture",
+            "L5": "no_capture",
+            "cases": 26
+          }
+        ]
+      },
+      "all": {
+        "assigned": 1314,
+        "captured": 981,
+        "captured_cards_with_potential_repeated_source_binding": 0,
+        "complete_all_visible_controls": 916,
+        "complete_cards_with_confirmed_repeat": 0,
+        "complete_with_numeric_binding": 772,
+        "complete_with_two_or_more_numeric_controls": 326,
+        "confirmed_distinct_path_card_occurrences": 0,
+        "native_control_states": {
+          "complete_without_repeat": 916,
+          "incomplete_without_confirmed_repeat": 65,
+          "no_capture": 333,
+          "repeated": 0
+        },
+        "no_capture_reasons": {
+          "artifact_checks_rejected": 3,
+          "stage_rejected": 314,
+          "transport_failed": 16
+        }
+      },
+      "by_arm": {
+        "L1": {
+          "assigned": 219,
+          "captured": 211,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 200,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 172,
+          "complete_with_two_or_more_numeric_controls": 81,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 200,
+            "incomplete_without_confirmed_repeat": 11,
+            "no_capture": 8,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "artifact_checks_rejected": 3,
+            "stage_rejected": 1,
+            "transport_failed": 4
+          }
+        },
+        "L2": {
+          "assigned": 219,
+          "captured": 158,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 143,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 122,
+          "complete_with_two_or_more_numeric_controls": 53,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 143,
+            "incomplete_without_confirmed_repeat": 15,
+            "no_capture": 61,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 58,
+            "transport_failed": 3
+          }
+        },
+        "L3": {
+          "assigned": 219,
+          "captured": 160,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 142,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 120,
+          "complete_with_two_or_more_numeric_controls": 45,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 142,
+            "incomplete_without_confirmed_repeat": 18,
+            "no_capture": 59,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 54,
+            "transport_failed": 5
+          }
+        },
+        "L4": {
+          "assigned": 219,
+          "captured": 187,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 166,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 142,
+          "complete_with_two_or_more_numeric_controls": 66,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 166,
+            "incomplete_without_confirmed_repeat": 21,
+            "no_capture": 32,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 29,
+            "transport_failed": 3
+          }
+        },
+        "L5": {
+          "assigned": 219,
+          "captured": 150,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 150,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 125,
+          "complete_with_two_or_more_numeric_controls": 52,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 150,
+            "incomplete_without_confirmed_repeat": 0,
+            "no_capture": 69,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 68,
+            "transport_failed": 1
+          }
+        },
+        "L6": {
+          "assigned": 219,
+          "captured": 115,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 115,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 91,
+          "complete_with_two_or_more_numeric_controls": 29,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 115,
+            "incomplete_without_confirmed_repeat": 0,
+            "no_capture": 104,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 104
+          }
+        }
+      }
+    },
+    "raw_first": {
+      "L4_L5_same_task": {
+        "assigned": 219,
+        "both_captured": 144,
+        "complete_both": {
+          "L4_only": 0,
+          "L5_only": 0,
+          "both": 0,
+          "neither": 139,
+          "paired": 139
+        },
+        "complete_with_numeric_binding_both": {
+          "L4_only": 0,
+          "L5_only": 0,
+          "both": 0,
+          "neither": 116,
+          "paired": 116
+        },
+        "complete_with_two_or_more_numeric_controls_both": {
+          "L4_only": 0,
+          "L5_only": 0,
+          "both": 0,
+          "neither": 46,
+          "paired": 46
+        },
+        "joint_state_counts": [
+          {
+            "L4": "complete_without_repeat",
+            "L5": "complete_without_repeat",
+            "cases": 139
+          },
+          {
+            "L4": "complete_without_repeat",
+            "L5": "no_capture",
+            "cases": 27
+          },
+          {
+            "L4": "incomplete_without_confirmed_repeat",
+            "L5": "complete_without_repeat",
+            "cases": 5
+          },
+          {
+            "L4": "incomplete_without_confirmed_repeat",
+            "L5": "no_capture",
+            "cases": 16
+          },
+          {
+            "L4": "no_capture",
+            "L5": "complete_without_repeat",
+            "cases": 6
+          },
+          {
+            "L4": "no_capture",
+            "L5": "no_capture",
+            "cases": 26
+          }
+        ]
+      },
+      "all": {
+        "assigned": 1314,
+        "captured": 981,
+        "captured_cards_with_potential_repeated_source_binding": 0,
+        "complete_all_visible_controls": 915,
+        "complete_cards_with_confirmed_repeat": 0,
+        "complete_with_numeric_binding": 771,
+        "complete_with_two_or_more_numeric_controls": 326,
+        "confirmed_distinct_path_card_occurrences": 0,
+        "native_control_states": {
+          "complete_without_repeat": 915,
+          "incomplete_without_confirmed_repeat": 66,
+          "no_capture": 333,
+          "repeated": 0
+        },
+        "no_capture_reasons": {
+          "artifact_checks_rejected": 3,
+          "stage_rejected": 314,
+          "transport_failed": 16
+        }
+      },
+      "by_arm": {
+        "L1": {
+          "assigned": 219,
+          "captured": 211,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 200,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 172,
+          "complete_with_two_or_more_numeric_controls": 81,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 200,
+            "incomplete_without_confirmed_repeat": 11,
+            "no_capture": 8,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "artifact_checks_rejected": 3,
+            "stage_rejected": 1,
+            "transport_failed": 4
+          }
+        },
+        "L2": {
+          "assigned": 219,
+          "captured": 158,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 143,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 122,
+          "complete_with_two_or_more_numeric_controls": 53,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 143,
+            "incomplete_without_confirmed_repeat": 15,
+            "no_capture": 61,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 58,
+            "transport_failed": 3
+          }
+        },
+        "L3": {
+          "assigned": 219,
+          "captured": 160,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 141,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 119,
+          "complete_with_two_or_more_numeric_controls": 45,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 141,
+            "incomplete_without_confirmed_repeat": 19,
+            "no_capture": 59,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 54,
+            "transport_failed": 5
+          }
+        },
+        "L4": {
+          "assigned": 219,
+          "captured": 187,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 166,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 142,
+          "complete_with_two_or_more_numeric_controls": 66,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 166,
+            "incomplete_without_confirmed_repeat": 21,
+            "no_capture": 32,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 29,
+            "transport_failed": 3
+          }
+        },
+        "L5": {
+          "assigned": 219,
+          "captured": 150,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 150,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 125,
+          "complete_with_two_or_more_numeric_controls": 52,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 150,
+            "incomplete_without_confirmed_repeat": 0,
+            "no_capture": 69,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 68,
+            "transport_failed": 1
+          }
+        },
+        "L6": {
+          "assigned": 219,
+          "captured": 115,
+          "captured_cards_with_potential_repeated_source_binding": 0,
+          "complete_all_visible_controls": 115,
+          "complete_cards_with_confirmed_repeat": 0,
+          "complete_with_numeric_binding": 91,
+          "complete_with_two_or_more_numeric_controls": 29,
+          "confirmed_distinct_path_card_occurrences": 0,
+          "native_control_states": {
+            "complete_without_repeat": 115,
+            "incomplete_without_confirmed_repeat": 0,
+            "no_capture": 104,
+            "repeated": 0
+          },
+          "no_capture_reasons": {
+            "stage_rejected": 104
+          }
+        }
+      }
+    }
+  }
+}

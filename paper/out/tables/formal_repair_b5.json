@@ -1,0 +1,653 @@
+{
+  "formal_common_geometry_repair": {
+    "all": {
+      "actions_in_committed_proposals": 627,
+      "actions_per_proposal": 7.079605761940864,
+      "actions_per_triggered_seat": 13.07843137254902,
+      "actions_proposed": 9338,
+      "assessed_originals_with_violations": 714,
+      "assigned": 1314,
+      "attempts": 1319,
+      "committed": 178,
+      "exit_status": {
+        "no_change": 265,
+        "not_reached": 330,
+        "repaired": 178,
+        "skipped_source_check": 3,
+        "unresolved": 536,
+        "unsupported": 2
+      },
+      "first_artifacts": 984,
+      "new_node_code_pairs_in_final_artifacts": 0,
+      "new_node_code_pairs_summed_over_proposals": 3088,
+      "nodes_with_new_violations_summed_over_proposals": 3086,
+      "original_and_final_geometry_assessed": 979,
+      "proposals_with_new_geometry_violations": 938,
+      "proposals_worsening_existing_geometry_violations": 448,
+      "rounds": {
+        "1": {
+          "committed": 109,
+          "proposals_with_new_geometry_violations": 490,
+          "proposed": 714
+        },
+        "2": {
+          "committed": 69,
+          "proposals_with_new_geometry_violations": 448,
+          "proposed": 605
+        }
+      },
+      "seats_with_a_proposal_introducing_a_violation": 490,
+      "seats_with_attempts": 714,
+      "seats_with_new_violations_in_final_artifact": 0,
+      "tried_and_returned_original": 536
+    },
+    "by_arm": {
+      "L1": {
+        "actions_in_committed_proposals": 347,
+        "actions_per_proposal": 4.983914209115282,
+        "actions_per_triggered_seat": 8.894736842105264,
+        "actions_proposed": 1859,
+        "assessed_originals_with_violations": 209,
+        "assigned": 219,
+        "attempts": 373,
+        "committed": 91,
+        "exit_status": {
+          "not_reached": 5,
+          "repaired": 91,
+          "skipped_source_check": 3,
+          "unresolved": 118,
+          "unsupported": 2
+        },
+        "first_artifacts": 214,
+        "new_node_code_pairs_in_final_artifacts": 0,
+        "new_node_code_pairs_summed_over_proposals": 268,
+        "nodes_with_new_violations_summed_over_proposals": 268,
+        "original_and_final_geometry_assessed": 209,
+        "proposals_with_new_geometry_violations": 110,
+        "proposals_worsening_existing_geometry_violations": 149,
+        "rounds": {
+          "1": {
+            "committed": 45,
+            "proposals_with_new_geometry_violations": 63,
+            "proposed": 209
+          },
+          "2": {
+            "committed": 46,
+            "proposals_with_new_geometry_violations": 47,
+            "proposed": 164
+          }
+        },
+        "seats_with_a_proposal_introducing_a_violation": 63,
+        "seats_with_attempts": 209,
+        "seats_with_new_violations_in_final_artifact": 0,
+        "tried_and_returned_original": 118
+      },
+      "L2": {
+        "actions_in_committed_proposals": 94,
+        "actions_per_proposal": 7.8231292517006805,
+        "actions_per_triggered_seat": 14.556962025316455,
+        "actions_proposed": 2300,
+        "assessed_originals_with_violations": 158,
+        "assigned": 219,
+        "attempts": 294,
+        "committed": 30,
+        "exit_status": {
+          "not_reached": 61,
+          "repaired": 30,
+          "unresolved": 128
+        },
+        "first_artifacts": 158,
+        "new_node_code_pairs_in_final_artifacts": 0,
+        "new_node_code_pairs_summed_over_proposals": 884,
+        "nodes_with_new_violations_summed_over_proposals": 883,
+        "original_and_final_geometry_assessed": 158,
+        "proposals_with_new_geometry_violations": 257,
+        "proposals_worsening_existing_geometry_violations": 85,
+        "rounds": {
+          "1": {
+            "committed": 22,
+            "proposals_with_new_geometry_violations": 132,
+            "proposed": 158
+          },
+          "2": {
+            "committed": 8,
+            "proposals_with_new_geometry_violations": 125,
+            "proposed": 136
+          }
+        },
+        "seats_with_a_proposal_introducing_a_violation": 132,
+        "seats_with_attempts": 158,
+        "seats_with_new_violations_in_final_artifact": 0,
+        "tried_and_returned_original": 128
+      },
+      "L3": {
+        "actions_in_committed_proposals": 92,
+        "actions_per_proposal": 7.766666666666667,
+        "actions_per_triggered_seat": 14.5625,
+        "actions_proposed": 2330,
+        "assessed_originals_with_violations": 160,
+        "assigned": 219,
+        "attempts": 300,
+        "committed": 29,
+        "exit_status": {
+          "not_reached": 59,
+          "repaired": 29,
+          "unresolved": 131
+        },
+        "first_artifacts": 160,
+        "new_node_code_pairs_in_final_artifacts": 0,
+        "new_node_code_pairs_summed_over_proposals": 833,
+        "nodes_with_new_violations_summed_over_proposals": 833,
+        "original_and_final_geometry_assessed": 160,
+        "proposals_with_new_geometry_violations": 261,
+        "proposals_worsening_existing_geometry_violations": 106,
+        "rounds": {
+          "1": {
+            "committed": 20,
+            "proposals_with_new_geometry_violations": 135,
+            "proposed": 160
+          },
+          "2": {
+            "committed": 9,
+            "proposals_with_new_geometry_violations": 126,
+            "proposed": 140
+          }
+        },
+        "seats_with_a_proposal_introducing_a_violation": 135,
+        "seats_with_attempts": 160,
+        "seats_with_new_violations_in_final_artifact": 0,
+        "tried_and_returned_original": 131
+      },
+      "L4": {
+        "actions_in_committed_proposals": 94,
+        "actions_per_proposal": 8.09375,
+        "actions_per_triggered_seat": 15.235294117647058,
+        "actions_proposed": 2849,
+        "assessed_originals_with_violations": 187,
+        "assigned": 219,
+        "attempts": 352,
+        "committed": 28,
+        "exit_status": {
+          "not_reached": 32,
+          "repaired": 28,
+          "unresolved": 159
+        },
+        "first_artifacts": 187,
+        "new_node_code_pairs_in_final_artifacts": 0,
+        "new_node_code_pairs_summed_over_proposals": 1103,
+        "nodes_with_new_violations_summed_over_proposals": 1102,
+        "original_and_final_geometry_assessed": 187,
+        "proposals_with_new_geometry_violations": 310,
+        "proposals_worsening_existing_geometry_violations": 108,
+        "rounds": {
+          "1": {
+            "committed": 22,
+            "proposals_with_new_geometry_violations": 160,
+            "proposed": 187
+          },
+          "2": {
+            "committed": 6,
+            "proposals_with_new_geometry_violations": 150,
+            "proposed": 165
+          }
+        },
+        "seats_with_a_proposal_introducing_a_violation": 160,
+        "seats_with_attempts": 187,
+        "seats_with_new_violations_in_final_artifact": 0,
+        "tried_and_returned_original": 159
+      },
+      "L5": {
+        "actions_in_committed_proposals": 0,
+        "actions_per_proposal": null,
+        "actions_per_triggered_seat": null,
+        "actions_proposed": 0,
+        "assessed_originals_with_violations": 0,
+        "assigned": 219,
+        "attempts": 0,
+        "committed": 0,
+        "exit_status": {
+          "no_change": 150,
+          "not_reached": 69
+        },
+        "first_artifacts": 150,
+        "new_node_code_pairs_in_final_artifacts": 0,
+        "new_node_code_pairs_summed_over_proposals": 0,
+        "nodes_with_new_violations_summed_over_proposals": 0,
+        "original_and_final_geometry_assessed": 150,
+        "proposals_with_new_geometry_violations": 0,
+        "proposals_worsening_existing_geometry_violations": 0,
+        "rounds": {
+          "1": {
+            "committed": 0,
+            "proposals_with_new_geometry_violations": 0,
+            "proposed": 0
+          },
+          "2": {
+            "committed": 0,
+            "proposals_with_new_geometry_violations": 0,
+            "proposed": 0
+          }
+        },
+        "seats_with_a_proposal_introducing_a_violation": 0,
+        "seats_with_attempts": 0,
+        "seats_with_new_violations_in_final_artifact": 0,
+        "tried_and_returned_original": 0
+      },
+      "L6": {
+        "actions_in_committed_proposals": 0,
+        "actions_per_proposal": null,
+        "actions_per_triggered_seat": null,
+        "actions_proposed": 0,
+        "assessed_originals_with_violations": 0,
+        "assigned": 219,
+        "attempts": 0,
+        "committed": 0,
+        "exit_status": {
+          "no_change": 115,
+          "not_reached": 104
+        },
+        "first_artifacts": 115,
+        "new_node_code_pairs_in_final_artifacts": 0,
+        "new_node_code_pairs_summed_over_proposals": 0,
+        "nodes_with_new_violations_summed_over_proposals": 0,
+        "original_and_final_geometry_assessed": 115,
+        "proposals_with_new_geometry_violations": 0,
+        "proposals_worsening_existing_geometry_violations": 0,
+        "rounds": {
+          "1": {
+            "committed": 0,
+            "proposals_with_new_geometry_violations": 0,
+            "proposed": 0
+          },
+          "2": {
+            "committed": 0,
+            "proposals_with_new_geometry_violations": 0,
+            "proposed": 0
+          }
+        },
+        "seats_with_a_proposal_introducing_a_violation": 0,
+        "seats_with_attempts": 0,
+        "seats_with_new_violations_in_final_artifact": 0,
+        "tried_and_returned_original": 0
+      }
+    }
+  },
+  "formal_per_seat_metrics_sha256": "5a567ee2804cc97bb958d43a8db0d305870a0bb8b31ec21da1500a58ea330f07",
+  "measurement_sha256": {
+    "HarmonyOS_Sans_SC_Bold.ttf": "43a424b85e47fb53a17b3b32026a71801f86f8e022ca6798d186b47d39fa5f01",
+    "HarmonyOS_Sans_SC_Regular.ttf": "297b088424be212207df2ce8b98e335468b782aa6b96832af0b8b773d711e2b1",
+    "measure.py": "c5ebc7d13c94a73f2e48af6df51a045b8dd8b61c68a40c2dfc0ec69e16526f17"
+  },
+  "replay_space_allocation_sha256": "a6891dcc85983f2c972657682e430151150c02b16b7edcd1c9294052f2a4ed7f",
+  "same_initial_candidate_and_terminal_audit": {
+    "counts": {
+      "model": {
+        "common_fail": 110,
+        "common_pass": 101,
+        "common_unknown": 1,
+        "eligible": 212,
+        "tasks_with_at_least_one_observed_candidate_issue_introduced_or_worsened": 57
+      },
+      "program": {
+        "common_fail": 121,
+        "common_pass": 91,
+        "eligible": 212,
+        "tasks_with_at_least_one_observed_candidate_issue_introduced_or_worsened": 135
+      }
+    },
+    "effects": {
+      "model": {
+        "all_candidates": {
+          "accepted_candidate": {
+            "count": 101,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 101,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "rejected_candidate": {
+            "count": 233,
+            "introduced_occurrences": 72,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 72,
+            "not_numerically_comparable": 5,
+            "numerically_comparable": 228,
+            "unchanged_bytes_without_measurement": 0,
+            "with_either": 94,
+            "with_introduction": 44,
+            "with_worsening": 68,
+            "worsened_existing_occurrences": 156
+          }
+        },
+        "round_1": {
+          "accepted_candidate": {
+            "count": 88,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 88,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "rejected_candidate": {
+            "count": 123,
+            "introduced_occurrences": 49,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 49,
+            "not_numerically_comparable": 3,
+            "numerically_comparable": 120,
+            "unchanged_bytes_without_measurement": 0,
+            "with_either": 57,
+            "with_introduction": 30,
+            "with_worsening": 40,
+            "worsened_existing_occurrences": 91
+          }
+        },
+        "round_2": {
+          "accepted_candidate": {
+            "count": 13,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 13,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "rejected_candidate": {
+            "count": 110,
+            "introduced_occurrences": 23,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 23,
+            "not_numerically_comparable": 2,
+            "numerically_comparable": 108,
+            "unchanged_bytes_without_measurement": 0,
+            "with_either": 37,
+            "with_introduction": 14,
+            "with_worsening": 28,
+            "worsened_existing_occurrences": 65
+          }
+        },
+        "terminal": {
+          "changed": {
+            "count": 101,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 101,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "original_retained": {
+            "count": 110,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "not_numerically_comparable": 2,
+            "numerically_comparable": 108,
+            "unchanged_bytes_without_measurement": 2,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "transport_unknown": {
+            "count": 1
+          }
+        }
+      },
+      "program": {
+        "all_candidates": {
+          "accepted_candidate": {
+            "count": 91,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 91,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "rejected_candidate": {
+            "count": 282,
+            "introduced_occurrences": 268,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 268,
+            "numerically_comparable": 282,
+            "with_either": 207,
+            "with_introduction": 110,
+            "with_worsening": 149,
+            "worsened_existing_occurrences": 310
+          }
+        },
+        "round_1": {
+          "accepted_candidate": {
+            "count": 45,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 45,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "rejected_candidate": {
+            "count": 164,
+            "introduced_occurrences": 145,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 145,
+            "numerically_comparable": 164,
+            "with_either": 135,
+            "with_introduction": 63,
+            "with_worsening": 112,
+            "worsened_existing_occurrences": 233
+          }
+        },
+        "round_2": {
+          "accepted_candidate": {
+            "count": 46,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 46,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "rejected_candidate": {
+            "count": 118,
+            "introduced_occurrences": 123,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 123,
+            "numerically_comparable": 118,
+            "with_either": 72,
+            "with_introduction": 47,
+            "with_worsening": 37,
+            "worsened_existing_occurrences": 77
+          }
+        },
+        "terminal": {
+          "changed": {
+            "count": 91,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "numerically_comparable": 91,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          },
+          "original_retained": {
+            "count": 121,
+            "introduced_occurrences": 0,
+            "introduced_on_new_ids": 0,
+            "introduced_on_preexisting_ids": 0,
+            "not_numerically_comparable": 2,
+            "numerically_comparable": 119,
+            "unchanged_bytes_without_measurement": 2,
+            "with_either": 0,
+            "with_introduction": 0,
+            "with_worsening": 0,
+            "worsened_existing_occurrences": 0
+          }
+        }
+      }
+    },
+    "eligible": 212,
+    "method": "Fixed initial draft for every round and terminal; compare the reference geometry (node ID, rule) and a strictly >0.05 increase in recorded excess. A new ID after restructuring can create a newly keyed defect. This is a geometric diagnostic. Program field edits and model whole-card rewrites do not have a common atomic action count.",
+    "model_requests": {
+      "confirmed_responses": 334,
+      "confirmed_tokens": 1523760,
+      "request_intents": 335,
+      "unconfirmed_provider_requests": 1
+    },
+    "paired_ledger_sha256": "bf341baa5135848d0df1fdf86c69c670307f88608febf98b5b87d65bf0126f72",
+    "program_incremental_model_calls": 0,
+    "registered_cohort": 219,
+    "rq2_plan_sha256": "f07f04cc41ff711fc590cc68e0f67ac821f94b75c9728b5065b8fdd34cab19ae"
+  },
+  "same_initial_repair_budget": {
+    "assigned": 219,
+    "eligibility_counts": {
+      "awaiting_first_repair": 212,
+      "no_first_artifact": 5,
+      "trigger_unknown": 2
+    },
+    "model_budget_1": {
+      "eligible": 212,
+      "fail": 123,
+      "pass": 88,
+      "program_rescued": 0,
+      "rounds": [
+        {
+          "candidate_received": 211,
+          "metered_responses": 211,
+          "metered_tokens": 843565,
+          "request_intents": 212,
+          "rescued": 88
+        }
+      ],
+      "total": {
+        "candidate_received": 211,
+        "metered_responses": 211,
+        "metered_tokens": 843565,
+        "request_intents": 212,
+        "rescued": 88
+      },
+      "undetermined": 1
+    },
+    "model_budget_2": {
+      "eligible": 212,
+      "fail": 110,
+      "pass": 101,
+      "program_rescued": 0,
+      "rounds": [
+        {
+          "candidate_received": 211,
+          "metered_responses": 211,
+          "metered_tokens": 843565,
+          "request_intents": 212,
+          "rescued": 88
+        },
+        {
+          "candidate_received": 123,
+          "metered_responses": 123,
+          "metered_tokens": 680195,
+          "request_intents": 123,
+          "rescued": 13
+        }
+      ],
+      "total": {
+        "candidate_received": 334,
+        "metered_responses": 334,
+        "metered_tokens": 1523760,
+        "request_intents": 335,
+        "rescued": 101
+      },
+      "undetermined": 1
+    },
+    "program_first_budget_1": {
+      "eligible": 212,
+      "fail": 105,
+      "pass": 107,
+      "program_rescued": 91,
+      "rounds": [
+        {
+          "candidate_received": 121,
+          "metered_responses": 121,
+          "metered_tokens": 540065,
+          "request_intents": 121,
+          "rescued": 16
+        }
+      ],
+      "total": {
+        "candidate_received": 121,
+        "metered_responses": 121,
+        "metered_tokens": 540065,
+        "request_intents": 121,
+        "rescued": 16
+      },
+      "undetermined": 0
+    },
+    "program_first_budget_2": {
+      "eligible": 212,
+      "fail": 96,
+      "pass": 116,
+      "program_rescued": 91,
+      "rounds": [
+        {
+          "candidate_received": 121,
+          "metered_responses": 121,
+          "metered_tokens": 540065,
+          "request_intents": 121,
+          "rescued": 16
+        },
+        {
+          "candidate_received": 105,
+          "metered_responses": 105,
+          "metered_tokens": 597105,
+          "request_intents": 105,
+          "rescued": 9
+        }
+      ],
+      "total": {
+        "candidate_received": 226,
+        "metered_responses": 226,
+        "metered_tokens": 1137170,
+        "request_intents": 226,
+        "rescued": 25
+      },
+      "undetermined": 0
+    },
+    "program_only": {
+      "eligible": 212,
+      "fail": 121,
+      "pass": 91,
+      "program_rescued": 91,
+      "rounds": [],
+      "total": {
+        "candidate_received": 0,
+        "metered_responses": 0,
+        "metered_tokens": 0,
+        "request_intents": 0,
+        "rescued": 0
+      },
+      "undetermined": 0
+    },
+    "scope": "Previously observed repair requests from the same original card. A program-first policy retains a successful program output; all other model requests start from the original card. Unknown replies remain undetermined. Tokens are the incremental metered model repair tokens, excluding the original generation."
+  },
+  "scope": "The six-arm B5 counts the common geometry repair after the initial artifact. All proposals are compared to that same initial artifact. An issue identity is a node id and geometry code. A changed property in one proposal counts as one action. Source or protocol rejection before the geometry exit provides no geometry estimate. The independent repair study reuses the L1 initial artifacts; counts in the two studies overlap."
+}
