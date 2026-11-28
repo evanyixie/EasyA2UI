@@ -15,14 +15,22 @@ def study(monkeypatch):
 def case(size, load, i, family=None):
     name = f"{size}-{load}-{i}"
     return {
-        "task": name, "size": size, "load": load, "family": family or name,
-        "draw_rank_sha256": f"{i:02}", "raw_request_sha256": name,
+        "task": name,
+        "size": size,
+        "load": load,
+        "family": family or name,
+        "draw_rank_sha256": f"{i:02}",
+        "raw_request_sha256": name,
     }
 
 
 def test_two_per_size_and_band_with_ties_and_order_invariance(study):
-    rows = [case(size, load, i) for size in study.SIZES
-            for load, n in ((1, 2), (2, 4), (3, 4), (4, 2)) for i in range(n)]
+    rows = [
+        case(size, load, i)
+        for size in study.SIZES
+        for load, n in ((1, 2), (2, 4), (3, 4), (4, 2))
+        for i in range(n)
+    ]
     selected, strata = study.draw(rows)
     assert (selected, strata) == study.draw(list(reversed(rows)))
     assert Counter((r["size"], r["load_band"]) for r in selected) == {
@@ -38,7 +46,12 @@ def test_two_per_size_and_band_with_ties_and_order_invariance(study):
 
 
 def test_backtracks_across_sizes_to_preserve_global_family_uniqueness(study):
-    rows = [case(size, load, i) for size in study.SIZES for load in (1, 2, 3) for i in range(2)]
+    rows = [
+        case(size, load, i)
+        for size in study.SIZES
+        for load in (1, 2, 3)
+        for i in range(2)
+    ]
     rows[0]["family"] = rows[6]["family"] = "only-available-in-later-cell"
     rows.append(case("2x2", 1, 2))
     selected, _ = study.draw(rows)
@@ -48,7 +61,12 @@ def test_backtracks_across_sizes_to_preserve_global_family_uniqueness(study):
 
 
 def test_no_feasible_draw_rejected(study):
-    rows = [case(s, n, i, family=str(i)) for s in study.SIZES for n in (1, 2, 3) for i in range(2)]
+    rows = [
+        case(s, n, i, family=str(i))
+        for s in study.SIZES
+        for n in (1, 2, 3)
+        for i in range(2)
+    ]
     with pytest.raises(ValueError, match="globally distinct"):
         study.draw(rows)
     for row in rows:
