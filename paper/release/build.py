@@ -50,6 +50,7 @@ TABLES = (
     "paper/out/tables/formal_font_size.json",
     "paper/out/tables/fixed_tree_density.json",
     "paper/out/tables/formal_repair_b5.json",
+    "paper/out/tables/formal_repeated_values.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -141,6 +142,7 @@ def _readme(anonymous: bool) -> str:
 - [六档声明字号、同一字段配对与设备取证范围]({TABLES[26]})
 - [固定布局树，分别改变字号和留白的四格结果]({TABLES[27]})
 - [正式 B5 修复轮次、候选新增违规及同初稿请求预算]({TABLES[28]})
+- [A6 首帧正文的参考值重复与完整数值复核]({TABLES[29]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -177,6 +179,8 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 同一保管目录下运行 `python cardgen-proto/exp/studies/six_arms/formal_numeric_fidelity.py <正式批保管目录>` 可复核数值出处表。程序校验历史匹配器、输入和原件摘要，重算每席的参考值覆盖，并核对已发表的覆盖计数摘要。
 
 运行 `python cardgen-proto/exp/studies/six_arms/formal_font_size.py <正式批保管目录>` 可复核 C-05 的两条字号线、同一字段的字号差异，以及归档设备控件树能否提供实际字号。输出仅含汇总。
+
+运行 `python cardgen-proto/exp/studies/six_arms/formal_repeated_values.py <正式批保管目录>` 可复核 A6。程序按冻结的参考卡取值，用历史匹配器统计六档首件与终件，再检查重复出现在同一个还是多个正文控件中。
 
 保管方运行 `python cardgen-proto/exp/studies/six_arms/fixed_tree_density.py <正式批保管目录>` 可重放 12 题共 120 份已生成的布局树，核对字号与留白的四格结果。需要登记的常规和粗体字库及测量器；支持通过既有的 `SIX_ARMS_FONT_REGULAR`、`SIX_ARMS_FONT_BOLD`、`SIX_ARMS_MEASURE_PY` 指向等摘要的文件。
 
