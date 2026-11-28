@@ -150,7 +150,7 @@ def _individual_pairs(node, entries):
         yield from _individual_pairs(child, entries)
 
 
-def _features(tree, entries):
+def _features(tree, entries, *, canvas_width=150):
     gap, padding = 4, 10
     stats = {
         "action_width_excess_vp": 0.0,
@@ -184,9 +184,26 @@ def _features(tree, entries):
             return max(height(c, share) for c in children)
         return sum(height(c, width) for c in children) + spaces
 
-    stats["estimated_height_vp"] = 2 * padding + height(tree["root"], 150 - 2 * padding)
+    stats["estimated_height_vp"] = 2 * padding + height(
+        tree["root"], canvas_width - 2 * padding
+    )
     stats["action_width_excess_vp"] = round(stats["action_width_excess_vp"], 2)
     return stats
+
+
+def feature_rank(features):
+    height = features["estimated_height_vp"]
+    height_excess = max(0, height - 150)
+    action_excess = features["action_width_excess_vp"]
+    return (
+        bool(height_excess or action_excess),
+        bool(action_excess),
+        height_excess,
+        action_excess,
+        features["extra_text_lines"],
+        features["horizontal_groups"],
+        height,
+    )
 
 
 def small_menu(content, base, task_key):
@@ -209,18 +226,7 @@ def small_menu(content, base, task_key):
         if leaf_sequence(root) != sequence:
             raise ValueError("Candidate changed reference order")
         features = _features(tree, entries)
-        h = features["estimated_height_vp"]
-        height_excess = max(0, h - 150)
-        action_excess = features["action_width_excess_vp"]
-        score = (
-            bool(height_excess or action_excess),
-            bool(action_excess),
-            height_excess,
-            action_excess,
-            features["extra_text_lines"],
-            features["horizontal_groups"],
-            h,
-        )
+        score = feature_rank(features)
         order = hashlib.sha256(
             canonical(["small-structure-v1-20261128", task_key, tree])
         ).hexdigest()
