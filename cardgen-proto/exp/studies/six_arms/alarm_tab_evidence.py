@@ -3,7 +3,6 @@
 import argparse
 import json
 import re
-import runpy
 import sys
 from datetime import datetime
 from io import BytesIO
@@ -348,16 +347,8 @@ def audit(formal_root, *, request_index=None, originals_root=None, evaluator=Non
         or root.parent / "paper_source219_verification_20261126/requests.private.jsonl",
         originals_root,
     )
-    plan = json.loads(bounds.verified(root / "live/plan.json", FORMAL_PLAN))
-    if evaluator is None:
-        [runner] = [
-            Path(k)
-            for k in plan["dependencies"]
-            if k.replace("\\", "/").endswith("/staged_runner/stage_execution.py")
-        ]
-        evaluator = runner.parent.parent / "endpoint.py"
-    bounds.verified(evaluator, bounds.EVALUATOR)
-    assess = runpy.run_path(str(evaluator))["assess"]
+    bounds.verified(root / "live/plan.json", FORMAL_PLAN)
+    assess = bounds.frozen_assess(evaluator)
     archived_trees = {
         (r["arm"], r["checkpoint"]): r["tree_sha256"]
         for r in read_lines(root / MANIFEST, MANIFEST_SHA256)

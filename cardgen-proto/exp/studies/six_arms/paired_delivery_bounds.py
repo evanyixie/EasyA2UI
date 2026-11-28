@@ -96,9 +96,14 @@ def identical_card(batch, left, right):
     return True
 
 
-def replay(batch, evaluator):
-    verified(evaluator, EVALUATOR)
-    assess = runpy.run_path(str(evaluator))["assess"]
+def frozen_assess(evaluator=None):
+    path = evaluator or Path(__file__).with_name("preregistered") / "endpoint.py"
+    verified(path, EVALUATOR)
+    return runpy.run_path(str(path))["assess"]
+
+
+def replay(batch, evaluator=None):
+    assess = frozen_assess(evaluator)
     roster = [
         json.loads(line)
         for line in verified(batch / "analysis/roster.jsonl", ROSTER).splitlines()
@@ -181,6 +186,6 @@ def replay(batch, evaluator):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("formal_batch", type=Path)
-    parser.add_argument("frozen_evaluator", type=Path)
+    parser.add_argument("frozen_evaluator", type=Path, nargs="?")
     args = parser.parse_args()
     print(json.dumps(replay(args.formal_batch, args.frozen_evaluator), indent=2))

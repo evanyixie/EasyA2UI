@@ -253,6 +253,61 @@ def generate(stage, root, source, owner=None, catalogue=None):
         staged.rename(dest)
 
 
+P7_TEXT_FIELDS = ("originalQuery", "userQuery", "title", "description")
+
+
+def checked_p7_answer(answer, case):
+    """Return the comparable selection, preserving each quoted fragment verbatim."""
+    if not isinstance(answer, dict) or not isinstance(case, dict):
+        raise TypeError("A P7 answer and its frozen question are required")
+    request = case.get("request")
+    choices = case.get("choices")
+    if not isinstance(request, dict) or not isinstance(choices, list):
+        raise TypeError("Missing frozen request or candidate list")
+    candidate_ids = set()
+    for choice in choices:
+        if (
+            not isinstance(choice, (list, tuple))
+            or len(choice) != 2
+            or not isinstance(choice[0], str)
+            or not choice[0]
+            or choice[0] in candidate_ids
+        ):
+            raise ValueError("Invalid or ambiguous frozen candidate")
+        candidate_ids.add(choice[0])
+
+    must, literals = answer.get("must"), answer.get("literal")
+    for items in (must, literals):
+        if (
+            not isinstance(items, list)
+            or not all(isinstance(item, str) and item.strip() for item in items)
+            or len(items) != len(set(items))
+        ):
+            raise ValueError("P7 selections must contain unique, nonblank strings")
+    if not set(must) <= candidate_ids:
+        raise ValueError("Unknown P7 candidate")
+    # The form saves one fragment per line. A field boundary, a candidate label
+    # or an annotator's explanation cannot supply the quoted request text.
+    texts = [request[k] for k in P7_TEXT_FIELDS if isinstance(request.get(k), str)]
+    for fragment in literals:
+        if (
+            "\n" in fragment
+            or "\r" in fragment
+            or not any(fragment in text for text in texts)
+        ):
+            raise ValueError("A P7 literal must quote one line of the request verbatim")
+
+    state, note = answer.get("state"), answer.get("note", "")
+    if (
+        state not in ("已判定", "无必显项", "证据不足")
+        or (state == "已判定") != bool(must or literals)
+        or not isinstance(note, str)
+        or (state != "已判定" and not note.strip())
+    ):
+        raise ValueError("Inconsistent P7 decision or missing explanation")
+    return {"state": state, "must": sorted(must), "literal": sorted(literals)}
+
+
 def checked_submission(stage_dir, role, obj):
     manager = load(stage_dir / "admin.json")
     questions_path = stage_dir / role / "questions.json"
@@ -287,31 +342,7 @@ def checked_submission(stage_dir, role, obj):
         if not isinstance(a, dict):
             raise TypeError("答案结构有误")
         if q["mode"] == "must":
-            pick = a.get("must")
-            literal = a.get("literal")
-            state = a.get("state")
-            if (
-                not isinstance(pick, list)
-                or not all(isinstance(s, str) for s in pick)
-                or len(pick) != len(set(pick))
-                or not set(pick) <= {pair[0] for pair in ref["choices"]}
-                or not isinstance(literal, list)
-                or not all(isinstance(s, str) for s in literal)
-                or len(literal) != len(set(literal))
-            ):
-                raise ValueError("不合法必显引用")
-            query = "\n".join(
-                str(ref["request"].get(k, ""))
-                for k in ("originalQuery", "userQuery", "title", "description")
-            )
-            if any(not s.strip() or s not in query for s in literal):
-                raise ValueError("额外必显项需逐字引用输入")
-            if (
-                state not in {"已判定", "无必显项", "证据不足"}
-                or ((state == "已判定") != bool(pick or literal))
-                or (state != "已判定" and not a.get("note", "").strip())
-            ):
-                raise ValueError("缺明确完整判定；未知不能计为空集")
+            checked_p7_answer(a, ref)
         elif q["mode"] == "layout":
             if a.get("layout") not in q["layout_classes"]:
                 raise ValueError("缺合法布局判定")

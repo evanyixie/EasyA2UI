@@ -1,0 +1,579 @@
+{
+  "code_sha256": {
+    "cohort_analysis.py": "e4e1357bd83bfde927dfdca588da63406894bf52f3854c3b158c119bf7f25209",
+    "endpoint.py": "f113cd7b10b14a3dabeaaa18f9e8e092a32f6cec875b57a2d909caeff8c86058",
+    "paired_stats.py": "701f083ae61ea3b6533661d7663abc13feeed5a25ff4ae2c03c0b47b3ca798c5"
+  },
+  "cohorts": {
+    "217": {
+      "families": 198,
+      "phases": {
+        "after_common_repair": {
+          "arms": {
+            "L1": {
+              "fail": 4,
+              "pass": 0,
+              "unknown": 213
+            },
+            "L2": {
+              "fail": 57,
+              "pass": 0,
+              "unknown": 160
+            },
+            "L3": {
+              "fail": 54,
+              "pass": 0,
+              "unknown": 163
+            },
+            "L4": {
+              "fail": 29,
+              "pass": 0,
+              "unknown": 188
+            },
+            "L5": {
+              "fail": 68,
+              "pass": 0,
+              "unknown": 149
+            },
+            "L6": {
+              "fail": 104,
+              "pass": 0,
+              "unknown": 113
+            }
+          },
+          "paired_contrasts": {
+            "L2-L1": {
+              "effect": null,
+              "effect_bounds": [
+                -0.9815668202764977,
+                0.7373271889400922
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 1,
+              "n_total": 217,
+              "n_unknown": 216,
+              "paired_table": {
+                "both_fail": 1,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L3-L2": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7373271889400922,
+                0.7511520737327189
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 35,
+              "n_total": 217,
+              "n_unknown": 182,
+              "paired_table": {
+                "both_fail": 35,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L4-L3": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7511520737327189,
+                0.8663594470046083
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 23,
+              "n_total": 217,
+              "n_unknown": 194,
+              "paired_table": {
+                "both_fail": 23,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L5-L4": {
+              "effect": null,
+              "effect_bounds": [
+                -0.8663594470046083,
+                0.6866359447004609
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 26,
+              "n_total": 217,
+              "n_unknown": 191,
+              "paired_table": {
+                "both_fail": 26,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L6-L5": {
+              "effect": null,
+              "effect_bounds": [
+                -0.6866359447004609,
+                0.5207373271889401
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 64,
+              "n_total": 217,
+              "n_unknown": 153,
+              "paired_table": {
+                "both_fail": 64,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            }
+          },
+          "unknown_criteria_among_unresolved_seats": {
+            "actual_action_destinations": 986,
+            "binding_fidelity": 986,
+            "body_alignment": 986,
+            "common_repair_lineage": 16,
+            "entity_roles_priority": 986,
+            "execution": 16,
+            "first_response_lineage": 16,
+            "independent_business": 986,
+            "lossless_caller_canvas": 17,
+            "must_show_facts": 986,
+            "protocol": 16,
+            "readable_text": 986,
+            "registered_action_payloads": 495,
+            "schedule_timeline": 986,
+            "specialized_presentation": 986,
+            "title_anchor": 986,
+            "trusted_native_frame": 60
+          }
+        },
+        "raw_first": {
+          "arms": {
+            "L1": {
+              "fail": 4,
+              "pass": 0,
+              "unknown": 213
+            },
+            "L2": {
+              "fail": 57,
+              "pass": 0,
+              "unknown": 160
+            },
+            "L3": {
+              "fail": 54,
+              "pass": 0,
+              "unknown": 163
+            },
+            "L4": {
+              "fail": 29,
+              "pass": 0,
+              "unknown": 188
+            },
+            "L5": {
+              "fail": 68,
+              "pass": 0,
+              "unknown": 149
+            },
+            "L6": {
+              "fail": 104,
+              "pass": 0,
+              "unknown": 113
+            }
+          },
+          "paired_contrasts": {
+            "L2-L1": {
+              "effect": null,
+              "effect_bounds": [
+                -0.9815668202764977,
+                0.7373271889400922
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 1,
+              "n_total": 217,
+              "n_unknown": 216,
+              "paired_table": {
+                "both_fail": 1,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L3-L2": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7373271889400922,
+                0.7511520737327189
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 35,
+              "n_total": 217,
+              "n_unknown": 182,
+              "paired_table": {
+                "both_fail": 35,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L4-L3": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7511520737327189,
+                0.8663594470046083
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 23,
+              "n_total": 217,
+              "n_unknown": 194,
+              "paired_table": {
+                "both_fail": 23,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L5-L4": {
+              "effect": null,
+              "effect_bounds": [
+                -0.8663594470046083,
+                0.6866359447004609
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 26,
+              "n_total": 217,
+              "n_unknown": 191,
+              "paired_table": {
+                "both_fail": 26,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L6-L5": {
+              "effect": null,
+              "effect_bounds": [
+                -0.6866359447004609,
+                0.5207373271889401
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 64,
+              "n_total": 217,
+              "n_unknown": 153,
+              "paired_table": {
+                "both_fail": 64,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            }
+          },
+          "unknown_criteria_among_unresolved_seats": {
+            "actual_action_destinations": 986,
+            "binding_fidelity": 986,
+            "body_alignment": 986,
+            "entity_roles_priority": 986,
+            "execution": 16,
+            "first_response_lineage": 16,
+            "independent_business": 986,
+            "lossless_caller_canvas": 18,
+            "must_show_facts": 986,
+            "protocol": 16,
+            "readable_text": 986,
+            "registered_action_payloads": 495,
+            "schedule_timeline": 986,
+            "specialized_presentation": 986,
+            "title_anchor": 986,
+            "trusted_native_frame": 61
+          }
+        }
+      }
+    },
+    "219": {
+      "families": 200,
+      "phases": {
+        "after_common_repair": {
+          "arms": {
+            "L1": {
+              "fail": 4,
+              "pass": 0,
+              "unknown": 215
+            },
+            "L2": {
+              "fail": 58,
+              "pass": 0,
+              "unknown": 161
+            },
+            "L3": {
+              "fail": 54,
+              "pass": 0,
+              "unknown": 165
+            },
+            "L4": {
+              "fail": 29,
+              "pass": 0,
+              "unknown": 190
+            },
+            "L5": {
+              "fail": 68,
+              "pass": 0,
+              "unknown": 151
+            },
+            "L6": {
+              "fail": 104,
+              "pass": 0,
+              "unknown": 115
+            }
+          },
+          "paired_contrasts": {
+            "L2-L1": {
+              "effect": null,
+              "effect_bounds": [
+                -0.9817351598173516,
+                0.7351598173515982
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 1,
+              "n_total": 219,
+              "n_unknown": 218,
+              "paired_table": {
+                "both_fail": 1,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L3-L2": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7351598173515982,
+                0.7534246575342466
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 35,
+              "n_total": 219,
+              "n_unknown": 184,
+              "paired_table": {
+                "both_fail": 35,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L4-L3": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7534246575342466,
+                0.867579908675799
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 23,
+              "n_total": 219,
+              "n_unknown": 196,
+              "paired_table": {
+                "both_fail": 23,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L5-L4": {
+              "effect": null,
+              "effect_bounds": [
+                -0.867579908675799,
+                0.6894977168949772
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 26,
+              "n_total": 219,
+              "n_unknown": 193,
+              "paired_table": {
+                "both_fail": 26,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L6-L5": {
+              "effect": null,
+              "effect_bounds": [
+                -0.6894977168949772,
+                0.5251141552511416
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 64,
+              "n_total": 219,
+              "n_unknown": 155,
+              "paired_table": {
+                "both_fail": 64,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            }
+          },
+          "unknown_criteria_among_unresolved_seats": {
+            "actual_action_destinations": 997,
+            "binding_fidelity": 997,
+            "body_alignment": 997,
+            "common_repair_lineage": 16,
+            "entity_roles_priority": 997,
+            "execution": 16,
+            "first_response_lineage": 16,
+            "independent_business": 997,
+            "lossless_caller_canvas": 17,
+            "must_show_facts": 997,
+            "protocol": 16,
+            "readable_text": 997,
+            "registered_action_payloads": 500,
+            "schedule_timeline": 997,
+            "specialized_presentation": 997,
+            "title_anchor": 997,
+            "trusted_native_frame": 60
+          }
+        },
+        "raw_first": {
+          "arms": {
+            "L1": {
+              "fail": 4,
+              "pass": 0,
+              "unknown": 215
+            },
+            "L2": {
+              "fail": 58,
+              "pass": 0,
+              "unknown": 161
+            },
+            "L3": {
+              "fail": 54,
+              "pass": 0,
+              "unknown": 165
+            },
+            "L4": {
+              "fail": 29,
+              "pass": 0,
+              "unknown": 190
+            },
+            "L5": {
+              "fail": 68,
+              "pass": 0,
+              "unknown": 151
+            },
+            "L6": {
+              "fail": 104,
+              "pass": 0,
+              "unknown": 115
+            }
+          },
+          "paired_contrasts": {
+            "L2-L1": {
+              "effect": null,
+              "effect_bounds": [
+                -0.9817351598173516,
+                0.7351598173515982
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 1,
+              "n_total": 219,
+              "n_unknown": 218,
+              "paired_table": {
+                "both_fail": 1,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L3-L2": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7351598173515982,
+                0.7534246575342466
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 35,
+              "n_total": 219,
+              "n_unknown": 184,
+              "paired_table": {
+                "both_fail": 35,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L4-L3": {
+              "effect": null,
+              "effect_bounds": [
+                -0.7534246575342466,
+                0.867579908675799
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 23,
+              "n_total": 219,
+              "n_unknown": 196,
+              "paired_table": {
+                "both_fail": 23,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L5-L4": {
+              "effect": null,
+              "effect_bounds": [
+                -0.867579908675799,
+                0.6894977168949772
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 26,
+              "n_total": 219,
+              "n_unknown": 193,
+              "paired_table": {
+                "both_fail": 26,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            },
+            "L6-L5": {
+              "effect": null,
+              "effect_bounds": [
+                -0.6894977168949772,
+                0.5251141552511416
+              ],
+              "inference_status": "incomplete_endpoints",
+              "n_known": 64,
+              "n_total": 219,
+              "n_unknown": 155,
+              "paired_table": {
+                "both_fail": 64,
+                "both_pass": 0,
+                "left_only": 0,
+                "right_only": 0
+              }
+            }
+          },
+          "unknown_criteria_among_unresolved_seats": {
+            "actual_action_destinations": 997,
+            "binding_fidelity": 997,
+            "body_alignment": 997,
+            "entity_roles_priority": 997,
+            "execution": 16,
+            "first_response_lineage": 16,
+            "independent_business": 997,
+            "lossless_caller_canvas": 18,
+            "must_show_facts": 997,
+            "protocol": 16,
+            "readable_text": 997,
+            "registered_action_payloads": 500,
+            "schedule_timeline": 997,
+            "specialized_presentation": 997,
+            "title_anchor": 997,
+            "trusted_native_frame": 61
+          }
+        }
+      }
+    }
+  },
+  "observations": 2628,
+  "observations_sha256": "28e95fa792d7b1f4612b2f69930adce719449ea306d7f690d552b5b0fd535600"
+}

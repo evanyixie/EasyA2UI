@@ -6,7 +6,6 @@ a new file. The index links existing observations; it is not a reviewer packet.
 
 import argparse
 import json
-import runpy
 from collections import Counter
 from functools import cache
 from pathlib import Path
@@ -97,9 +96,8 @@ def portfolio(rows, arms):
     }
 
 
-def collect(batch, evaluator):
-    bounds.verified(evaluator, bounds.EVALUATOR)
-    assess = runpy.run_path(str(evaluator))["assess"]
+def collect(batch, evaluator=None):
+    assess = bounds.frozen_assess(evaluator)
     name, obs_hash = bounds.GRIDS["original"]
     observations = bounds.verified(
         batch / "followup_evidence_20261128" / name, obs_hash
@@ -183,7 +181,7 @@ def collect(batch, evaluator):
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("batch", type=Path)
-    cli.add_argument("evaluator", type=Path)
+    cli.add_argument("evaluator", type=Path, nargs="?")
     cli.add_argument("--private-ledger", type=Path)
     args = cli.parse_args()
     records = collect(args.batch, args.evaluator)

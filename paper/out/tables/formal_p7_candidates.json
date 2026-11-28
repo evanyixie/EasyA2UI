@@ -1,0 +1,191 @@
+{
+  "formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "model_inputs": {
+    "by_arm": {
+      "L1": {
+        "no_http_status": 4,
+        "other_http_status": 0,
+        "provider_id_present": 215,
+        "status_200": 215,
+        "verified_request_messages": 219
+      },
+      "L2": {
+        "no_http_status": 0,
+        "other_http_status": 0,
+        "provider_id_present": 219,
+        "status_200": 219,
+        "verified_request_messages": 219
+      },
+      "L3": {
+        "no_http_status": 2,
+        "other_http_status": 0,
+        "provider_id_present": 217,
+        "status_200": 217,
+        "verified_request_messages": 219
+      },
+      "L4": {
+        "no_http_status": 0,
+        "other_http_status": 0,
+        "provider_id_present": 219,
+        "status_200": 219,
+        "verified_request_messages": 219
+      },
+      "L5": {
+        "no_http_status": 1,
+        "other_http_status": 0,
+        "provider_id_present": 218,
+        "status_200": 218,
+        "verified_request_messages": 219
+      },
+      "L6": {
+        "no_http_status": 0,
+        "other_http_status": 0,
+        "provider_id_present": 219,
+        "status_200": 219,
+        "verified_request_messages": 219
+      }
+    },
+    "same_user_message_across_all_six_arms_tasks": 219
+  },
+  "packet_revisions": {
+    "original": {
+      "admin_sha256": "9c021641706a91f8035f48ebe44296f9a0c3606870c783198932f1944f322810",
+      "roles": {
+        "P7-all-A": {
+          "counts": {
+            "action_choices": 154,
+            "duplicate_field_choices": 0,
+            "duplicate_registered_fields_in_flat_list": 0,
+            "extra_fields": 0,
+            "field_choices": 1221,
+            "missing_fields": 224,
+            "tasks": 219,
+            "tasks_same_action_id_and_capability_multiset": 219,
+            "tasks_same_action_id_and_capability_order": 219,
+            "tasks_same_expandable_binding_definitions": 212,
+            "tasks_same_field_set_different_order": 0,
+            "tasks_same_full_ordered_action_definitions": 219,
+            "tasks_same_original_query_user_query_and_size": 219,
+            "tasks_with_added_fields_shown_after_an_action": 0,
+            "tasks_with_same_field_sequence": 212,
+            "tasks_with_same_field_set": 212
+          },
+          "file_sha256": {
+            "questions.json": "7b6c0e12d5b045e3e4bdfd15c4aa480ec2c87090bcacc34c6b7885b2f0e00a9a",
+            "开始审核.html": "e98b5a0c2a9a9bac66e89a7197a50c839e8632df2a7036a13660713aebf9f269"
+          },
+          "handoff_zip_sha256": null
+        },
+        "P7-double-B": {
+          "counts": {
+            "action_choices": 16,
+            "duplicate_field_choices": 0,
+            "duplicate_registered_fields_in_flat_list": 0,
+            "extra_fields": 0,
+            "field_choices": 88,
+            "missing_fields": 63,
+            "tasks": 20,
+            "tasks_same_action_id_and_capability_multiset": 20,
+            "tasks_same_action_id_and_capability_order": 20,
+            "tasks_same_expandable_binding_definitions": 19,
+            "tasks_same_field_set_different_order": 0,
+            "tasks_same_full_ordered_action_definitions": 20,
+            "tasks_same_original_query_user_query_and_size": 20,
+            "tasks_with_added_fields_shown_after_an_action": 0,
+            "tasks_with_same_field_sequence": 19,
+            "tasks_with_same_field_set": 19
+          },
+          "file_sha256": {
+            "questions.json": "b8bbd30d6a6b51c5c03ddaf0550e7e7f9b3836950f82c94dfa12ebc9e0245809",
+            "开始审核.html": "b499fb725794078ae6678c6d69faa9c5675791765b4d31214f64bc98409408f8"
+          },
+          "handoff_zip_sha256": null
+        }
+      },
+      "within_revision_overlap": {
+        "same_checkbox_ids_values_and_order": 20,
+        "same_request_details": 20,
+        "tasks": 20
+      }
+    },
+    "revised": {
+      "admin_sha256": "f2b9b567f68ae569e1826465eb5acc94615ec472d62c721260ff4280f5cf3077",
+      "roles": {
+        "P7-all-A": {
+          "counts": {
+            "action_choices": 154,
+            "duplicate_field_choices": 0,
+            "duplicate_registered_fields_in_flat_list": 0,
+            "extra_fields": 0,
+            "field_choices": 1445,
+            "missing_fields": 0,
+            "tasks": 219,
+            "tasks_same_action_id_and_capability_multiset": 219,
+            "tasks_same_action_id_and_capability_order": 219,
+            "tasks_same_expandable_binding_definitions": 212,
+            "tasks_same_field_set_different_order": 7,
+            "tasks_same_full_ordered_action_definitions": 219,
+            "tasks_same_original_query_user_query_and_size": 219,
+            "tasks_with_added_fields_shown_after_an_action": 4,
+            "tasks_with_same_field_sequence": 212,
+            "tasks_with_same_field_set": 219
+          },
+          "file_sha256": {
+            "questions.json": "28635199058a06a05c6d13c510ce8eb8b5f4ffac77e47fadbc1fcebcc5ef7abc",
+            "开始审核.html": "83360efbef28217a45faf49bce868b7d0c64b3c5891da76b8ad9e6225ee9c412"
+          },
+          "handoff_zip_sha256": "85b1d45325b2497348c60b174b44bc325c2ce51ffc823ae784033a823053231b"
+        },
+        "P7-double-B": {
+          "counts": {
+            "action_choices": 16,
+            "duplicate_field_choices": 0,
+            "duplicate_registered_fields_in_flat_list": 0,
+            "extra_fields": 0,
+            "field_choices": 151,
+            "missing_fields": 0,
+            "tasks": 20,
+            "tasks_same_action_id_and_capability_multiset": 20,
+            "tasks_same_action_id_and_capability_order": 20,
+            "tasks_same_expandable_binding_definitions": 19,
+            "tasks_same_field_set_different_order": 1,
+            "tasks_same_full_ordered_action_definitions": 20,
+            "tasks_same_original_query_user_query_and_size": 20,
+            "tasks_with_added_fields_shown_after_an_action": 0,
+            "tasks_with_same_field_sequence": 19,
+            "tasks_with_same_field_set": 20
+          },
+          "file_sha256": {
+            "questions.json": "42ab11075106882d766448dab6567c22a29f38b7b72480237e8583e0ff2289ac",
+            "开始审核.html": "cdee13eae5deb4d751325041ba4818ecdd86890ca67a5c7effb9b2f575ebe90c"
+          },
+          "handoff_zip_sha256": "c658edb3d47a425528b78566018f334dc5183f3b0877f13e98c099b5a79a34f7"
+        }
+      },
+      "within_revision_overlap": {
+        "same_checkbox_ids_values_and_order": 20,
+        "same_request_details": 20,
+        "tasks": 20
+      }
+    }
+  },
+  "question_revision": {
+    "P7-all-A": {
+      "added_field_count_to_task_count": {
+        "0": 212,
+        "21": 1,
+        "23": 3,
+        "27": 1,
+        "44": 1,
+        "63": 1
+      }
+    },
+    "P7-double-B": {
+      "added_field_count_to_task_count": {
+        "0": 19,
+        "63": 1
+      }
+    }
+  },
+  "scope": "L1 is a direct end-product request. L2–L6 have a distinct content request. The verified first-stage messages show the registered fields, samples and action definitions supplied; transport without a provider acknowledgement does not establish provider receipt. No model replies or human answers are read. Checkbox action labels name the capability. Full handler arguments are in the expandable request. Handoff archives establish the prepared version, not distribution or human completion."
+}
