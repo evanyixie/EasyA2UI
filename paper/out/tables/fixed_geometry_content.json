@@ -1,0 +1,869 @@
+{
+  "cohorts": {
+    "all_assigned": {
+      "families": 200,
+      "phases": {
+        "after_common_repair": {
+          "arms": {
+            "model": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 19,
+                  "some_unsourced": 3
+                },
+                "below_80": {
+                  "some_unsourced": 6
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 131,
+                "below_80": 55,
+                "unassessed": 33
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 186,
+                "no_artifact": 32
+              },
+              "joint": {
+                "fail": 197,
+                "missing": 3,
+                "pass": 19
+              },
+              "numeric_fidelity": {
+                "all_sourced": 102,
+                "empty_data": 23,
+                "no_artifact": 32,
+                "some_unsourced": 62
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 188,
+                "missing": 3,
+                "pass": 28
+              }
+            },
+            "program": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 75,
+                  "empty_data": 3,
+                  "some_unsourced": 25
+                },
+                "below_80": {
+                  "all_sourced": 15,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 103,
+                "below_80": 51,
+                "unassessed": 65
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 154,
+                "no_artifact": 64
+              },
+              "joint": {
+                "fail": 140,
+                "missing": 4,
+                "pass": 75
+              },
+              "numeric_fidelity": {
+                "all_sourced": 90,
+                "empty_data": 24,
+                "no_artifact": 64,
+                "some_unsourced": 41
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 63,
+                "missing": 1,
+                "pass": 155
+              }
+            }
+          },
+          "both_artifacts_equal_reference_counts": 152,
+          "both_artifacts_identical_bytes": 0,
+          "both_have_artifacts": 152
+        },
+        "raw_first": {
+          "arms": {
+            "model": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 131,
+                "below_80": 55,
+                "unassessed": 33
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 186,
+                "no_artifact": 32
+              },
+              "joint": {
+                "fail": 216,
+                "missing": 3
+              },
+              "numeric_fidelity": {
+                "all_sourced": 102,
+                "empty_data": 23,
+                "no_artifact": 32,
+                "some_unsourced": 62
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 216,
+                "missing": 3
+              }
+            },
+            "program": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 75,
+                  "empty_data": 3,
+                  "some_unsourced": 25
+                },
+                "below_80": {
+                  "all_sourced": 15,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 103,
+                "below_80": 51,
+                "unassessed": 65
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 154,
+                "no_artifact": 64
+              },
+              "joint": {
+                "fail": 140,
+                "missing": 4,
+                "pass": 75
+              },
+              "numeric_fidelity": {
+                "all_sourced": 90,
+                "empty_data": 24,
+                "no_artifact": 64,
+                "some_unsourced": 41
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 63,
+                "missing": 1,
+                "pass": 155
+              }
+            }
+          },
+          "both_artifacts_equal_reference_counts": 152,
+          "both_artifacts_identical_bytes": 0,
+          "both_have_artifacts": 152
+        }
+      },
+      "tasks": 219
+    },
+    "same_content_and_tree": {
+      "families": 173,
+      "phases": {
+        "after_common_repair": {
+          "arms": {
+            "model": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 19,
+                  "some_unsourced": 3
+                },
+                "below_80": {
+                  "some_unsourced": 6
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 131,
+                "below_80": 55,
+                "unassessed": 4
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 186,
+                "no_artifact": 3
+              },
+              "joint": {
+                "fail": 169,
+                "missing": 2,
+                "pass": 19
+              },
+              "numeric_fidelity": {
+                "all_sourced": 102,
+                "empty_data": 23,
+                "no_artifact": 3,
+                "some_unsourced": 62
+              },
+              "tasks": 190,
+              "technical": {
+                "fail": 160,
+                "missing": 2,
+                "pass": 28
+              }
+            },
+            "program": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 75,
+                  "empty_data": 3,
+                  "some_unsourced": 25
+                },
+                "below_80": {
+                  "all_sourced": 15,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 103,
+                "below_80": 51,
+                "unassessed": 36
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 154,
+                "no_artifact": 35
+              },
+              "joint": {
+                "fail": 112,
+                "missing": 3,
+                "pass": 75
+              },
+              "numeric_fidelity": {
+                "all_sourced": 90,
+                "empty_data": 24,
+                "no_artifact": 35,
+                "some_unsourced": 41
+              },
+              "tasks": 190,
+              "technical": {
+                "fail": 35,
+                "pass": 155
+              }
+            }
+          },
+          "both_artifacts_equal_reference_counts": 152,
+          "both_artifacts_identical_bytes": 0,
+          "both_have_artifacts": 152,
+          "joint_pair": {
+            "certified_difference_family_percentile_ci95": [
+              0.22334902173377358,
+              0.3693181818181818
+            ],
+            "certified_difference_rate": 0.29473684210526313,
+            "columns": "program",
+            "difference": "program_minus_model",
+            "latent_difference_rate_bounds": [
+              0.28421052631578947,
+              0.3105263157894737
+            ],
+            "pairs_with_both_states_known": 185,
+            "rows": "model",
+            "states": {
+              "fail": {
+                "fail": 111,
+                "missing": 3,
+                "pass": 55
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 1
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 19
+              }
+            }
+          },
+          "technical_pair": {
+            "fail": {
+              "fail": 35,
+              "missing": 0,
+              "pass": 125
+            },
+            "missing": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 2
+            },
+            "pass": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 28
+            }
+          }
+        },
+        "raw_first": {
+          "arms": {
+            "model": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 131,
+                "below_80": 55,
+                "unassessed": 4
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 186,
+                "no_artifact": 3
+              },
+              "joint": {
+                "fail": 188,
+                "missing": 2
+              },
+              "numeric_fidelity": {
+                "all_sourced": 102,
+                "empty_data": 23,
+                "no_artifact": 3,
+                "some_unsourced": 62
+              },
+              "tasks": 190,
+              "technical": {
+                "fail": 188,
+                "missing": 2
+              }
+            },
+            "program": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 75,
+                  "empty_data": 3,
+                  "some_unsourced": 25
+                },
+                "below_80": {
+                  "all_sourced": 15,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 103,
+                "below_80": 51,
+                "unassessed": 36
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 154,
+                "no_artifact": 35
+              },
+              "joint": {
+                "fail": 112,
+                "missing": 3,
+                "pass": 75
+              },
+              "numeric_fidelity": {
+                "all_sourced": 90,
+                "empty_data": 24,
+                "no_artifact": 35,
+                "some_unsourced": 41
+              },
+              "tasks": 190,
+              "technical": {
+                "fail": 35,
+                "pass": 155
+              }
+            }
+          },
+          "both_artifacts_equal_reference_counts": 152,
+          "both_artifacts_identical_bytes": 0,
+          "both_have_artifacts": 152,
+          "joint_pair": {
+            "certified_difference_family_percentile_ci95": [
+              0.30337078651685395,
+              0.48815165876777245
+            ],
+            "certified_difference_rate": 0.39473684210526316,
+            "columns": "program",
+            "difference": "program_minus_model",
+            "latent_difference_rate_bounds": [
+              0.38421052631578945,
+              0.4105263157894737
+            ],
+            "pairs_with_both_states_known": 185,
+            "rows": "model",
+            "states": {
+              "fail": {
+                "fail": 111,
+                "missing": 3,
+                "pass": 74
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 1
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 0
+              }
+            }
+          },
+          "technical_pair": {
+            "fail": {
+              "fail": 35,
+              "missing": 0,
+              "pass": 153
+            },
+            "missing": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 2
+            },
+            "pass": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 0
+            }
+          }
+        }
+      },
+      "tasks": 190
+    },
+    "same_tree_original_sources": {
+      "families": 171,
+      "phases": {
+        "after_common_repair": {
+          "arms": {
+            "model": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 19,
+                  "some_unsourced": 3
+                },
+                "below_80": {
+                  "some_unsourced": 6
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 130,
+                "below_80": 54,
+                "unassessed": 4
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 184,
+                "no_artifact": 3
+              },
+              "joint": {
+                "fail": 167,
+                "missing": 2,
+                "pass": 19
+              },
+              "numeric_fidelity": {
+                "all_sourced": 101,
+                "empty_data": 23,
+                "no_artifact": 3,
+                "some_unsourced": 61
+              },
+              "tasks": 188,
+              "technical": {
+                "fail": 158,
+                "missing": 2,
+                "pass": 28
+              }
+            },
+            "program": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 74,
+                  "empty_data": 3,
+                  "some_unsourced": 25
+                },
+                "below_80": {
+                  "all_sourced": 15,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 102,
+                "below_80": 51,
+                "unassessed": 35
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 153,
+                "no_artifact": 34
+              },
+              "joint": {
+                "fail": 111,
+                "missing": 3,
+                "pass": 74
+              },
+              "numeric_fidelity": {
+                "all_sourced": 89,
+                "empty_data": 24,
+                "no_artifact": 34,
+                "some_unsourced": 41
+              },
+              "tasks": 188,
+              "technical": {
+                "fail": 34,
+                "pass": 154
+              }
+            }
+          },
+          "both_artifacts_equal_reference_counts": 151,
+          "both_artifacts_identical_bytes": 0,
+          "both_have_artifacts": 151,
+          "joint_pair": {
+            "certified_difference_family_percentile_ci95": [
+              0.2222222222222222,
+              0.3672316384180791
+            ],
+            "certified_difference_rate": 0.2925531914893617,
+            "columns": "program",
+            "difference": "program_minus_model",
+            "latent_difference_rate_bounds": [
+              0.28191489361702127,
+              0.30851063829787234
+            ],
+            "pairs_with_both_states_known": 183,
+            "rows": "model",
+            "states": {
+              "fail": {
+                "fail": 110,
+                "missing": 3,
+                "pass": 54
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 1
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 19
+              }
+            }
+          },
+          "technical_pair": {
+            "fail": {
+              "fail": 34,
+              "missing": 0,
+              "pass": 124
+            },
+            "missing": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 2
+            },
+            "pass": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 28
+            }
+          }
+        },
+        "raw_first": {
+          "arms": {
+            "model": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 130,
+                "below_80": 54,
+                "unassessed": 4
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 184,
+                "no_artifact": 3
+              },
+              "joint": {
+                "fail": 186,
+                "missing": 2
+              },
+              "numeric_fidelity": {
+                "all_sourced": 101,
+                "empty_data": 23,
+                "no_artifact": 3,
+                "some_unsourced": 61
+              },
+              "tasks": 188,
+              "technical": {
+                "fail": 186,
+                "missing": 2
+              }
+            },
+            "program": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 74,
+                  "empty_data": 3,
+                  "some_unsourced": 25
+                },
+                "below_80": {
+                  "all_sourced": 15,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 102,
+                "below_80": 51,
+                "unassessed": 35
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 153,
+                "no_artifact": 34
+              },
+              "joint": {
+                "fail": 111,
+                "missing": 3,
+                "pass": 74
+              },
+              "numeric_fidelity": {
+                "all_sourced": 89,
+                "empty_data": 24,
+                "no_artifact": 34,
+                "some_unsourced": 41
+              },
+              "tasks": 188,
+              "technical": {
+                "fail": 34,
+                "pass": 154
+              }
+            }
+          },
+          "both_artifacts_equal_reference_counts": 151,
+          "both_artifacts_identical_bytes": 0,
+          "both_have_artifacts": 151,
+          "joint_pair": {
+            "certified_difference_family_percentile_ci95": [
+              0.30318313069908814,
+              0.4876847290640395
+            ],
+            "certified_difference_rate": 0.39361702127659576,
+            "columns": "program",
+            "difference": "program_minus_model",
+            "latent_difference_rate_bounds": [
+              0.3829787234042553,
+              0.4095744680851064
+            ],
+            "pairs_with_both_states_known": 183,
+            "rows": "model",
+            "states": {
+              "fail": {
+                "fail": 110,
+                "missing": 3,
+                "pass": 73
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 1
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 0
+              }
+            }
+          },
+          "technical_pair": {
+            "fail": {
+              "fail": 34,
+              "missing": 0,
+              "pass": 152
+            },
+            "missing": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 2
+            },
+            "pass": {
+              "fail": 0,
+              "missing": 0,
+              "pass": 0
+            }
+          }
+        }
+      },
+      "tasks": 188
+    }
+  },
+  "geometry_stage_resources": {
+    "all_attempted_geometry": {
+      "model_callback_wall_ms": {
+        "eligible": 190,
+        "max_ms": 6967.628,
+        "observed": 190,
+        "p50_ms": 3206.883,
+        "p95_ms": 5002.602,
+        "sum_ms": 640005.04,
+        "unknown": 0
+      },
+      "model_geometry_wall_ms": {
+        "eligible": 190,
+        "max_ms": 6968.199,
+        "observed": 190,
+        "p50_ms": 3207.237,
+        "p95_ms": 5003.083,
+        "sum_ms": 640076.944,
+        "unknown": 0
+      },
+      "model_minus_program_same_tree_ms": {
+        "eligible": 190,
+        "max_ms": 6962.7519999999995,
+        "observed": 190,
+        "p50_ms": 3205.023,
+        "p95_ms": 4999.792,
+        "sum_ms": 639604.055,
+        "unknown": 0
+      },
+      "original_official_post_wall_ms": {
+        "eligible": 190,
+        "max_ms": 6935.743,
+        "observed": 190,
+        "p50_ms": 3169.638,
+        "p95_ms": 4969.375,
+        "sum_ms": 633499.158,
+        "unknown": 0
+      },
+      "program_geometry_wall_ms": {
+        "eligible": 190,
+        "max_ms": 39.823,
+        "observed": 190,
+        "p50_ms": 1.875,
+        "p95_ms": 5.846,
+        "sum_ms": 472.889,
+        "unknown": 0
+      }
+    },
+    "assigned": 219,
+    "known_geometry_usage": {
+      "completion_tokens": 71733,
+      "metered_requests": 188,
+      "metered_requests_with_any_cached_input_tokens": 188,
+      "prompt_cache_hit_tokens": 357883,
+      "prompt_cache_miss_tokens": 100935,
+      "prompt_tokens": 458818,
+      "total_tokens": 530551,
+      "unknown_usage_calls": 2
+    },
+    "model_stage_status": {
+      "callback_failed": 2,
+      "completed": 187,
+      "stage_rejected": 1
+    },
+    "requests": {
+      "distinct_provider_response_ids": 188,
+      "distinct_request_message_sha256": 188,
+      "extra_model_calls_in_same_tree_replay": 0,
+      "identical_message_groups_with_multiple_confirmed_responses": 2,
+      "identical_message_groups_with_multiple_local_intents": 2,
+      "known_physical_attempts": 188,
+      "l4_model_local_intents": 190,
+      "program_geometry_model_calls": 0,
+      "unconfirmed_physical_attempt_counts": 2
+    },
+    "reuse": "The model side uses its actual original L4 response or transport receipt. The program replays the upstream content and structure, then computes geometry locally. Prefix-cache hits are counted as input tokens and do not constitute full response reuse.",
+    "same_tree_reached": 190,
+    "same_trees_with_received_model_response": {
+      "model_callback_wall_ms": {
+        "eligible": 188,
+        "max_ms": 6967.628,
+        "observed": 188,
+        "p50_ms": 3213.515,
+        "p95_ms": 5005.032,
+        "sum_ms": 637608.48,
+        "unknown": 0
+      },
+      "model_geometry_wall_ms": {
+        "eligible": 188,
+        "max_ms": 6968.199,
+        "observed": 188,
+        "p50_ms": 3213.883,
+        "p95_ms": 5005.515,
+        "sum_ms": 637680.105,
+        "unknown": 0
+      },
+      "model_minus_program_same_tree_ms": {
+        "eligible": 188,
+        "max_ms": 6962.7519999999995,
+        "observed": 188,
+        "p50_ms": 3212.314,
+        "p95_ms": 5002.334,
+        "sum_ms": 637210.2,
+        "unknown": 0
+      },
+      "original_official_post_wall_ms": {
+        "eligible": 188,
+        "max_ms": 6935.743,
+        "observed": 188,
+        "p50_ms": 3178.55,
+        "p95_ms": 4971.555,
+        "sum_ms": 631156.407,
+        "unknown": 0
+      },
+      "program_geometry_wall_ms": {
+        "eligible": 188,
+        "max_ms": 39.823,
+        "observed": 188,
+        "p50_ms": 1.875,
+        "p95_ms": 5.886,
+        "sum_ms": 469.905,
+        "unknown": 0
+      }
+    },
+    "source_sha256": {
+      "branch_executor": "41a6c515948bb59fe8d2d02a84e948e300b7aae1d804bd2a72675a3a7ba2ea5c",
+      "formal_costs": "8a14e60a953e8b7e445df7985c7512ceefff94f0fcc404cc62bf6a6c51f83e72",
+      "formal_plan": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+      "outcome_index": "620c51e4c95436dfa15b0cf2bd429ece8cd873b88716d481a3f7f3afc047fad2",
+      "same_tree_rows": "8beb265f91a2e9ca98d18ce1ad50acb40ad1ccd10736b701b3c26c028ac3df1c"
+    },
+    "timing": "Original model and archived local program geometry-stage wall times on identical accepted content and tree. The model clock includes its callback and network. Timings are from separate runs and exclude downstream rendering. All reached inputs include recorded wait for transport failures; the received-response subset also retains any model output rejected by the stage.",
+    "upstream_unreached": 29
+  },
+  "interpretation": "Post-hoc content check of a fixed-tree geometry intervention. Joint pass requires common technical acceptance, at least 80% reference coverage, and at least one numeric item with all numeric items sourced. Intervals resample registered task families using the same method as the six-arm content table. Displayed-value counts do not establish object attribution, visual quality or business delivery.",
+  "private_score_rows_sha256": "b10a0422e3074df854b63e4b6a9c88fedb8ae6d94a32a600bc74f89ae35c65a6"
+}

@@ -105,6 +105,7 @@ def summarize(rows):
 
 
 def run(batch, vault):
+    from six_arms.fixed_geometry_resources import audit as original_geometry_resources
     from six_arms.formal_fixed_geometry_replay import iter_pairs
 
     batch, vault = Path(batch).resolve(), Path(vault).resolve()
@@ -138,6 +139,7 @@ def run(batch, vault):
         )
     return {
         "cohorts": cohorts,
+        "geometry_stage_resources": original_geometry_resources(batch),
         "private_score_rows_sha256": digest(
             encode(sorted(rows, key=lambda r: r["task"]))
         ),
