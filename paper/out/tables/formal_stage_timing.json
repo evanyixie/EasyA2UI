@@ -1,0 +1,1658 @@
+{
+  "assigned_seats": 1314,
+  "by_arm": {
+    "L1": {
+      "assigned": 219,
+      "elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 15898.22,
+        "observed": 219,
+        "p50_ms": 4177.391,
+        "p95_ms": 6740.484,
+        "sum_ms": 979092.599,
+        "unknown": 0
+      },
+      "exit_not_reached": 5,
+      "output_check_and_repair_wall_ms": {
+        "eligible": 214,
+        "max_ms": 84.568,
+        "observed": 214,
+        "p50_ms": 9.634,
+        "p95_ms": 53.757,
+        "sum_ms": 3240.987,
+        "unknown": 0
+      },
+      "stages": {
+        "one_shot": {
+          "attempted": 219,
+          "callback_wall_ms": {
+            "eligible": 219,
+            "max_ms": 15898.001,
+            "observed": 219,
+            "p50_ms": 4166.687,
+            "p95_ms": 6700.678,
+            "sum_ms": 975773.101,
+            "unknown": 0
+          },
+          "known_physical_attempts": 215,
+          "logged_model_intents": 219,
+          "not_reached": 0,
+          "owners": {
+            "one_shot": 219
+          },
+          "provider_identified_responses": 215,
+          "receipt_http_ms": {
+            "eligible": 219,
+            "max_ms": 15856.552,
+            "observed": 219,
+            "p50_ms": 4129.541,
+            "p95_ms": 6663.437,
+            "sum_ms": 967460.181,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 4,
+            "completed": 214,
+            "stage_rejected": 1
+          },
+          "unknown_physical_attempt_intents": 4,
+          "wall_ms": {
+            "eligible": 219,
+            "max_ms": 15898.153,
+            "observed": 219,
+            "p50_ms": 4166.976,
+            "p95_ms": 6700.982,
+            "sum_ms": 975835.67,
+            "unknown": 0
+          }
+        }
+      },
+      "statuses": {
+        "accepted": 91,
+        "artifact_checks_rejected": 3,
+        "callback_failed": 4,
+        "geometry_unknown": 2,
+        "geometry_unresolved": 118,
+        "stage_rejected": 1
+      },
+      "unattributed_elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 0.156,
+        "observed": 219,
+        "p50_ms": 0.07,
+        "p95_ms": 0.103,
+        "sum_ms": 15.942,
+        "unknown": 0
+      }
+    },
+    "L2": {
+      "assigned": 219,
+      "elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 27634.005,
+        "observed": 219,
+        "p50_ms": 15339.063,
+        "p95_ms": 21427.315,
+        "sum_ms": 3174999.433,
+        "unknown": 0
+      },
+      "exit_not_reached": 61,
+      "output_check_and_repair_wall_ms": {
+        "eligible": 158,
+        "max_ms": 197.114,
+        "observed": 158,
+        "p50_ms": 19.343,
+        "p95_ms": 72.275,
+        "sum_ms": 4040.772,
+        "unknown": 0
+      },
+      "stages": {
+        "content": {
+          "attempted": 219,
+          "callback_wall_ms": {
+            "eligible": 219,
+            "max_ms": 5669.046,
+            "observed": 219,
+            "p50_ms": 2855.265,
+            "p95_ms": 3870.924,
+            "sum_ms": 646637.446,
+            "unknown": 0
+          },
+          "known_physical_attempts": 219,
+          "logged_model_intents": 219,
+          "not_reached": 0,
+          "owners": {
+            "model_extract": 219
+          },
+          "provider_identified_responses": 219,
+          "receipt_http_ms": {
+            "eligible": 219,
+            "max_ms": 5631.717,
+            "observed": 219,
+            "p50_ms": 2821.71,
+            "p95_ms": 3826.614,
+            "sum_ms": 638885.402,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 192,
+            "stage_rejected": 27
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 219,
+            "max_ms": 5669.668,
+            "observed": 219,
+            "p50_ms": 2855.644,
+            "p95_ms": 3872.009,
+            "sum_ms": 646761.252,
+            "unknown": 0
+          }
+        },
+        "emit": {
+          "attempted": 159,
+          "callback_wall_ms": {
+            "eligible": 159,
+            "max_ms": 8301.505,
+            "observed": 159,
+            "p50_ms": 4214.458,
+            "p95_ms": 6361.223,
+            "sum_ms": 702788.887,
+            "unknown": 0
+          },
+          "known_physical_attempts": 159,
+          "logged_model_intents": 159,
+          "not_reached": 60,
+          "owners": {
+            "model_emit": 159
+          },
+          "provider_identified_responses": 159,
+          "receipt_http_ms": {
+            "eligible": 159,
+            "max_ms": 8258.616,
+            "observed": 159,
+            "p50_ms": 4181.355,
+            "p95_ms": 6325.98,
+            "sum_ms": 697037.146,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 158,
+            "stage_rejected": 1
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 159,
+            "max_ms": 8301.861,
+            "observed": 159,
+            "p50_ms": 4214.808,
+            "p95_ms": 6361.688,
+            "sum_ms": 702842.225,
+            "unknown": 0
+          }
+        },
+        "geometry": {
+          "attempted": 192,
+          "callback_wall_ms": {
+            "eligible": 192,
+            "max_ms": 5865.909,
+            "observed": 192,
+            "p50_ms": 3250.409,
+            "p95_ms": 4551.083,
+            "sum_ms": 639675.655,
+            "unknown": 0
+          },
+          "known_physical_attempts": 190,
+          "logged_model_intents": 192,
+          "not_reached": 27,
+          "owners": {
+            "model_solve": 192
+          },
+          "provider_identified_responses": 190,
+          "receipt_http_ms": {
+            "eligible": 192,
+            "max_ms": 5828.871,
+            "observed": 192,
+            "p50_ms": 3215.383,
+            "p95_ms": 4508.669,
+            "sum_ms": 633134.504,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 2,
+            "completed": 189,
+            "stage_rejected": 1
+          },
+          "unknown_physical_attempt_intents": 2,
+          "wall_ms": {
+            "eligible": 192,
+            "max_ms": 5866.587,
+            "observed": 192,
+            "p50_ms": 3250.77,
+            "p95_ms": 4551.705,
+            "sum_ms": 639747.04,
+            "unknown": 0
+          }
+        },
+        "structure": {
+          "attempted": 192,
+          "callback_wall_ms": {
+            "eligible": 192,
+            "max_ms": 4870.348,
+            "observed": 192,
+            "p50_ms": 2439.734,
+            "p95_ms": 3265.557,
+            "sum_ms": 482003.422,
+            "unknown": 0
+          },
+          "known_physical_attempts": 192,
+          "logged_model_intents": 192,
+          "not_reached": 27,
+          "owners": {
+            "model_free": 192
+          },
+          "provider_identified_responses": 192,
+          "receipt_http_ms": {
+            "eligible": 192,
+            "max_ms": 4843.195,
+            "observed": 192,
+            "p50_ms": 2408.827,
+            "p95_ms": 3229.862,
+            "sum_ms": 475488.377,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 192
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 192,
+            "max_ms": 4870.595,
+            "observed": 192,
+            "p50_ms": 2439.966,
+            "p95_ms": 3265.788,
+            "sum_ms": 482053.533,
+            "unknown": 0
+          }
+        },
+        "theme": {
+          "attempted": 189,
+          "callback_wall_ms": {
+            "eligible": 189,
+            "max_ms": 17986.319,
+            "observed": 189,
+            "p50_ms": 3409.143,
+            "p95_ms": 5853.962,
+            "sum_ms": 699463.87,
+            "unknown": 0
+          },
+          "known_physical_attempts": 188,
+          "logged_model_intents": 189,
+          "not_reached": 30,
+          "owners": {
+            "model_theme": 189
+          },
+          "provider_identified_responses": 188,
+          "receipt_http_ms": {
+            "eligible": 189,
+            "max_ms": 17946.56,
+            "observed": 189,
+            "p50_ms": 3376.211,
+            "p95_ms": 5820.044,
+            "sum_ms": 692912.475,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 1,
+            "completed": 159,
+            "stage_rejected": 29
+          },
+          "unknown_physical_attempt_intents": 1,
+          "wall_ms": {
+            "eligible": 189,
+            "max_ms": 17986.564,
+            "observed": 189,
+            "p50_ms": 3409.538,
+            "p95_ms": 5854.356,
+            "sum_ms": 699534.936,
+            "unknown": 0
+          }
+        }
+      },
+      "statuses": {
+        "accepted": 30,
+        "callback_failed": 3,
+        "geometry_unresolved": 128,
+        "stage_rejected": 58
+      },
+      "unattributed_elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 0.202,
+        "observed": 219,
+        "p50_ms": 0.086,
+        "p95_ms": 0.127,
+        "sum_ms": 19.675,
+        "unknown": 0
+      }
+    },
+    "L3": {
+      "assigned": 219,
+      "elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 19478.509,
+        "observed": 219,
+        "p50_ms": 11685.197,
+        "p95_ms": 15766.61,
+        "sum_ms": 2434346.557,
+        "unknown": 0
+      },
+      "exit_not_reached": 59,
+      "output_check_and_repair_wall_ms": {
+        "eligible": 160,
+        "max_ms": 218.131,
+        "observed": 160,
+        "p50_ms": 17.54,
+        "p95_ms": 53.997,
+        "sum_ms": 3841.541,
+        "unknown": 0
+      },
+      "stages": {
+        "content": {
+          "attempted": 219,
+          "callback_wall_ms": {
+            "eligible": 219,
+            "max_ms": 5389.148,
+            "observed": 219,
+            "p50_ms": 2838.407,
+            "p95_ms": 4028.272,
+            "sum_ms": 648197.732,
+            "unknown": 0
+          },
+          "known_physical_attempts": 217,
+          "logged_model_intents": 219,
+          "not_reached": 0,
+          "owners": {
+            "model_extract": 219
+          },
+          "provider_identified_responses": 217,
+          "receipt_http_ms": {
+            "eligible": 219,
+            "max_ms": 5350.729,
+            "observed": 219,
+            "p50_ms": 2803.606,
+            "p95_ms": 3988.439,
+            "sum_ms": 640409.106,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 2,
+            "completed": 190,
+            "stage_rejected": 27
+          },
+          "unknown_physical_attempt_intents": 2,
+          "wall_ms": {
+            "eligible": 219,
+            "max_ms": 5389.7,
+            "observed": 219,
+            "p50_ms": 2838.875,
+            "p95_ms": 4029.111,
+            "sum_ms": 648320.087,
+            "unknown": 0
+          }
+        },
+        "emit": {
+          "attempted": 160,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 59,
+          "owners": {
+            "program_jsonl": 160
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 160
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 160,
+            "max_ms": 0.756,
+            "observed": 160,
+            "p50_ms": 0.324,
+            "p95_ms": 0.489,
+            "sum_ms": 54.431,
+            "unknown": 0
+          }
+        },
+        "geometry": {
+          "attempted": 190,
+          "callback_wall_ms": {
+            "eligible": 190,
+            "max_ms": 6974.267,
+            "observed": 190,
+            "p50_ms": 3166.109,
+            "p95_ms": 4471.798,
+            "sum_ms": 620737.719,
+            "unknown": 0
+          },
+          "known_physical_attempts": 188,
+          "logged_model_intents": 190,
+          "not_reached": 29,
+          "owners": {
+            "model_solve": 190
+          },
+          "provider_identified_responses": 188,
+          "receipt_http_ms": {
+            "eligible": 190,
+            "max_ms": 6942.855,
+            "observed": 190,
+            "p50_ms": 3133.153,
+            "p95_ms": 4436.814,
+            "sum_ms": 614127.994,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 2,
+            "completed": 187,
+            "stage_rejected": 1
+          },
+          "unknown_physical_attempt_intents": 2,
+          "wall_ms": {
+            "eligible": 190,
+            "max_ms": 6974.878,
+            "observed": 190,
+            "p50_ms": 3166.451,
+            "p95_ms": 4472.26,
+            "sum_ms": 620808.742,
+            "unknown": 0
+          }
+        },
+        "structure": {
+          "attempted": 190,
+          "callback_wall_ms": {
+            "eligible": 190,
+            "max_ms": 9228.58,
+            "observed": 190,
+            "p50_ms": 2400.385,
+            "p95_ms": 3426.354,
+            "sum_ms": 487111.706,
+            "unknown": 0
+          },
+          "known_physical_attempts": 190,
+          "logged_model_intents": 190,
+          "not_reached": 29,
+          "owners": {
+            "model_free": 190
+          },
+          "provider_identified_responses": 190,
+          "receipt_http_ms": {
+            "eligible": 190,
+            "max_ms": 9191.152,
+            "observed": 190,
+            "p50_ms": 2369.686,
+            "p95_ms": 3393.986,
+            "sum_ms": 480658.748,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 190
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 190,
+            "max_ms": 9228.847,
+            "observed": 190,
+            "p50_ms": 2400.635,
+            "p95_ms": 3426.642,
+            "sum_ms": 487161.75,
+            "unknown": 0
+          }
+        },
+        "theme": {
+          "attempted": 187,
+          "callback_wall_ms": {
+            "eligible": 187,
+            "max_ms": 7335.858,
+            "observed": 187,
+            "p50_ms": 3459.006,
+            "p95_ms": 5241.485,
+            "sum_ms": 674070.994,
+            "unknown": 0
+          },
+          "known_physical_attempts": 186,
+          "logged_model_intents": 187,
+          "not_reached": 32,
+          "owners": {
+            "model_theme": 187
+          },
+          "provider_identified_responses": 186,
+          "receipt_http_ms": {
+            "eligible": 187,
+            "max_ms": 7302.707,
+            "observed": 187,
+            "p50_ms": 3421.172,
+            "p95_ms": 5208.276,
+            "sum_ms": 667515.198,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 1,
+            "completed": 160,
+            "stage_rejected": 26
+          },
+          "unknown_physical_attempt_intents": 1,
+          "wall_ms": {
+            "eligible": 187,
+            "max_ms": 7336.121,
+            "observed": 187,
+            "p50_ms": 3459.357,
+            "p95_ms": 5241.977,
+            "sum_ms": 674140.286,
+            "unknown": 0
+          }
+        }
+      },
+      "statuses": {
+        "accepted": 29,
+        "callback_failed": 5,
+        "geometry_unresolved": 131,
+        "stage_rejected": 54
+      },
+      "unattributed_elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 0.162,
+        "observed": 219,
+        "p50_ms": 0.086,
+        "p95_ms": 0.126,
+        "sum_ms": 19.72,
+        "unknown": 0
+      }
+    },
+    "L4": {
+      "assigned": 219,
+      "elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 13329.845,
+        "observed": 219,
+        "p50_ms": 8401.975,
+        "p95_ms": 11313.927,
+        "sum_ms": 1774745.89,
+        "unknown": 0
+      },
+      "exit_not_reached": 32,
+      "output_check_and_repair_wall_ms": {
+        "eligible": 187,
+        "max_ms": 313.356,
+        "observed": 187,
+        "p50_ms": 18.706,
+        "p95_ms": 80.322,
+        "sum_ms": 5238.397,
+        "unknown": 0
+      },
+      "stages": {
+        "content": {
+          "attempted": 219,
+          "callback_wall_ms": {
+            "eligible": 219,
+            "max_ms": 5302.786,
+            "observed": 219,
+            "p50_ms": 2863.35,
+            "p95_ms": 3935.589,
+            "sum_ms": 649788.446,
+            "unknown": 0
+          },
+          "known_physical_attempts": 219,
+          "logged_model_intents": 219,
+          "not_reached": 0,
+          "owners": {
+            "model_extract": 219
+          },
+          "provider_identified_responses": 219,
+          "receipt_http_ms": {
+            "eligible": 219,
+            "max_ms": 5263.226,
+            "observed": 219,
+            "p50_ms": 2817.008,
+            "p95_ms": 3899.562,
+            "sum_ms": 641893.669,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 191,
+            "stage_rejected": 28
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 219,
+            "max_ms": 5303.581,
+            "observed": 219,
+            "p50_ms": 2863.742,
+            "p95_ms": 3936.219,
+            "sum_ms": 649912.832,
+            "unknown": 0
+          }
+        },
+        "emit": {
+          "attempted": 187,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 32,
+          "owners": {
+            "program_jsonl": 187
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 187
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 187,
+            "max_ms": 3.336,
+            "observed": 187,
+            "p50_ms": 0.311,
+            "p95_ms": 0.56,
+            "sum_ms": 65.169,
+            "unknown": 0
+          }
+        },
+        "geometry": {
+          "attempted": 190,
+          "callback_wall_ms": {
+            "eligible": 190,
+            "max_ms": 6967.628,
+            "observed": 190,
+            "p50_ms": 3206.883,
+            "p95_ms": 5002.602,
+            "sum_ms": 640005.04,
+            "unknown": 0
+          },
+          "known_physical_attempts": 188,
+          "logged_model_intents": 190,
+          "not_reached": 29,
+          "owners": {
+            "model_solve": 190
+          },
+          "provider_identified_responses": 188,
+          "receipt_http_ms": {
+            "eligible": 190,
+            "max_ms": 6935.743,
+            "observed": 190,
+            "p50_ms": 3169.638,
+            "p95_ms": 4969.375,
+            "sum_ms": 633499.158,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 2,
+            "completed": 187,
+            "stage_rejected": 1
+          },
+          "unknown_physical_attempt_intents": 2,
+          "wall_ms": {
+            "eligible": 190,
+            "max_ms": 6968.199,
+            "observed": 190,
+            "p50_ms": 3207.237,
+            "p95_ms": 5003.083,
+            "sum_ms": 640076.944,
+            "unknown": 0
+          }
+        },
+        "structure": {
+          "attempted": 191,
+          "callback_wall_ms": {
+            "eligible": 191,
+            "max_ms": 5780.377,
+            "observed": 191,
+            "p50_ms": 2399.012,
+            "p95_ms": 3446.19,
+            "sum_ms": 479317.48,
+            "unknown": 0
+          },
+          "known_physical_attempts": 190,
+          "logged_model_intents": 191,
+          "not_reached": 28,
+          "owners": {
+            "model_free": 191
+          },
+          "provider_identified_responses": 190,
+          "receipt_http_ms": {
+            "eligible": 191,
+            "max_ms": 5751.033,
+            "observed": 191,
+            "p50_ms": 2365.037,
+            "p95_ms": 3408.628,
+            "sum_ms": 472864.023,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 1,
+            "completed": 190
+          },
+          "unknown_physical_attempt_intents": 1,
+          "wall_ms": {
+            "eligible": 191,
+            "max_ms": 5780.585,
+            "observed": 191,
+            "p50_ms": 2399.277,
+            "p95_ms": 3446.48,
+            "sum_ms": 479367.431,
+            "unknown": 0
+          }
+        },
+        "theme": {
+          "attempted": 187,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 32,
+          "owners": {
+            "program_theme": 187
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 187
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 187,
+            "max_ms": 1.347,
+            "observed": 187,
+            "p50_ms": 0.328,
+            "p95_ms": 0.559,
+            "sum_ms": 65.232,
+            "unknown": 0
+          }
+        }
+      },
+      "statuses": {
+        "accepted": 28,
+        "callback_failed": 3,
+        "geometry_unresolved": 159,
+        "stage_rejected": 29
+      },
+      "unattributed_elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 0.254,
+        "observed": 219,
+        "p50_ms": 0.086,
+        "p95_ms": 0.128,
+        "sum_ms": 19.885,
+        "unknown": 0
+      }
+    },
+    "L5": {
+      "assigned": 219,
+      "elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 15883.024,
+        "observed": 219,
+        "p50_ms": 5280.295,
+        "p95_ms": 6860.163,
+        "sum_ms": 1143004.996,
+        "unknown": 0
+      },
+      "exit_not_reached": 69,
+      "output_check_and_repair_wall_ms": {
+        "eligible": 150,
+        "max_ms": 8.926,
+        "observed": 150,
+        "p50_ms": 1.397,
+        "p95_ms": 4.076,
+        "sum_ms": 268.65,
+        "unknown": 0
+      },
+      "stages": {
+        "content": {
+          "attempted": 219,
+          "callback_wall_ms": {
+            "eligible": 219,
+            "max_ms": 15882.846,
+            "observed": 219,
+            "p50_ms": 2915.658,
+            "p95_ms": 3997.529,
+            "sum_ms": 672761.519,
+            "unknown": 0
+          },
+          "known_physical_attempts": 218,
+          "logged_model_intents": 219,
+          "not_reached": 0,
+          "owners": {
+            "model_extract": 219
+          },
+          "provider_identified_responses": 218,
+          "receipt_http_ms": {
+            "eligible": 219,
+            "max_ms": 15845.598,
+            "observed": 219,
+            "p50_ms": 2882.639,
+            "p95_ms": 3965.839,
+            "sum_ms": 664860.017,
+            "unknown": 0
+          },
+          "stage_status": {
+            "callback_failed": 1,
+            "completed": 187,
+            "stage_rejected": 31
+          },
+          "unknown_physical_attempt_intents": 1,
+          "wall_ms": {
+            "eligible": 219,
+            "max_ms": 15882.977,
+            "observed": 219,
+            "p50_ms": 2916.119,
+            "p95_ms": 3998.165,
+            "sum_ms": 672885.746,
+            "unknown": 0
+          }
+        },
+        "emit": {
+          "attempted": 150,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 69,
+          "owners": {
+            "program_jsonl": 150
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 150
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 150,
+            "max_ms": 4.239,
+            "observed": 150,
+            "p50_ms": 0.296,
+            "p95_ms": 0.476,
+            "sum_ms": 49.968,
+            "unknown": 0
+          }
+        },
+        "geometry": {
+          "attempted": 187,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 32,
+          "owners": {
+            "program_solve_plan": 187
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 150,
+            "stage_rejected": 37
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 187,
+            "max_ms": 12.575,
+            "observed": 187,
+            "p50_ms": 2.035,
+            "p95_ms": 6.004,
+            "sum_ms": 446.479,
+            "unknown": 0
+          }
+        },
+        "structure": {
+          "attempted": 187,
+          "callback_wall_ms": {
+            "eligible": 187,
+            "max_ms": 4991.462,
+            "observed": 187,
+            "p50_ms": 2411.635,
+            "p95_ms": 3404.546,
+            "sum_ms": 469241.073,
+            "unknown": 0
+          },
+          "known_physical_attempts": 187,
+          "logged_model_intents": 187,
+          "not_reached": 32,
+          "owners": {
+            "model_free": 187
+          },
+          "provider_identified_responses": 187,
+          "receipt_http_ms": {
+            "eligible": 187,
+            "max_ms": 4957.296,
+            "observed": 187,
+            "p50_ms": 2380.838,
+            "p95_ms": 3368.93,
+            "sum_ms": 462715.288,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 187
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 187,
+            "max_ms": 4991.673,
+            "observed": 187,
+            "p50_ms": 2411.859,
+            "p95_ms": 3404.888,
+            "sum_ms": 469290.516,
+            "unknown": 0
+          }
+        },
+        "theme": {
+          "attempted": 150,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 69,
+          "owners": {
+            "program_theme": 150
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 150
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 150,
+            "max_ms": 0.687,
+            "observed": 150,
+            "p50_ms": 0.282,
+            "p95_ms": 0.462,
+            "sum_ms": 44.375,
+            "unknown": 0
+          }
+        }
+      },
+      "statuses": {
+        "accepted": 150,
+        "callback_failed": 1,
+        "stage_rejected": 68
+      },
+      "unattributed_elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 0.17,
+        "observed": 219,
+        "p50_ms": 0.086,
+        "p95_ms": 0.121,
+        "sum_ms": 19.262,
+        "unknown": 0
+      }
+    },
+    "L6": {
+      "assigned": 219,
+      "elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 5476.242,
+        "observed": 219,
+        "p50_ms": 2849.381,
+        "p95_ms": 4085.991,
+        "sum_ms": 650550.968,
+        "unknown": 0
+      },
+      "exit_not_reached": 104,
+      "output_check_and_repair_wall_ms": {
+        "eligible": 115,
+        "max_ms": 8.012,
+        "observed": 115,
+        "p50_ms": 1.269,
+        "p95_ms": 3.881,
+        "sum_ms": 187.593,
+        "unknown": 0
+      },
+      "stages": {
+        "content": {
+          "attempted": 219,
+          "callback_wall_ms": {
+            "eligible": 219,
+            "max_ms": 5471.369,
+            "observed": 219,
+            "p50_ms": 2845.93,
+            "p95_ms": 4083.185,
+            "sum_ms": 649650.1,
+            "unknown": 0
+          },
+          "known_physical_attempts": 219,
+          "logged_model_intents": 219,
+          "not_reached": 0,
+          "owners": {
+            "model_extract": 219
+          },
+          "provider_identified_responses": 219,
+          "receipt_http_ms": {
+            "eligible": 219,
+            "max_ms": 5434.34,
+            "observed": 219,
+            "p50_ms": 2810.972,
+            "p95_ms": 4051.969,
+            "sum_ms": 641713.135,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 187,
+            "stage_rejected": 32
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 219,
+            "max_ms": 5472.334,
+            "observed": 219,
+            "p50_ms": 2846.442,
+            "p95_ms": 4083.607,
+            "sum_ms": 649774.377,
+            "unknown": 0
+          }
+        },
+        "emit": {
+          "attempted": 115,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 104,
+          "owners": {
+            "program_jsonl": 115
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 115
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 115,
+            "max_ms": 0.616,
+            "observed": 115,
+            "p50_ms": 0.273,
+            "p95_ms": 0.438,
+            "sum_ms": 32.23,
+            "unknown": 0
+          }
+        },
+        "geometry": {
+          "attempted": 187,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 32,
+          "owners": {
+            "program_solve_plan": 187
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 115,
+            "stage_rejected": 72
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 187,
+            "max_ms": 37.21,
+            "observed": 187,
+            "p50_ms": 1.877,
+            "p95_ms": 6.456,
+            "sum_ms": 486.5,
+            "unknown": 0
+          }
+        },
+        "structure": {
+          "attempted": 187,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 32,
+          "owners": {
+            "program_route": 187
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 187
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 187,
+            "max_ms": 0.25,
+            "observed": 187,
+            "p50_ms": 0.1,
+            "p95_ms": 0.155,
+            "sum_ms": 19.553,
+            "unknown": 0
+          }
+        },
+        "theme": {
+          "attempted": 115,
+          "callback_wall_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "known_physical_attempts": 0,
+          "logged_model_intents": 0,
+          "not_reached": 104,
+          "owners": {
+            "program_theme": 115
+          },
+          "provider_identified_responses": 0,
+          "receipt_http_ms": {
+            "eligible": 0,
+            "max_ms": null,
+            "observed": 0,
+            "p50_ms": null,
+            "p95_ms": null,
+            "sum_ms": null,
+            "unknown": 0
+          },
+          "stage_status": {
+            "completed": 115
+          },
+          "unknown_physical_attempt_intents": 0,
+          "wall_ms": {
+            "eligible": 115,
+            "max_ms": 1.48,
+            "observed": 115,
+            "p50_ms": 0.264,
+            "p95_ms": 0.427,
+            "sum_ms": 32.152,
+            "unknown": 0
+          }
+        }
+      },
+      "statuses": {
+        "accepted": 115,
+        "stage_rejected": 104
+      },
+      "unattributed_elapsed_ms": {
+        "eligible": 219,
+        "max_ms": 0.155,
+        "observed": 219,
+        "p50_ms": 0.081,
+        "p95_ms": 0.121,
+        "sum_ms": 18.563,
+        "unknown": 0
+      }
+    }
+  },
+  "contrast": "Full cohort sums include zero duration for an unreached span; the paired distributions condition on reaching that span in both arms.",
+  "right_minus_left": {
+    "L5_minus_L4": {
+      "content": {
+        "all_assigned_difference_sum_ms": 22972.914,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 184,
+          "max_ms": 1627.387,
+          "observed": 184,
+          "p50_ms": 22.953,
+          "p95_ms": 941.443,
+          "sum_ms": 5757.998,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 219,
+          "max_ms": 13490.364,
+          "observed": 219,
+          "p50_ms": 54.857,
+          "p95_ms": 1088.329,
+          "sum_ms": 22972.914,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "elapsed": {
+        "all_assigned_difference_sum_ms": -631740.894,
+        "assigned_pairs": 219,
+        "both_reached_right_minus_left_ms": {
+          "eligible": 219,
+          "max_ms": 8259.579,
+          "observed": 219,
+          "p50_ms": -3054.478,
+          "p95_ms": 352.709,
+          "sum_ms": -631740.894,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "emit": {
+        "all_assigned_difference_sum_ms": -15.201,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 144,
+          "max_ms": 3.49,
+          "observed": 144,
+          "p50_ms": -0.004,
+          "p95_ms": 0.073,
+          "sum_ms": 0.785,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 144,
+          "max_ms": 3.49,
+          "observed": 144,
+          "p50_ms": -0.004,
+          "p95_ms": 0.073,
+          "sum_ms": 0.785,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "exit": {
+        "all_assigned_difference_sum_ms": -4969.747,
+        "assigned_pairs": 219,
+        "both_reached_right_minus_left_ms": {
+          "eligible": 144,
+          "max_ms": -1.404,
+          "observed": 144,
+          "p50_ms": -14.495,
+          "p95_ms": -1.737,
+          "sum_ms": -2896.212,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "geometry": {
+        "all_assigned_difference_sum_ms": -639630.465,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 144,
+          "max_ms": -2233.847,
+          "observed": 144,
+          "p50_ms": -3069.374,
+          "p95_ms": -2430.008,
+          "sum_ms": -463769.897,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 183,
+          "max_ms": -1172.575,
+          "observed": 183,
+          "p50_ms": -3187.534,
+          "p95_ms": -2429.011,
+          "sum_ms": -609641.93,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "structure": {
+        "all_assigned_difference_sum_ms": -10076.915,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 183,
+          "max_ms": 2636.166,
+          "observed": 183,
+          "p50_ms": -17.914,
+          "p95_ms": 779.377,
+          "sum_ms": -2179.694,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 184,
+          "max_ms": 2636.166,
+          "observed": 184,
+          "p50_ms": -14.666,
+          "p95_ms": 864.004,
+          "sum_ms": -510.402,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "theme": {
+        "all_assigned_difference_sum_ms": -20.857,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 144,
+          "max_ms": 0.314,
+          "observed": 144,
+          "p50_ms": -0.02,
+          "p95_ms": 0.059,
+          "sum_ms": -4.687,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 144,
+          "max_ms": 0.314,
+          "observed": 144,
+          "p50_ms": -0.02,
+          "p95_ms": 0.059,
+          "sum_ms": -4.687,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "unattributed": {
+        "all_assigned_difference_sum_ms": -0.623,
+        "assigned_pairs": 219,
+        "both_reached_right_minus_left_ms": {
+          "eligible": 219,
+          "max_ms": 0.082,
+          "observed": 219,
+          "p50_ms": -0.002,
+          "p95_ms": 0.03,
+          "sum_ms": -0.623,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      }
+    },
+    "L6_minus_L5": {
+      "content": {
+        "all_assigned_difference_sum_ms": -23111.369,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 182,
+          "max_ms": 2421.949,
+          "observed": 182,
+          "p50_ms": -69.513,
+          "p95_ms": 975.684,
+          "sum_ms": -3079.944,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 219,
+          "max_ms": 2421.949,
+          "observed": 219,
+          "p50_ms": -80.015,
+          "p95_ms": 918.396,
+          "sum_ms": -23111.369,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "elapsed": {
+        "all_assigned_difference_sum_ms": -492454.028,
+        "assigned_pairs": 219,
+        "both_reached_right_minus_left_ms": {
+          "eligible": 219,
+          "max_ms": 1679.325,
+          "observed": 219,
+          "p50_ms": -2418.0,
+          "p95_ms": -0.114,
+          "sum_ms": -492454.028,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "emit": {
+        "all_assigned_difference_sum_ms": -17.738,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 110,
+          "max_ms": 0.181,
+          "observed": 110,
+          "p50_ms": -0.002,
+          "p95_ms": 0.102,
+          "sum_ms": -0.373,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 110,
+          "max_ms": 0.181,
+          "observed": 110,
+          "p50_ms": -0.002,
+          "p95_ms": 0.102,
+          "sum_ms": -0.373,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "exit": {
+        "all_assigned_difference_sum_ms": -81.057,
+        "assigned_pairs": 219,
+        "both_reached_right_minus_left_ms": {
+          "eligible": 110,
+          "max_ms": 7.065,
+          "observed": 110,
+          "p50_ms": 0.013,
+          "p95_ms": 2.322,
+          "sum_ms": -0.491,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "geometry": {
+        "all_assigned_difference_sum_ms": 40.021,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 110,
+          "max_ms": 34.359,
+          "observed": 110,
+          "p50_ms": -0.009,
+          "p95_ms": 1.176,
+          "sum_ms": 41.354,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 182,
+          "max_ms": 34.359,
+          "observed": 182,
+          "p50_ms": -0.014,
+          "p95_ms": 1.575,
+          "sum_ms": 40.098,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "structure": {
+        "all_assigned_difference_sum_ms": -469270.963,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 182,
+          "max_ms": -1939.154,
+          "observed": 182,
+          "p50_ms": -2408.733,
+          "p95_ms": -2045.822,
+          "sum_ms": -454036.261,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 182,
+          "max_ms": -1939.154,
+          "observed": 182,
+          "p50_ms": -2408.733,
+          "p95_ms": -2045.822,
+          "sum_ms": -454036.261,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "theme": {
+        "all_assigned_difference_sum_ms": -12.223,
+        "assigned_pairs": 219,
+        "both_completed_right_minus_left_ms": {
+          "eligible": 110,
+          "max_ms": 1.27,
+          "observed": 110,
+          "p50_ms": -0.001,
+          "p95_ms": 0.139,
+          "sum_ms": 0.922,
+          "unknown": 0
+        },
+        "both_reached_right_minus_left_ms": {
+          "eligible": 110,
+          "max_ms": 1.27,
+          "observed": 110,
+          "p50_ms": -0.001,
+          "p95_ms": 0.139,
+          "sum_ms": 0.922,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      },
+      "unattributed": {
+        "all_assigned_difference_sum_ms": -0.699,
+        "assigned_pairs": 219,
+        "both_reached_right_minus_left_ms": {
+          "eligible": 219,
+          "max_ms": 0.107,
+          "observed": 219,
+          "p50_ms": -0.003,
+          "p95_ms": 0.032,
+          "sum_ms": -0.699,
+          "unknown": 0
+        },
+        "missing_pair_clocks": 0
+      }
+    }
+  },
+  "schema": "formal_stage_timing.v1",
+  "source_sha256": {
+    "cost_seats": "8a14e60a953e8b7e445df7985c7512ceefff94f0fcc404cc62bf6a6c51f83e72",
+    "cost_summary": "262c265cc7d42b1cdfe786cb569f57f70e5aed235d57fa5a7b88af756e5555c1",
+    "formal_plan": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+    "outcome_index": "620c51e4c95436dfa15b0cf2bd429ece8cd873b88716d481a3f7f3afc047fad2"
+  },
+  "tasks": 219,
+  "timing_scope": "Executor only. HTTP is inside model callback, callback inside stage. Elapsed includes reached stage walls, joint output check/repair and residual.",
+  "units": "Milliseconds. P50/P95 use linear interpolation on observed clocks."
+}
