@@ -1,0 +1,258 @@
+{
+  "schema": "matched-structure-repeats-v1",
+  "formal_plan_sha256": "66a65da3c893fb2c0bd6ecd9feb8a09d669e95996e6692fffc635bdbe7c17d18",
+  "scope": "Natural repeats matching L5's complete structure message bytes within the same task; reuse successful recorded physical replies with independent request IDs.",
+  "outcome": "All replies use L5's frozen content stage (including its registered entry repair) and program tail. Direct technical pass is exit.status=no_change before any exit repair. Visual and business quality were not assessed.",
+  "sampling": "Donor arms are L2/L3/L4. Group counts condition on naturally matched messages; pair counts share replies within tasks.",
+  "assigned_tasks": 219,
+  "reproduced_l5_anchors": 187,
+  "eligible_matched_replies_from_other_arms": {
+    "L2": 92,
+    "L3": 73,
+    "L4": 91
+  },
+  "missing_or_unmatched": {
+    "alternative_different_message": 293,
+    "l5_stopped_at_content": 32,
+    "alternative_structure_not_reached": 11,
+    "same_message_missing_reply": 1
+  },
+  "new_model_calls": 0,
+  "new_device_calls": 0,
+  "by_replies_per_task": {
+    "1": {
+      "tasks": 55,
+      "anchor_first_artifacts": 39,
+      "anchor_first_direct_passes": 39,
+      "structure_calls": 55,
+      "first_artifacts": 39,
+      "first_direct_passes": 39,
+      "tasks_with_structure_variation": 0,
+      "tasks_with_different_available_first_bytes": 0,
+      "first_availability_by_task": {
+        "all": 39,
+        "none": 16
+      },
+      "direct_pass_by_task": {
+        "all": 39,
+        "none": 16
+      },
+      "all_within_task_pairs": {
+        "pairs": 0,
+        "same_tree": 0,
+        "different_tree": 0,
+        "both_first_present": 0,
+        "both_first_absent": 0,
+        "first_presence_disagrees": 0,
+        "same_first_bytes_when_both_present": 0,
+        "different_first_bytes_when_both_present": 0,
+        "both_direct_pass": 0,
+        "neither_direct_pass": 0,
+        "direct_pass_disagrees": 0
+      },
+      "l5_anchor_vs_alternative": {
+        "pairs": 0,
+        "same_tree": 0,
+        "different_tree": 0,
+        "both_first_present": 0,
+        "both_first_absent": 0,
+        "first_presence_disagrees": 0,
+        "same_first_bytes_when_both_present": 0,
+        "different_first_bytes_when_both_present": 0,
+        "both_direct_pass": 0,
+        "neither_direct_pass": 0,
+        "direct_pass_disagrees": 0,
+        "only_anchor_direct_pass": 0,
+        "only_alternative_direct_pass": 0
+      }
+    },
+    "2": {
+      "tasks": 47,
+      "anchor_first_artifacts": 38,
+      "anchor_first_direct_passes": 38,
+      "structure_calls": 94,
+      "first_artifacts": 75,
+      "first_direct_passes": 75,
+      "tasks_with_structure_variation": 5,
+      "tasks_with_different_available_first_bytes": 1,
+      "first_availability_by_task": {
+        "none": 8,
+        "all": 36,
+        "some": 3
+      },
+      "direct_pass_by_task": {
+        "none": 8,
+        "all": 36,
+        "some": 3
+      },
+      "all_within_task_pairs": {
+        "pairs": 47,
+        "same_tree": 42,
+        "different_tree": 5,
+        "both_first_present": 36,
+        "both_first_absent": 8,
+        "first_presence_disagrees": 3,
+        "same_first_bytes_when_both_present": 35,
+        "different_first_bytes_when_both_present": 1,
+        "both_direct_pass": 36,
+        "neither_direct_pass": 8,
+        "direct_pass_disagrees": 3
+      },
+      "l5_anchor_vs_alternative": {
+        "pairs": 47,
+        "same_tree": 42,
+        "different_tree": 5,
+        "both_first_present": 36,
+        "both_first_absent": 8,
+        "first_presence_disagrees": 3,
+        "same_first_bytes_when_both_present": 35,
+        "different_first_bytes_when_both_present": 1,
+        "both_direct_pass": 36,
+        "neither_direct_pass": 8,
+        "direct_pass_disagrees": 3,
+        "only_anchor_direct_pass": 2,
+        "only_alternative_direct_pass": 1
+      }
+    },
+    "3": {
+      "tasks": 46,
+      "anchor_first_artifacts": 36,
+      "anchor_first_direct_passes": 36,
+      "structure_calls": 138,
+      "first_artifacts": 108,
+      "first_direct_passes": 108,
+      "tasks_with_structure_variation": 11,
+      "tasks_with_different_available_first_bytes": 8,
+      "first_availability_by_task": {
+        "all": 36,
+        "none": 10
+      },
+      "direct_pass_by_task": {
+        "all": 36,
+        "none": 10
+      },
+      "all_within_task_pairs": {
+        "pairs": 138,
+        "same_tree": 115,
+        "different_tree": 23,
+        "both_first_present": 108,
+        "both_first_absent": 30,
+        "first_presence_disagrees": 0,
+        "same_first_bytes_when_both_present": 92,
+        "different_first_bytes_when_both_present": 16,
+        "both_direct_pass": 108,
+        "neither_direct_pass": 30,
+        "direct_pass_disagrees": 0
+      },
+      "l5_anchor_vs_alternative": {
+        "pairs": 92,
+        "same_tree": 75,
+        "different_tree": 17,
+        "both_first_present": 72,
+        "both_first_absent": 20,
+        "first_presence_disagrees": 0,
+        "same_first_bytes_when_both_present": 59,
+        "different_first_bytes_when_both_present": 13,
+        "both_direct_pass": 72,
+        "neither_direct_pass": 20,
+        "direct_pass_disagrees": 0,
+        "only_anchor_direct_pass": 0,
+        "only_alternative_direct_pass": 0
+      }
+    },
+    "4": {
+      "tasks": 39,
+      "anchor_first_artifacts": 37,
+      "anchor_first_direct_passes": 37,
+      "structure_calls": 156,
+      "first_artifacts": 148,
+      "first_direct_passes": 148,
+      "tasks_with_structure_variation": 6,
+      "tasks_with_different_available_first_bytes": 6,
+      "first_availability_by_task": {
+        "all": 37,
+        "none": 2
+      },
+      "direct_pass_by_task": {
+        "all": 37,
+        "none": 2
+      },
+      "all_within_task_pairs": {
+        "pairs": 234,
+        "same_tree": 214,
+        "different_tree": 20,
+        "both_first_present": 222,
+        "both_first_absent": 12,
+        "first_presence_disagrees": 0,
+        "same_first_bytes_when_both_present": 202,
+        "different_first_bytes_when_both_present": 20,
+        "both_direct_pass": 222,
+        "neither_direct_pass": 12,
+        "direct_pass_disagrees": 0
+      },
+      "l5_anchor_vs_alternative": {
+        "pairs": 117,
+        "same_tree": 109,
+        "different_tree": 8,
+        "both_first_present": 111,
+        "both_first_absent": 6,
+        "first_presence_disagrees": 0,
+        "same_first_bytes_when_both_present": 103,
+        "different_first_bytes_when_both_present": 8,
+        "both_direct_pass": 111,
+        "neither_direct_pass": 6,
+        "direct_pass_disagrees": 0,
+        "only_anchor_direct_pass": 0,
+        "only_alternative_direct_pass": 0
+      }
+    }
+  },
+  "tasks_with_repeated_messages": {
+    "tasks": 132,
+    "anchor_first_artifacts": 111,
+    "anchor_first_direct_passes": 111,
+    "structure_calls": 388,
+    "first_artifacts": 331,
+    "first_direct_passes": 331,
+    "tasks_with_structure_variation": 22,
+    "tasks_with_different_available_first_bytes": 15,
+    "first_availability_by_task": {
+      "all": 109,
+      "none": 20,
+      "some": 3
+    },
+    "direct_pass_by_task": {
+      "all": 109,
+      "none": 20,
+      "some": 3
+    },
+    "all_within_task_pairs": {
+      "pairs": 419,
+      "same_tree": 371,
+      "different_tree": 48,
+      "both_first_present": 366,
+      "both_first_absent": 50,
+      "first_presence_disagrees": 3,
+      "same_first_bytes_when_both_present": 329,
+      "different_first_bytes_when_both_present": 37,
+      "both_direct_pass": 366,
+      "neither_direct_pass": 50,
+      "direct_pass_disagrees": 3
+    },
+    "l5_anchor_vs_alternative": {
+      "pairs": 256,
+      "same_tree": 226,
+      "different_tree": 30,
+      "both_first_present": 219,
+      "both_first_absent": 34,
+      "first_presence_disagrees": 3,
+      "same_first_bytes_when_both_present": 197,
+      "different_first_bytes_when_both_present": 22,
+      "both_direct_pass": 219,
+      "neither_direct_pass": 34,
+      "direct_pass_disagrees": 3,
+      "only_anchor_direct_pass": 2,
+      "only_alternative_direct_pass": 1
+    }
+  }
+}

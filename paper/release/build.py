@@ -31,6 +31,10 @@ TABLES = (
     "paper/out/tables/six_arm_button_visibility.json",
     "paper/out/tables/layout_preference_calibration.json",
     "paper/out/tables/protocol_mutation_coverage.json",
+    "paper/out/tables/matched_structure_repeats.json",
+    "paper/out/tables/fixed_content_repeats.json",
+    "paper/out/tables/enhanced_repeat_bridge.json",
+    "paper/out/tables/standard_repeat_bridge.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -110,6 +114,8 @@ def _readme(anonymous: bool) -> str:
 - [正式六档 219 题的按钮尾部省略与同题比较]({TABLES[7]})
 - [固定内容实验的参考几何、字号与人工偏好]({TABLES[8]})
 - [T03 三行协议校验器的逐项注错与合法对照]({TABLES[9]})
+- [正式批相同布局消息的历史重复]({TABLES[10]}) · [固定内容后每题十次的布局稳定性]({TABLES[11]})
+- [补强 L6 在同一批十二题上的重复结果]({TABLES[12]}) · [两档统一字号后的同题比较]({TABLES[13]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
