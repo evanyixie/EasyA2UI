@@ -63,6 +63,7 @@ TABLES = (
     "paper/out/tables/fixed_geometry_content.json",
     "paper/out/tables/formal_p7_candidates.json",
     "paper/out/tables/formal_delivery_replay.json",
+    "paper/out/tables/formal_selected_bindings.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -167,6 +168,7 @@ def _readme(anonymous: bool) -> str:
 - [固定内容与布局树后，模型与程序几何的参考内容、可行性与耗时]({TABLES[39]})
 - [P7 正式勾选清单与六档模型输入核对]({TABLES[40]})
 - [预注册完整交付终点、未知分项及五组配对界限]({TABLES[41]})
+- [模型已选动态字段在卡片原件和真机首帧中的保留情况]({TABLES[42]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -225,6 +227,8 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 运行 `python cardgen-proto/exp/studies/six_arms/formal_p7_candidates.py <六档正式批保管目录> <保管库根目录>` 可核对实际交接的勾选项、动作参数和留存的首请求。正式业务制卷前，保管方可用同目录的 `p7_input_validation.py --help` 查看原票及仲裁的原文证据预检入口。
 
 运行 `python cardgen-proto/exp/studies/six_arms/preregistered/replay.py <六档正式批保管目录>` 可用冻结的判分与配对程序复算原批次的完整交付分项和五组相邻比较。公开包内的三个原程序保留冻结时的文件摘要。运行 `python -m pytest cardgen-proto/exp/studies/six_arms/preregistered` 可用合成证据独立验证判据。
+
+运行 `python cardgen-proto/exp/studies/six_arms/formal_selected_bindings.py <六档正式批保管目录>` 可从 L2–L6 的模型内容回执追踪已接受的字段，核对卡片原件及真机首帧中的对应控件。相同非空字段集合的配对统计保留单边或双边缺件的题。
 
 宽卡同菜单的待排版内容和首选回执保存在保管侧。使用登记的 HarmonyOS 字体、Pillow 12.3.0 和 FreeType 2.14.3，在 `cardgen-proto/exp/studies/six_arms/` 下运行 `wide_menu_outcomes.py <宽卡保管目录> --cohort-sha <题单摘要> --program-sha <程序首选摘要> --model-sha <模型首选摘要>` 即可离线复算。三个摘要见[宽卡汇总]({TABLES[38]})的 `evidence_sha256`。原始选择流程由 `wide_menu_selection.py` 冻结候选，Windows 上的 `menu_model_runner.py` 留存每次实际请求。复算已有成绩无需再次调用模型。
 
