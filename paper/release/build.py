@@ -52,6 +52,7 @@ TABLES = (
     "paper/out/tables/formal_repair_b5.json",
     "paper/out/tables/formal_repeated_values.json",
     "paper/out/tables/formal_stage_timing.json",
+    "paper/out/tables/structure_input_audit.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -145,6 +146,7 @@ def _readme(anonymous: bool) -> str:
 - [正式 B5 修复轮次、候选新增违规及同初稿请求预算]({TABLES[28]})
 - [A6 首帧正文的参考值重复与完整数值复核]({TABLES[29]})
 - [各档逐阶段计时、调用回执与相邻档的同题时间差]({TABLES[30]})
+- [L5 与原 L6 在结构阶段能读取的信息]({TABLES[31]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -185,6 +187,8 @@ python cardgen-proto/exp/studies/six_arms/protocol_mutations.py --check
 运行 `python cardgen-proto/exp/studies/six_arms/formal_repeated_values.py <正式批保管目录>` 可复核 A6。程序按冻结的参考卡取值，用历史匹配器统计六档首件与终件，再检查重复出现在同一个还是多个正文控件中。
 
 运行 `python cardgen-proto/exp/studies/six_arms/formal_stage_timing.py <正式批保管目录>` 可从归档执行记录与请求回执复算 B1/B2。每个阶段分别列出实际进入和提前终止的题数，网络请求耗时已计入相应的模型阶段。
+
+运行 `python cardgen-proto/exp/studies/six_arms/structure_input_audit.py <正式批保管目录>` 可核对 187 份固定内容的哈希、已发送的结构提示、引用清单以及模型和程序树中的按钮位置。
 
 保管方运行 `python cardgen-proto/exp/studies/six_arms/fixed_tree_density.py <正式批保管目录>` 可重放 12 题共 120 份已生成的布局树，核对字号与留白的四格结果。需要登记的常规和粗体字库及测量器；支持通过既有的 `SIX_ARMS_FONT_REGULAR`、`SIX_ARMS_FONT_BOLD`、`SIX_ARMS_MEASURE_PY` 指向等摘要的文件。
 
