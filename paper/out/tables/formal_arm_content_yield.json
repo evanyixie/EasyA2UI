@@ -1,0 +1,1085 @@
+{
+  "cohorts": {
+    "all_assigned": {
+      "families": 200,
+      "phases": {
+        "after_common_repair": {
+          "arms": {
+            "L1": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 47,
+                  "empty_data": 1,
+                  "some_unsourced": 6
+                },
+                "below_80": {
+                  "all_sourced": 6,
+                  "empty_data": 16,
+                  "some_unsourced": 14
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 127,
+                "below_80": 82,
+                "unassessed": 10
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 209,
+                "no_artifact": 5,
+                "unresolved_text": 4
+              },
+              "joint": {
+                "fail": 165,
+                "missing": 7,
+                "pass": 47
+              },
+              "numeric_fidelity": {
+                "all_sourced": 118,
+                "empty_data": 26,
+                "no_artifact": 5,
+                "some_unsourced": 66,
+                "unresolved_text": 4
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 122,
+                "missing": 6,
+                "pass": 91
+              }
+            },
+            "L2": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 22,
+                  "some_unsourced": 2
+                },
+                "below_80": {
+                  "some_unsourced": 6
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 108,
+                "below_80": 49,
+                "unassessed": 62
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 157,
+                "no_artifact": 61
+              },
+              "joint": {
+                "fail": 194,
+                "missing": 3,
+                "pass": 22
+              },
+              "numeric_fidelity": {
+                "all_sourced": 92,
+                "empty_data": 20,
+                "no_artifact": 61,
+                "some_unsourced": 46
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 186,
+                "missing": 3,
+                "pass": 30
+              }
+            },
+            "L3": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 22,
+                  "some_unsourced": 2
+                },
+                "below_80": {
+                  "some_unsourced": 5
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 112,
+                "below_80": 47,
+                "unassessed": 60
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 159,
+                "no_artifact": 59
+              },
+              "joint": {
+                "fail": 192,
+                "missing": 5,
+                "pass": 22
+              },
+              "numeric_fidelity": {
+                "all_sourced": 95,
+                "empty_data": 21,
+                "no_artifact": 59,
+                "some_unsourced": 44
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 185,
+                "missing": 5,
+                "pass": 29
+              }
+            },
+            "L4": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 19,
+                  "some_unsourced": 3
+                },
+                "below_80": {
+                  "some_unsourced": 6
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 131,
+                "below_80": 55,
+                "unassessed": 33
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 186,
+                "no_artifact": 32
+              },
+              "joint": {
+                "fail": 197,
+                "missing": 3,
+                "pass": 19
+              },
+              "numeric_fidelity": {
+                "all_sourced": 102,
+                "empty_data": 23,
+                "no_artifact": 32,
+                "some_unsourced": 62
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 188,
+                "missing": 3,
+                "pass": 28
+              }
+            },
+            "L5": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 71,
+                  "empty_data": 3,
+                  "some_unsourced": 26
+                },
+                "below_80": {
+                  "all_sourced": 12,
+                  "empty_data": 21,
+                  "some_unsourced": 16
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 100,
+                "below_80": 49,
+                "unassessed": 70
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 149,
+                "no_artifact": 69
+              },
+              "joint": {
+                "fail": 144,
+                "missing": 4,
+                "pass": 71
+              },
+              "numeric_fidelity": {
+                "all_sourced": 83,
+                "empty_data": 24,
+                "no_artifact": 69,
+                "some_unsourced": 43
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 68,
+                "missing": 1,
+                "pass": 150
+              }
+            },
+            "L6": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 65,
+                  "empty_data": 3,
+                  "some_unsourced": 10
+                },
+                "below_80": {
+                  "all_sourced": 4,
+                  "empty_data": 20,
+                  "some_unsourced": 13
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 78,
+                "below_80": 37,
+                "unassessed": 104
+              },
+              "coverage_state": {
+                "measured": 115,
+                "no_artifact": 104
+              },
+              "joint": {
+                "fail": 151,
+                "missing": 3,
+                "pass": 65
+              },
+              "numeric_fidelity": {
+                "all_sourced": 69,
+                "empty_data": 23,
+                "no_artifact": 104,
+                "some_unsourced": 23
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 104,
+                "pass": 115
+              }
+            }
+          },
+          "paired_l5_minus_l4": {
+            "certified_difference_family_percentile_ci95": [
+              0.17924528301886788,
+              0.3024390243902439
+            ],
+            "certified_difference_rate": 0.2374429223744292,
+            "columns": "L5",
+            "difference": "L5_minus_L4",
+            "latent_difference_rate_bounds": [
+              0.2237442922374429,
+              0.2557077625570776
+            ],
+            "pairs_with_both_states_known": 212,
+            "rows": "L4",
+            "states": {
+              "fail": {
+                "fail": 143,
+                "missing": 4,
+                "pass": 50
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 2
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 19
+              }
+            }
+          }
+        },
+        "raw_first": {
+          "arms": {
+            "L1": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 127,
+                "below_80": 82,
+                "unassessed": 10
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 209,
+                "no_artifact": 5,
+                "unresolved_text": 4
+              },
+              "joint": {
+                "fail": 213,
+                "missing": 6
+              },
+              "numeric_fidelity": {
+                "all_sourced": 118,
+                "empty_data": 26,
+                "no_artifact": 5,
+                "some_unsourced": 66,
+                "unresolved_text": 4
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 213,
+                "missing": 6
+              }
+            },
+            "L2": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 108,
+                "below_80": 49,
+                "unassessed": 62
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 157,
+                "no_artifact": 61
+              },
+              "joint": {
+                "fail": 216,
+                "missing": 3
+              },
+              "numeric_fidelity": {
+                "all_sourced": 92,
+                "empty_data": 20,
+                "no_artifact": 61,
+                "some_unsourced": 46
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 216,
+                "missing": 3
+              }
+            },
+            "L3": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 112,
+                "below_80": 47,
+                "unassessed": 60
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 159,
+                "no_artifact": 59
+              },
+              "joint": {
+                "fail": 214,
+                "missing": 5
+              },
+              "numeric_fidelity": {
+                "all_sourced": 95,
+                "empty_data": 21,
+                "no_artifact": 59,
+                "some_unsourced": 44
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 214,
+                "missing": 5
+              }
+            },
+            "L4": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 131,
+                "below_80": 55,
+                "unassessed": 33
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 186,
+                "no_artifact": 32
+              },
+              "joint": {
+                "fail": 216,
+                "missing": 3
+              },
+              "numeric_fidelity": {
+                "all_sourced": 102,
+                "empty_data": 23,
+                "no_artifact": 32,
+                "some_unsourced": 62
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 216,
+                "missing": 3
+              }
+            },
+            "L5": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 71,
+                  "empty_data": 3,
+                  "some_unsourced": 26
+                },
+                "below_80": {
+                  "all_sourced": 12,
+                  "empty_data": 21,
+                  "some_unsourced": 16
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 100,
+                "below_80": 49,
+                "unassessed": 70
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 149,
+                "no_artifact": 69
+              },
+              "joint": {
+                "fail": 144,
+                "missing": 4,
+                "pass": 71
+              },
+              "numeric_fidelity": {
+                "all_sourced": 83,
+                "empty_data": 24,
+                "no_artifact": 69,
+                "some_unsourced": 43
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 68,
+                "missing": 1,
+                "pass": 150
+              }
+            },
+            "L6": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 65,
+                  "empty_data": 3,
+                  "some_unsourced": 10
+                },
+                "below_80": {
+                  "all_sourced": 4,
+                  "empty_data": 20,
+                  "some_unsourced": 13
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 78,
+                "below_80": 37,
+                "unassessed": 104
+              },
+              "coverage_state": {
+                "measured": 115,
+                "no_artifact": 104
+              },
+              "joint": {
+                "fail": 151,
+                "missing": 3,
+                "pass": 65
+              },
+              "numeric_fidelity": {
+                "all_sourced": 69,
+                "empty_data": 23,
+                "no_artifact": 104,
+                "some_unsourced": 23
+              },
+              "tasks": 219,
+              "technical": {
+                "fail": 104,
+                "pass": 115
+              }
+            }
+          },
+          "paired_l5_minus_l4": {
+            "certified_difference_family_percentile_ci95": [
+              0.24271844660194175,
+              0.4142335407502772
+            ],
+            "certified_difference_rate": 0.3242009132420091,
+            "columns": "L5",
+            "difference": "L5_minus_L4",
+            "latent_difference_rate_bounds": [
+              0.3105022831050228,
+              0.3424657534246575
+            ],
+            "pairs_with_both_states_known": 212,
+            "rows": "L4",
+            "states": {
+              "fail": {
+                "fail": 143,
+                "missing": 4,
+                "pass": 69
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 2
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 0
+              }
+            }
+          }
+        }
+      },
+      "tasks": 219
+    },
+    "original_sources": {
+      "families": 198,
+      "phases": {
+        "after_common_repair": {
+          "arms": {
+            "L1": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 47,
+                  "empty_data": 1,
+                  "some_unsourced": 5
+                },
+                "below_80": {
+                  "all_sourced": 6,
+                  "empty_data": 16,
+                  "some_unsourced": 14
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 125,
+                "below_80": 82,
+                "unassessed": 10
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 207,
+                "no_artifact": 5,
+                "unresolved_text": 4
+              },
+              "joint": {
+                "fail": 163,
+                "missing": 7,
+                "pass": 47
+              },
+              "numeric_fidelity": {
+                "all_sourced": 117,
+                "empty_data": 26,
+                "no_artifact": 5,
+                "some_unsourced": 65,
+                "unresolved_text": 4
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 121,
+                "missing": 6,
+                "pass": 90
+              }
+            },
+            "L2": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 22,
+                  "some_unsourced": 2
+                },
+                "below_80": {
+                  "some_unsourced": 6
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 107,
+                "below_80": 49,
+                "unassessed": 61
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 156,
+                "no_artifact": 60
+              },
+              "joint": {
+                "fail": 192,
+                "missing": 3,
+                "pass": 22
+              },
+              "numeric_fidelity": {
+                "all_sourced": 91,
+                "empty_data": 20,
+                "no_artifact": 60,
+                "some_unsourced": 46
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 184,
+                "missing": 3,
+                "pass": 30
+              }
+            },
+            "L3": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 22,
+                  "some_unsourced": 2
+                },
+                "below_80": {
+                  "some_unsourced": 5
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 111,
+                "below_80": 46,
+                "unassessed": 60
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 157,
+                "no_artifact": 59
+              },
+              "joint": {
+                "fail": 190,
+                "missing": 5,
+                "pass": 22
+              },
+              "numeric_fidelity": {
+                "all_sourced": 94,
+                "empty_data": 21,
+                "no_artifact": 59,
+                "some_unsourced": 43
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 183,
+                "missing": 5,
+                "pass": 29
+              }
+            },
+            "L4": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 19,
+                  "some_unsourced": 3
+                },
+                "below_80": {
+                  "some_unsourced": 6
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 130,
+                "below_80": 54,
+                "unassessed": 33
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 184,
+                "no_artifact": 32
+              },
+              "joint": {
+                "fail": 195,
+                "missing": 3,
+                "pass": 19
+              },
+              "numeric_fidelity": {
+                "all_sourced": 101,
+                "empty_data": 23,
+                "no_artifact": 32,
+                "some_unsourced": 61
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 186,
+                "missing": 3,
+                "pass": 28
+              }
+            },
+            "L5": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 70,
+                  "empty_data": 3,
+                  "some_unsourced": 26
+                },
+                "below_80": {
+                  "all_sourced": 12,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 99,
+                "below_80": 48,
+                "unassessed": 70
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 147,
+                "no_artifact": 69
+              },
+              "joint": {
+                "fail": 143,
+                "missing": 4,
+                "pass": 70
+              },
+              "numeric_fidelity": {
+                "all_sourced": 82,
+                "empty_data": 24,
+                "no_artifact": 69,
+                "some_unsourced": 42
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 68,
+                "missing": 1,
+                "pass": 148
+              }
+            },
+            "L6": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 64,
+                  "empty_data": 3,
+                  "some_unsourced": 10
+                },
+                "below_80": {
+                  "all_sourced": 4,
+                  "empty_data": 20,
+                  "some_unsourced": 12
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 77,
+                "below_80": 36,
+                "unassessed": 104
+              },
+              "coverage_state": {
+                "measured": 113,
+                "no_artifact": 104
+              },
+              "joint": {
+                "fail": 150,
+                "missing": 3,
+                "pass": 64
+              },
+              "numeric_fidelity": {
+                "all_sourced": 68,
+                "empty_data": 23,
+                "no_artifact": 104,
+                "some_unsourced": 22
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 104,
+                "pass": 113
+              }
+            }
+          },
+          "paired_l5_minus_l4": {
+            "certified_difference_family_percentile_ci95": [
+              0.17467248908296942,
+              0.3005024194603078
+            ],
+            "certified_difference_rate": 0.2350230414746544,
+            "columns": "L5",
+            "difference": "L5_minus_L4",
+            "latent_difference_rate_bounds": [
+              0.22119815668202766,
+              0.2534562211981567
+            ],
+            "pairs_with_both_states_known": 210,
+            "rows": "L4",
+            "states": {
+              "fail": {
+                "fail": 142,
+                "missing": 4,
+                "pass": 49
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 2
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 19
+              }
+            }
+          }
+        },
+        "raw_first": {
+          "arms": {
+            "L1": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 125,
+                "below_80": 82,
+                "unassessed": 10
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 207,
+                "no_artifact": 5,
+                "unresolved_text": 4
+              },
+              "joint": {
+                "fail": 211,
+                "missing": 6
+              },
+              "numeric_fidelity": {
+                "all_sourced": 117,
+                "empty_data": 26,
+                "no_artifact": 5,
+                "some_unsourced": 65,
+                "unresolved_text": 4
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 211,
+                "missing": 6
+              }
+            },
+            "L2": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 107,
+                "below_80": 49,
+                "unassessed": 61
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 156,
+                "no_artifact": 60
+              },
+              "joint": {
+                "fail": 214,
+                "missing": 3
+              },
+              "numeric_fidelity": {
+                "all_sourced": 91,
+                "empty_data": 20,
+                "no_artifact": 60,
+                "some_unsourced": 46
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 214,
+                "missing": 3
+              }
+            },
+            "L3": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 111,
+                "below_80": 46,
+                "unassessed": 60
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 157,
+                "no_artifact": 59
+              },
+              "joint": {
+                "fail": 212,
+                "missing": 5
+              },
+              "numeric_fidelity": {
+                "all_sourced": 94,
+                "empty_data": 21,
+                "no_artifact": 59,
+                "some_unsourced": 43
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 212,
+                "missing": 5
+              }
+            },
+            "L4": {
+              "content_among_technical_passes": {
+                "at_least_80": {},
+                "below_80": {},
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 130,
+                "below_80": 54,
+                "unassessed": 33
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 184,
+                "no_artifact": 32
+              },
+              "joint": {
+                "fail": 214,
+                "missing": 3
+              },
+              "numeric_fidelity": {
+                "all_sourced": 101,
+                "empty_data": 23,
+                "no_artifact": 32,
+                "some_unsourced": 61
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 214,
+                "missing": 3
+              }
+            },
+            "L5": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 70,
+                  "empty_data": 3,
+                  "some_unsourced": 26
+                },
+                "below_80": {
+                  "all_sourced": 12,
+                  "empty_data": 21,
+                  "some_unsourced": 15
+                },
+                "unassessed": {
+                  "some_unsourced": 1
+                }
+              },
+              "coverage": {
+                "at_least_80": 99,
+                "below_80": 48,
+                "unassessed": 70
+              },
+              "coverage_state": {
+                "empty_reference": 1,
+                "measured": 147,
+                "no_artifact": 69
+              },
+              "joint": {
+                "fail": 143,
+                "missing": 4,
+                "pass": 70
+              },
+              "numeric_fidelity": {
+                "all_sourced": 82,
+                "empty_data": 24,
+                "no_artifact": 69,
+                "some_unsourced": 42
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 68,
+                "missing": 1,
+                "pass": 148
+              }
+            },
+            "L6": {
+              "content_among_technical_passes": {
+                "at_least_80": {
+                  "all_sourced": 64,
+                  "empty_data": 3,
+                  "some_unsourced": 10
+                },
+                "below_80": {
+                  "all_sourced": 4,
+                  "empty_data": 20,
+                  "some_unsourced": 12
+                },
+                "unassessed": {}
+              },
+              "coverage": {
+                "at_least_80": 77,
+                "below_80": 36,
+                "unassessed": 104
+              },
+              "coverage_state": {
+                "measured": 113,
+                "no_artifact": 104
+              },
+              "joint": {
+                "fail": 150,
+                "missing": 3,
+                "pass": 64
+              },
+              "numeric_fidelity": {
+                "all_sourced": 68,
+                "empty_data": 23,
+                "no_artifact": 104,
+                "some_unsourced": 22
+              },
+              "tasks": 217,
+              "technical": {
+                "fail": 104,
+                "pass": 113
+              }
+            }
+          },
+          "paired_l5_minus_l4": {
+            "certified_difference_family_percentile_ci95": [
+              0.2380894590846047,
+              0.4107142857142857
+            ],
+            "certified_difference_rate": 0.3225806451612903,
+            "columns": "L5",
+            "difference": "L5_minus_L4",
+            "latent_difference_rate_bounds": [
+              0.3087557603686636,
+              0.34101382488479265
+            ],
+            "pairs_with_both_states_known": 210,
+            "rows": "L4",
+            "states": {
+              "fail": {
+                "fail": 142,
+                "missing": 4,
+                "pass": 68
+              },
+              "missing": {
+                "fail": 1,
+                "missing": 0,
+                "pass": 2
+              },
+              "pass": {
+                "fail": 0,
+                "missing": 0,
+                "pass": 0
+              }
+            }
+          }
+        }
+      },
+      "tasks": 217
+    }
+  },
+  "inference": "L5 minus L4, paired by task. Percentile interval resamples registered families 10,000 times, seed 20261124, for the difference in obtained passes. Latent bounds allow every unknown component outcome. The six-arm composite was added after earlier five-strategy marginals were known.",
+  "private_score_rows_sha256": "297cea7e4c588eda7946eab97f08d386df8019531b70ca14df0c0588e09f0e38",
+  "score": "Post-hoc common technical pass, A4a coverage >=80%, and nonempty A5 with every numeric token sourced. Any known failure is decisive; other incomplete combinations are unknown. This is not the preregistered complete-delivery endpoint."
+}
