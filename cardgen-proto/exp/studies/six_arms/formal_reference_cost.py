@@ -26,6 +26,7 @@ from six_arms.web_geometry_inputs import load_inputs
 
 ROOT = Path(__file__).resolve().parents[4]
 TABLE = ROOT / "paper/out/tables/formal_reference_cost.json"
+DIAGNOSTICS = ROOT / "paper/out/tables/formal_reference_cost_diagnostics.json"
 
 
 def encode(x):
@@ -111,7 +112,7 @@ def profile(rows):
     return selected
 
 
-def run(root, vault):
+def run(root, vault, *, diagnostics=False):
     if not root.resolve().is_relative_to(
         vault.resolve()
     ) or vault.resolve().is_relative_to(ROOT):
@@ -128,11 +129,21 @@ def run(root, vault):
     for row in rows:
         task = row["task"]
         seat = seats[task, row["arm"], row["phase"]]
+        row["artifact_sha256"] = seat.artifact_sha256
         key = (task, seat.artifact_sha256)
         if key not in cache:
             raw = verified(seat.path, seat.artifact_sha256) if seat.path else None
             cache[key] = content.coverage(raw, facts[task])
         row["a4a_hits"], row["a4a_total"], row["a4a_status"] = cache[key]
+    if diagnostics:
+        from six_arms.composite_diagnostics import diagnostic_report
+        from six_arms.reference_coverage_stats import a4a_report
+
+        return {
+            "assigned_tasks": len(controls),
+            "literal_reference_coverage": a4a_report(rows),
+            "joint_outcomes": diagnostic_report(rows, root),
+        }
     historical = {
         t
         for t, r in references.items()
@@ -196,19 +207,31 @@ if __name__ == "__main__":
     parser.add_argument("formal_root", type=Path)
     parser.add_argument("--vault", type=Path)
     parser.add_argument(
+        "--diagnostics",
+        action="store_true",
+        help="Verify the secondary literal-coverage and clipping breakdown",
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         help="Write a new aggregate; default verifies the published table",
     )
     args = parser.parse_args()
-    report = run(args.formal_root, args.vault or args.formal_root.parent)
+    report = run(
+        args.formal_root,
+        args.vault or args.formal_root.parent,
+        diagnostics=args.diagnostics,
+    )
+    published = DIAGNOSTICS if args.diagnostics else TABLE
     if args.output:
         with args.output.open("xb") as f:
             f.write(encode(report))
-    elif report != json.loads(TABLE.read_bytes()):
+    elif report != json.loads(published.read_bytes()):
         raise ValueError("Reference-cost aggregate differs from the frozen evidence")
     print(
         "Verified reference-cost aggregate for",
-        report["reference_control"]["cases"],
+        report["assigned_tasks"]
+        if args.diagnostics
+        else report["reference_control"]["cases"],
         "tasks",
     )

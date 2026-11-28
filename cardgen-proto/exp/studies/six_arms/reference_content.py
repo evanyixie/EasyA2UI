@@ -14,6 +14,20 @@ from src.measure import check_content
 # Frozen build_content_oracle.py at blob 38c27401ca02da87b1b914b587b452af3feb84fd.
 SKIP_KEY = re.compile(r"code|id|url|icon|color|type|unit|timestamp|ts$", re.IGNORECASE)
 SEPARATOR = re.compile(r"\s*(?:/|~|～|—|→|至|，|,)\s*")
+# Components understood by the historical renderer (blob 701ddca87d15fab4f1e97972cd3951283b12fa28).
+KNOWN_COMPONENTS = {
+    "Column",
+    "Row",
+    "Stack",
+    "List",
+    "Grid",
+    "Text",
+    "Image",
+    "Button",
+    "Checkbox",
+    "Divider",
+    "Progress",
+}
 
 
 def parts(value):
@@ -46,33 +60,51 @@ def reference_facts(data, prefix=()):
     return facts
 
 
-def messages(raw):
+def surface_data(raw):
+    """Verify the three messages share one surface before using its data or text."""
     try:
         result = json.loads(raw)
     except json.JSONDecodeError:
         result = [json.loads(line) for line in raw.splitlines() if line.strip()]
     if not isinstance(result, list) or len(result) != 3:
         raise ValueError("Unsupported A2UI message set")
-    return result
-
-
-def read_reference(raw):
-    model = messages(raw)[2]["updateDataModel"]
+    payloads = []
+    for message, key in zip(
+        result, ("createSurface", "updateComponents", "updateDataModel"), strict=True
+    ):
+        if not isinstance(message, dict) or not isinstance(message.get(key), dict):
+            raise TypeError("Unsupported A2UI message payload")
+        payloads.append(message[key])
+    creation, graph, model = payloads
+    surface = creation.get("surfaceId")
+    if (
+        not isinstance(surface, str)
+        or not surface.strip()
+        or any(m.get("surfaceId") != surface for m in (graph, model))
+    ):
+        raise ValueError("A2UI messages do not identify one surface")
     if "value" not in model:
-        raise ValueError("Missing reference data model")
-    path = model.get("path") or "/"
+        raise ValueError("Missing A2UI data-model value")
+    # A legacy message may omit the path for a root update. Explicit values must be pointers.
+    path = model.get("path", "/")
     if (
         not isinstance(path, str)
         or not path.startswith("/")
         or re.search(r"~(?![01])", path)
     ):
-        raise ValueError("Unknown reference data-model root")
+        raise ValueError("Unsupported data-model pointer")
     prefix = (
         tuple(p.replace("~1", "/").replace("~0", "~") for p in path[1:].split("/"))
         if path != "/"
         else ()
     )
-    return reference_facts(model["value"], prefix)
+    return graph, model["value"], prefix
+
+
+def read_reference(raw):
+    _, value, prefix = surface_data(raw)
+    # The historical extractor applied `value or {}` at the model root only.
+    return reference_facts(value or {}, prefix)
 
 
 def registered_value_support(facts, registered):
@@ -91,13 +123,7 @@ def registered_value_support(facts, registered):
 
 def artifact_text(raw):
     """For the original Text-only metric, resolve each reachable node in component order."""
-    creation, graph, model = messages(raw)
-    graph, model = graph["updateComponents"], model["updateDataModel"]
-    if (
-        creation["createSurface"]["surfaceId"] != graph["surfaceId"]
-        or model["surfaceId"] != graph["surfaceId"]
-    ):
-        raise ValueError("Unsupported generated data-model root or surface")
+    graph, data, prefix = surface_data(raw)
     if "root" not in graph:
         nodes = graph["components"]
         roots = {c["id"] for c in nodes} - {
@@ -107,17 +133,10 @@ def artifact_text(raw):
             raise ValueError("No unique component-tree root")
         graph = {**graph, "root": roots.pop()}
     emit_fidelity.graph(graph)
-    path = model.get("path") or "/"
-    if (
-        not isinstance(path, str)
-        or not path.startswith("/")
-        or re.search(r"~(?![01])", path)
-    ):
-        raise ValueError("Unsupported data-model pointer")
-    data = model["value"]
-    if path != "/":
-        for part in reversed(path[1:].split("/")):
-            data = {part.replace("~1", "/").replace("~0", "~"): data}
+    if any(c["component"] not in KNOWN_COMPONENTS for c in graph["components"]):
+        raise ValueError("Unrecognized component may contain display text")
+    for key in reversed(prefix):
+        data = {key: data}
     return [
         resolve_value(c["content"], data)
         for c in graph["components"]
