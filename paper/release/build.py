@@ -39,6 +39,8 @@ TABLES = (
     "paper/out/tables/layout_content_draws.json",
     "paper/out/tables/augmented_content_draws.json",
     "paper/out/tables/native_repeated_facts.json",
+    "paper/out/tables/six_arm_cache_token_cost.json",
+    "paper/out/tables/paired_resource_differences.json",
 )
 FIGURES = ("paper/out/figures/six_arm_cost_frontier.png",)
 PUBLIC_FILES = (*REPORTS, *TABLES, *FIGURES, "paper/data/dev/pointer.json")
@@ -122,6 +124,7 @@ def _readme(anonymous: bool) -> str:
 - [补强 L6 在同一批十二题上的重复结果]({TABLES[12]}) · [两档统一字号后的同题比较]({TABLES[13]})
 - [相同内容提示的选择一致性]({TABLES[14]}) · [四组内容下的原程序]({TABLES[15]}) · [两种字号下的补强程序]({TABLES[16]})
 - [A6 同一动态数值是否跨控件重复显示]({TABLES[17]})
+- [六档缓存命中、未命中与输出用量]({TABLES[18]}) · [同题耗时与输入、输出 token 的配对差和区间]({TABLES[19]})
 - [各档终止原因及 L5/L6 同题交叉表]({TABLES[3]})
 - [同题成本与两种通过率]({TABLES[4]}) · [六档对比图]({FIGURES[0]})
 
@@ -136,6 +139,12 @@ python cardgen-proto/exp/studies/six_arms/study.py replay demo-batch demo-replay
 ```
 
 预期匹配 4 个席位，新增物理请求 0 次。逐席结果见 `demo-replay/replay.json`。上述机读表给出正式观测和补充分析的汇总值。
+
+安装 Pillow 后，可以用本机字体运行补强 L6 的小卡与宽卡合成示例。程序核对两个实体的事实绑定和动作，列出两种字号策略的判定与成件摘要。演练自行识别常见字体，也可用 `--regular` 和 `--bold` 指定字体文件。
+
+```sh
+python cardgen-proto/exp/studies/six_arms/portable_layout_smoke.py
+```
 
 T03 的 90 次注错和 10 个合法对照均可用公开材料复算。在解压目录执行下列命令，程序将逐项校对返回码、伴随码及异常类型。
 

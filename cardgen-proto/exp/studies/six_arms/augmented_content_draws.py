@@ -1,6 +1,7 @@
 """Offline follow-up on archived content draws from the four model-structure arms.
 
-Supply the frozen formal batch directory and original paired_times.py benchmark.
+Supply the frozen formal batch directory. The public selector is the default;
+the historical benchmark is optional for independent implementation comparison.
 Both enhanced program policies are rerun for each distinct task, source, content
 and entry status. Every observed model structure response is scored separately.
 """
@@ -8,8 +9,11 @@ and entry status. Every observed model structure response is scored separately.
 import argparse
 import importlib.util
 import json
+import multiprocessing
 import sys
 from collections import Counter, defaultdict
+from concurrent.futures import ProcessPoolExecutor
+from dataclasses import dataclass
 from pathlib import Path
 from unittest.mock import patch
 
@@ -26,6 +30,7 @@ else:
 TABLE = evidence.PUBLIC.with_name("augmented_content_draws.json")
 POLICIES = ("compatible", "standard")
 DONORS = ("L2", "L3", "L4", "L5")
+SEALED_ROWS = "403f1cefa2181c260a56b57f9e566b4d27ed10baf6a77a83d08bdd6d58e0aa43"
 
 
 def program_layout(bench, dev, mods, task, content, source, entry):
@@ -91,9 +96,9 @@ def program_layout(bench, dev, mods, task, content, source, entry):
     return outputs, decisions
 
 
-def model_layout(bench, dev, draw, entry):
-    tree, content = draw.structure.product, draw.content.product
-    model = dev.run_tail(tree, content, draw.source, entry)
+def model_layout(bench, dev, draw):
+    tree, content = draw.structure, draw.content
+    model = dev.run_tail(tree, content, draw.source, draw.entry)
     strict = bench.run.ex.judge_one(content, draw.source, tree, tree)
     compatible_sha = model.get("final_sha") if model["status"] == "accepted" else None
     standard_sha = accepted_sha(strict)
@@ -232,8 +237,56 @@ def four_content_tasks(rows):
     return result
 
 
-def run(batch, benchmark):
+@dataclass
+class LayoutInput:
+    task: str
+    donor: str
+    size: str
+    status: str
+    entry: dict
+    source: dict
+    content: dict | None
+    structure: dict | None
+    request_id: str | None
+
+
+def verified_inputs(batch):
+    """Read the archived inputs and reparse each physical reply in its frozen runtime."""
     sys.addaudithook(evidence.no_network)
+    prep, plan_sha, package, cases = primary.load_batch(batch)
+    inputs = []
+    for draw in primary.iter_draws(batch, prep, plan_sha, package, cases):
+        content = draw.content.product if draw.content else None
+        tree = None
+        if draw.structure:
+            tree = prep.engine.model.parse_output(
+                "structure",
+                draw.structure.wire.decode(),
+                draw.source,
+                content=content,
+                tree=None,
+            )
+            evidence.require(
+                tree == draw.structure.product,
+                "Structure did not parse for this specific content",
+            )
+        inputs.append(
+            LayoutInput(
+                draw.task,
+                draw.donor,
+                draw.size,
+                draw.status,
+                draw.original["entry"],
+                draw.source,
+                content,
+                draw.structure.product if draw.structure else None,
+                draw.structure.request_id if draw.structure else None,
+            )
+        )
+    return plan_sha, inputs
+
+
+def historical_selectors(batch, benchmark):
     evidence.check_file(benchmark, evidence.PINS["benchmark"])
     spec = importlib.util.spec_from_file_location(
         "original_187_program_policies", benchmark
@@ -242,16 +295,56 @@ def run(batch, benchmark):
     spec.loader.exec_module(bench)
     _, dev, mods, _ = bench.load()
     bench.warm_fonts()
+    evidence.require(
+        bench.BASE.resolve() == batch.resolve()
+        and sys.modules["prepare_queue"].engine is bench.run.eng,
+        "Mixed frozen batches/engines",
+    )
+    return (
+        lambda task, content, src, entry: program_layout(
+            bench, dev, mods, task, content, src, entry
+        ),
+        lambda draw: model_layout(bench, dev, draw),
+    )
+
+
+def public_selectors():
+    if __package__:
+        from . import portable_enhanced_layout as layout
+        from .portable_layout_engine import load_engine
+    else:
+        import portable_enhanced_layout as layout
+        from portable_layout_engine import load_engine
+
+    engine = load_engine()
+    return (
+        lambda task, content, src, entry: layout.select(
+            task, content, src, entry, engine
+        ),
+        lambda draw: layout.evaluate_model(
+            draw.content, draw.source, draw.entry, draw.structure, engine
+        ),
+    )
+
+
+def run(batch, benchmark=None):
+    sys.addaudithook(evidence.no_network)
     compare_file = batch / "same_content_l56_followup/timing/times.private.json"
     evidence.check_file(compare_file, evidence.PINS["timed187"])
     historical = evidence.indexed(evidence.load(compare_file))
-    prep, plan_sha, package, cases = primary.load_batch(batch)
-    evidence.require(
-        bench.BASE.resolve() == batch.resolve() and prep.engine is bench.run.eng,
-        "Mixed frozen batches/engines",
-    )
+    # The archived adapter and public selector import different versions of the
+    # same stage modules. Pass verified inputs in memory across the process boundary.
+    if benchmark is None:
+        with ProcessPoolExecutor(
+            max_workers=1, mp_context=multiprocessing.get_context("spawn")
+        ) as pool:
+            plan_sha, draws = pool.submit(verified_inputs, batch).result()
+        select_program, score_model = public_selectors()
+    else:
+        plan_sha, draws = verified_inputs(batch)
+        select_program, score_model = historical_selectors(batch, benchmark)
     results, calibrations, request_ids, cache = [], set(), set(), {}
-    for draw in primary.iter_draws(batch, prep, plan_sha, package, cases):
+    for draw in draws:
         row = {
             "task": draw.task,
             "donor": draw.donor,
@@ -265,14 +358,11 @@ def run(batch, benchmark):
             draw.status in {"ready", "structure_unknown"} and draw.content is not None,
             "Unknown content status",
         )
-        entry = draw.original["entry"]
-        content = draw.content.product
+        entry, content = draw.entry, draw.content
         content_hash = canonical_sha(content)
         key = draw.task, canonical_sha(draw.source), content_hash, entry["status"]
         if key not in cache:
-            cache[key] = program_layout(
-                bench, dev, mods, draw.task, content, draw.source, entry
-            )
+            cache[key] = select_program(draw.task, content, draw.source, entry)
             evidence.require(
                 canonical_sha(content) == content_hash, "Program changed fixed content"
             )
@@ -283,22 +373,11 @@ def run(batch, benchmark):
         if draw.status == "structure_unknown":
             continue
         evidence.require(
-            draw.structure.request_id not in request_ids,
+            draw.request_id and draw.request_id not in request_ids,
             "Duplicate physical model response",
         )
-        request_ids.add(draw.structure.request_id)
-        checked_tree = prep.engine.model.parse_output(
-            "structure",
-            draw.structure.wire.decode(),
-            draw.source,
-            content=content,
-            tree=None,
-        )
-        evidence.require(
-            checked_tree == draw.structure.product,
-            "Structure did not parse for this specific content",
-        )
-        row["model"], row["model_decisions"] = model_layout(bench, dev, draw, entry)
+        request_ids.add(draw.request_id)
+        row["model"], row["model_decisions"] = score_model(draw)
         if draw.donor == "L5":
             old = historical[draw.task]
             evidence.require(
@@ -354,7 +433,16 @@ def run(batch, benchmark):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--formal-root", type=Path, required=True)
-    parser.add_argument("--benchmark", type=Path, required=True)
+    parser.add_argument(
+        "--benchmark",
+        type=Path,
+        help="Optional original benchmark for historical replay",
+    )
+    parser.add_argument(
+        "--verify-records",
+        type=Path,
+        help="Compare every case, pass, unresolved decision and artifact SHA with the sealed first replay.",
+    )
     parser.add_argument(
         "--private-output",
         type=Path,
@@ -367,6 +455,12 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     report, records = run(args.formal_root, args.benchmark)
+    if args.verify_records:
+        evidence.check_file(args.verify_records, SEALED_ROWS)
+        evidence.require(
+            evidence.load(args.verify_records) == records,
+            "One or more case-level records differ",
+        )
     if args.private_output:
         args.private_output.parent.mkdir(parents=True, exist_ok=True)
         if args.private_output.exists():

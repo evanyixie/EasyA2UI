@@ -1,0 +1,339 @@
+{
+  "bootstrap": {
+    "interval": "percentile 95% inclusive",
+    "replicates": 10000,
+    "seed": 20261124
+  },
+  "cohorts": {
+    "all_assigned": {
+      "L5_minus_L4": {
+        "completion_tokens": {
+          "assigned": 219,
+          "equal_family_median_difference": -326.0,
+          "families_with_known_pairs": 196,
+          "family_median_signed_rank": {
+            "nonzero": 186,
+            "p_two_sided": 5.805494012831246e-46,
+            "w_negative": 17169.0,
+            "w_positive": 222.0,
+            "zeros": 10
+          },
+          "known_task_pairs": 215,
+          "missing_task_pairs": 4,
+          "paired_median_difference": -326.0,
+          "query_signed_rank": {
+            "nonzero": 205,
+            "p_two_sided": 8.232822128870937e-51,
+            "w_negative": 20856.0,
+            "w_positive": 259.0,
+            "zeros": 10
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -355.0,
+            -278.0
+          ]
+        },
+        "executor_ms": {
+          "assigned": 219,
+          "equal_family_median_difference": -3046.1505,
+          "families_with_known_pairs": 200,
+          "family_median_signed_rank": {
+            "nonzero": 200,
+            "p_two_sided": 2.9845627873610104e-41,
+            "w_negative": 19405.0,
+            "w_positive": 695.0,
+            "zeros": 0
+          },
+          "known_task_pairs": 219,
+          "missing_task_pairs": 0,
+          "paired_median_difference": -3054.478,
+          "query_signed_rank": {
+            "nonzero": 219,
+            "p_two_sided": 8.069955054049341e-46,
+            "w_negative": 23315.0,
+            "w_positive": 775.0,
+            "zeros": 0
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -3211.864275,
+            -2887.2575
+          ]
+        },
+        "prompt_tokens": {
+          "assigned": 219,
+          "equal_family_median_difference": -2353.0,
+          "families_with_known_pairs": 196,
+          "family_median_signed_rank": {
+            "nonzero": 173,
+            "p_two_sided": 5.532138868400245e-40,
+            "w_negative": 14743.5,
+            "w_positive": 307.5,
+            "zeros": 23
+          },
+          "known_task_pairs": 215,
+          "missing_task_pairs": 4,
+          "paired_median_difference": -2331.0,
+          "query_signed_rank": {
+            "nonzero": 190,
+            "p_two_sided": 3.038400400944451e-44,
+            "w_negative": 17797.5,
+            "w_positive": 347.5,
+            "zeros": 25
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -2388.0,
+            -2280.0
+          ]
+        }
+      },
+      "L6_minus_L5": {
+        "completion_tokens": {
+          "assigned": 219,
+          "equal_family_median_difference": -65.0,
+          "families_with_known_pairs": 199,
+          "family_median_signed_rank": {
+            "nonzero": 188,
+            "p_two_sided": 1.9358301776421617e-43,
+            "w_negative": 17408.0,
+            "w_positive": 358.0,
+            "zeros": 11
+          },
+          "known_task_pairs": 218,
+          "missing_task_pairs": 1,
+          "paired_median_difference": -64.5,
+          "query_signed_rank": {
+            "nonzero": 207,
+            "p_two_sided": 5.4016024642010424e-48,
+            "w_negative": 21109.0,
+            "w_positive": 419.0,
+            "zeros": 11
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -66.0,
+            -56.0
+          ]
+        },
+        "executor_ms": {
+          "assigned": 219,
+          "equal_family_median_difference": -2433.98,
+          "families_with_known_pairs": 200,
+          "family_median_signed_rank": {
+            "nonzero": 200,
+            "p_two_sided": 1.7203226645086842e-51,
+            "w_negative": 19927.0,
+            "w_positive": 173.0,
+            "zeros": 0
+          },
+          "known_task_pairs": 219,
+          "missing_task_pairs": 0,
+          "paired_median_difference": -2418.0,
+          "query_signed_rank": {
+            "nonzero": 219,
+            "p_two_sided": 4.504763985129786e-56,
+            "w_negative": 23876.0,
+            "w_positive": 214.0,
+            "zeros": 0
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -2529.217,
+            -2281.676
+          ]
+        },
+        "prompt_tokens": {
+          "assigned": 219,
+          "equal_family_median_difference": -2176.0,
+          "families_with_known_pairs": 199,
+          "family_median_signed_rank": {
+            "nonzero": 170,
+            "p_two_sided": 1.3363823550460978e-51,
+            "w_negative": 14535.0,
+            "w_positive": 0.0,
+            "zeros": 29
+          },
+          "known_task_pairs": 218,
+          "missing_task_pairs": 1,
+          "paired_median_difference": -2154.5,
+          "query_signed_rank": {
+            "nonzero": 187,
+            "p_two_sided": 1.0195788231247695e-56,
+            "w_negative": 17578.0,
+            "w_positive": 0.0,
+            "zeros": 31
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -2230.0,
+            -2082.0
+          ]
+        }
+      }
+    },
+    "source_217": {
+      "L5_minus_L4": {
+        "completion_tokens": {
+          "assigned": 217,
+          "equal_family_median_difference": -326.0,
+          "families_with_known_pairs": 194,
+          "family_median_signed_rank": {
+            "nonzero": 184,
+            "p_two_sided": 2.187146852711998e-45,
+            "w_negative": 16799.0,
+            "w_positive": 221.0,
+            "zeros": 10
+          },
+          "known_task_pairs": 213,
+          "missing_task_pairs": 4,
+          "paired_median_difference": -325.0,
+          "query_signed_rank": {
+            "nonzero": 203,
+            "p_two_sided": 3.1145172021755746e-50,
+            "w_negative": 20448.0,
+            "w_positive": 258.0,
+            "zeros": 10
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -341.0,
+            -278.0
+          ]
+        },
+        "executor_ms": {
+          "assigned": 217,
+          "equal_family_median_difference": -3026.825,
+          "families_with_known_pairs": 198,
+          "family_median_signed_rank": {
+            "nonzero": 198,
+            "p_two_sided": 1.0408441699667603e-40,
+            "w_negative": 19010.0,
+            "w_positive": 691.0,
+            "zeros": 0
+          },
+          "known_task_pairs": 217,
+          "missing_task_pairs": 0,
+          "paired_median_difference": -3033.554,
+          "query_signed_rank": {
+            "nonzero": 217,
+            "p_two_sided": 2.835111614012999e-45,
+            "w_negative": 22882.0,
+            "w_positive": 771.0,
+            "zeros": 0
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -3211.864275,
+            -2874.543
+          ]
+        },
+        "prompt_tokens": {
+          "assigned": 217,
+          "equal_family_median_difference": -2345.5,
+          "families_with_known_pairs": 194,
+          "family_median_signed_rank": {
+            "nonzero": 171,
+            "p_two_sided": 2.2127356033239124e-39,
+            "w_negative": 14398.5,
+            "w_positive": 307.5,
+            "zeros": 23
+          },
+          "known_task_pairs": 213,
+          "missing_task_pairs": 4,
+          "paired_median_difference": -2322.0,
+          "query_signed_rank": {
+            "nonzero": 188,
+            "p_two_sided": 1.2153108980258869e-43,
+            "w_negative": 17418.5,
+            "w_positive": 347.5,
+            "zeros": 25
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -2385.0,
+            -2269.0
+          ]
+        }
+      },
+      "L6_minus_L5": {
+        "completion_tokens": {
+          "assigned": 217,
+          "equal_family_median_difference": -65.0,
+          "families_with_known_pairs": 197,
+          "family_median_signed_rank": {
+            "nonzero": 186,
+            "p_two_sided": 7.04377419649187e-43,
+            "w_negative": 17035.0,
+            "w_positive": 356.0,
+            "zeros": 11
+          },
+          "known_task_pairs": 216,
+          "missing_task_pairs": 1,
+          "paired_median_difference": -64.0,
+          "query_signed_rank": {
+            "nonzero": 205,
+            "p_two_sided": 1.9789715546775986e-47,
+            "w_negative": 20698.0,
+            "w_positive": 417.0,
+            "zeros": 11
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -66.0,
+            -56.0
+          ]
+        },
+        "executor_ms": {
+          "assigned": 217,
+          "equal_family_median_difference": -2429.138,
+          "families_with_known_pairs": 198,
+          "family_median_signed_rank": {
+            "nonzero": 198,
+            "p_two_sided": 6.881290658034737e-51,
+            "w_negative": 19528.0,
+            "w_positive": 173.0,
+            "zeros": 0
+          },
+          "known_task_pairs": 217,
+          "missing_task_pairs": 0,
+          "paired_median_difference": -2408.763,
+          "query_signed_rank": {
+            "nonzero": 217,
+            "p_two_sided": 1.8019055940519143e-55,
+            "w_negative": 23439.0,
+            "w_positive": 214.0,
+            "zeros": 0
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -2523.81,
+            -2275.267
+          ]
+        },
+        "prompt_tokens": {
+          "assigned": 217,
+          "equal_family_median_difference": -2175.0,
+          "families_with_known_pairs": 197,
+          "family_median_signed_rank": {
+            "nonzero": 168,
+            "p_two_sided": 5.345529420184391e-51,
+            "w_negative": 14196.0,
+            "w_positive": 0.0,
+            "zeros": 29
+          },
+          "known_task_pairs": 216,
+          "missing_task_pairs": 1,
+          "paired_median_difference": -2150.0,
+          "query_signed_rank": {
+            "nonzero": 185,
+            "p_two_sided": 4.078315292499078e-56,
+            "w_negative": 17205.0,
+            "w_positive": 0.0,
+            "zeros": 31
+          },
+          "task_weighted_cluster_bootstrap_ci95": [
+            -2228.0,
+            -2065.0
+          ]
+        }
+      }
+    }
+  },
+  "method": "Medians of within-query differences. Resample whole families with replacement, then take the median across all sampled queries. Wilcoxon exact two-sided conditional on the nonzero absolute differences, using average ranks for ties. The query test assumes independent symmetric signs; the family sensitivity uses one median difference per family. P values are descriptive and unadjusted for multiple comparisons. Intervals apply to measurable pairs.",
+  "scope": "Original whole-request arms, including failures and early stops. Wall time ends at the executor and excludes rendering. B3 requires a complete meter for both seats. A negative paired difference favors the first arm on resource use only.",
+  "source_sha256": {
+    "analysis/roster.jsonl": "ffcecb4ce1cf0f0fb0ea9e3a43140c1b119420f619d335ad621bd2063e9a39c2",
+    "tech_metrics/continuation_final/seats.private.jsonl": "8a14e60a953e8b7e445df7985c7512ceefff94f0fcc404cc62bf6a6c51f83e72"
+  }
+}

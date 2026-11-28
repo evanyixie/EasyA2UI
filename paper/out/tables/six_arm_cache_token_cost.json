@@ -1,0 +1,89 @@
+{
+  "all": {
+    "assigned": 1314,
+    "completion_tokens": 949428,
+    "metered_requests": 3165,
+    "prompt_cache_hit_tokens": 5635813,
+    "prompt_cache_miss_tokens": 1632233,
+    "prompt_tokens": 7268046,
+    "request_intents": 3181,
+    "total_tokens": 8217474,
+    "unknown_usage_calls": 16
+  },
+  "arms": {
+    "L1": {
+      "assigned": 219,
+      "completion_tokens": 146094,
+      "metered_requests": 215,
+      "prompt_cache_hit_tokens": 276352,
+      "prompt_cache_miss_tokens": 134258,
+      "prompt_tokens": 410610,
+      "request_intents": 219,
+      "total_tokens": 556704,
+      "unknown_usage_calls": 4
+    },
+    "L2": {
+      "assigned": 219,
+      "completion_tokens": 339510,
+      "metered_requests": 948,
+      "prompt_cache_hit_tokens": 1679571,
+      "prompt_cache_miss_tokens": 615030,
+      "prompt_tokens": 2294601,
+      "request_intents": 951,
+      "total_tokens": 2634111,
+      "unknown_usage_calls": 3
+    },
+    "L3": {
+      "assigned": 219,
+      "completion_tokens": 218226,
+      "metered_requests": 781,
+      "prompt_cache_hit_tokens": 1445730,
+      "prompt_cache_miss_tokens": 411714,
+      "prompt_tokens": 1857444,
+      "request_intents": 786,
+      "total_tokens": 2075670,
+      "unknown_usage_calls": 5
+    },
+    "L4": {
+      "assigned": 219,
+      "completion_tokens": 134992,
+      "metered_requests": 597,
+      "prompt_cache_hit_tokens": 1079908,
+      "prompt_cache_miss_tokens": 276081,
+      "prompt_tokens": 1355989,
+      "request_intents": 600,
+      "total_tokens": 1490981,
+      "unknown_usage_calls": 3
+    },
+    "L5": {
+      "assigned": 219,
+      "completion_tokens": 62331,
+      "metered_requests": 405,
+      "prompt_cache_hit_tokens": 752357,
+      "prompt_cache_miss_tokens": 133887,
+      "prompt_tokens": 886244,
+      "request_intents": 406,
+      "total_tokens": 948575,
+      "unknown_usage_calls": 1
+    },
+    "L6": {
+      "assigned": 219,
+      "completion_tokens": 48275,
+      "metered_requests": 219,
+      "prompt_cache_hit_tokens": 401895,
+      "prompt_cache_miss_tokens": 61263,
+      "prompt_tokens": 463158,
+      "request_intents": 219,
+      "total_tokens": 511433,
+      "unknown_usage_calls": 0
+    }
+  },
+  "metering": "Each metered receipt satisfies cache-hit + cache-miss = input and input + output = total. The provider's cached_tokens field is a second representation of cache-hit input and is counted once. All receipt bytes and local request joins were checked; unmetered calls retain unknown usage.",
+  "pricing": "No invoice or historical rates are asserted. A supplied-rate simulation prices only known cache-hit input, cache-miss input and output, per million tokens.",
+  "scope": "Original formal 219 tasks x six arms; every request intent, including failed seats. Separate supplementary runs are outside this ledger.",
+  "source_sha256": {
+    "cost_frontier_canonical_json": "b040805ec43ab2b741f59236cccfadaa02c962b186cb1342eb523227b75bb2e2",
+    "formal_seats": "8a14e60a953e8b7e445df7985c7512ceefff94f0fcc404cc62bf6a6c51f83e72"
+  },
+  "unique_provider_request_ids": 3165
+}
